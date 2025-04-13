@@ -528,6 +528,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property onSale (base name: "on_sale")', function() {
+      // uncomment below and update the code to test the property onSale
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

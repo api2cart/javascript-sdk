@@ -234,6 +234,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property onSale (base name: "on_sale")', function() {
+      // uncomment below and update the code to test the property onSale
+      //var instance = new Api2CartOpenApi.Product();
+      //expect(instance).to.be();
+    });
+
     it('should have the property backorders (base name: "backorders")', function() {
       // uncomment below and update the code to test the property backorders
       //var instance = new Api2CartOpenApi.Product();

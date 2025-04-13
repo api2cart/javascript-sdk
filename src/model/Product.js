@@ -147,6 +147,9 @@ class Product {
             if (data.hasOwnProperty('in_stock')) {
                 obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
             }
+            if (data.hasOwnProperty('on_sale')) {
+                obj['on_sale'] = ApiClient.convertToType(data['on_sale'], 'Boolean');
+            }
             if (data.hasOwnProperty('backorders')) {
                 obj['backorders'] = ApiClient.convertToType(data['backorders'], 'String');
             }
@@ -601,6 +604,11 @@ Product.prototype['sort_order'] = undefined;
  * @member {Boolean} in_stock
  */
 Product.prototype['in_stock'] = undefined;
+
+/**
+ * @member {Boolean} on_sale
+ */
+Product.prototype['on_sale'] = undefined;
 
 /**
  * @member {String} backorders

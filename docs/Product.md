@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **weightUnit** | **String** |  | [optional] 
 **sortOrder** | **Number** |  | [optional] 
 **inStock** | **Boolean** |  | [optional] 
+**onSale** | **Boolean** |  | [optional] 
 **backorders** | **String** |  | [optional] 
 **manageStock** | **String** |  | [optional] 
 **isStockManaged** | **Boolean** |  | [optional] 

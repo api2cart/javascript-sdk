@@ -48,6 +48,7 @@ class ProductUpdate {
         obj['is_supply'] = true;
         obj['downloadable'] = false;
         obj['auto_renew'] = false;
+        obj['on_sale'] = false;
     }
 
     /**
@@ -297,6 +298,9 @@ class ProductUpdate {
             }
             if (data.hasOwnProperty('auto_renew')) {
                 obj['auto_renew'] = ApiClient.convertToType(data['auto_renew'], 'Boolean');
+            }
+            if (data.hasOwnProperty('on_sale')) {
+                obj['on_sale'] = ApiClient.convertToType(data['on_sale'], 'Boolean');
             }
         }
         return obj;
@@ -992,6 +996,13 @@ ProductUpdate.prototype['materials'] = undefined;
  * @default false
  */
 ProductUpdate.prototype['auto_renew'] = false;
+
+/**
+ * Set whether the product on sale
+ * @member {Boolean} on_sale
+ * @default false
+ */
+ProductUpdate.prototype['on_sale'] = false;
 
 
 
