@@ -283,6 +283,7 @@ import ProductAddCertificationsInnerFilesInner from './model/ProductAddCertifica
 import ProductAddCertificationsInnerImagesInner from './model/ProductAddCertificationsInnerImagesInner';
 import ProductAddFilesInner from './model/ProductAddFilesInner';
 import ProductAddGroupPricesInner from './model/ProductAddGroupPricesInner';
+import ProductAddLogisticInfoInner from './model/ProductAddLogisticInfoInner';
 import ProductAddManufacturerInfo from './model/ProductAddManufacturerInfo';
 import ProductAddPackageDetails from './model/ProductAddPackageDetails';
 import ProductAddSalesTax from './model/ProductAddSalesTax';
@@ -2123,6 +2124,12 @@ export {
      * @property {module:model/ProductAddGroupPricesInner}
      */
     ProductAddGroupPricesInner,
+
+    /**
+     * The ProductAddLogisticInfoInner model constructor.
+     * @property {module:model/ProductAddLogisticInfoInner}
+     */
+    ProductAddLogisticInfoInner,
 
     /**
      * The ProductAddManufacturerInfo model constructor.

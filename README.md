@@ -577,6 +577,7 @@ Class | Method | HTTP request | Description
  - [Api2CartOpenApi.ProductAddCertificationsInnerImagesInner](docs/ProductAddCertificationsInnerImagesInner.md)
  - [Api2CartOpenApi.ProductAddFilesInner](docs/ProductAddFilesInner.md)
  - [Api2CartOpenApi.ProductAddGroupPricesInner](docs/ProductAddGroupPricesInner.md)
+ - [Api2CartOpenApi.ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [Api2CartOpenApi.ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [Api2CartOpenApi.ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
  - [Api2CartOpenApi.ProductAddSalesTax](docs/ProductAddSalesTax.md)

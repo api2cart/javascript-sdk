@@ -16,6 +16,7 @@ import ProductAddBestOffer from './ProductAddBestOffer';
 import ProductAddCertificationsInner from './ProductAddCertificationsInner';
 import ProductAddFilesInner from './ProductAddFilesInner';
 import ProductAddGroupPricesInner from './ProductAddGroupPricesInner';
+import ProductAddLogisticInfoInner from './ProductAddLogisticInfoInner';
 import ProductAddManufacturerInfo from './ProductAddManufacturerInfo';
 import ProductAddPackageDetails from './ProductAddPackageDetails';
 import ProductAddSalesTax from './ProductAddSalesTax';
@@ -288,6 +289,9 @@ class ProductAdd {
             if (data.hasOwnProperty('image_name')) {
                 obj['image_name'] = ApiClient.convertToType(data['image_name'], 'String');
             }
+            if (data.hasOwnProperty('additional_image_urls')) {
+                obj['additional_image_urls'] = ApiClient.convertToType(data['additional_image_urls'], ['String']);
+            }
             if (data.hasOwnProperty('reserve_price')) {
                 obj['reserve_price'] = ApiClient.convertToType(data['reserve_price'], 'Number');
             }
@@ -299,6 +303,9 @@ class ProductAdd {
             }
             if (data.hasOwnProperty('auction_confidentiality_level')) {
                 obj['auction_confidentiality_level'] = ApiClient.convertToType(data['auction_confidentiality_level'], 'String');
+            }
+            if (data.hasOwnProperty('logistic_info')) {
+                obj['logistic_info'] = ApiClient.convertToType(data['logistic_info'], [ProductAddLogisticInfoInner]);
             }
             if (data.hasOwnProperty('avail_from')) {
                 obj['avail_from'] = ApiClient.convertToType(data['avail_from'], 'String');
@@ -654,6 +661,10 @@ class ProductAdd {
         if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
             throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
         }
+        // ensure the json data is an array
+        if (!Array.isArray(data['additional_image_urls'])) {
+            throw new Error("Expected the field `additional_image_urls` to be an array in the JSON data but got " + data['additional_image_urls']);
+        }
         // ensure the json data is a string
         if (data['condition_description'] && !(typeof data['condition_description'] === 'string' || data['condition_description'] instanceof String)) {
             throw new Error("Expected the field `condition_description` to be a primitive type in the JSON string but got " + data['condition_description']);
@@ -661,6 +672,16 @@ class ProductAdd {
         // ensure the json data is a string
         if (data['auction_confidentiality_level'] && !(typeof data['auction_confidentiality_level'] === 'string' || data['auction_confidentiality_level'] instanceof String)) {
             throw new Error("Expected the field `auction_confidentiality_level` to be a primitive type in the JSON string but got " + data['auction_confidentiality_level']);
+        }
+        if (data['logistic_info']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['logistic_info'])) {
+                throw new Error("Expected the field `logistic_info` to be an array in the JSON data but got " + data['logistic_info']);
+            }
+            // validate the optional field `logistic_info` (array)
+            for (const item of data['logistic_info']) {
+                ProductAddLogisticInfoInner.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['avail_from'] && !(typeof data['avail_from'] === 'string' || data['avail_from'] instanceof String)) {
@@ -1203,6 +1224,12 @@ ProductAdd.prototype['image_url'] = undefined;
 ProductAdd.prototype['image_name'] = undefined;
 
 /**
+ * Image Url
+ * @member {Array.<String>} additional_image_urls
+ */
+ProductAdd.prototype['additional_image_urls'] = undefined;
+
+/**
  * Defines reserve price value
  * @member {Number} reserve_price
  */
@@ -1225,6 +1252,12 @@ ProductAdd.prototype['condition_description'] = undefined;
  * @member {String} auction_confidentiality_level
  */
 ProductAdd.prototype['auction_confidentiality_level'] = undefined;
+
+/**
+ * Defines product's logistic channel settings
+ * @member {Array.<module:model/ProductAddLogisticInfoInner>} logistic_info
+ */
+ProductAdd.prototype['logistic_info'] = undefined;
 
 /**
  * Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.

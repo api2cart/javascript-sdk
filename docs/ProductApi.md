@@ -429,6 +429,7 @@ let opts = {
   'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'brandIds': "4,5", // String | Retrieves brands specified by brand ids
   'exclude': "false", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  'categoryId': "6", // String | Retrieves product brands specified by category id
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Language id
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
@@ -460,6 +461,7 @@ Name | Type | Description  | Notes
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,short_description,active,url&#39;]
  **brandIds** | **String**| Retrieves brands specified by brand ids | [optional] 
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
+ **categoryId** | **String**| Retrieves product brands specified by category id | [optional] 
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Language id | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 

@@ -379,6 +379,7 @@ export default class ProductApi {
      * @param {String} [params = 'id,name,short_description,active,url')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [brandIds] Retrieves brands specified by brand ids
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [categoryId] Retrieves product brands specified by category id
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
      * @param {String} [createdFrom] Retrieve entities from their creation date
@@ -405,6 +406,7 @@ export default class ProductApi {
         'params': opts['params'],
         'brand_ids': opts['brandIds'],
         'exclude': opts['exclude'],
+        'category_id': opts['categoryId'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'created_from': opts['createdFrom'],

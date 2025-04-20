@@ -283,6 +283,7 @@ docs/ProductAddCertificationsInnerFilesInner.md
 docs/ProductAddCertificationsInnerImagesInner.md
 docs/ProductAddFilesInner.md
 docs/ProductAddGroupPricesInner.md
+docs/ProductAddLogisticInfoInner.md
 docs/ProductAddManufacturerInfo.md
 docs/ProductAddPackageDetails.md
 docs/ProductAddSalesTax.md
@@ -744,6 +745,7 @@ src/model/ProductAddCertificationsInnerFilesInner.js
 src/model/ProductAddCertificationsInnerImagesInner.js
 src/model/ProductAddFilesInner.js
 src/model/ProductAddGroupPricesInner.js
+src/model/ProductAddLogisticInfoInner.js
 src/model/ProductAddManufacturerInfo.js
 src/model/ProductAddPackageDetails.js
 src/model/ProductAddSalesTax.js
@@ -1195,6 +1197,7 @@ test/model/ProductAddCertificationsInnerFilesInner.spec.js
 test/model/ProductAddCertificationsInnerImagesInner.spec.js
 test/model/ProductAddFilesInner.spec.js
 test/model/ProductAddGroupPricesInner.spec.js
+test/model/ProductAddLogisticInfoInner.spec.js
 test/model/ProductAddManufacturerInfo.spec.js
 test/model/ProductAddPackageDetails.spec.js
 test/model/ProductAddSalesTax.spec.js

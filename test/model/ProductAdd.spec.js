@@ -462,6 +462,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property additionalImageUrls (base name: "additional_image_urls")', function() {
+      // uncomment below and update the code to test the property additionalImageUrls
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reservePrice (base name: "reserve_price")', function() {
       // uncomment below and update the code to test the property reservePrice
       //var instance = new Api2CartOpenApi.ProductAdd();
@@ -482,6 +488,12 @@
 
     it('should have the property auctionConfidentialityLevel (base name: "auction_confidentiality_level")', function() {
       // uncomment below and update the code to test the property auctionConfidentialityLevel
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property logisticInfo (base name: "logistic_info")', function() {
+      // uncomment below and update the code to test the property logisticInfo
       //var instance = new Api2CartOpenApi.ProductAdd();
       //expect(instance).to.be();
     });
