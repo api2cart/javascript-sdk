@@ -60,6 +60,9 @@ class ProductVariantImageAdd {
             if (data.hasOwnProperty('product_variant_id')) {
                 obj['product_variant_id'] = ApiClient.convertToType(data['product_variant_id'], 'String');
             }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            }
             if (data.hasOwnProperty('image_name')) {
                 obj['image_name'] = ApiClient.convertToType(data['image_name'], 'String');
             }
@@ -80,9 +83,6 @@ class ProductVariantImageAdd {
             }
             if (data.hasOwnProperty('position')) {
                 obj['position'] = ApiClient.convertToType(data['position'], 'Number');
-            }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('option_id')) {
                 obj['option_id'] = ApiClient.convertToType(data['option_id'], 'String');
@@ -112,6 +112,10 @@ class ProductVariantImageAdd {
             throw new Error("Expected the field `product_variant_id` to be a primitive type in the JSON string but got " + data['product_variant_id']);
         }
         // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
         if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
             throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
         }
@@ -134,10 +138,6 @@ class ProductVariantImageAdd {
         // ensure the json data is a string
         if (data['mime'] && !(typeof data['mime'] === 'string' || data['mime'] instanceof String)) {
             throw new Error("Expected the field `mime` to be a primitive type in the JSON string but got " + data['mime']);
-        }
-        // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         // ensure the json data is a string
         if (data['option_id'] && !(typeof data['option_id'] === 'string' || data['option_id'] instanceof String)) {
@@ -163,6 +163,12 @@ ProductVariantImageAdd.prototype['product_id'] = undefined;
  * @member {String} product_variant_id
  */
 ProductVariantImageAdd.prototype['product_variant_id'] = undefined;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+ProductVariantImageAdd.prototype['store_id'] = undefined;
 
 /**
  * Defines image's name
@@ -207,12 +213,6 @@ ProductVariantImageAdd.prototype['mime'] = undefined;
  * @default 0
  */
 ProductVariantImageAdd.prototype['position'] = 0;
-
-/**
- * Store Id
- * @member {String} store_id
- */
-ProductVariantImageAdd.prototype['store_id'] = undefined;
 
 /**
  * Defines option id of the product variant for which the image will be added

@@ -59,17 +59,8 @@ class CartCouponAdd {
         if (data) {
             obj = obj || new CartCouponAdd();
 
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('codes')) {
-                obj['codes'] = ApiClient.convertToType(data['codes'], ['String']);
             }
             if (data.hasOwnProperty('action_type')) {
                 obj['action_type'] = ApiClient.convertToType(data['action_type'], 'String');
@@ -82,6 +73,12 @@ class CartCouponAdd {
             }
             if (data.hasOwnProperty('action_amount')) {
                 obj['action_amount'] = ApiClient.convertToType(data['action_amount'], 'Number');
+            }
+            if (data.hasOwnProperty('codes')) {
+                obj['codes'] = ApiClient.convertToType(data['codes'], ['String']);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('date_start')) {
                 obj['date_start'] = ApiClient.convertToType(data['date_start'], 'String');
@@ -110,6 +107,9 @@ class CartCouponAdd {
             if (data.hasOwnProperty('include_tax')) {
                 obj['include_tax'] = ApiClient.convertToType(data['include_tax'], 'Boolean');
             }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            }
         }
         return obj;
     }
@@ -127,20 +127,8 @@ class CartCouponAdd {
             }
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['code'] && !(typeof data['code'] === 'string' || data['code'] instanceof String)) {
             throw new Error("Expected the field `code` to be a primitive type in the JSON string but got " + data['code']);
-        }
-        // ensure the json data is a string
-        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
-            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['codes'])) {
-            throw new Error("Expected the field `codes` to be an array in the JSON data but got " + data['codes']);
         }
         // ensure the json data is a string
         if (data['action_type'] && !(typeof data['action_type'] === 'string' || data['action_type'] instanceof String)) {
@@ -153,6 +141,14 @@ class CartCouponAdd {
         // ensure the json data is a string
         if (data['action_scope'] && !(typeof data['action_scope'] === 'string' || data['action_scope'] instanceof String)) {
             throw new Error("Expected the field `action_scope` to be a primitive type in the JSON string but got " + data['action_scope']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['codes'])) {
+            throw new Error("Expected the field `codes` to be an array in the JSON data but got " + data['codes']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
         // ensure the json data is a string
         if (data['date_start'] && !(typeof data['date_start'] === 'string' || data['date_start'] instanceof String)) {
@@ -178,6 +174,10 @@ class CartCouponAdd {
         if (data['action_condition_value'] && !(typeof data['action_condition_value'] === 'string' || data['action_condition_value'] instanceof String)) {
             throw new Error("Expected the field `action_condition_value` to be a primitive type in the JSON string but got " + data['action_condition_value']);
         }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
 
         return true;
     }
@@ -188,28 +188,10 @@ class CartCouponAdd {
 CartCouponAdd.RequiredProperties = ["code", "action_type", "action_apply_to", "action_scope", "action_amount"];
 
 /**
- * Store Id
- * @member {String} store_id
- */
-CartCouponAdd.prototype['store_id'] = undefined;
-
-/**
  * Coupon code
  * @member {String} code
  */
 CartCouponAdd.prototype['code'] = undefined;
-
-/**
- * Coupon name
- * @member {String} name
- */
-CartCouponAdd.prototype['name'] = undefined;
-
-/**
- * Entity codes
- * @member {Array.<String>} codes
- */
-CartCouponAdd.prototype['codes'] = undefined;
 
 /**
  * Coupon discount type
@@ -234,6 +216,18 @@ CartCouponAdd.prototype['action_scope'] = undefined;
  * @member {Number} action_amount
  */
 CartCouponAdd.prototype['action_amount'] = undefined;
+
+/**
+ * Entity codes
+ * @member {Array.<String>} codes
+ */
+CartCouponAdd.prototype['codes'] = undefined;
+
+/**
+ * Coupon name
+ * @member {String} name
+ */
+CartCouponAdd.prototype['name'] = undefined;
 
 /**
  * Date start
@@ -290,6 +284,12 @@ CartCouponAdd.prototype['action_condition_value'] = undefined;
  * @default false
  */
 CartCouponAdd.prototype['include_tax'] = false;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+CartCouponAdd.prototype['store_id'] = undefined;
 
 
 

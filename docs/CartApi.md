@@ -162,12 +162,12 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'ids': "24,25", // String | Retrieves  catalog_price_rules by ids
-  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'responseFields': "{result{catalog_price_rules_count,catalog_price_rules{id,type,name,avail,usage_count,actions,conditions}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartCatalogPriceRulesList(opts, (error, data, response) => {
@@ -184,12 +184,12 @@ apiInstance.cartCatalogPriceRulesList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **ids** | **String**| Retrieves  catalog_price_rules by ids | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
@@ -465,10 +465,10 @@ let key = "subtotal"; // String | Defines condition entity attribute key
 let operator = "=="; // String | Defines condition operator
 let value = "2"; // String | Defines condition value, can be comma separated according to the operator.
 let opts = {
-  'storeId': "1", // String | Store Id
   'target': "coupon_action", // String | Defines condition operator
   'includeTax': true, // Boolean | Indicates whether to apply a discount for taxes.
-  'includeShipping': true // Boolean | Indicates whether to apply a discount for shipping.
+  'includeShipping': true, // Boolean | Indicates whether to apply a discount for shipping.
+  'storeId': "1" // String | Store Id
 };
 apiInstance.cartCouponConditionAdd(couponId, entity, key, operator, value, opts, (error, data, response) => {
   if (error) {
@@ -489,10 +489,10 @@ Name | Type | Description  | Notes
  **key** | **String**| Defines condition entity attribute key | 
  **operator** | **String**| Defines condition operator | 
  **value** | **String**| Defines condition value, can be comma separated according to the operator. | 
- **storeId** | **String**| Store Id | [optional] 
  **target** | **String**| Defines condition operator | [optional] [default to &#39;coupon_prerequisite&#39;]
  **includeTax** | **Boolean**| Indicates whether to apply a discount for taxes. | [optional] [default to false]
  **includeShipping** | **Boolean**| Indicates whether to apply a discount for shipping. | [optional] [default to false]
+ **storeId** | **String**| Store Id | [optional] 
 
 ### Return type
 
@@ -535,11 +535,11 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
   'storeId': "1", // String | Store Id
+  'avail': false, // Boolean | Defines category's visibility status
   'dateStartFrom': "2016-12-29 16:44:30", // String | Filter entity by date_start (greater or equal)
   'dateStartTo': "2016-12-29 16:44:30", // String | Filter entity by date_start (less or equal)
   'dateEndFrom': "2016-12-29 16:44:30", // String | Filter entity by date_end (greater or equal)
-  'dateEndTo': "2016-12-29 16:44:30", // String | Filter entity by date_end (less or equal)
-  'avail': false // Boolean | Defines category's visibility status
+  'dateEndTo': "2016-12-29 16:44:30" // String | Filter entity by date_end (less or equal)
 };
 apiInstance.cartCouponCount(opts, (error, data, response) => {
   if (error) {
@@ -556,11 +556,11 @@ apiInstance.cartCouponCount(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **storeId** | **String**| Store Id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
  **dateStartFrom** | **String**| Filter entity by date_start (greater or equal) | [optional] 
  **dateStartTo** | **String**| Filter entity by date_start (less or equal) | [optional] 
  **dateEndFrom** | **String**| Filter entity by date_end (greater or equal) | [optional] 
  **dateEndTo** | **String**| Filter entity by date_end (less or equal) | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
 
 ### Return type
 
@@ -662,19 +662,19 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'couponsIds': "1,2,3", // String | Filter coupons by ids
   'storeId': "1", // String | Filter coupons by store id
+  'langId': "3", // String | Language id
+  'avail': false, // Boolean | Filter coupons by avail status
   'dateStartFrom': "2016-12-29 16:44:30", // String | Filter entity by date_start (greater or equal)
   'dateStartTo': "2016-12-29 16:44:30", // String | Filter entity by date_start (less or equal)
   'dateEndFrom': "2016-12-29 16:44:30", // String | Filter entity by date_end (greater or equal)
   'dateEndTo': "2016-12-29 16:44:30", // String | Filter entity by date_end (less or equal)
-  'avail': false, // Boolean | Filter coupons by avail status
-  'langId': "3", // String | Language id
-  'params': "id,code,type,amount", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'responseFields': "{pagination,result{coupon_count,coupon{id,code,name,conditions,actions{scope,amount,conditions{id,value,sub-conditions}},date_start,avail}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,code,type,amount", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "usage_history,type" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartCouponList(opts, (error, data, response) => {
@@ -691,19 +691,19 @@ apiInstance.cartCouponList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **couponsIds** | **String**| Filter coupons by ids | [optional] 
  **storeId** | **String**| Filter coupons by store id | [optional] 
+ **langId** | **String**| Language id | [optional] 
+ **avail** | **Boolean**| Filter coupons by avail status | [optional] 
  **dateStartFrom** | **String**| Filter entity by date_start (greater or equal) | [optional] 
  **dateStartTo** | **String**| Filter entity by date_start (less or equal) | [optional] 
  **dateEndFrom** | **String**| Filter entity by date_end (greater or equal) | [optional] 
  **dateEndTo** | **String**| Filter entity by date_end (less or equal) | [optional] 
- **avail** | **Boolean**| Filter coupons by avail status | [optional] 
- **langId** | **String**| Language id | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,code,name,description&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,code,name,description&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
@@ -1095,12 +1095,12 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'storeId': "1", // String | Store Id
-  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'responseFields': "{pagination,result{gift_card{id,code,amount,status}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartGiftcardList(opts, (error, data, response) => {
@@ -1117,12 +1117,12 @@ apiInstance.cartGiftcardList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **storeId** | **String**| Store Id | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,code,name&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,code,name&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
@@ -1165,10 +1165,10 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'params': "name,url", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'storeId': "1", // String | Store Id
   'responseFields': "{result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "name,url", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'storeId': "1" // String | Store Id
+  'params': "name,url", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "name,url" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartInfo(opts, (error, data, response) => {
   if (error) {
@@ -1184,10 +1184,10 @@ apiInstance.cartInfo(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;store_name,store_url,db_prefix&#39;]
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **storeId** | **String**| Store Id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;store_name,store_url,db_prefix&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
 
@@ -1277,14 +1277,14 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CartApi();
 let entityId = "1"; // String | Entity Id
 let opts = {
+  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'entity': "order", // String | Entity
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Language id
   'key': "subtotal", // String | Key
-  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'responseFields': "{result{items{key,value}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartMetaDataList(entityId, opts, (error, data, response) => {
@@ -1302,14 +1302,14 @@ apiInstance.cartMetaDataList(entityId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entityId** | **String**| Entity Id | 
+ **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **entity** | **String**| Entity | [optional] [default to &#39;product&#39;]
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Language id | [optional] 
  **key** | **String**| Key | [optional] 
- **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;key,value&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;key,value&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
@@ -1540,9 +1540,9 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'storeId': "1", // String | Store Id
   'start': 0, // Number | This parameter sets the number from which you want to get entities
-  'count': 20 // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'storeId': "1" // String | Store Id
 };
 apiInstance.cartPluginList(opts, (error, data, response) => {
   if (error) {
@@ -1558,9 +1558,9 @@ apiInstance.cartPluginList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **String**| Store Id | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **storeId** | **String**| Store Id | [optional] 
 
 ### Return type
 
@@ -1734,17 +1734,17 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  'scriptIds': "34023324,34024032", // String | Retrieves only scripts with specific ids
+  'storeId': "1", // String | Store Id
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'scriptIds': "34023324,34024032", // String | Retrieves only scripts with specific ids
-  'storeId': "1", // String | Store Id
-  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'responseFields': "{pagination,result{total_count,scripts{id,name,src,created_time{value}}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartScriptList(opts, (error, data, response) => {
@@ -1761,17 +1761,17 @@ apiInstance.cartScriptList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
+ **scriptIds** | **String**| Retrieves only scripts with specific ids | [optional] 
+ **storeId** | **String**| Store Id | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **scriptIds** | **String**| Retrieves only scripts with specific ids | [optional] 
- **storeId** | **String**| Store Id | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
@@ -1814,11 +1814,11 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CartApi();
 let opts = {
-  'storeId': "1", // String | Store Id
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'storeId': "1", // String | Store Id
   'responseFields': "{result{id,name,enabled,countries,shipping_methods{name,rates}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.cartShippingZonesList(opts, (error, data, response) => {
@@ -1835,11 +1835,11 @@ apiInstance.cartShippingZonesList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **String**| Store Id | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,enabled&#39;]
+ **storeId** | **String**| Store Id | [optional] 
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,enabled&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type

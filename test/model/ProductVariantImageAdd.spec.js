@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
+      //var instance = new Api2CartOpenApi.ProductVariantImageAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property imageName (base name: "image_name")', function() {
       // uncomment below and update the code to test the property imageName
       //var instance = new Api2CartOpenApi.ProductVariantImageAdd();
@@ -104,12 +110,6 @@
 
     it('should have the property position (base name: "position")', function() {
       // uncomment below and update the code to test the property position
-      //var instance = new Api2CartOpenApi.ProductVariantImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.ProductVariantImageAdd();
       //expect(instance).to.be();
     });

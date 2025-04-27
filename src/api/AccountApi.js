@@ -93,12 +93,12 @@ export default class AccountApi {
      * account.cart.list
      * This method lets you get a list of online stores connected to your API2Cart account. You can get the number of API requests to each store if you specify a period using parameters (request_from_date, request_to_date). The total_calls field is displayed only if there are parameters (request_from_date, request_to_date).
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [requestFromDate] Retrieve entities from their creation date
-     * @param {String} [requestToDate] Retrieve entities to their creation date
      * @param {String} [storeUrl] A web address of a store
      * @param {String} [storeKey] Find store by store key
+     * @param {String} [requestFromDate] Retrieve entities from their creation date
+     * @param {String} [requestToDate] Retrieve entities to their creation date
+     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/AccountApi~accountCartListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountCartList200Response}
      */
@@ -109,12 +109,12 @@ export default class AccountApi {
       let pathParams = {
       };
       let queryParams = {
-        'params': opts['params'],
-        'exclude': opts['exclude'],
+        'store_url': opts['storeUrl'],
+        'store_key': opts['storeKey'],
         'request_from_date': opts['requestFromDate'],
         'request_to_date': opts['requestToDate'],
-        'store_url': opts['storeUrl'],
-        'store_key': opts['storeKey']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -203,6 +203,7 @@ export default class AccountApi {
      * @param {String} [shoplineAccessToken] Shopline APP Key
      * @param {String} [shoplineAppKey] Shopline APP Key
      * @param {String} [shoplineAppSecret] Shopline App Secret
+     * @param {String} [shoplineSharedSecret] Shopline Shared Secret
      * @param {String} [shopifyAccessToken] Access token authorizing the app to access resources on behalf of a user
      * @param {String} [shopifyApiKey] Shopify API Key
      * @param {String} [shopifyApiPassword] Shopify API Password
@@ -354,6 +355,7 @@ export default class AccountApi {
         'shopline_access_token': opts['shoplineAccessToken'],
         'shopline_app_key': opts['shoplineAppKey'],
         'shopline_app_secret': opts['shoplineAppSecret'],
+        'shopline_shared_secret': opts['shoplineSharedSecret'],
         'shopify_access_token': opts['shopifyAccessToken'],
         'shopify_api_key': opts['shopifyApiKey'],
         'shopify_api_password': opts['shopifyApiPassword'],
@@ -465,8 +467,8 @@ export default class AccountApi {
      * account.failed_webhooks
      * If the callback of your service for some reason could not accept webhooks from API2Cart, then with the help of this method you can get a list of missed webhooks to perform synchronization again using entity_id. Please note that we keep such records for 24 hours.
      * @param {Object} opts Optional parameters
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
+     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [ids] List of сomma-separated webhook ids
      * @param {module:api/AccountApi~accountFailedWebhooksCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountFailedWebhooks200Response}
@@ -478,8 +480,8 @@ export default class AccountApi {
       let pathParams = {
       };
       let queryParams = {
-        'count': opts['count'],
         'start': opts['start'],
+        'count': opts['count'],
         'ids': opts['ids']
       };
       let headerParams = {

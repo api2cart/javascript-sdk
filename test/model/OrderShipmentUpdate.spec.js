@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(Api2CartOpenApi.OrderShipmentUpdate);
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
-      //expect(instance).to.be();
-    });
-
     it('should have the property shipmentId (base name: "shipment_id")', function() {
       // uncomment below and update the code to test the property shipmentId
       //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
@@ -72,20 +66,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shipmentProvider (base name: "shipment_provider")', function() {
+      // uncomment below and update the code to test the property shipmentProvider
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property trackingNumbers (base name: "tracking_numbers")', function() {
       // uncomment below and update the code to test the property trackingNumbers
-      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property replace (base name: "replace")', function() {
-      // uncomment below and update the code to test the property replace
-      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isShipped (base name: "is_shipped")', function() {
-      // uncomment below and update the code to test the property isShipped
       //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
       //expect(instance).to.be();
     });
@@ -96,14 +90,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isShipped (base name: "is_shipped")', function() {
+      // uncomment below and update the code to test the property isShipped
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property deliveredAt (base name: "delivered_at")', function() {
       // uncomment below and update the code to test the property deliveredAt
       //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property shipmentProvider (base name: "shipment_provider")', function() {
-      // uncomment below and update the code to test the property shipmentProvider
+    it('should have the property replace (base name: "replace")', function() {
+      // uncomment below and update the code to test the property replace
       //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
       //expect(instance).to.be();
     });

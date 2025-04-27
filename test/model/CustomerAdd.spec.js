@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new Api2CartOpenApi.CustomerAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdTime (base name: "created_time")', function() {
       // uncomment below and update the code to test the property createdTime
       //var instance = new Api2CartOpenApi.CustomerAdd();
@@ -120,12 +126,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instance = new Api2CartOpenApi.CustomerAdd();
-      //expect(instance).to.be();
-    });
-
     it('should have the property newsLetterSubscription (base name: "news_letter_subscription")', function() {
       // uncomment below and update the code to test the property newsLetterSubscription
       //var instance = new Api2CartOpenApi.CustomerAdd();
@@ -146,12 +146,6 @@
 
     it('should have the property website (base name: "website")', function() {
       // uncomment below and update the code to test the property website
-      //var instance = new Api2CartOpenApi.CustomerAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.CustomerAdd();
       //expect(instance).to.be();
     });
@@ -182,6 +176,12 @@
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
+      //var instance = new Api2CartOpenApi.CustomerAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.CustomerAdd();
       //expect(instance).to.be();
     });

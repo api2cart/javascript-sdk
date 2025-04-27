@@ -48,17 +48,17 @@ export default class SubscriberApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Boolean} [subscribed] Filter by subscription status
      * @param {String} [storeId] Store Id
      * @param {String} [email] Filter subscribers by email
-     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/SubscriberApi~subscriberListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseSubscriberList}
      */
@@ -71,17 +71,17 @@ export default class SubscriberApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'subscribed': opts['subscribed'],
         'store_id': opts['storeId'],
         'email': opts['email'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'page_cursor': opts['pageCursor'],
-        'response_fields': opts['responseFields']
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };

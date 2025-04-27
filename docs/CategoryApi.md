@@ -46,20 +46,20 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CategoryApi();
 let name = "Shoes"; // String | Defines category's name that has to be added
 let opts = {
-  'parentId': "6", // String | Adds categories specified by parent id
-  'storesIds': "1,2", // String | Create category in the stores that is specified by comma-separated stores' id
-  'storeId': "1", // String | Store Id
-  'langId': "3", // String | Language id
-  'avail': false, // Boolean | Defines category's visibility status
-  'sortOrder': 2, // Number | Sort number in the list
-  'createdTime': "2014-01-30 15:58:41", // String | Entity's date creation
-  'modifiedTime': "2014-07-30 15:58:41", // String | Entity's date modification
   'description': "Test category", // String | Defines category's description
   'shortDescription': "Short description. This is very short description", // String | Defines short description
+  'parentId': "6", // String | Adds categories specified by parent id
+  'avail': false, // Boolean | Defines category's visibility status
+  'createdTime': "2014-01-30 15:58:41", // String | Entity's date creation
+  'modifiedTime': "2014-07-30 15:58:41", // String | Entity's date modification
+  'sortOrder': 2, // Number | Sort number in the list
   'metaTitle': "category,test", // String | Defines unique meta title for each entity
   'metaDescription': "category,test", // String | Defines unique meta description of a entity
   'metaKeywords': "category,test", // String | Defines unique meta keywords for each entity
-  'seoUrl': "category,test" // String | Defines unique category's URL for SEO
+  'seoUrl': "category,test", // String | Defines unique category's URL for SEO
+  'storeId': "1", // String | Store Id
+  'storesIds': "1,2", // String | Create category in the stores that is specified by comma-separated stores' id
+  'langId': "3" // String | Language id
 };
 apiInstance.categoryAdd(name, opts, (error, data, response) => {
   if (error) {
@@ -76,20 +76,20 @@ apiInstance.categoryAdd(name, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Defines category&#39;s name that has to be added | 
- **parentId** | **String**| Adds categories specified by parent id | [optional] 
- **storesIds** | **String**| Create category in the stores that is specified by comma-separated stores&#39; id | [optional] 
- **storeId** | **String**| Store Id | [optional] 
- **langId** | **String**| Language id | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
- **sortOrder** | **Number**| Sort number in the list | [optional] [default to 0]
- **createdTime** | **String**| Entity&#39;s date creation | [optional] 
- **modifiedTime** | **String**| Entity&#39;s date modification | [optional] 
  **description** | **String**| Defines category&#39;s description | [optional] 
  **shortDescription** | **String**| Defines short description | [optional] 
+ **parentId** | **String**| Adds categories specified by parent id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **createdTime** | **String**| Entity&#39;s date creation | [optional] 
+ **modifiedTime** | **String**| Entity&#39;s date modification | [optional] 
+ **sortOrder** | **Number**| Sort number in the list | [optional] [default to 0]
  **metaTitle** | **String**| Defines unique meta title for each entity | [optional] 
  **metaDescription** | **String**| Defines unique meta description of a entity | [optional] 
  **metaKeywords** | **String**| Defines unique meta keywords for each entity | [optional] 
  **seoUrl** | **String**| Defines unique category&#39;s URL for SEO | [optional] 
+ **storeId** | **String**| Store Id | [optional] 
+ **storesIds** | **String**| Create category in the stores that is specified by comma-separated stores&#39; id | [optional] 
+ **langId** | **String**| Language id | [optional] 
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## categoryAssign
 
-> CartConfigUpdate200Response categoryAssign(productId, categoryId, opts)
+> CartConfigUpdate200Response categoryAssign(categoryId, productId, opts)
 
 category.assign
 
@@ -186,12 +186,12 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
 let apiInstance = new Api2CartOpenApi.CategoryApi();
-let productId = "10"; // String | Defines category assign to the product, specified by product id
 let categoryId = "6"; // String | Defines category assign, specified by category id
+let productId = "10"; // String | Defines category assign to the product, specified by product id
 let opts = {
   'storeId': "1" // String | Store Id
 };
-apiInstance.categoryAssign(productId, categoryId, opts, (error, data, response) => {
+apiInstance.categoryAssign(categoryId, productId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -205,8 +205,8 @@ apiInstance.categoryAssign(productId, categoryId, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **String**| Defines category assign to the product, specified by product id | 
  **categoryId** | **String**| Defines category assign, specified by category id | 
+ **productId** | **String**| Defines category assign to the product, specified by product id | 
  **storeId** | **String**| Store Id | [optional] 
 
 ### Return type
@@ -252,11 +252,11 @@ let opts = {
   'parentId': "6", // String | Counts categories specified by parent id
   'storeId': "1", // String | Counts category specified by store id
   'langId': "3", // String | Counts category specified by language id
+  'avail': false, // Boolean | Defines category's visibility status
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'avail': false, // Boolean | Defines category's visibility status
   'productType': "BICYCLE", // String | A categorization for the product
   'findValue': "Demo category 1", // String | Entity search that is specified by some value
   'findWhere': "email", // String | Counts categories that are searched specified by field
@@ -280,11 +280,11 @@ Name | Type | Description  | Notes
  **parentId** | **String**| Counts categories specified by parent id | [optional] 
  **storeId** | **String**| Counts category specified by store id | [optional] 
  **langId** | **String**| Counts category specified by language id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
  **productType** | **String**| A categorization for the product | [optional] 
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Counts categories that are searched specified by field | [optional] 
@@ -461,10 +461,10 @@ let imageName = "bag-gray.png"; // String | Defines image's name
 let url = "http://docs.api2cart.com/img/logo.png"; // String | Defines URL of the image that has to be added
 let type = "base"; // String | Defines image's types that are specified by comma-separated list
 let opts = {
+  'storeId': "1", // String | Store Id
   'label': "This cool image", // String | Defines alternative text that has to be attached to the picture
   'mime': "image/jpeg", // String | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
-  'position': 5, // Number | Defines image’s position in the list
-  'storeId': "1" // String | Store Id
+  'position': 5 // Number | Defines image’s position in the list
 };
 apiInstance.categoryImageAdd(categoryId, imageName, url, type, opts, (error, data, response) => {
   if (error) {
@@ -484,10 +484,10 @@ Name | Type | Description  | Notes
  **imageName** | **String**| Defines image&#39;s name | 
  **url** | **String**| Defines URL of the image that has to be added | 
  **type** | **String**| Defines image&#39;s types that are specified by comma-separated list | 
+ **storeId** | **String**| Store Id | [optional] 
  **label** | **String**| Defines alternative text that has to be attached to the picture | [optional] 
  **mime** | **String**| Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] 
  **position** | **Number**| Defines image’s position in the list | [optional] [default to 0]
- **storeId** | **String**| Store Id | [optional] 
 
 ### Return type
 
@@ -592,12 +592,12 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CategoryApi();
 let id = "10"; // String | Retrieves category's info specified by category id
 let opts = {
-  'params': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'responseFields': "{result{id,name,parent_id,modified_at{value},images}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'storeId': "1", // String | Retrieves category info  specified by store id
   'langId': "3", // String | Retrieves category info  specified by language id
   'schemaType': "LISTING", // String | The name of the requirements set for the provided schema.
+  'responseFields': "{result{id,name,parent_id,modified_at{value},images}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'reportRequestId': "105245017661", // String | Report request id
   'disableReportCache': false // Boolean | Disable report cache for current request
 };
@@ -616,12 +616,12 @@ apiInstance.categoryInfo(id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Retrieves category&#39;s info specified by category id | 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;]
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **storeId** | **String**| Retrieves category info  specified by store id | [optional] 
  **langId** | **String**| Retrieves category info  specified by language id | [optional] 
  **schemaType** | **String**| The name of the requirements set for the provided schema. | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **reportRequestId** | **String**| Report request id | [optional] 
  **disableReportCache** | **Boolean**| Disable report cache for current request | [optional] [default to false]
 
@@ -668,20 +668,20 @@ let opts = {
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  'parentId': "6", // String | Retrieves categories specified by parent id
-  'params': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'responseFields': "{result{categories_count,category{id,parent_id,modified_at{value},images}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'storeId': "1", // String | Retrieves categories specified by store id
   'langId': "3", // String | Retrieves categorys specified by language id
+  'parentId': "6", // String | Retrieves categories specified by parent id
+  'avail': false, // Boolean | Defines category's visibility status
+  'productType': "BICYCLE", // String | A categorization for the product
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'avail': false, // Boolean | Defines category's visibility status
-  'productType': "BICYCLE", // String | A categorization for the product
   'findValue': "Demo category 1", // String | Entity search that is specified by some value
   'findWhere': "name", // String | Category search that is specified by field
+  'responseFields': "{result{categories_count,category{id,parent_id,modified_at{value},images}}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,parent_id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'reportRequestId': "105245017661", // String | Report request id
   'disableReportCache': false, // Boolean | Disable report cache for current request
   'disableCache': false // Boolean | Disable cache for current request
@@ -703,20 +703,20 @@ Name | Type | Description  | Notes
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
- **parentId** | **String**| Retrieves categories specified by parent id | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;]
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **storeId** | **String**| Retrieves categories specified by store id | [optional] 
  **langId** | **String**| Retrieves categorys specified by language id | [optional] 
+ **parentId** | **String**| Retrieves categories specified by parent id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **productType** | **String**| A categorization for the product | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
- **productType** | **String**| A categorization for the product | [optional] 
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Category search that is specified by field | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **reportRequestId** | **String**| Report request id | [optional] 
  **disableReportCache** | **Boolean**| Disable report cache for current request | [optional] [default to false]
  **disableCache** | **Boolean**| Disable cache for current request | [optional] [default to false]
@@ -825,19 +825,19 @@ let apiInstance = new Api2CartOpenApi.CategoryApi();
 let id = "10"; // String | Defines category update specified by category id
 let opts = {
   'name': "NEW Shoes", // String | Defines new category’s name
+  'description': "New test category", // String | Defines new category's description
+  'shortDescription': "Short description. This is very short description", // String | Defines short description
   'parentId': "6", // String | Defines new parent category id
-  'storesIds': "1,2", // String | Update category in the stores that is specified by comma-separated stores' id
   'avail': false, // Boolean | Defines category's visibility status
   'sortOrder': 2, // Number | Sort number in the list
   'modifiedTime': "2014-07-30 15:58:41", // String | Entity's date modification
-  'description': "New test category", // String | Defines new category's description
-  'shortDescription': "Short description. This is very short description", // String | Defines short description
   'metaTitle': "category,test", // String | Defines unique meta title for each entity
   'metaDescription': "category,test", // String | Defines unique meta description of a entity
   'metaKeywords': "category,test", // String | Defines unique meta keywords for each entity
   'seoUrl': "category,test", // String | Defines unique category's URL for SEO
-  'langId': "3", // String | Language id
-  'storeId': "1" // String | Store Id
+  'storeId': "1", // String | Store Id
+  'storesIds': "1,2", // String | Update category in the stores that is specified by comma-separated stores' id
+  'langId': "3" // String | Language id
 };
 apiInstance.categoryUpdate(id, opts, (error, data, response) => {
   if (error) {
@@ -855,19 +855,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Defines category update specified by category id | 
  **name** | **String**| Defines new category’s name | [optional] 
+ **description** | **String**| Defines new category&#39;s description | [optional] 
+ **shortDescription** | **String**| Defines short description | [optional] 
  **parentId** | **String**| Defines new parent category id | [optional] 
- **storesIds** | **String**| Update category in the stores that is specified by comma-separated stores&#39; id | [optional] 
  **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] 
  **sortOrder** | **Number**| Sort number in the list | [optional] 
  **modifiedTime** | **String**| Entity&#39;s date modification | [optional] 
- **description** | **String**| Defines new category&#39;s description | [optional] 
- **shortDescription** | **String**| Defines short description | [optional] 
  **metaTitle** | **String**| Defines unique meta title for each entity | [optional] 
  **metaDescription** | **String**| Defines unique meta description of a entity | [optional] 
  **metaKeywords** | **String**| Defines unique meta keywords for each entity | [optional] 
  **seoUrl** | **String**| Defines unique category&#39;s URL for SEO | [optional] 
- **langId** | **String**| Language id | [optional] 
  **storeId** | **String**| Store Id | [optional] 
+ **storesIds** | **String**| Update category in the stores that is specified by comma-separated stores&#39; id | [optional] 
+ **langId** | **String**| Language id | [optional] 
 
 ### Return type
 

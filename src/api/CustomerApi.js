@@ -149,9 +149,9 @@ export default class CustomerApi {
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/CustomerApi~customerAttributeListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCustomerAttributeList}
      */
@@ -171,9 +171,9 @@ export default class CustomerApi {
         'customer_id': customerId,
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -203,18 +203,18 @@ export default class CustomerApi {
      * customer.count
      * Get number of customers from store.
      * @param {Object} opts Optional parameters
+     * @param {String} [ids] Counts customers specified by ids
+     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [customerListId] The numeric ID of the customer list in Demandware.
      * @param {String} [groupId] Customer group_id
+     * @param {String} [storeId] Counts customer specified by store id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {String} [findValue] Entity search that is specified by some value
+     * @param {String} [findWhere] Counts customers that are searched specified by field
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [storeId] Counts customer specified by store id
-     * @param {String} [customerListId] The numeric ID of the customer list in Demandware.
-     * @param {Boolean} [avail = true)] Defines category's visibility status
-     * @param {String} [findValue] Entity search that is specified by some value
-     * @param {String} [findWhere] Counts customers that are searched specified by field
-     * @param {String} [ids] Counts customers specified by ids
-     * @param {String} [sinceId] Retrieve entities starting from the specified id.
      * @param {module:api/CustomerApi~customerCountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomerCount200Response}
      */
@@ -225,18 +225,18 @@ export default class CustomerApi {
       let pathParams = {
       };
       let queryParams = {
-        'group_id': opts['groupId'],
-        'created_from': opts['createdFrom'],
-        'created_to': opts['createdTo'],
-        'modified_from': opts['modifiedFrom'],
-        'modified_to': opts['modifiedTo'],
-        'store_id': opts['storeId'],
+        'ids': opts['ids'],
+        'since_id': opts['sinceId'],
         'customer_list_id': opts['customerListId'],
+        'group_id': opts['groupId'],
+        'store_id': opts['storeId'],
         'avail': opts['avail'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
-        'ids': opts['ids'],
-        'since_id': opts['sinceId']
+        'created_from': opts['createdFrom'],
+        'created_to': opts['createdTo'],
+        'modified_from': opts['modifiedFrom'],
+        'modified_to': opts['modifiedTo']
       };
       let headerParams = {
       };
@@ -409,16 +409,16 @@ export default class CustomerApi {
      * customer.group.list
      * Get list of customers groups.
      * @param {Object} opts Optional parameters
-     * @param {Boolean} [disableCache = false)] Disable cache for current request
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [groupIds] Groups that will be assigned to a customer
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
-     * @param {String} [groupIds] Groups that will be assigned to a customer
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,name,additional_fields')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {Boolean} [disableCache = false)] Disable cache for current request
      * @param {module:api/CustomerApi~customerGroupListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCustomerGroupList}
      */
@@ -429,16 +429,16 @@ export default class CustomerApi {
       let pathParams = {
       };
       let queryParams = {
-        'disable_cache': opts['disableCache'],
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
+        'group_ids': opts['groupIds'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
-        'group_ids': opts['groupIds'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
         'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'disable_cache': opts['disableCache']
       };
       let headerParams = {
       };
@@ -469,10 +469,10 @@ export default class CustomerApi {
      * Get customers' details from store.
      * @param {String} id Retrieves customer's info specified by customer id
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'id,email,first_name,last_name')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Retrieves customer info specified by store id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,email,first_name,last_name')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CustomerApi~customerInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomerInfo200Response}
      */
@@ -488,10 +488,10 @@ export default class CustomerApi {
       };
       let queryParams = {
         'id': id,
-        'params': opts['params'],
+        'store_id': opts['storeId'],
         'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'store_id': opts['storeId']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -521,26 +521,26 @@ export default class CustomerApi {
      * customer.list
      * Get list of customers from store.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [ids] Retrieves customers specified by ids
+     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [customerListId] The numeric ID of the customer list in Demandware.
+     * @param {String} [groupId] Customer group_id
+     * @param {String} [storeId] Retrieves customers specified by store id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {String} [findValue] Entity search that is specified by some value
+     * @param {String} [findWhere] Customer search that is specified by field
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [params = 'id,email,first_name,last_name')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [groupId] Customer group_id
-     * @param {String} [storeId] Retrieves customers specified by store id
-     * @param {String} [customerListId] The numeric ID of the customer list in Demandware.
-     * @param {Boolean} [avail = true)] Defines category's visibility status
-     * @param {String} [findValue] Entity search that is specified by some value
-     * @param {String} [findWhere] Customer search that is specified by field
      * @param {String} [sortBy = 'created_time')] Set field to sort by
      * @param {String} [sortDirection = 'asc')] Set sorting direction
-     * @param {String} [ids] Retrieves customers specified by ids
-     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,email,first_name,last_name')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CustomerApi~customerListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCustomerList}
      */
@@ -551,26 +551,26 @@ export default class CustomerApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
+        'ids': opts['ids'],
+        'since_id': opts['sinceId'],
+        'customer_list_id': opts['customerListId'],
+        'group_id': opts['groupId'],
+        'store_id': opts['storeId'],
+        'avail': opts['avail'],
+        'find_value': opts['findValue'],
+        'find_where': opts['findWhere'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'group_id': opts['groupId'],
-        'store_id': opts['storeId'],
-        'customer_list_id': opts['customerListId'],
-        'avail': opts['avail'],
-        'find_value': opts['findValue'],
-        'find_where': opts['findWhere'],
         'sort_by': opts['sortBy'],
         'sort_direction': opts['sortDirection'],
-        'ids': opts['ids'],
-        'since_id': opts['sinceId']
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -643,11 +643,11 @@ export default class CustomerApi {
      * Get a Wish List of customer from the store.
      * @param {String} customerId Retrieves orders specified by customer id
      * @param {Object} opts Optional parameters
-     * @param {String} [id] Entity id
-     * @param {String} [storeId] Store Id
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [id] Entity id
+     * @param {String} [storeId] Store Id
      * @param {String} [responseFields = '{return_code,return_message,pagination,result}')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/CustomerApi~customerWishlistListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCustomerWishlistList}
@@ -663,12 +663,12 @@ export default class CustomerApi {
       let pathParams = {
       };
       let queryParams = {
-        'customer_id': customerId,
-        'id': opts['id'],
-        'store_id': opts['storeId'],
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
+        'customer_id': customerId,
+        'id': opts['id'],
+        'store_id': opts['storeId'],
         'response_fields': opts['responseFields']
       };
       let headerParams = {

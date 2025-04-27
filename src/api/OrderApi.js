@@ -75,19 +75,19 @@ export default class OrderApi {
      * order.abandoned.list
      * Get list of orders that were left by customers before completing the order.
      * @param {Object} opts Optional parameters
+     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
+     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [customerId] Retrieves orders specified by customer id
      * @param {String} [customerEmail] Retrieves orders specified by customer email
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {Boolean} [skipEmptyEmail = false)] Filter empty emails
      * @param {String} [storeId] Store Id
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {String} [params = 'customer,totals,items')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [createdFrom] Retrieve entities from their creation date
+     * @param {String} [createdTo] Retrieve entities to their creation date
+     * @param {String} [modifiedFrom] Retrieve entities from their modification date
+     * @param {String} [modifiedTo] Retrieve entities to their modification date
+     * @param {Boolean} [skipEmptyEmail = false)] Filter empty emails
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'customer,totals,items')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/OrderApi~orderAbandonedListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseOrderAbandonedList}
@@ -99,19 +99,19 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
+        'start': opts['start'],
+        'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'customer_id': opts['customerId'],
         'customer_email': opts['customerEmail'],
-        'created_to': opts['createdTo'],
-        'created_from': opts['createdFrom'],
-        'modified_to': opts['modifiedTo'],
-        'modified_from': opts['modifiedFrom'],
-        'skip_empty_email': opts['skipEmptyEmail'],
         'store_id': opts['storeId'],
-        'page_cursor': opts['pageCursor'],
-        'count': opts['count'],
-        'start': opts['start'],
-        'params': opts['params'],
+        'created_from': opts['createdFrom'],
+        'created_to': opts['createdTo'],
+        'modified_from': opts['modifiedFrom'],
+        'modified_to': opts['modifiedTo'],
+        'skip_empty_email': opts['skipEmptyEmail'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -184,17 +184,13 @@ export default class OrderApi {
      * order.count
      * Count orders in store
      * @param {Object} opts Optional parameters
+     * @param {String} [orderIds] Counts orders specified by order ids
+     * @param {String} [ids] Counts orders specified by ids
      * @param {String} [customerId] Counts orders quantity specified by customer id
+     * @param {String} [storeId] Counts orders quantity specified by store id
      * @param {String} [customerEmail] Counts orders quantity specified by customer email
      * @param {String} [orderStatus] Counts orders quantity specified by order status
      * @param {Array.<String>} [orderStatusIds] Retrieves orders specified by order statuses
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [storeId] Counts orders quantity specified by store id
-     * @param {String} [ids] Counts orders specified by ids
-     * @param {String} [orderIds] Counts orders specified by order ids
      * @param {String} [ebayOrderStatus] Counts orders quantity specified by order status
      * @param {String} [financialStatus] Counts orders quantity specified by financial status
      * @param {Array.<String>} [financialStatusIds] Retrieves orders count specified by financial status ids
@@ -204,6 +200,10 @@ export default class OrderApi {
      * @param {String} [deliveryMethod] Retrieves order with delivery method
      * @param {String} [tags] Order tags
      * @param {String} [shipNodeType] Retrieves order with ship node type
+     * @param {String} [createdFrom] Retrieve entities from their creation date
+     * @param {String} [createdTo] Retrieve entities to their creation date
+     * @param {String} [modifiedFrom] Retrieve entities from their modification date
+     * @param {String} [modifiedTo] Retrieve entities to their modification date
      * @param {module:api/OrderApi~orderCountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrderCount200Response}
      */
@@ -214,17 +214,13 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
+        'order_ids': opts['orderIds'],
+        'ids': opts['ids'],
         'customer_id': opts['customerId'],
+        'store_id': opts['storeId'],
         'customer_email': opts['customerEmail'],
         'order_status': opts['orderStatus'],
         'order_status_ids': this.apiClient.buildCollectionParam(opts['orderStatusIds'], 'multi'),
-        'created_to': opts['createdTo'],
-        'created_from': opts['createdFrom'],
-        'modified_to': opts['modifiedTo'],
-        'modified_from': opts['modifiedFrom'],
-        'store_id': opts['storeId'],
-        'ids': opts['ids'],
-        'order_ids': opts['orderIds'],
         'ebay_order_status': opts['ebayOrderStatus'],
         'financial_status': opts['financialStatus'],
         'financial_status_ids': this.apiClient.buildCollectionParam(opts['financialStatusIds'], 'multi'),
@@ -233,7 +229,11 @@ export default class OrderApi {
         'shipping_method': opts['shippingMethod'],
         'delivery_method': opts['deliveryMethod'],
         'tags': opts['tags'],
-        'ship_node_type': opts['shipNodeType']
+        'ship_node_type': opts['shipNodeType'],
+        'created_from': opts['createdFrom'],
+        'created_to': opts['createdTo'],
+        'modified_from': opts['modifiedFrom'],
+        'modified_to': opts['modifiedTo']
       };
       let headerParams = {
       };
@@ -300,18 +300,18 @@ export default class OrderApi {
      * order.find
      * This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
      * @param {Object} opts Optional parameters
+     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
+     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [customerId] Retrieves orders specified by customer id
      * @param {String} [customerEmail] Retrieves orders specified by customer email
      * @param {String} [orderStatus] Retrieves orders specified by order status
-     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'order_id,customer,totals,address,items,bundles,status')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [financialStatus] Retrieves orders specified by financial status
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [financialStatus] Retrieves orders specified by financial status
+     * @param {String} [params = 'order_id,customer,totals,address,items,bundles,status')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/OrderApi~orderFindCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrderFind200Response}
      */
@@ -322,18 +322,18 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
+        'start': opts['start'],
+        'count': opts['count'],
         'customer_id': opts['customerId'],
         'customer_email': opts['customerEmail'],
         'order_status': opts['orderStatus'],
-        'start': opts['start'],
-        'count': opts['count'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
+        'financial_status': opts['financialStatus'],
         'created_to': opts['createdTo'],
         'created_from': opts['createdFrom'],
         'modified_to': opts['modifiedTo'],
         'modified_from': opts['modifiedFrom'],
-        'financial_status': opts['financialStatus']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -404,12 +404,12 @@ export default class OrderApi {
      * order.info
      * Info about a specific order by ID
      * @param {Object} opts Optional parameters
-     * @param {String} [orderId] Retrieves order’s info specified by order id
      * @param {String} [id] Retrieves order info specified by id
+     * @param {String} [orderId] Retrieves order’s info specified by order id
+     * @param {String} [storeId] Defines store id where the order should be found
      * @param {String} [params = 'order_id,customer,totals,address,items,bundles,status')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [storeId] Defines store id where the order should be found
      * @param {Boolean} [enableCache = false)] If the value is 'true' and order exist in our cache, we will return order.info response from cache
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {module:api/OrderApi~orderInfoCallback} callback The callback function, accepting three arguments: error, data, response
@@ -422,12 +422,12 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
-        'order_id': opts['orderId'],
         'id': opts['id'],
+        'order_id': opts['orderId'],
+        'store_id': opts['storeId'],
         'params': opts['params'],
         'response_fields': opts['responseFields'],
         'exclude': opts['exclude'],
-        'store_id': opts['storeId'],
         'enable_cache': opts['enableCache'],
         'use_latest_api_version': opts['useLatestApiVersion']
       };
@@ -459,43 +459,43 @@ export default class OrderApi {
      * order.list
      * Get list of orders from store.
      * @param {Object} opts Optional parameters
-     * @param {String} [customerId] Retrieves orders specified by customer id
-     * @param {String} [customerEmail] Retrieves orders specified by customer email
-     * @param {String} [phone] Filter orders by customer's phone number
-     * @param {String} [orderStatus] Retrieves orders specified by order status
-     * @param {Array.<String>} [orderStatusIds] Retrieves orders specified by order statuses
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve orders via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [ids] Retrieves orders specified by ids
+     * @param {String} [orderIds] Retrieves orders specified by order ids
+     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [storeId] Store Id
+     * @param {String} [customerId] Retrieves orders specified by customer id
+     * @param {String} [customerEmail] Retrieves orders specified by customer email
+     * @param {String} [basketId] Retrieves order’s info specified by basket id.
+     * @param {String} [currencyId] Currency Id
+     * @param {String} [phone] Filter orders by customer's phone number
+     * @param {String} [orderStatus] Retrieves orders specified by order status
+     * @param {Array.<String>} [orderStatusIds] Retrieves orders specified by order statuses
+     * @param {String} [ebayOrderStatus] Retrieves orders specified by order status
+     * @param {String} [financialStatus] Retrieves orders specified by financial status
+     * @param {Array.<String>} [financialStatusIds] Retrieves orders specified by financial status ids
+     * @param {String} [fulfillmentStatus] Create order with fulfillment status
+     * @param {String} [returnStatus] Retrieves orders specified by return status
+     * @param {String} [fulfillmentChannel] Retrieves order with a fulfillment channel
+     * @param {String} [shippingMethod] Retrieve entities according to shipping method
+     * @param {String} [skipOrderIds] Skipped orders by ids
+     * @param {Boolean} [isDeleted] Filter deleted orders
+     * @param {String} [shippingCountryIso3] Retrieve entities according to shipping country
+     * @param {String} [deliveryMethod] Retrieves order with delivery method
+     * @param {String} [shipNodeType] Retrieves order with ship node type
+     * @param {String} [createdTo] Retrieve entities to their creation date
+     * @param {String} [createdFrom] Retrieve entities from their creation date
+     * @param {String} [modifiedTo] Retrieve entities to their modification date
+     * @param {String} [modifiedFrom] Retrieve entities from their modification date
+     * @param {String} [tags] Order tags
      * @param {String} [sortBy = 'order_id')] Set field to sort by
      * @param {String} [sortDirection = 'asc')] Set sorting direction
      * @param {String} [params = 'order_id,customer,totals,address,items,bundles,status')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [storeId] Store Id
-     * @param {String} [ids] Retrieves orders specified by ids
-     * @param {String} [orderIds] Retrieves orders specified by order ids
-     * @param {String} [ebayOrderStatus] Retrieves orders specified by order status
-     * @param {String} [basketId] Retrieves order’s info specified by basket id.
-     * @param {String} [financialStatus] Retrieves orders specified by financial status
-     * @param {Array.<String>} [financialStatusIds] Retrieves orders specified by financial status ids
-     * @param {String} [fulfillmentStatus] Create order with fulfillment status
-     * @param {String} [fulfillmentChannel] Retrieves order with a fulfillment channel
-     * @param {String} [shippingMethod] Retrieve entities according to shipping method
-     * @param {String} [skipOrderIds] Skipped orders by ids
-     * @param {String} [sinceId] Retrieve entities starting from the specified id.
-     * @param {Boolean} [isDeleted] Filter deleted orders
-     * @param {String} [shippingCountryIso3] Retrieve entities according to shipping country
      * @param {Boolean} [enableCache = false)] If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
-     * @param {String} [deliveryMethod] Retrieves order with delivery method
-     * @param {String} [tags] Order tags
-     * @param {String} [shipNodeType] Retrieves order with ship node type
-     * @param {String} [currencyId] Currency Id
-     * @param {String} [returnStatus] Retrieves orders specified by return status
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {module:api/OrderApi~orderListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseOrderList}
@@ -507,43 +507,43 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
-        'customer_id': opts['customerId'],
-        'customer_email': opts['customerEmail'],
-        'phone': opts['phone'],
-        'order_status': opts['orderStatus'],
-        'order_status_ids': this.apiClient.buildCollectionParam(opts['orderStatusIds'], 'multi'),
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
+        'ids': opts['ids'],
+        'order_ids': opts['orderIds'],
+        'since_id': opts['sinceId'],
+        'store_id': opts['storeId'],
+        'customer_id': opts['customerId'],
+        'customer_email': opts['customerEmail'],
+        'basket_id': opts['basketId'],
+        'currency_id': opts['currencyId'],
+        'phone': opts['phone'],
+        'order_status': opts['orderStatus'],
+        'order_status_ids': this.apiClient.buildCollectionParam(opts['orderStatusIds'], 'multi'),
+        'ebay_order_status': opts['ebayOrderStatus'],
+        'financial_status': opts['financialStatus'],
+        'financial_status_ids': this.apiClient.buildCollectionParam(opts['financialStatusIds'], 'multi'),
+        'fulfillment_status': opts['fulfillmentStatus'],
+        'return_status': opts['returnStatus'],
+        'fulfillment_channel': opts['fulfillmentChannel'],
+        'shipping_method': opts['shippingMethod'],
+        'skip_order_ids': opts['skipOrderIds'],
+        'is_deleted': opts['isDeleted'],
+        'shipping_country_iso3': opts['shippingCountryIso3'],
+        'delivery_method': opts['deliveryMethod'],
+        'ship_node_type': opts['shipNodeType'],
+        'created_to': opts['createdTo'],
+        'created_from': opts['createdFrom'],
+        'modified_to': opts['modifiedTo'],
+        'modified_from': opts['modifiedFrom'],
+        'tags': opts['tags'],
         'sort_by': opts['sortBy'],
         'sort_direction': opts['sortDirection'],
         'params': opts['params'],
         'response_fields': opts['responseFields'],
         'exclude': opts['exclude'],
-        'created_to': opts['createdTo'],
-        'created_from': opts['createdFrom'],
-        'modified_to': opts['modifiedTo'],
-        'modified_from': opts['modifiedFrom'],
-        'store_id': opts['storeId'],
-        'ids': opts['ids'],
-        'order_ids': opts['orderIds'],
-        'ebay_order_status': opts['ebayOrderStatus'],
-        'basket_id': opts['basketId'],
-        'financial_status': opts['financialStatus'],
-        'financial_status_ids': this.apiClient.buildCollectionParam(opts['financialStatusIds'], 'multi'),
-        'fulfillment_status': opts['fulfillmentStatus'],
-        'fulfillment_channel': opts['fulfillmentChannel'],
-        'shipping_method': opts['shippingMethod'],
-        'skip_order_ids': opts['skipOrderIds'],
-        'since_id': opts['sinceId'],
-        'is_deleted': opts['isDeleted'],
-        'shipping_country_iso3': opts['shippingCountryIso3'],
         'enable_cache': opts['enableCache'],
-        'delivery_method': opts['deliveryMethod'],
-        'tags': opts['tags'],
-        'ship_node_type': opts['shipNodeType'],
-        'currency_id': opts['currencyId'],
-        'return_status': opts['returnStatus'],
         'use_latest_api_version': opts['useLatestApiVersion']
       };
       let headerParams = {
@@ -935,10 +935,10 @@ export default class OrderApi {
      * @param {String} orderId Defines the order id
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {String} [params = 'id,order_id,items,tracking_numbers')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,order_id,items,tracking_numbers')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/OrderApi~orderShipmentInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrderShipmentInfo200Response}
      */
@@ -957,13 +957,13 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
+        'start': opts['start'],
         'id': id,
         'order_id': orderId,
-        'start': opts['start'],
-        'params': opts['params'],
+        'store_id': opts['storeId'],
         'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'store_id': opts['storeId']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -994,17 +994,17 @@ export default class OrderApi {
      * Get list of shipments by orders.
      * @param {String} orderId Retrieves shipments specified by order id
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'id,order_id,items,tracking_numbers')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [storeId] Store Id
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,order_id,items,tracking_numbers')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/OrderApi~orderShipmentListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseOrderShipmentList}
      */
@@ -1019,18 +1019,18 @@ export default class OrderApi {
       let pathParams = {
       };
       let queryParams = {
-        'order_id': orderId,
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
+        'page_cursor': opts['pageCursor'],
+        'order_id': orderId,
+        'store_id': opts['storeId'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'store_id': opts['storeId']
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -1191,11 +1191,11 @@ export default class OrderApi {
      * @param {String} orderIds Retrieves order transactions specified by order ids
      * @param {Object} opts Optional parameters
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [storeId] Store Id
      * @param {String} [params = 'id,order_id,amount,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {module:api/OrderApi~orderTransactionListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseOrderTransactionList}
      */
@@ -1211,12 +1211,12 @@ export default class OrderApi {
       };
       let queryParams = {
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'order_ids': orderIds,
         'store_id': opts['storeId'],
         'params': opts['params'],
         'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'page_cursor': opts['pageCursor']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -1249,19 +1249,19 @@ export default class OrderApi {
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Defines store id where the order should be found
      * @param {String} [orderStatus] Defines new order's status
+     * @param {String} [financialStatus] Update order financial status to specified
+     * @param {String} [fulfillmentStatus] Create order with fulfillment status
      * @param {String} [cancellationReason] Defines the cancellation reason when the order will be canceled
+     * @param {String} [orderPaymentMethod] Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
      * @param {String} [comment] Specifies order comment
      * @param {String} [adminComment] Specifies admin's order comment
      * @param {String} [adminPrivateComment] Specifies private admin's order comment
+     * @param {String} [invoiceAdminComment] Specifies admin's order invoice comment
      * @param {String} [dateModified] Specifies order's  modification date
      * @param {String} [dateFinished] Specifies order's  finished date
-     * @param {String} [financialStatus] Update order financial status to specified
-     * @param {String} [fulfillmentStatus] Create order with fulfillment status
-     * @param {String} [orderPaymentMethod] Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
      * @param {Boolean} [sendNotifications = false)] Send notifications to customer after order was created
-     * @param {String} [origin] The source of the order
      * @param {Boolean} [createInvoice] Determines whether an invoice should be created if it has not already been created
-     * @param {String} [invoiceAdminComment] Specifies admin's order invoice comment
+     * @param {String} [origin] The source of the order
      * @param {module:api/OrderApi~orderUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountConfigUpdate200Response}
      */
@@ -1279,19 +1279,19 @@ export default class OrderApi {
         'order_id': orderId,
         'store_id': opts['storeId'],
         'order_status': opts['orderStatus'],
+        'financial_status': opts['financialStatus'],
+        'fulfillment_status': opts['fulfillmentStatus'],
         'cancellation_reason': opts['cancellationReason'],
+        'order_payment_method': opts['orderPaymentMethod'],
         'comment': opts['comment'],
         'admin_comment': opts['adminComment'],
         'admin_private_comment': opts['adminPrivateComment'],
+        'invoice_admin_comment': opts['invoiceAdminComment'],
         'date_modified': opts['dateModified'],
         'date_finished': opts['dateFinished'],
-        'financial_status': opts['financialStatus'],
-        'fulfillment_status': opts['fulfillmentStatus'],
-        'order_payment_method': opts['orderPaymentMethod'],
         'send_notifications': opts['sendNotifications'],
-        'origin': opts['origin'],
         'create_invoice': opts['createInvoice'],
-        'invoice_admin_comment': opts['invoiceAdminComment']
+        'origin': opts['origin']
       };
       let headerParams = {
       };

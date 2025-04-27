@@ -53,17 +53,17 @@ class OrderPreestimateShippingList {
         if (data) {
             obj = obj || new OrderPreestimateShippingList();
 
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('warehouse_id')) {
                 obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('customer_email')) {
                 obj['customer_email'] = ApiClient.convertToType(data['customer_email'], 'String');
             }
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('shipp_address_1')) {
                 obj['shipp_address_1'] = ApiClient.convertToType(data['shipp_address_1'], 'String');
@@ -106,20 +106,20 @@ class OrderPreestimateShippingList {
             }
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['warehouse_id'] && !(typeof data['warehouse_id'] === 'string' || data['warehouse_id'] instanceof String)) {
             throw new Error("Expected the field `warehouse_id` to be a primitive type in the JSON string but got " + data['warehouse_id']);
+        }
+        // ensure the json data is a string
+        if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
+            throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
         }
         // ensure the json data is a string
         if (data['customer_email'] && !(typeof data['customer_email'] === 'string' || data['customer_email'] instanceof String)) {
             throw new Error("Expected the field `customer_email` to be a primitive type in the JSON string but got " + data['customer_email']);
         }
         // ensure the json data is a string
-        if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
-            throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         // ensure the json data is a string
         if (data['shipp_address_1'] && !(typeof data['shipp_address_1'] === 'string' || data['shipp_address_1'] instanceof String)) {
@@ -169,16 +169,16 @@ class OrderPreestimateShippingList {
 OrderPreestimateShippingList.RequiredProperties = ["shipp_country", "order_item"];
 
 /**
- * Store Id
- * @member {String} store_id
- */
-OrderPreestimateShippingList.prototype['store_id'] = undefined;
-
-/**
  * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
  * @member {String} warehouse_id
  */
 OrderPreestimateShippingList.prototype['warehouse_id'] = undefined;
+
+/**
+ * Retrieves orders specified by customer id
+ * @member {String} customer_id
+ */
+OrderPreestimateShippingList.prototype['customer_id'] = undefined;
 
 /**
  * Retrieves orders specified by customer email
@@ -187,10 +187,10 @@ OrderPreestimateShippingList.prototype['warehouse_id'] = undefined;
 OrderPreestimateShippingList.prototype['customer_email'] = undefined;
 
 /**
- * Retrieves orders specified by customer id
- * @member {String} customer_id
+ * Store Id
+ * @member {String} store_id
  */
-OrderPreestimateShippingList.prototype['customer_id'] = undefined;
+OrderPreestimateShippingList.prototype['store_id'] = undefined;
 
 /**
  * Specifies first shipping address

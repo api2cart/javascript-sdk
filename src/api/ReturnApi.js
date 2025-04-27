@@ -152,9 +152,9 @@ export default class ReturnApi {
      * @param {Object} opts Optional parameters
      * @param {String} [orderId] Defines the order id
      * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,order_products')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/ReturnApi~returnInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReturnInfo200Response}
      */
@@ -172,9 +172,9 @@ export default class ReturnApi {
         'id': id,
         'order_id': opts['orderId'],
         'store_id': opts['storeId'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -207,9 +207,6 @@ export default class ReturnApi {
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [params = 'id,order_products')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [orderId] Defines the order id
      * @param {String} [orderIds] Retrieves return requests specified by order ids
      * @param {String} [customerId] Retrieves return requests specified by customer id
@@ -220,6 +217,9 @@ export default class ReturnApi {
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,order_products')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {module:api/ReturnApi~returnListCallback} callback The callback function, accepting three arguments: error, data, response
@@ -235,9 +235,6 @@ export default class ReturnApi {
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields'],
         'order_id': opts['orderId'],
         'order_ids': opts['orderIds'],
         'customer_id': opts['customerId'],
@@ -248,6 +245,9 @@ export default class ReturnApi {
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'report_request_id': opts['reportRequestId'],
         'disable_report_cache': opts['disableReportCache']
       };

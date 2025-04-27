@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(Api2CartOpenApi.ProductImageAdd);
     });
 
-    it('should have the property productId (base name: "product_id")', function() {
-      // uncomment below and update the code to test the property productId
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instance = new Api2CartOpenApi.ProductImageAdd();
       //expect(instance).to.be();
     });
@@ -66,38 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instance = new Api2CartOpenApi.ProductImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property url (base name: "url")', function() {
-      // uncomment below and update the code to test the property url
-      //var instance = new Api2CartOpenApi.ProductImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property label (base name: "label")', function() {
-      // uncomment below and update the code to test the property label
-      //var instance = new Api2CartOpenApi.ProductImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property mime (base name: "mime")', function() {
-      // uncomment below and update the code to test the property mime
-      //var instance = new Api2CartOpenApi.ProductImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property position (base name: "position")', function() {
-      // uncomment below and update the code to test the property position
-      //var instance = new Api2CartOpenApi.ProductImageAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
+    it('should have the property productId (base name: "product_id")', function() {
+      // uncomment below and update the code to test the property productId
       //var instance = new Api2CartOpenApi.ProductImageAdd();
       //expect(instance).to.be();
     });
@@ -128,6 +98,36 @@
 
     it('should have the property langId (base name: "lang_id")', function() {
       // uncomment below and update the code to test the property langId
+      //var instance = new Api2CartOpenApi.ProductImageAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instance = new Api2CartOpenApi.ProductImageAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property content (base name: "content")', function() {
+      // uncomment below and update the code to test the property content
+      //var instance = new Api2CartOpenApi.ProductImageAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instance = new Api2CartOpenApi.ProductImageAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mime (base name: "mime")', function() {
+      // uncomment below and update the code to test the property mime
+      //var instance = new Api2CartOpenApi.ProductImageAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property position (base name: "position")', function() {
+      // uncomment below and update the code to test the property position
       //var instance = new Api2CartOpenApi.ProductImageAdd();
       //expect(instance).to.be();
     });

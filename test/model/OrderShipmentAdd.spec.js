@@ -60,14 +60,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
+    it('should have the property warehouseId (base name: "warehouse_id")', function() {
+      // uncomment below and update the code to test the property warehouseId
       //var instance = new Api2CartOpenApi.OrderShipmentAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property warehouseId (base name: "warehouse_id")', function() {
-      // uncomment below and update the code to test the property warehouseId
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.OrderShipmentAdd();
       //expect(instance).to.be();
     });
@@ -90,26 +90,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sendNotifications (base name: "send_notifications")', function() {
-      // uncomment below and update the code to test the property sendNotifications
-      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
-      //expect(instance).to.be();
-    });
-
     it('should have the property trackingNumbers (base name: "tracking_numbers")', function() {
       // uncomment below and update the code to test the property trackingNumbers
-      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property adjustStock (base name: "adjust_stock")', function() {
-      // uncomment below and update the code to test the property adjustStock
-      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property enableCache (base name: "enable_cache")', function() {
-      // uncomment below and update the code to test the property enableCache
       //var instance = new Api2CartOpenApi.OrderShipmentAdd();
       //expect(instance).to.be();
     });
@@ -122,6 +104,24 @@
 
     it('should have the property isShipped (base name: "is_shipped")', function() {
       // uncomment below and update the code to test the property isShipped
+      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sendNotifications (base name: "send_notifications")', function() {
+      // uncomment below and update the code to test the property sendNotifications
+      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property adjustStock (base name: "adjust_stock")', function() {
+      // uncomment below and update the code to test the property adjustStock
+      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property enableCache (base name: "enable_cache")', function() {
+      // uncomment below and update the code to test the property enableCache
       //var instance = new Api2CartOpenApi.OrderShipmentAdd();
       //expect(instance).to.be();
     });

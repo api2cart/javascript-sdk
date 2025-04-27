@@ -58,20 +58,20 @@ export default class CategoryApi {
      * Add new category in store
      * @param {String} name Defines category's name that has to be added
      * @param {Object} opts Optional parameters
-     * @param {String} [parentId] Adds categories specified by parent id
-     * @param {String} [storesIds] Create category in the stores that is specified by comma-separated stores' id
-     * @param {String} [storeId] Store Id
-     * @param {String} [langId] Language id
-     * @param {Boolean} [avail = true)] Defines category's visibility status
-     * @param {Number} [sortOrder = 0)] Sort number in the list
-     * @param {String} [createdTime] Entity's date creation
-     * @param {String} [modifiedTime] Entity's date modification
      * @param {String} [description] Defines category's description
      * @param {String} [shortDescription] Defines short description
+     * @param {String} [parentId] Adds categories specified by parent id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {String} [createdTime] Entity's date creation
+     * @param {String} [modifiedTime] Entity's date modification
+     * @param {Number} [sortOrder = 0)] Sort number in the list
      * @param {String} [metaTitle] Defines unique meta title for each entity
      * @param {String} [metaDescription] Defines unique meta description of a entity
      * @param {String} [metaKeywords] Defines unique meta keywords for each entity
      * @param {String} [seoUrl] Defines unique category's URL for SEO
+     * @param {String} [storeId] Store Id
+     * @param {String} [storesIds] Create category in the stores that is specified by comma-separated stores' id
+     * @param {String} [langId] Language id
      * @param {module:api/CategoryApi~categoryAddCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CategoryAdd200Response}
      */
@@ -87,20 +87,20 @@ export default class CategoryApi {
       };
       let queryParams = {
         'name': name,
-        'parent_id': opts['parentId'],
-        'stores_ids': opts['storesIds'],
-        'store_id': opts['storeId'],
-        'lang_id': opts['langId'],
-        'avail': opts['avail'],
-        'sort_order': opts['sortOrder'],
-        'created_time': opts['createdTime'],
-        'modified_time': opts['modifiedTime'],
         'description': opts['description'],
         'short_description': opts['shortDescription'],
+        'parent_id': opts['parentId'],
+        'avail': opts['avail'],
+        'created_time': opts['createdTime'],
+        'modified_time': opts['modifiedTime'],
+        'sort_order': opts['sortOrder'],
         'meta_title': opts['metaTitle'],
         'meta_description': opts['metaDescription'],
         'meta_keywords': opts['metaKeywords'],
-        'seo_url': opts['seoUrl']
+        'seo_url': opts['seoUrl'],
+        'store_id': opts['storeId'],
+        'stores_ids': opts['storesIds'],
+        'lang_id': opts['langId']
       };
       let headerParams = {
       };
@@ -171,30 +171,30 @@ export default class CategoryApi {
     /**
      * category.assign
      * Assign category to product
-     * @param {String} productId Defines category assign to the product, specified by product id
      * @param {String} categoryId Defines category assign, specified by category id
+     * @param {String} productId Defines category assign to the product, specified by product id
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
      * @param {module:api/CategoryApi~categoryAssignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CartConfigUpdate200Response}
      */
-    categoryAssign(productId, categoryId, opts, callback) {
+    categoryAssign(categoryId, productId, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'productId' is set
-      if (productId === undefined || productId === null) {
-        throw new Error("Missing the required parameter 'productId' when calling categoryAssign");
-      }
       // verify the required parameter 'categoryId' is set
       if (categoryId === undefined || categoryId === null) {
         throw new Error("Missing the required parameter 'categoryId' when calling categoryAssign");
+      }
+      // verify the required parameter 'productId' is set
+      if (productId === undefined || productId === null) {
+        throw new Error("Missing the required parameter 'productId' when calling categoryAssign");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'product_id': productId,
         'category_id': categoryId,
+        'product_id': productId,
         'store_id': opts['storeId']
       };
       let headerParams = {
@@ -228,11 +228,11 @@ export default class CategoryApi {
      * @param {String} [parentId] Counts categories specified by parent id
      * @param {String} [storeId] Counts category specified by store id
      * @param {String} [langId] Counts category specified by language id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {Boolean} [avail = true)] Defines category's visibility status
      * @param {String} [productType] A categorization for the product
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Counts categories that are searched specified by field
@@ -251,11 +251,11 @@ export default class CategoryApi {
         'parent_id': opts['parentId'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
+        'avail': opts['avail'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'avail': opts['avail'],
         'product_type': opts['productType'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
@@ -394,10 +394,10 @@ export default class CategoryApi {
      * @param {String} url Defines URL of the image that has to be added
      * @param {module:model/String} type Defines image's types that are specified by comma-separated list
      * @param {Object} opts Optional parameters
+     * @param {String} [storeId] Store Id
      * @param {String} [label] Defines alternative text that has to be attached to the picture
      * @param {String} [mime] Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
      * @param {Number} [position = 0)] Defines image’s position in the list
-     * @param {String} [storeId] Store Id
      * @param {module:api/CategoryApi~categoryImageAddCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CategoryImageAdd200Response}
      */
@@ -427,11 +427,11 @@ export default class CategoryApi {
         'category_id': categoryId,
         'image_name': imageName,
         'url': url,
+        'type': type,
+        'store_id': opts['storeId'],
         'label': opts['label'],
         'mime': opts['mime'],
-        'type': type,
-        'position': opts['position'],
-        'store_id': opts['storeId']
+        'position': opts['position']
       };
       let headerParams = {
       };
@@ -515,12 +515,12 @@ export default class CategoryApi {
      * Get category info about category ID*** or specify other category ID.
      * @param {String} id Retrieves category's info specified by category id
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'id,parent_id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Retrieves category info  specified by store id
      * @param {String} [langId] Retrieves category info  specified by language id
      * @param {String} [schemaType] The name of the requirements set for the provided schema.
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,parent_id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {module:api/CategoryApi~categoryInfoCallback} callback The callback function, accepting three arguments: error, data, response
@@ -538,12 +538,12 @@ export default class CategoryApi {
       };
       let queryParams = {
         'id': id,
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'schema_type': opts['schemaType'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'report_request_id': opts['reportRequestId'],
         'disable_report_cache': opts['disableReportCache']
       };
@@ -578,20 +578,20 @@ export default class CategoryApi {
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [parentId] Retrieves categories specified by parent id
-     * @param {String} [params = 'id,parent_id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Retrieves categories specified by store id
      * @param {String} [langId] Retrieves categorys specified by language id
+     * @param {String} [parentId] Retrieves categories specified by parent id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {String} [productType] A categorization for the product
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {Boolean} [avail = true)] Defines category's visibility status
-     * @param {String} [productType] A categorization for the product
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Category search that is specified by field
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,parent_id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {Boolean} [disableCache = false)] Disable cache for current request
@@ -608,20 +608,20 @@ export default class CategoryApi {
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
-        'parent_id': opts['parentId'],
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
+        'parent_id': opts['parentId'],
+        'avail': opts['avail'],
+        'product_type': opts['productType'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'avail': opts['avail'],
-        'product_type': opts['productType'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'report_request_id': opts['reportRequestId'],
         'disable_report_cache': opts['disableReportCache'],
         'disable_cache': opts['disableCache']
@@ -709,19 +709,19 @@ export default class CategoryApi {
      * @param {String} id Defines category update specified by category id
      * @param {Object} opts Optional parameters
      * @param {String} [name] Defines new category’s name
+     * @param {String} [description] Defines new category's description
+     * @param {String} [shortDescription] Defines short description
      * @param {String} [parentId] Defines new parent category id
-     * @param {String} [storesIds] Update category in the stores that is specified by comma-separated stores' id
      * @param {Boolean} [avail] Defines category's visibility status
      * @param {Number} [sortOrder] Sort number in the list
      * @param {String} [modifiedTime] Entity's date modification
-     * @param {String} [description] Defines new category's description
-     * @param {String} [shortDescription] Defines short description
      * @param {String} [metaTitle] Defines unique meta title for each entity
      * @param {String} [metaDescription] Defines unique meta description of a entity
      * @param {String} [metaKeywords] Defines unique meta keywords for each entity
      * @param {String} [seoUrl] Defines unique category's URL for SEO
-     * @param {String} [langId] Language id
      * @param {String} [storeId] Store Id
+     * @param {String} [storesIds] Update category in the stores that is specified by comma-separated stores' id
+     * @param {String} [langId] Language id
      * @param {module:api/CategoryApi~categoryUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountConfigUpdate200Response}
      */
@@ -738,19 +738,19 @@ export default class CategoryApi {
       let queryParams = {
         'id': id,
         'name': opts['name'],
+        'description': opts['description'],
+        'short_description': opts['shortDescription'],
         'parent_id': opts['parentId'],
-        'stores_ids': opts['storesIds'],
         'avail': opts['avail'],
         'sort_order': opts['sortOrder'],
         'modified_time': opts['modifiedTime'],
-        'description': opts['description'],
-        'short_description': opts['shortDescription'],
         'meta_title': opts['metaTitle'],
         'meta_description': opts['metaDescription'],
         'meta_keywords': opts['metaKeywords'],
         'seo_url': opts['seoUrl'],
-        'lang_id': opts['langId'],
-        'store_id': opts['storeId']
+        'store_id': opts['storeId'],
+        'stores_ids': opts['storesIds'],
+        'lang_id': opts['langId']
       };
       let headerParams = {
       };

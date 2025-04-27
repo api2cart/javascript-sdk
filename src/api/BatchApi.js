@@ -49,11 +49,11 @@ export default class BatchApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [ids] Filter batch jobs by ids
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [processedFrom] Retrieve entities according to their processing datetime
      * @param {String} [processedTo] Retrieve entities according to their processing datetime
-     * @param {String} [ids] Filter batch jobs by ids
      * @param {String} [responseFields = '{return_code,return_message,pagination,result}')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/BatchApi~batchJobListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseBatchJobList}
@@ -67,11 +67,11 @@ export default class BatchApi {
       let queryParams = {
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
+        'ids': opts['ids'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'processed_from': opts['processedFrom'],
         'processed_to': opts['processedTo'],
-        'ids': opts['ids'],
         'response_fields': opts['responseFields']
       };
       let headerParams = {

@@ -97,8 +97,8 @@ export default class AttributeApi {
       };
       let queryParams = {
         'type': type,
-        'code': opts['code'],
         'name': name,
+        'code': opts['code'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'visible': opts['visible'],
@@ -254,9 +254,9 @@ export default class AttributeApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/AttributeApi~attributeAttributesetListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseAttributeAttributesetList}
      */
@@ -269,9 +269,9 @@ export default class AttributeApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -370,8 +370,8 @@ export default class AttributeApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
-        'id': id
+        'id': id,
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };
@@ -403,11 +403,11 @@ export default class AttributeApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [attributeSetId] Attribute set id
      * @param {String} [langId] Language id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [attributeSetId] Attribute set id
      * @param {module:api/AttributeApi~attributeGroupListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseAttributeGroupList}
      */
@@ -420,11 +420,11 @@ export default class AttributeApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
+        'attribute_set_id': opts['attributeSetId'],
         'lang_id': opts['langId'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
         'response_fields': opts['responseFields'],
-        'attribute_set_id': opts['attributeSetId']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -458,9 +458,9 @@ export default class AttributeApi {
      * @param {String} [attributeSetId] Attribute set id
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/AttributeApi~attributeInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AttributeInfo200Response}
      */
@@ -479,9 +479,9 @@ export default class AttributeApi {
         'attribute_set_id': opts['attributeSetId'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -513,17 +513,17 @@ export default class AttributeApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [type] Defines attribute's type
      * @param {String} [attributeIds] Filter attributes by ids
      * @param {String} [attributeSetId] Filter items by attribute set id
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Retrieves attributes on specified language id
-     * @param {String} [params = 'id,name,code,type')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [type] Defines attribute's type
      * @param {Boolean} [visible] Filter items by visibility status
      * @param {Boolean} [required] Defines if the option is required
      * @param {Boolean} [system] True if attribute is system
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,code,type')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/AttributeApi~attributeListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseAttributeList}
      */
@@ -536,17 +536,17 @@ export default class AttributeApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
-        'type': opts['type'],
         'attribute_ids': opts['attributeIds'],
         'attribute_set_id': opts['attributeSetId'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields'],
+        'type': opts['type'],
         'visible': opts['visible'],
         'required': opts['required'],
-        'system': opts['system']
+        'system': opts['system'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };

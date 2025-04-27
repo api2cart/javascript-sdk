@@ -54,26 +54,8 @@
       //expect(instance).to.be.a(Api2CartOpenApi.CartCouponAdd);
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.CartCouponAdd();
-      //expect(instance).to.be();
-    });
-
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instance = new Api2CartOpenApi.CartCouponAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new Api2CartOpenApi.CartCouponAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property codes (base name: "codes")', function() {
-      // uncomment below and update the code to test the property codes
       //var instance = new Api2CartOpenApi.CartCouponAdd();
       //expect(instance).to.be();
     });
@@ -98,6 +80,18 @@
 
     it('should have the property actionAmount (base name: "action_amount")', function() {
       // uncomment below and update the code to test the property actionAmount
+      //var instance = new Api2CartOpenApi.CartCouponAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property codes (base name: "codes")', function() {
+      // uncomment below and update the code to test the property codes
+      //var instance = new Api2CartOpenApi.CartCouponAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instance = new Api2CartOpenApi.CartCouponAdd();
       //expect(instance).to.be();
     });
@@ -152,6 +146,12 @@
 
     it('should have the property includeTax (base name: "include_tax")', function() {
       // uncomment below and update the code to test the property includeTax
+      //var instance = new Api2CartOpenApi.CartCouponAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.CartCouponAdd();
       //expect(instance).to.be();
     });

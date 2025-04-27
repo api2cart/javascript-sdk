@@ -22,12 +22,12 @@ class ProductImageAdd {
     /**
      * Constructs a new <code>ProductImageAdd</code>.
      * @alias module:model/ProductImageAdd
-     * @param imageName {String} Defines image's name
      * @param type {module:model/ProductImageAdd.TypeEnum} Defines image's types that are specified by comma-separated list
+     * @param imageName {String} Defines image's name
      */
-    constructor(imageName, type) { 
+    constructor(type, imageName) { 
         
-        ProductImageAdd.initialize(this, imageName, type);
+        ProductImageAdd.initialize(this, type, imageName);
     }
 
     /**
@@ -35,9 +35,9 @@ class ProductImageAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, imageName, type) { 
-        obj['image_name'] = imageName;
+    static initialize(obj, type, imageName) { 
         obj['type'] = type;
+        obj['image_name'] = imageName;
         obj['position'] = 0;
         obj['use_latest_api_version'] = false;
     }
@@ -53,29 +53,14 @@ class ProductImageAdd {
         if (data) {
             obj = obj || new ProductImageAdd();
 
-            if (data.hasOwnProperty('product_id')) {
-                obj['product_id'] = ApiClient.convertToType(data['product_id'], 'String');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('image_name')) {
                 obj['image_name'] = ApiClient.convertToType(data['image_name'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
-            }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
-            }
-            if (data.hasOwnProperty('label')) {
-                obj['label'] = ApiClient.convertToType(data['label'], 'String');
-            }
-            if (data.hasOwnProperty('mime')) {
-                obj['mime'] = ApiClient.convertToType(data['mime'], 'String');
-            }
-            if (data.hasOwnProperty('position')) {
-                obj['position'] = ApiClient.convertToType(data['position'], 'Number');
-            }
-            if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], 'String');
+            if (data.hasOwnProperty('product_id')) {
+                obj['product_id'] = ApiClient.convertToType(data['product_id'], 'String');
             }
             if (data.hasOwnProperty('product_variant_id')) {
                 obj['product_variant_id'] = ApiClient.convertToType(data['product_variant_id'], 'String');
@@ -91,6 +76,21 @@ class ProductImageAdd {
             }
             if (data.hasOwnProperty('lang_id')) {
                 obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
+            }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('content')) {
+                obj['content'] = ApiClient.convertToType(data['content'], 'String');
+            }
+            if (data.hasOwnProperty('label')) {
+                obj['label'] = ApiClient.convertToType(data['label'], 'String');
+            }
+            if (data.hasOwnProperty('mime')) {
+                obj['mime'] = ApiClient.convertToType(data['mime'], 'String');
+            }
+            if (data.hasOwnProperty('position')) {
+                obj['position'] = ApiClient.convertToType(data['position'], 'Number');
             }
             if (data.hasOwnProperty('use_latest_api_version')) {
                 obj['use_latest_api_version'] = ApiClient.convertToType(data['use_latest_api_version'], 'Boolean');
@@ -112,32 +112,16 @@ class ProductImageAdd {
             }
         }
         // ensure the json data is a string
-        if (data['product_id'] && !(typeof data['product_id'] === 'string' || data['product_id'] instanceof String)) {
-            throw new Error("Expected the field `product_id` to be a primitive type in the JSON string but got " + data['product_id']);
+        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
+            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
         }
         // ensure the json data is a string
         if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
             throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
         }
         // ensure the json data is a string
-        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
-            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
-        }
-        // ensure the json data is a string
-        if (data['url'] && !(typeof data['url'] === 'string' || data['url'] instanceof String)) {
-            throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
-        }
-        // ensure the json data is a string
-        if (data['label'] && !(typeof data['label'] === 'string' || data['label'] instanceof String)) {
-            throw new Error("Expected the field `label` to be a primitive type in the JSON string but got " + data['label']);
-        }
-        // ensure the json data is a string
-        if (data['mime'] && !(typeof data['mime'] === 'string' || data['mime'] instanceof String)) {
-            throw new Error("Expected the field `mime` to be a primitive type in the JSON string but got " + data['mime']);
-        }
-        // ensure the json data is a string
-        if (data['content'] && !(typeof data['content'] === 'string' || data['content'] instanceof String)) {
-            throw new Error("Expected the field `content` to be a primitive type in the JSON string but got " + data['content']);
+        if (data['product_id'] && !(typeof data['product_id'] === 'string' || data['product_id'] instanceof String)) {
+            throw new Error("Expected the field `product_id` to be a primitive type in the JSON string but got " + data['product_id']);
         }
         // ensure the json data is a string
         if (data['product_variant_id'] && !(typeof data['product_variant_id'] === 'string' || data['product_variant_id'] instanceof String)) {
@@ -159,6 +143,22 @@ class ProductImageAdd {
         if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
             throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
         }
+        // ensure the json data is a string
+        if (data['url'] && !(typeof data['url'] === 'string' || data['url'] instanceof String)) {
+            throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
+        }
+        // ensure the json data is a string
+        if (data['content'] && !(typeof data['content'] === 'string' || data['content'] instanceof String)) {
+            throw new Error("Expected the field `content` to be a primitive type in the JSON string but got " + data['content']);
+        }
+        // ensure the json data is a string
+        if (data['label'] && !(typeof data['label'] === 'string' || data['label'] instanceof String)) {
+            throw new Error("Expected the field `label` to be a primitive type in the JSON string but got " + data['label']);
+        }
+        // ensure the json data is a string
+        if (data['mime'] && !(typeof data['mime'] === 'string' || data['mime'] instanceof String)) {
+            throw new Error("Expected the field `mime` to be a primitive type in the JSON string but got " + data['mime']);
+        }
 
         return true;
     }
@@ -166,19 +166,7 @@ class ProductImageAdd {
 
 }
 
-ProductImageAdd.RequiredProperties = ["image_name", "type"];
-
-/**
- * Defines product id where the image should be added
- * @member {String} product_id
- */
-ProductImageAdd.prototype['product_id'] = undefined;
-
-/**
- * Defines image's name
- * @member {String} image_name
- */
-ProductImageAdd.prototype['image_name'] = undefined;
+ProductImageAdd.RequiredProperties = ["type", "image_name"];
 
 /**
  * Defines image's types that are specified by comma-separated list
@@ -187,35 +175,16 @@ ProductImageAdd.prototype['image_name'] = undefined;
 ProductImageAdd.prototype['type'] = undefined;
 
 /**
- * Defines URL of the image that has to be added
- * @member {String} url
+ * Defines image's name
+ * @member {String} image_name
  */
-ProductImageAdd.prototype['url'] = undefined;
+ProductImageAdd.prototype['image_name'] = undefined;
 
 /**
- * Defines alternative text that has to be attached to the picture
- * @member {String} label
+ * Defines product id where the image should be added
+ * @member {String} product_id
  */
-ProductImageAdd.prototype['label'] = undefined;
-
-/**
- * Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
- * @member {String} mime
- */
-ProductImageAdd.prototype['mime'] = undefined;
-
-/**
- * Defines image’s position in the list
- * @member {Number} position
- * @default 0
- */
-ProductImageAdd.prototype['position'] = 0;
-
-/**
- * Content(body) encoded in base64 of image file
- * @member {String} content
- */
-ProductImageAdd.prototype['content'] = undefined;
+ProductImageAdd.prototype['product_id'] = undefined;
 
 /**
  * Defines product's variants specified by variant id
@@ -246,6 +215,37 @@ ProductImageAdd.prototype['store_id'] = undefined;
  * @member {String} lang_id
  */
 ProductImageAdd.prototype['lang_id'] = undefined;
+
+/**
+ * Defines URL of the image that has to be added
+ * @member {String} url
+ */
+ProductImageAdd.prototype['url'] = undefined;
+
+/**
+ * Content(body) encoded in base64 of image file
+ * @member {String} content
+ */
+ProductImageAdd.prototype['content'] = undefined;
+
+/**
+ * Defines alternative text that has to be attached to the picture
+ * @member {String} label
+ */
+ProductImageAdd.prototype['label'] = undefined;
+
+/**
+ * Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
+ * @member {String} mime
+ */
+ProductImageAdd.prototype['mime'] = undefined;
+
+/**
+ * Defines image’s position in the list
+ * @member {Number} position
+ * @default 0
+ */
+ProductImageAdd.prototype['position'] = 0;
 
 /**
  * Use the latest platform API version

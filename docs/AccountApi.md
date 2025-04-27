@@ -84,12 +84,12 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.AccountApi();
 let opts = {
-  'params': "url,store_key", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "url,store_key", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  'storeUrl': "http://mystore.com", // String | A web address of a store
+  'storeKey': "ab37fc230bc5df63a5be1b11220949be", // String | Find store by store key
   'requestFromDate': "2010-07-29", // String | Retrieve entities from their creation date
   'requestToDate': "2100-08-29", // String | Retrieve entities to their creation date
-  'storeUrl': "http://mystore.com", // String | A web address of a store
-  'storeKey': "ab37fc230bc5df63a5be1b11220949be" // String | Find store by store key
+  'params': "url,store_key", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "url,store_key" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.accountCartList(opts, (error, data, response) => {
   if (error) {
@@ -105,12 +105,12 @@ apiInstance.accountCartList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;]
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **requestFromDate** | **String**| Retrieve entities from their creation date | [optional] 
- **requestToDate** | **String**| Retrieve entities to their creation date | [optional] 
  **storeUrl** | **String**| A web address of a store | [optional] 
  **storeKey** | **String**| Find store by store key | [optional] 
+ **requestFromDate** | **String**| Retrieve entities from their creation date | [optional] 
+ **requestToDate** | **String**| Retrieve entities to their creation date | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
 
@@ -211,6 +211,7 @@ let opts = {
   'shoplineAccessToken': "igse8e4rdmzkxdi937qe69d59en1imw", // String | Shopline APP Key
   'shoplineAppKey': "737cf6bd2879cb6c7e5a8ff9cd63f3d46b0b5b7b", // String | Shopline APP Key
   'shoplineAppSecret': "1701d123bb5cc14cd2732dcaed90638316c0a09", // String | Shopline App Secret
+  'shoplineSharedSecret': "1701d123bb5cc14cd2732dcaed90638316c0a09", // String | Shopline Shared Secret
   'shopifyAccessToken': "igse8e4rdmzkxdi937qe69d59en1imw", // String | Access token authorizing the app to access resources on behalf of a user
   'shopifyApiKey': "bbca57d8ff3c3677128112c15556d9e3", // String | Shopify API Key
   'shopifyApiPassword': "860f3a6fc87632301a42cd88e4b5ab3d", // String | Shopify API Password
@@ -367,6 +368,7 @@ Name | Type | Description  | Notes
  **shoplineAccessToken** | **String**| Shopline APP Key | [optional] 
  **shoplineAppKey** | **String**| Shopline APP Key | [optional] 
  **shoplineAppSecret** | **String**| Shopline App Secret | [optional] 
+ **shoplineSharedSecret** | **String**| Shopline Shared Secret | [optional] 
  **shopifyAccessToken** | **String**| Access token authorizing the app to access resources on behalf of a user | [optional] 
  **shopifyApiKey** | **String**| Shopify API Key | [optional] 
  **shopifyApiPassword** | **String**| Shopify API Password | [optional] 
@@ -485,8 +487,8 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.AccountApi();
 let opts = {
-  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'start': 0, // Number | This parameter sets the number from which you want to get entities
+  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'ids': "3,14,25" // String | List of сomma-separated webhook ids
 };
 apiInstance.accountFailedWebhooks(opts, (error, data, response) => {
@@ -503,8 +505,8 @@ apiInstance.accountFailedWebhooks(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
+ **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **ids** | **String**| List of сomma-separated webhook ids | [optional] 
 
 ### Return type

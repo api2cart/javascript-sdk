@@ -66,14 +66,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property oldPrice (base name: "old_price")', function() {
-      // uncomment below and update the code to test the property oldPrice
+    it('should have the property sku (base name: "sku")', function() {
+      // uncomment below and update the code to test the property sku
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shortDescription (base name: "short_description")', function() {
+      // uncomment below and update the code to test the property shortDescription
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property oldPrice (base name: "old_price")', function() {
+      // uncomment below and update the code to test the property oldPrice
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -114,8 +138,80 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property quantity (base name: "quantity")', function() {
-      // uncomment below and update the code to test the property quantity
+    it('should have the property tierPrices (base name: "tier_prices")', function() {
+      // uncomment below and update the code to test the property tierPrices
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reservePrice (base name: "reserve_price")', function() {
+      // uncomment below and update the code to test the property reservePrice
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property buyitnowPrice (base name: "buyitnow_price")', function() {
+      // uncomment below and update the code to test the property buyitnowPrice
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxable (base name: "taxable")', function() {
+      // uncomment below and update the code to test the property taxable
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taxClassId (base name: "tax_class_id")', function() {
+      // uncomment below and update the code to test the property taxClassId
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property condition (base name: "condition")', function() {
+      // uncomment below and update the code to test the property condition
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property visible (base name: "visible")', function() {
+      // uncomment below and update the code to test the property visible
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property inStock (base name: "in_stock")', function() {
+      // uncomment below and update the code to test the property inStock
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property avail (base name: "avail")', function() {
+      // uncomment below and update the code to test the property avail
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property availFrom (base name: "avail_from")', function() {
+      // uncomment below and update the code to test the property availFrom
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productClass (base name: "product_class")', function() {
+      // uncomment below and update the code to test the property productClass
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -126,38 +222,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property weight (base name: "weight")', function() {
-      // uncomment below and update the code to test the property weight
+    it('should have the property storesIds (base name: "stores_ids")', function() {
+      // uncomment below and update the code to test the property storesIds
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property weightUnit (base name: "weight_unit")', function() {
-      // uncomment below and update the code to test the property weightUnit
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property dimensionsUnit (base name: "dimensions_unit")', function() {
-      // uncomment below and update the code to test the property dimensionsUnit
+    it('should have the property langId (base name: "lang_id")', function() {
+      // uncomment below and update the code to test the property langId
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property increaseQuantity (base name: "increase_quantity")', function() {
-      // uncomment below and update the code to test the property increaseQuantity
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reduceQuantity (base name: "reduce_quantity")', function() {
-      // uncomment below and update the code to test the property reduceQuantity
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warehouseId (base name: "warehouse_id")', function() {
-      // uncomment below and update the code to test the property warehouseId
+    it('should have the property quantity (base name: "quantity")', function() {
+      // uncomment below and update the code to test the property quantity
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -180,20 +264,104 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property increaseQuantity (base name: "increase_quantity")', function() {
+      // uncomment below and update the code to test the property increaseQuantity
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property sku (base name: "sku")', function() {
-      // uncomment below and update the code to test the property sku
+    it('should have the property reduceQuantity (base name: "reduce_quantity")', function() {
+      // uncomment below and update the code to test the property reduceQuantity
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property visible (base name: "visible")', function() {
-      // uncomment below and update the code to test the property visible
+    it('should have the property warehouseId (base name: "warehouse_id")', function() {
+      // uncomment below and update the code to test the property warehouseId
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property weight (base name: "weight")', function() {
+      // uncomment below and update the code to test the property weight
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property weightUnit (base name: "weight_unit")', function() {
+      // uncomment below and update the code to test the property weightUnit
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property height (base name: "height")', function() {
+      // uncomment below and update the code to test the property height
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property length (base name: "length")', function() {
+      // uncomment below and update the code to test the property length
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property width (base name: "width")', function() {
+      // uncomment below and update the code to test the property width
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dimensionsUnit (base name: "dimensions_unit")', function() {
+      // uncomment below and update the code to test the property dimensionsUnit
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isVirtual (base name: "is_virtual")', function() {
+      // uncomment below and update the code to test the property isVirtual
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isFreeShipping (base name: "is_free_shipping")', function() {
+      // uncomment below and update the code to test the property isFreeShipping
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property gtin (base name: "gtin")', function() {
+      // uncomment below and update the code to test the property gtin
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property upc (base name: "upc")', function() {
+      // uncomment below and update the code to test the property upc
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mpn (base name: "mpn")', function() {
+      // uncomment below and update the code to test the property mpn
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ean (base name: "ean")', function() {
+      // uncomment below and update the code to test the property ean
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isbn (base name: "isbn")', function() {
+      // uncomment below and update the code to test the property isbn
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property barcode (base name: "barcode")', function() {
+      // uncomment below and update the code to test the property barcode
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -234,18 +402,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property shortDescription (base name: "short_description")', function() {
-      // uncomment below and update the code to test the property shortDescription
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
     it('should have the property metaTitle (base name: "meta_title")', function() {
       // uncomment below and update the code to test the property metaTitle
       //var instance = new Api2CartOpenApi.ProductUpdate();
@@ -264,134 +420,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property langId (base name: "lang_id")', function() {
-      // uncomment below and update the code to test the property langId
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property inStock (base name: "in_stock")', function() {
-      // uncomment below and update the code to test the property inStock
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property status (base name: "status")', function() {
-      // uncomment below and update the code to test the property status
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
     it('should have the property seoUrl (base name: "seo_url")', function() {
       // uncomment below and update the code to test the property seoUrl
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reportRequestId (base name: "report_request_id")', function() {
-      // uncomment below and update the code to test the property reportRequestId
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property disableReportCache (base name: "disable_report_cache")', function() {
-      // uncomment below and update the code to test the property disableReportCache
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reindex (base name: "reindex")', function() {
-      // uncomment below and update the code to test the property reindex
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property clearCache (base name: "clear_cache")', function() {
-      // uncomment below and update the code to test the property clearCache
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property gtin (base name: "gtin")', function() {
-      // uncomment below and update the code to test the property gtin
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property upc (base name: "upc")', function() {
-      // uncomment below and update the code to test the property upc
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property mpn (base name: "mpn")', function() {
-      // uncomment below and update the code to test the property mpn
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ean (base name: "ean")', function() {
-      // uncomment below and update the code to test the property ean
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isbn (base name: "isbn")', function() {
-      // uncomment below and update the code to test the property isbn
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property taxable (base name: "taxable")', function() {
-      // uncomment below and update the code to test the property taxable
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productClass (base name: "product_class")', function() {
-      // uncomment below and update the code to test the property productClass
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property height (base name: "height")', function() {
-      // uncomment below and update the code to test the property height
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property length (base name: "length")', function() {
-      // uncomment below and update the code to test the property length
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property width (base name: "width")', function() {
-      // uncomment below and update the code to test the property width
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property harmonizedSystemCode (base name: "harmonized_system_code")', function() {
-      // uncomment below and update the code to test the property harmonizedSystemCode
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property countryOfOrigin (base name: "country_of_origin")', function() {
-      // uncomment below and update the code to test the property countryOfOrigin
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -402,56 +432,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property barcode (base name: "barcode")', function() {
-      // uncomment below and update the code to test the property barcode
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isVirtual (base name: "is_virtual")', function() {
-      // uncomment below and update the code to test the property isVirtual
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isFreeShipping (base name: "is_free_shipping")', function() {
-      // uncomment below and update the code to test the property isFreeShipping
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reservePrice (base name: "reserve_price")', function() {
-      // uncomment below and update the code to test the property reservePrice
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property buyitnowPrice (base name: "buyitnow_price")', function() {
-      // uncomment below and update the code to test the property buyitnowPrice
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property availFrom (base name: "avail_from")', function() {
-      // uncomment below and update the code to test the property availFrom
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property taxClassId (base name: "tax_class_id")', function() {
-      // uncomment below and update the code to test the property taxClassId
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property avail (base name: "avail")', function() {
-      // uncomment below and update the code to test the property avail
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -462,32 +444,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property checkProcessStatus (base name: "check_process_status")', function() {
-      // uncomment below and update the code to test the property checkProcessStatus
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
     it('should have the property packageDetails (base name: "package_details")', function() {
       // uncomment below and update the code to test the property packageDetails
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property storesIds (base name: "stores_ids")', function() {
-      // uncomment below and update the code to test the property storesIds
+    it('should have the property countryOfOrigin (base name: "country_of_origin")', function() {
+      // uncomment below and update the code to test the property countryOfOrigin
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
 
-    it('should have the property manufacturerInfo (base name: "manufacturer_info")', function() {
-      // uncomment below and update the code to test the property manufacturerInfo
-      //var instance = new Api2CartOpenApi.ProductUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property productionPartnerIds (base name: "production_partner_ids")', function() {
-      // uncomment below and update the code to test the property productionPartnerIds
+    it('should have the property harmonizedSystemCode (base name: "harmonized_system_code")', function() {
+      // uncomment below and update the code to test the property harmonizedSystemCode
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });
@@ -530,6 +500,48 @@
 
     it('should have the property onSale (base name: "on_sale")', function() {
       // uncomment below and update the code to test the property onSale
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property productionPartnerIds (base name: "production_partner_ids")', function() {
+      // uncomment below and update the code to test the property productionPartnerIds
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property manufacturerInfo (base name: "manufacturer_info")', function() {
+      // uncomment below and update the code to test the property manufacturerInfo
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reportRequestId (base name: "report_request_id")', function() {
+      // uncomment below and update the code to test the property reportRequestId
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property disableReportCache (base name: "disable_report_cache")', function() {
+      // uncomment below and update the code to test the property disableReportCache
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reindex (base name: "reindex")', function() {
+      // uncomment below and update the code to test the property reindex
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property clearCache (base name: "clear_cache")', function() {
+      // uncomment below and update the code to test the property clearCache
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property checkProcessStatus (base name: "check_process_status")', function() {
+      // uncomment below and update the code to test the property checkProcessStatus
       //var instance = new Api2CartOpenApi.ProductUpdate();
       //expect(instance).to.be();
     });

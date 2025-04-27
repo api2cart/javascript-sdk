@@ -149,12 +149,12 @@ export default class CartApi {
      * cart.catalog_price_rules.list
      * Get cart catalog price rules discounts.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [ids] Retrieves  catalog_price_rules by ids
-     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartCatalogPriceRulesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartCatalogPriceRulesList}
@@ -166,12 +166,12 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'ids': opts['ids'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -377,10 +377,10 @@ export default class CartApi {
      * @param {String} operator Defines condition operator
      * @param {String} value Defines condition value, can be comma separated according to the operator.
      * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Store Id
      * @param {String} [target = 'coupon_prerequisite')] Defines condition operator
      * @param {Boolean} [includeTax = false)] Indicates whether to apply a discount for taxes.
      * @param {Boolean} [includeShipping = false)] Indicates whether to apply a discount for shipping.
+     * @param {String} [storeId] Store Id
      * @param {module:api/CartApi~cartCouponConditionAddCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BasketLiveShippingServiceDelete200Response}
      */
@@ -411,15 +411,15 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'coupon_id': couponId,
-        'target': opts['target'],
         'entity': entity,
         'key': key,
         'operator': operator,
         'value': value,
+        'target': opts['target'],
         'include_tax': opts['includeTax'],
-        'include_shipping': opts['includeShipping']
+        'include_shipping': opts['includeShipping'],
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };
@@ -450,11 +450,11 @@ export default class CartApi {
      * This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
+     * @param {Boolean} [avail = true)] Defines category's visibility status
      * @param {String} [dateStartFrom] Filter entity by date_start (greater or equal)
      * @param {String} [dateStartTo] Filter entity by date_start (less or equal)
      * @param {String} [dateEndFrom] Filter entity by date_end (greater or equal)
      * @param {String} [dateEndTo] Filter entity by date_end (less or equal)
-     * @param {Boolean} [avail = true)] Defines category's visibility status
      * @param {module:api/CartApi~cartCouponCountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CartCouponCount200Response}
      */
@@ -466,11 +466,11 @@ export default class CartApi {
       };
       let queryParams = {
         'store_id': opts['storeId'],
+        'avail': opts['avail'],
         'date_start_from': opts['dateStartFrom'],
         'date_start_to': opts['dateStartTo'],
         'date_end_from': opts['dateEndFrom'],
-        'date_end_to': opts['dateEndTo'],
-        'avail': opts['avail']
+        'date_end_to': opts['dateEndTo']
       };
       let headerParams = {
       };
@@ -547,19 +547,19 @@ export default class CartApi {
      * cart.coupon.list
      * Get cart coupon discounts.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [couponsIds] Filter coupons by ids
      * @param {String} [storeId] Filter coupons by store id
+     * @param {String} [langId] Language id
+     * @param {Boolean} [avail] Filter coupons by avail status
      * @param {String} [dateStartFrom] Filter entity by date_start (greater or equal)
      * @param {String} [dateStartTo] Filter entity by date_start (less or equal)
      * @param {String} [dateEndFrom] Filter entity by date_end (greater or equal)
      * @param {String} [dateEndTo] Filter entity by date_end (less or equal)
-     * @param {Boolean} [avail] Filter coupons by avail status
-     * @param {String} [langId] Language id
-     * @param {String} [params = 'id,code,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,code,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartCouponListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartCouponList}
@@ -571,19 +571,19 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'coupons_ids': opts['couponsIds'],
         'store_id': opts['storeId'],
+        'lang_id': opts['langId'],
+        'avail': opts['avail'],
         'date_start_from': opts['dateStartFrom'],
         'date_start_to': opts['dateStartTo'],
         'date_end_from': opts['dateEndFrom'],
         'date_end_to': opts['dateEndTo'],
-        'avail': opts['avail'],
-        'lang_id': opts['langId'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -877,12 +877,12 @@ export default class CartApi {
      * cart.giftcard.list
      * Get gift cards list.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [storeId] Store Id
-     * @param {String} [params = 'id,code,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,code,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartGiftcardListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartGiftCardList}
@@ -894,12 +894,12 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'store_id': opts['storeId'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -930,10 +930,10 @@ export default class CartApi {
      * cart.info
      * This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'store_name,store_url,db_prefix')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'store_name,store_url,db_prefix')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CartInfo200Response}
      */
@@ -944,10 +944,10 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'params': opts['params'],
+        'store_id': opts['storeId'],
         'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'store_id': opts['storeId']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -1015,14 +1015,14 @@ export default class CartApi {
      * Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
      * @param {String} entityId Entity Id
      * @param {Object} opts Optional parameters
+     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [entity = 'product')] Entity
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
      * @param {String} [key] Key
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [params = 'key,value')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'key,value')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartMetaDataListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartMetaDataList}
@@ -1038,15 +1038,15 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
+        'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'entity_id': entityId,
         'entity': opts['entity'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'key': opts['key'],
-        'count': opts['count'],
-        'page_cursor': opts['pageCursor'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -1111,12 +1111,12 @@ export default class CartApi {
       };
       let queryParams = {
         'entity_id': entityId,
-        'entity': opts['entity'],
-        'store_id': opts['storeId'],
-        'lang_id': opts['langId'],
         'key': key,
         'value': value,
-        'namespace': namespace
+        'namespace': namespace,
+        'entity': opts['entity'],
+        'store_id': opts['storeId'],
+        'lang_id': opts['langId']
       };
       let headerParams = {
       };
@@ -1174,10 +1174,10 @@ export default class CartApi {
       };
       let queryParams = {
         'entity_id': entityId,
-        'entity': opts['entity'],
-        'store_id': opts['storeId'],
         'key': key,
-        'id': id
+        'id': id,
+        'entity': opts['entity'],
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };
@@ -1244,9 +1244,9 @@ export default class CartApi {
      * cart.plugin.list
      * Get a list of third-party plugins installed on the store.
      * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Store Id
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [storeId] Store Id
      * @param {module:api/CartApi~cartPluginListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CartPluginList200Response}
      */
@@ -1257,9 +1257,9 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'start': opts['start'],
-        'count': opts['count']
+        'count': opts['count'],
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };
@@ -1391,17 +1391,17 @@ export default class CartApi {
      * cart.script.list
      * Get scripts installed to the storefront
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [scriptIds] Retrieves only scripts with specific ids
+     * @param {String} [storeId] Store Id
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [scriptIds] Retrieves only scripts with specific ids
-     * @param {String} [storeId] Store Id
-     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartScriptListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartScriptList}
@@ -1413,17 +1413,17 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
+        'script_ids': opts['scriptIds'],
+        'store_id': opts['storeId'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'script_ids': opts['scriptIds'],
-        'store_id': opts['storeId'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -1454,11 +1454,11 @@ export default class CartApi {
      * cart.shipping_zones.list
      * Get list of shipping zones
      * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Store Id
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'id,name,enabled')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [storeId] Store Id
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,enabled')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/CartApi~cartShippingZonesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseCartShippingZonesList}
@@ -1470,11 +1470,11 @@ export default class CartApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
+        'store_id': opts['storeId'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {

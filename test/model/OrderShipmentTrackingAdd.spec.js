@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(Api2CartOpenApi.OrderShipmentTrackingAdd);
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.OrderShipmentTrackingAdd();
-      //expect(instance).to.be();
-    });
-
     it('should have the property orderId (base name: "order_id")', function() {
       // uncomment below and update the code to test the property orderId
       //var instance = new Api2CartOpenApi.OrderShipmentTrackingAdd();
@@ -74,6 +68,12 @@
 
     it('should have the property carrierId (base name: "carrier_id")', function() {
       // uncomment below and update the code to test the property carrierId
+      //var instance = new Api2CartOpenApi.OrderShipmentTrackingAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.OrderShipmentTrackingAdd();
       //expect(instance).to.be();
     });

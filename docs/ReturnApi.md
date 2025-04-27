@@ -172,9 +172,9 @@ let id = "10"; // String | Entity id
 let opts = {
   'orderId': "25", // String | Defines the order id
   'storeId': "1", // String | Store Id
+  'responseFields': "{return_code,return_message,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,order_products", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,order_id", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{return_code,return_message,result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,order_id" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.returnInfo(id, opts, (error, data, response) => {
   if (error) {
@@ -193,9 +193,9 @@ Name | Type | Description  | Notes
  **id** | **String**| Entity id | 
  **orderId** | **String**| Defines the order id | [optional] 
  **storeId** | **String**| Store Id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_products&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
 
 ### Return type
 
@@ -240,9 +240,6 @@ let opts = {
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  'params': "id,order_products", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,order_id", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'orderId': "25", // String | Defines the order id
   'orderIds': "24,25", // String | Retrieves return requests specified by order ids
   'customerId': "5", // String | Retrieves return requests specified by customer id
@@ -253,6 +250,9 @@ let opts = {
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
+  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,order_products", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,order_id", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'reportRequestId': "105245017661", // String | Report request id
   'disableReportCache': false // Boolean | Disable report cache for current request
 };
@@ -273,9 +273,6 @@ Name | Type | Description  | Notes
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_products&#39;]
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **orderId** | **String**| Defines the order id | [optional] 
  **orderIds** | **String**| Retrieves return requests specified by order ids | [optional] 
  **customerId** | **String**| Retrieves return requests specified by customer id | [optional] 
@@ -286,6 +283,9 @@ Name | Type | Description  | Notes
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_products&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **reportRequestId** | **String**| Report request id | [optional] 
  **disableReportCache** | **Boolean**| Disable report cache for current request | [optional] [default to false]
 

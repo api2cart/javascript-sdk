@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property orderItemPriceIncludesTax (base name: "order_item_price_includes_tax")', function() {
+      // uncomment below and update the code to test the property orderItemPriceIncludesTax
+      //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderItemParent (base name: "order_item_parent")', function() {
       // uncomment below and update the code to test the property orderItemParent
       //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();
@@ -122,12 +128,6 @@
 
     it('should have the property orderItemAllowShipItemsSeparately (base name: "order_item_allow_ship_items_separately")', function() {
       // uncomment below and update the code to test the property orderItemAllowShipItemsSeparately
-      //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property orderItemPriceIncludesTax (base name: "order_item_price_includes_tax")', function() {
-      // uncomment below and update the code to test the property orderItemPriceIncludesTax
       //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();
       //expect(instance).to.be();
     });

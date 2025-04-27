@@ -162,9 +162,9 @@ let opts = {
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Language id
+  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "false", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{return_code,return_message,pagination,result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.customerAttributeList(customerId, opts, (error, data, response) => {
   if (error) {
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Language id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
 
 ### Return type
 
@@ -229,18 +229,18 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CustomerApi();
 let opts = {
-  'groupId': "3", // String | Customer group_id
-  'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
-  'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
-  'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
-  'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'storeId': "1", // String | Counts customer specified by store id
+  'ids': "24,25", // String | Counts customers specified by ids
+  'sinceId': "56", // String | Retrieve entities starting from the specified id.
   'customerListId': "exampleListId", // String | The numeric ID of the customer list in Demandware.
+  'groupId': "3", // String | Customer group_id
+  'storeId': "1", // String | Counts customer specified by store id
   'avail': false, // Boolean | Defines category's visibility status
   'findValue': "mail@gmail.com", // String | Entity search that is specified by some value
   'findWhere': "email", // String | Counts customers that are searched specified by field
-  'ids': "24,25", // String | Counts customers specified by ids
-  'sinceId': "56" // String | Retrieve entities starting from the specified id.
+  'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
+  'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
+  'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
+  'modifiedTo': "2100-08-29 13:45:52" // String | Retrieve entities to their modification date
 };
 apiInstance.customerCount(opts, (error, data, response) => {
   if (error) {
@@ -256,18 +256,18 @@ apiInstance.customerCount(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | **String**| Counts customers specified by ids | [optional] 
+ **sinceId** | **String**| Retrieve entities starting from the specified id. | [optional] 
+ **customerListId** | **String**| The numeric ID of the customer list in Demandware. | [optional] 
  **groupId** | **String**| Customer group_id | [optional] 
+ **storeId** | **String**| Counts customer specified by store id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **findValue** | **String**| Entity search that is specified by some value | [optional] 
+ **findWhere** | **String**| Counts customers that are searched specified by field | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **storeId** | **String**| Counts customer specified by store id | [optional] 
- **customerListId** | **String**| The numeric ID of the customer list in Demandware. | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
- **findValue** | **String**| Entity search that is specified by some value | [optional] 
- **findWhere** | **String**| Counts customers that are searched specified by field | [optional] 
- **ids** | **String**| Counts customers specified by ids | [optional] 
- **sinceId** | **String**| Retrieve entities starting from the specified id. | [optional] 
 
 ### Return type
 
@@ -491,16 +491,16 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CustomerApi();
 let opts = {
-  'disableCache': false, // Boolean | Disable cache for current request
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  'groupIds': "1,2,3", // String | Groups that will be assigned to a customer
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Language id
-  'groupIds': "1,2,3", // String | Groups that will be assigned to a customer
+  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{return_code,return_message,pagination,result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'disableCache': false // Boolean | Disable cache for current request
 };
 apiInstance.customerGroupList(opts, (error, data, response) => {
   if (error) {
@@ -516,16 +516,16 @@ apiInstance.customerGroupList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **disableCache** | **Boolean**| Disable cache for current request | [optional] [default to false]
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
+ **groupIds** | **String**| Groups that will be assigned to a customer | [optional] 
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Language id | [optional] 
- **groupIds** | **String**| Groups that will be assigned to a customer | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,additional_fields&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **disableCache** | **Boolean**| Disable cache for current request | [optional] [default to false]
 
 ### Return type
 
@@ -568,10 +568,10 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CustomerApi();
 let id = "10"; // String | Retrieves customer's info specified by customer id
 let opts = {
-  'params': "id,email", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'storeId': "1", // String | Retrieves customer info specified by store id
   'responseFields': "{result{id,parent_id,sku,upc,images,combination}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,email", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'storeId': "1" // String | Retrieves customer info specified by store id
+  'params': "id,email", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,email" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.customerInfo(id, opts, (error, data, response) => {
   if (error) {
@@ -588,10 +588,10 @@ apiInstance.customerInfo(id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Retrieves customer&#39;s info specified by customer id | 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,email,first_name,last_name&#39;]
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
  **storeId** | **String**| Retrieves customer info specified by store id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,email,first_name,last_name&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
 
@@ -633,26 +633,26 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.CustomerApi();
 let opts = {
-  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  'ids': "24,25", // String | Retrieves customers specified by ids
+  'sinceId': "56", // String | Retrieve entities starting from the specified id.
+  'customerListId': "exampleListId", // String | The numeric ID of the customer list in Demandware.
+  'groupId': "3", // String | Customer group_id
+  'storeId': "1", // String | Retrieves customers specified by store id
+  'avail': false, // Boolean | Defines category's visibility status
+  'findValue': "mail@gmail.com", // String | Entity search that is specified by some value
+  'findWhere': "email", // String | Customer search that is specified by field
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'params': "id,email", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'responseFields': "{result{customer}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,email", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'groupId': "3", // String | Customer group_id
-  'storeId': "1", // String | Retrieves customers specified by store id
-  'customerListId': "exampleListId", // String | The numeric ID of the customer list in Demandware.
-  'avail': false, // Boolean | Defines category's visibility status
-  'findValue': "mail@gmail.com", // String | Entity search that is specified by some value
-  'findWhere': "email", // String | Customer search that is specified by field
   'sortBy': "value_id", // String | Set field to sort by
   'sortDirection': "asc", // String | Set sorting direction
-  'ids': "24,25", // String | Retrieves customers specified by ids
-  'sinceId': "56" // String | Retrieve entities starting from the specified id.
+  'responseFields': "{result{customer}}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,email", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,email" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.customerList(opts, (error, data, response) => {
   if (error) {
@@ -668,26 +668,26 @@ apiInstance.customerList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
+ **ids** | **String**| Retrieves customers specified by ids | [optional] 
+ **sinceId** | **String**| Retrieve entities starting from the specified id. | [optional] 
+ **customerListId** | **String**| The numeric ID of the customer list in Demandware. | [optional] 
+ **groupId** | **String**| Customer group_id | [optional] 
+ **storeId** | **String**| Retrieves customers specified by store id | [optional] 
+ **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **findValue** | **String**| Entity search that is specified by some value | [optional] 
+ **findWhere** | **String**| Customer search that is specified by field | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,email,first_name,last_name&#39;]
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **groupId** | **String**| Customer group_id | [optional] 
- **storeId** | **String**| Retrieves customers specified by store id | [optional] 
- **customerListId** | **String**| The numeric ID of the customer list in Demandware. | [optional] 
- **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
- **findValue** | **String**| Entity search that is specified by some value | [optional] 
- **findWhere** | **String**| Customer search that is specified by field | [optional] 
  **sortBy** | **String**| Set field to sort by | [optional] [default to &#39;created_time&#39;]
  **sortDirection** | **String**| Set sorting direction | [optional] [default to &#39;asc&#39;]
- **ids** | **String**| Retrieves customers specified by ids | [optional] 
- **sinceId** | **String**| Retrieve entities starting from the specified id. | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,email,first_name,last_name&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
 
@@ -786,11 +786,11 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 let apiInstance = new Api2CartOpenApi.CustomerApi();
 let customerId = "5"; // String | Retrieves orders specified by customer id
 let opts = {
-  'id': "10", // String | Entity id
-  'storeId': "1", // String | Store Id
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  'id': "10", // String | Entity id
+  'storeId': "1", // String | Store Id
   'responseFields': "{return_code,return_message,pagination,result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
 };
 apiInstance.customerWishlistList(customerId, opts, (error, data, response) => {
@@ -808,11 +808,11 @@ apiInstance.customerWishlistList(customerId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **String**| Retrieves orders specified by customer id | 
- **id** | **String**| Entity id | [optional] 
- **storeId** | **String**| Store Id | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
+ **id** | **String**| Entity id | [optional] 
+ **storeId** | **String**| Store Id | [optional] 
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;]
 
 ### Return type

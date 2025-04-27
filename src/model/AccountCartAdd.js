@@ -282,6 +282,9 @@ class AccountCartAdd {
             if (data.hasOwnProperty('shopline_app_secret')) {
                 obj['shopline_app_secret'] = ApiClient.convertToType(data['shopline_app_secret'], 'String');
             }
+            if (data.hasOwnProperty('shopline_shared_secret')) {
+                obj['shopline_shared_secret'] = ApiClient.convertToType(data['shopline_shared_secret'], 'String');
+            }
             if (data.hasOwnProperty('shopify_access_token')) {
                 obj['shopify_access_token'] = ApiClient.convertToType(data['shopify_access_token'], 'String');
             }
@@ -794,6 +797,10 @@ class AccountCartAdd {
         // ensure the json data is a string
         if (data['shopline_app_secret'] && !(typeof data['shopline_app_secret'] === 'string' || data['shopline_app_secret'] instanceof String)) {
             throw new Error("Expected the field `shopline_app_secret` to be a primitive type in the JSON string but got " + data['shopline_app_secret']);
+        }
+        // ensure the json data is a string
+        if (data['shopline_shared_secret'] && !(typeof data['shopline_shared_secret'] === 'string' || data['shopline_shared_secret'] instanceof String)) {
+            throw new Error("Expected the field `shopline_shared_secret` to be a primitive type in the JSON string but got " + data['shopline_shared_secret']);
         }
         // ensure the json data is a string
         if (data['shopify_access_token'] && !(typeof data['shopify_access_token'] === 'string' || data['shopify_access_token'] instanceof String)) {
@@ -1546,6 +1553,12 @@ AccountCartAdd.prototype['shopline_app_key'] = undefined;
  * @member {String} shopline_app_secret
  */
 AccountCartAdd.prototype['shopline_app_secret'] = undefined;
+
+/**
+ * Shopline Shared Secret
+ * @member {String} shopline_shared_secret
+ */
+AccountCartAdd.prototype['shopline_shared_secret'] = undefined;
 
 /**
  * Access token authorizing the app to access resources on behalf of a user

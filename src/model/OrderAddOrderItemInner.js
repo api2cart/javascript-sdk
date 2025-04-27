@@ -83,6 +83,9 @@ class OrderAddOrderItemInner {
             if (data.hasOwnProperty('order_item_tax')) {
                 obj['order_item_tax'] = ApiClient.convertToType(data['order_item_tax'], 'Number');
             }
+            if (data.hasOwnProperty('order_item_price_includes_tax')) {
+                obj['order_item_price_includes_tax'] = ApiClient.convertToType(data['order_item_price_includes_tax'], 'Boolean');
+            }
             if (data.hasOwnProperty('order_item_parent')) {
                 obj['order_item_parent'] = ApiClient.convertToType(data['order_item_parent'], 'Number');
             }
@@ -94,9 +97,6 @@ class OrderAddOrderItemInner {
             }
             if (data.hasOwnProperty('order_item_allow_ship_items_separately')) {
                 obj['order_item_allow_ship_items_separately'] = ApiClient.convertToType(data['order_item_allow_ship_items_separately'], 'Boolean');
-            }
-            if (data.hasOwnProperty('order_item_price_includes_tax')) {
-                obj['order_item_price_includes_tax'] = ApiClient.convertToType(data['order_item_price_includes_tax'], 'Boolean');
             }
             if (data.hasOwnProperty('order_item_option')) {
                 obj['order_item_option'] = ApiClient.convertToType(data['order_item_option'], [OrderAddOrderItemInnerOrderItemOptionInner]);
@@ -219,6 +219,13 @@ OrderAddOrderItemInner.prototype['order_item_variant_id'] = undefined;
 OrderAddOrderItemInner.prototype['order_item_tax'] = 0;
 
 /**
+ * Defines if item price includes tax
+ * @member {Boolean} order_item_price_includes_tax
+ * @default false
+ */
+OrderAddOrderItemInner.prototype['order_item_price_includes_tax'] = false;
+
+/**
  * Index of the parent grouped/bundle product
  * @member {Number} order_item_parent
  */
@@ -241,13 +248,6 @@ OrderAddOrderItemInner.prototype['order_item_allow_refund_items_separately'] = u
  * @member {Boolean} order_item_allow_ship_items_separately
  */
 OrderAddOrderItemInner.prototype['order_item_allow_ship_items_separately'] = undefined;
-
-/**
- * Defines if item price includes tax
- * @member {Boolean} order_item_price_includes_tax
- * @default false
- */
-OrderAddOrderItemInner.prototype['order_item_price_includes_tax'] = false;
 
 /**
  * @member {Array.<module:model/OrderAddOrderItemInnerOrderItemOptionInner>} order_item_option

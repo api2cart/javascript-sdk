@@ -55,23 +55,23 @@ class ProductAdd {
         obj['model'] = model;
         obj['description'] = description;
         obj['price'] = price;
+        obj['type'] = 'simple';
+        obj['is_virtual'] = false;
+        obj['downloadable'] = false;
+        obj['is_supply'] = true;
         obj['available_for_view'] = true;
         obj['available_for_sale'] = true;
-        obj['weight'] = 0;
         obj['quantity'] = 0;
-        obj['downloadable'] = false;
-        obj['type'] = 'simple';
-        obj['viewed_count'] = 0;
-        obj['ordered_count'] = 0;
+        obj['weight'] = 0;
         obj['attribute_set_name'] = 'Default';
+        obj['auto_renew'] = false;
+        obj['when_made'] = 'made_to_order';
+        obj['taxable'] = true;
         obj['shipping_template_id'] = 0;
         obj['listing_type'] = 'FixedPrice';
         obj['clear_cache'] = true;
-        obj['taxable'] = true;
-        obj['is_virtual'] = false;
-        obj['when_made'] = 'made_to_order';
-        obj['is_supply'] = true;
-        obj['auto_renew'] = false;
+        obj['viewed_count'] = 0;
+        obj['ordered_count'] = 0;
     }
 
     /**
@@ -91,41 +91,47 @@ class ProductAdd {
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], 'String');
             }
-            if (data.hasOwnProperty('sku')) {
-                obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
             }
-            if (data.hasOwnProperty('old_price')) {
-                obj['old_price'] = ApiClient.convertToType(data['old_price'], 'Number');
+            if (data.hasOwnProperty('sku')) {
+                obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
             }
-            if (data.hasOwnProperty('special_price')) {
-                obj['special_price'] = ApiClient.convertToType(data['special_price'], 'Number');
+            if (data.hasOwnProperty('short_description')) {
+                obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String');
             }
-            if (data.hasOwnProperty('cost_price')) {
-                obj['cost_price'] = ApiClient.convertToType(data['cost_price'], 'Number');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
-            if (data.hasOwnProperty('fixed_cost_shipping_price')) {
-                obj['fixed_cost_shipping_price'] = ApiClient.convertToType(data['fixed_cost_shipping_price'], 'Number');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
-            if (data.hasOwnProperty('sprice_create')) {
-                obj['sprice_create'] = ApiClient.convertToType(data['sprice_create'], 'String');
+            if (data.hasOwnProperty('visible')) {
+                obj['visible'] = ApiClient.convertToType(data['visible'], 'String');
             }
-            if (data.hasOwnProperty('sprice_modified')) {
-                obj['sprice_modified'] = ApiClient.convertToType(data['sprice_modified'], 'String');
+            if (data.hasOwnProperty('category_id')) {
+                obj['category_id'] = ApiClient.convertToType(data['category_id'], 'String');
             }
-            if (data.hasOwnProperty('sprice_expire')) {
-                obj['sprice_expire'] = ApiClient.convertToType(data['sprice_expire'], 'String');
+            if (data.hasOwnProperty('categories_ids')) {
+                obj['categories_ids'] = ApiClient.convertToType(data['categories_ids'], 'String');
             }
-            if (data.hasOwnProperty('tier_prices')) {
-                obj['tier_prices'] = ApiClient.convertToType(data['tier_prices'], [ProductAddTierPricesInner]);
+            if (data.hasOwnProperty('product_class')) {
+                obj['product_class'] = ApiClient.convertToType(data['product_class'], 'String');
             }
-            if (data.hasOwnProperty('group_prices')) {
-                obj['group_prices'] = ApiClient.convertToType(data['group_prices'], [ProductAddGroupPricesInner]);
+            if (data.hasOwnProperty('product_type')) {
+                obj['product_type'] = ApiClient.convertToType(data['product_type'], 'String');
+            }
+            if (data.hasOwnProperty('is_virtual')) {
+                obj['is_virtual'] = ApiClient.convertToType(data['is_virtual'], 'Boolean');
+            }
+            if (data.hasOwnProperty('downloadable')) {
+                obj['downloadable'] = ApiClient.convertToType(data['downloadable'], 'Boolean');
+            }
+            if (data.hasOwnProperty('is_supply')) {
+                obj['is_supply'] = ApiClient.convertToType(data['is_supply'], 'Boolean');
             }
             if (data.hasOwnProperty('available_for_view')) {
                 obj['available_for_view'] = ApiClient.convertToType(data['available_for_view'], 'Boolean');
@@ -133,8 +139,68 @@ class ProductAdd {
             if (data.hasOwnProperty('available_for_sale')) {
                 obj['available_for_sale'] = ApiClient.convertToType(data['available_for_sale'], 'Boolean');
             }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            }
+            if (data.hasOwnProperty('stores_ids')) {
+                obj['stores_ids'] = ApiClient.convertToType(data['stores_ids'], 'String');
+            }
+            if (data.hasOwnProperty('lang_id')) {
+                obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
+            }
+            if (data.hasOwnProperty('old_price')) {
+                obj['old_price'] = ApiClient.convertToType(data['old_price'], 'Number');
+            }
+            if (data.hasOwnProperty('special_price')) {
+                obj['special_price'] = ApiClient.convertToType(data['special_price'], 'Number');
+            }
+            if (data.hasOwnProperty('wholesale_price')) {
+                obj['wholesale_price'] = ApiClient.convertToType(data['wholesale_price'], 'Number');
+            }
+            if (data.hasOwnProperty('cost_price')) {
+                obj['cost_price'] = ApiClient.convertToType(data['cost_price'], 'Number');
+            }
+            if (data.hasOwnProperty('fixed_cost_shipping_price')) {
+                obj['fixed_cost_shipping_price'] = ApiClient.convertToType(data['fixed_cost_shipping_price'], 'Number');
+            }
+            if (data.hasOwnProperty('tier_prices')) {
+                obj['tier_prices'] = ApiClient.convertToType(data['tier_prices'], [ProductAddTierPricesInner]);
+            }
+            if (data.hasOwnProperty('group_prices')) {
+                obj['group_prices'] = ApiClient.convertToType(data['group_prices'], [ProductAddGroupPricesInner]);
+            }
+            if (data.hasOwnProperty('buyitnow_price')) {
+                obj['buyitnow_price'] = ApiClient.convertToType(data['buyitnow_price'], 'Number');
+            }
+            if (data.hasOwnProperty('reserve_price')) {
+                obj['reserve_price'] = ApiClient.convertToType(data['reserve_price'], 'Number');
+            }
+            if (data.hasOwnProperty('quantity')) {
+                obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
+            }
+            if (data.hasOwnProperty('in_stock')) {
+                obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
+            }
+            if (data.hasOwnProperty('manage_stock')) {
+                obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
+            }
+            if (data.hasOwnProperty('warehouse_id')) {
+                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
+            }
+            if (data.hasOwnProperty('backorder_status')) {
+                obj['backorder_status'] = ApiClient.convertToType(data['backorder_status'], 'String');
+            }
+            if (data.hasOwnProperty('min_order_quantity')) {
+                obj['min_order_quantity'] = ApiClient.convertToType(data['min_order_quantity'], 'Number');
+            }
+            if (data.hasOwnProperty('max_order_quantity')) {
+                obj['max_order_quantity'] = ApiClient.convertToType(data['max_order_quantity'], 'Number');
+            }
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
+            }
+            if (data.hasOwnProperty('weight_unit')) {
+                obj['weight_unit'] = ApiClient.convertToType(data['weight_unit'], 'String');
             }
             if (data.hasOwnProperty('width')) {
                 obj['width'] = ApiClient.convertToType(data['width'], 'Number');
@@ -145,128 +211,8 @@ class ProductAdd {
             if (data.hasOwnProperty('length')) {
                 obj['length'] = ApiClient.convertToType(data['length'], 'Number');
             }
-            if (data.hasOwnProperty('weight_unit')) {
-                obj['weight_unit'] = ApiClient.convertToType(data['weight_unit'], 'String');
-            }
             if (data.hasOwnProperty('dimensions_unit')) {
                 obj['dimensions_unit'] = ApiClient.convertToType(data['dimensions_unit'], 'String');
-            }
-            if (data.hasOwnProperty('short_description')) {
-                obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String');
-            }
-            if (data.hasOwnProperty('warehouse_id')) {
-                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
-            }
-            if (data.hasOwnProperty('backorder_status')) {
-                obj['backorder_status'] = ApiClient.convertToType(data['backorder_status'], 'String');
-            }
-            if (data.hasOwnProperty('quantity')) {
-                obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
-            }
-            if (data.hasOwnProperty('downloadable')) {
-                obj['downloadable'] = ApiClient.convertToType(data['downloadable'], 'Boolean');
-            }
-            if (data.hasOwnProperty('wholesale_price')) {
-                obj['wholesale_price'] = ApiClient.convertToType(data['wholesale_price'], 'Number');
-            }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
-            }
-            if (data.hasOwnProperty('manufacturer')) {
-                obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
-            }
-            if (data.hasOwnProperty('manufacturer_id')) {
-                obj['manufacturer_id'] = ApiClient.convertToType(data['manufacturer_id'], 'String');
-            }
-            if (data.hasOwnProperty('categories_ids')) {
-                obj['categories_ids'] = ApiClient.convertToType(data['categories_ids'], 'String');
-            }
-            if (data.hasOwnProperty('related_products_ids')) {
-                obj['related_products_ids'] = ApiClient.convertToType(data['related_products_ids'], 'String');
-            }
-            if (data.hasOwnProperty('up_sell_products_ids')) {
-                obj['up_sell_products_ids'] = ApiClient.convertToType(data['up_sell_products_ids'], 'String');
-            }
-            if (data.hasOwnProperty('cross_sell_products_ids')) {
-                obj['cross_sell_products_ids'] = ApiClient.convertToType(data['cross_sell_products_ids'], 'String');
-            }
-            if (data.hasOwnProperty('tax_class_id')) {
-                obj['tax_class_id'] = ApiClient.convertToType(data['tax_class_id'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
-            }
-            if (data.hasOwnProperty('meta_title')) {
-                obj['meta_title'] = ApiClient.convertToType(data['meta_title'], 'String');
-            }
-            if (data.hasOwnProperty('meta_keywords')) {
-                obj['meta_keywords'] = ApiClient.convertToType(data['meta_keywords'], 'String');
-            }
-            if (data.hasOwnProperty('meta_description')) {
-                obj['meta_description'] = ApiClient.convertToType(data['meta_description'], 'String');
-            }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
-            }
-            if (data.hasOwnProperty('lang_id')) {
-                obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
-            }
-            if (data.hasOwnProperty('stores_ids')) {
-                obj['stores_ids'] = ApiClient.convertToType(data['stores_ids'], 'String');
-            }
-            if (data.hasOwnProperty('category_id')) {
-                obj['category_id'] = ApiClient.convertToType(data['category_id'], 'String');
-            }
-            if (data.hasOwnProperty('viewed_count')) {
-                obj['viewed_count'] = ApiClient.convertToType(data['viewed_count'], 'Number');
-            }
-            if (data.hasOwnProperty('ordered_count')) {
-                obj['ordered_count'] = ApiClient.convertToType(data['ordered_count'], 'Number');
-            }
-            if (data.hasOwnProperty('attribute_set_name')) {
-                obj['attribute_set_name'] = ApiClient.convertToType(data['attribute_set_name'], 'String');
-            }
-            if (data.hasOwnProperty('attribute_name')) {
-                obj['attribute_name'] = ApiClient.convertToType(data['attribute_name'], 'String');
-            }
-            if (data.hasOwnProperty('shipping_template_id')) {
-                obj['shipping_template_id'] = ApiClient.convertToType(data['shipping_template_id'], 'Number');
-            }
-            if (data.hasOwnProperty('production_partner_ids')) {
-                obj['production_partner_ids'] = ApiClient.convertToType(data['production_partner_ids'], 'String');
-            }
-            if (data.hasOwnProperty('condition')) {
-                obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
-            }
-            if (data.hasOwnProperty('listing_duration')) {
-                obj['listing_duration'] = ApiClient.convertToType(data['listing_duration'], 'String');
-            }
-            if (data.hasOwnProperty('listing_type')) {
-                obj['listing_type'] = ApiClient.convertToType(data['listing_type'], 'String');
-            }
-            if (data.hasOwnProperty('payment_methods')) {
-                obj['payment_methods'] = ApiClient.convertToType(data['payment_methods'], ['String']);
-            }
-            if (data.hasOwnProperty('return_accepted')) {
-                obj['return_accepted'] = ApiClient.convertToType(data['return_accepted'], 'Boolean');
-            }
-            if (data.hasOwnProperty('shipping_details')) {
-                obj['shipping_details'] = ApiClient.convertToType(data['shipping_details'], [ProductAddShippingDetailsInner]);
-            }
-            if (data.hasOwnProperty('paypal_email')) {
-                obj['paypal_email'] = ApiClient.convertToType(data['paypal_email'], 'String');
-            }
-            if (data.hasOwnProperty('seller_profiles')) {
-                obj['seller_profiles'] = ProductAddSellerProfiles.constructFromObject(data['seller_profiles']);
-            }
-            if (data.hasOwnProperty('package_details')) {
-                obj['package_details'] = ProductAddPackageDetails.constructFromObject(data['package_details']);
-            }
-            if (data.hasOwnProperty('best_offer')) {
-                obj['best_offer'] = ProductAddBestOffer.constructFromObject(data['best_offer']);
-            }
-            if (data.hasOwnProperty('sales_tax')) {
-                obj['sales_tax'] = ProductAddSalesTax.constructFromObject(data['sales_tax']);
             }
             if (data.hasOwnProperty('barcode')) {
                 obj['barcode'] = ApiClient.convertToType(data['barcode'], 'String');
@@ -280,8 +226,35 @@ class ProductAdd {
             if (data.hasOwnProperty('isbn')) {
                 obj['isbn'] = ApiClient.convertToType(data['isbn'], 'String');
             }
-            if (data.hasOwnProperty('specifics')) {
-                obj['specifics'] = ApiClient.convertToType(data['specifics'], [ProductAddSpecificsInner]);
+            if (data.hasOwnProperty('gtin')) {
+                obj['gtin'] = ApiClient.convertToType(data['gtin'], 'String');
+            }
+            if (data.hasOwnProperty('mpn')) {
+                obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
+            }
+            if (data.hasOwnProperty('asin')) {
+                obj['asin'] = ApiClient.convertToType(data['asin'], 'String');
+            }
+            if (data.hasOwnProperty('product_reference')) {
+                obj['product_reference'] = ApiClient.convertToType(data['product_reference'], 'String');
+            }
+            if (data.hasOwnProperty('harmonized_system_code')) {
+                obj['harmonized_system_code'] = ApiClient.convertToType(data['harmonized_system_code'], 'String');
+            }
+            if (data.hasOwnProperty('country_of_origin')) {
+                obj['country_of_origin'] = ApiClient.convertToType(data['country_of_origin'], 'String');
+            }
+            if (data.hasOwnProperty('manufacturer')) {
+                obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
+            }
+            if (data.hasOwnProperty('manufacturer_id')) {
+                obj['manufacturer_id'] = ApiClient.convertToType(data['manufacturer_id'], 'String');
+            }
+            if (data.hasOwnProperty('manufacturer_info')) {
+                obj['manufacturer_info'] = ProductAddManufacturerInfo.constructFromObject(data['manufacturer_info']);
+            }
+            if (data.hasOwnProperty('brand_name')) {
+                obj['brand_name'] = ApiClient.convertToType(data['brand_name'], 'String');
             }
             if (data.hasOwnProperty('image_url')) {
                 obj['image_url'] = ApiClient.convertToType(data['image_url'], 'String');
@@ -292,95 +265,113 @@ class ProductAdd {
             if (data.hasOwnProperty('additional_image_urls')) {
                 obj['additional_image_urls'] = ApiClient.convertToType(data['additional_image_urls'], ['String']);
             }
-            if (data.hasOwnProperty('reserve_price')) {
-                obj['reserve_price'] = ApiClient.convertToType(data['reserve_price'], 'Number');
-            }
-            if (data.hasOwnProperty('buyitnow_price')) {
-                obj['buyitnow_price'] = ApiClient.convertToType(data['buyitnow_price'], 'Number');
-            }
-            if (data.hasOwnProperty('condition_description')) {
-                obj['condition_description'] = ApiClient.convertToType(data['condition_description'], 'String');
-            }
-            if (data.hasOwnProperty('auction_confidentiality_level')) {
-                obj['auction_confidentiality_level'] = ApiClient.convertToType(data['auction_confidentiality_level'], 'String');
-            }
-            if (data.hasOwnProperty('logistic_info')) {
-                obj['logistic_info'] = ApiClient.convertToType(data['logistic_info'], [ProductAddLogisticInfoInner]);
-            }
-            if (data.hasOwnProperty('avail_from')) {
-                obj['avail_from'] = ApiClient.convertToType(data['avail_from'], 'String');
-            }
-            if (data.hasOwnProperty('tags')) {
-                obj['tags'] = ApiClient.convertToType(data['tags'], 'String');
-            }
-            if (data.hasOwnProperty('clear_cache')) {
-                obj['clear_cache'] = ApiClient.convertToType(data['clear_cache'], 'Boolean');
-            }
-            if (data.hasOwnProperty('asin')) {
-                obj['asin'] = ApiClient.convertToType(data['asin'], 'String');
-            }
-            if (data.hasOwnProperty('gtin')) {
-                obj['gtin'] = ApiClient.convertToType(data['gtin'], 'String');
-            }
-            if (data.hasOwnProperty('mpn')) {
-                obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
-            }
-            if (data.hasOwnProperty('taxable')) {
-                obj['taxable'] = ApiClient.convertToType(data['taxable'], 'Boolean');
-            }
-            if (data.hasOwnProperty('visible')) {
-                obj['visible'] = ApiClient.convertToType(data['visible'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
-            }
-            if (data.hasOwnProperty('seo_url')) {
-                obj['seo_url'] = ApiClient.convertToType(data['seo_url'], 'String');
-            }
-            if (data.hasOwnProperty('product_class')) {
-                obj['product_class'] = ApiClient.convertToType(data['product_class'], 'String');
-            }
-            if (data.hasOwnProperty('product_type')) {
-                obj['product_type'] = ApiClient.convertToType(data['product_type'], 'String');
-            }
-            if (data.hasOwnProperty('marketplace_item_properties')) {
-                obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], 'String');
-            }
-            if (data.hasOwnProperty('manage_stock')) {
-                obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
-            }
-            if (data.hasOwnProperty('harmonized_system_code')) {
-                obj['harmonized_system_code'] = ApiClient.convertToType(data['harmonized_system_code'], 'String');
-            }
-            if (data.hasOwnProperty('country_of_origin')) {
-                obj['country_of_origin'] = ApiClient.convertToType(data['country_of_origin'], 'String');
-            }
             if (data.hasOwnProperty('files')) {
                 obj['files'] = ApiClient.convertToType(data['files'], [ProductAddFilesInner]);
+            }
+            if (data.hasOwnProperty('size_chart')) {
+                obj['size_chart'] = ProductAddSizeChart.constructFromObject(data['size_chart']);
+            }
+            if (data.hasOwnProperty('related_products_ids')) {
+                obj['related_products_ids'] = ApiClient.convertToType(data['related_products_ids'], 'String');
+            }
+            if (data.hasOwnProperty('up_sell_products_ids')) {
+                obj['up_sell_products_ids'] = ApiClient.convertToType(data['up_sell_products_ids'], 'String');
+            }
+            if (data.hasOwnProperty('cross_sell_products_ids')) {
+                obj['cross_sell_products_ids'] = ApiClient.convertToType(data['cross_sell_products_ids'], 'String');
+            }
+            if (data.hasOwnProperty('attribute_set_name')) {
+                obj['attribute_set_name'] = ApiClient.convertToType(data['attribute_set_name'], 'String');
+            }
+            if (data.hasOwnProperty('attribute_name')) {
+                obj['attribute_name'] = ApiClient.convertToType(data['attribute_name'], 'String');
             }
             if (data.hasOwnProperty('search_keywords')) {
                 obj['search_keywords'] = ApiClient.convertToType(data['search_keywords'], 'String');
             }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            if (data.hasOwnProperty('tags')) {
+                obj['tags'] = ApiClient.convertToType(data['tags'], 'String');
             }
-            if (data.hasOwnProperty('brand_name')) {
-                obj['brand_name'] = ApiClient.convertToType(data['brand_name'], 'String');
+            if (data.hasOwnProperty('materials')) {
+                obj['materials'] = ApiClient.convertToType(data['materials'], ['String']);
             }
-            if (data.hasOwnProperty('is_virtual')) {
-                obj['is_virtual'] = ApiClient.convertToType(data['is_virtual'], 'Boolean');
+            if (data.hasOwnProperty('certifications')) {
+                obj['certifications'] = ApiClient.convertToType(data['certifications'], [ProductAddCertificationsInner]);
+            }
+            if (data.hasOwnProperty('specifics')) {
+                obj['specifics'] = ApiClient.convertToType(data['specifics'], [ProductAddSpecificsInner]);
+            }
+            if (data.hasOwnProperty('avail_from')) {
+                obj['avail_from'] = ApiClient.convertToType(data['avail_from'], 'String');
+            }
+            if (data.hasOwnProperty('sprice_create')) {
+                obj['sprice_create'] = ApiClient.convertToType(data['sprice_create'], 'String');
+            }
+            if (data.hasOwnProperty('sprice_modified')) {
+                obj['sprice_modified'] = ApiClient.convertToType(data['sprice_modified'], 'String');
+            }
+            if (data.hasOwnProperty('sprice_expire')) {
+                obj['sprice_expire'] = ApiClient.convertToType(data['sprice_expire'], 'String');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+            }
+            if (data.hasOwnProperty('auto_renew')) {
+                obj['auto_renew'] = ApiClient.convertToType(data['auto_renew'], 'Boolean');
+            }
+            if (data.hasOwnProperty('when_made')) {
+                obj['when_made'] = ApiClient.convertToType(data['when_made'], 'String');
+            }
+            if (data.hasOwnProperty('meta_title')) {
+                obj['meta_title'] = ApiClient.convertToType(data['meta_title'], 'String');
+            }
+            if (data.hasOwnProperty('meta_keywords')) {
+                obj['meta_keywords'] = ApiClient.convertToType(data['meta_keywords'], 'String');
+            }
+            if (data.hasOwnProperty('meta_description')) {
+                obj['meta_description'] = ApiClient.convertToType(data['meta_description'], 'String');
+            }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('seo_url')) {
+                obj['seo_url'] = ApiClient.convertToType(data['seo_url'], 'String');
+            }
+            if (data.hasOwnProperty('tax_class_id')) {
+                obj['tax_class_id'] = ApiClient.convertToType(data['tax_class_id'], 'String');
+            }
+            if (data.hasOwnProperty('taxable')) {
+                obj['taxable'] = ApiClient.convertToType(data['taxable'], 'Boolean');
+            }
+            if (data.hasOwnProperty('sales_tax')) {
+                obj['sales_tax'] = ProductAddSalesTax.constructFromObject(data['sales_tax']);
+            }
+            if (data.hasOwnProperty('condition')) {
+                obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
+            }
+            if (data.hasOwnProperty('condition_description')) {
+                obj['condition_description'] = ApiClient.convertToType(data['condition_description'], 'String');
+            }
+            if (data.hasOwnProperty('allow_display_condition')) {
+                obj['allow_display_condition'] = ApiClient.convertToType(data['allow_display_condition'], 'Boolean');
+            }
+            if (data.hasOwnProperty('payment_methods')) {
+                obj['payment_methods'] = ApiClient.convertToType(data['payment_methods'], ['String']);
+            }
+            if (data.hasOwnProperty('paypal_email')) {
+                obj['paypal_email'] = ApiClient.convertToType(data['paypal_email'], 'String');
+            }
+            if (data.hasOwnProperty('shipping_template_id')) {
+                obj['shipping_template_id'] = ApiClient.convertToType(data['shipping_template_id'], 'Number');
+            }
+            if (data.hasOwnProperty('shipping_details')) {
+                obj['shipping_details'] = ApiClient.convertToType(data['shipping_details'], [ProductAddShippingDetailsInner]);
             }
             if (data.hasOwnProperty('is_free_shipping')) {
                 obj['is_free_shipping'] = ApiClient.convertToType(data['is_free_shipping'], 'Boolean');
             }
-            if (data.hasOwnProperty('in_stock')) {
-                obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
-            }
             if (data.hasOwnProperty('delivery_code')) {
                 obj['delivery_code'] = ApiClient.convertToType(data['delivery_code'], 'String');
-            }
-            if (data.hasOwnProperty('product_reference')) {
-                obj['product_reference'] = ApiClient.convertToType(data['product_reference'], 'String');
             }
             if (data.hasOwnProperty('delivery_type')) {
                 obj['delivery_type'] = ApiClient.convertToType(data['delivery_type'], 'String');
@@ -388,38 +379,47 @@ class ProductAdd {
             if (data.hasOwnProperty('delivery_time')) {
                 obj['delivery_time'] = ApiClient.convertToType(data['delivery_time'], 'Number');
             }
-            if (data.hasOwnProperty('size_chart')) {
-                obj['size_chart'] = ProductAddSizeChart.constructFromObject(data['size_chart']);
-            }
-            if (data.hasOwnProperty('certifications')) {
-                obj['certifications'] = ApiClient.convertToType(data['certifications'], [ProductAddCertificationsInner]);
-            }
             if (data.hasOwnProperty('delivery_option_ids')) {
                 obj['delivery_option_ids'] = ApiClient.convertToType(data['delivery_option_ids'], 'String');
             }
-            if (data.hasOwnProperty('manufacturer_info')) {
-                obj['manufacturer_info'] = ProductAddManufacturerInfo.constructFromObject(data['manufacturer_info']);
+            if (data.hasOwnProperty('package_details')) {
+                obj['package_details'] = ProductAddPackageDetails.constructFromObject(data['package_details']);
             }
-            if (data.hasOwnProperty('when_made')) {
-                obj['when_made'] = ApiClient.convertToType(data['when_made'], 'String');
+            if (data.hasOwnProperty('logistic_info')) {
+                obj['logistic_info'] = ApiClient.convertToType(data['logistic_info'], [ProductAddLogisticInfoInner]);
             }
-            if (data.hasOwnProperty('is_supply')) {
-                obj['is_supply'] = ApiClient.convertToType(data['is_supply'], 'Boolean');
+            if (data.hasOwnProperty('listing_duration')) {
+                obj['listing_duration'] = ApiClient.convertToType(data['listing_duration'], 'String');
             }
-            if (data.hasOwnProperty('materials')) {
-                obj['materials'] = ApiClient.convertToType(data['materials'], ['String']);
+            if (data.hasOwnProperty('listing_type')) {
+                obj['listing_type'] = ApiClient.convertToType(data['listing_type'], 'String');
             }
-            if (data.hasOwnProperty('auto_renew')) {
-                obj['auto_renew'] = ApiClient.convertToType(data['auto_renew'], 'Boolean');
+            if (data.hasOwnProperty('return_accepted')) {
+                obj['return_accepted'] = ApiClient.convertToType(data['return_accepted'], 'Boolean');
             }
-            if (data.hasOwnProperty('allow_display_condition')) {
-                obj['allow_display_condition'] = ApiClient.convertToType(data['allow_display_condition'], 'Boolean');
+            if (data.hasOwnProperty('seller_profiles')) {
+                obj['seller_profiles'] = ProductAddSellerProfiles.constructFromObject(data['seller_profiles']);
             }
-            if (data.hasOwnProperty('min_order_quantity')) {
-                obj['min_order_quantity'] = ApiClient.convertToType(data['min_order_quantity'], 'Number');
+            if (data.hasOwnProperty('auction_confidentiality_level')) {
+                obj['auction_confidentiality_level'] = ApiClient.convertToType(data['auction_confidentiality_level'], 'String');
             }
-            if (data.hasOwnProperty('max_order_quantity')) {
-                obj['max_order_quantity'] = ApiClient.convertToType(data['max_order_quantity'], 'Number');
+            if (data.hasOwnProperty('best_offer')) {
+                obj['best_offer'] = ProductAddBestOffer.constructFromObject(data['best_offer']);
+            }
+            if (data.hasOwnProperty('production_partner_ids')) {
+                obj['production_partner_ids'] = ApiClient.convertToType(data['production_partner_ids'], 'String');
+            }
+            if (data.hasOwnProperty('marketplace_item_properties')) {
+                obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], 'String');
+            }
+            if (data.hasOwnProperty('clear_cache')) {
+                obj['clear_cache'] = ApiClient.convertToType(data['clear_cache'], 'Boolean');
+            }
+            if (data.hasOwnProperty('viewed_count')) {
+                obj['viewed_count'] = ApiClient.convertToType(data['viewed_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ordered_count')) {
+                obj['ordered_count'] = ApiClient.convertToType(data['ordered_count'], 'Number');
             }
         }
         return obj;
@@ -446,24 +446,56 @@ class ProductAdd {
             throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
         }
         // ensure the json data is a string
-        if (data['sku'] && !(typeof data['sku'] === 'string' || data['sku'] instanceof String)) {
-            throw new Error("Expected the field `sku` to be a primitive type in the JSON string but got " + data['sku']);
-        }
-        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
         }
         // ensure the json data is a string
-        if (data['sprice_create'] && !(typeof data['sprice_create'] === 'string' || data['sprice_create'] instanceof String)) {
-            throw new Error("Expected the field `sprice_create` to be a primitive type in the JSON string but got " + data['sprice_create']);
+        if (data['sku'] && !(typeof data['sku'] === 'string' || data['sku'] instanceof String)) {
+            throw new Error("Expected the field `sku` to be a primitive type in the JSON string but got " + data['sku']);
         }
         // ensure the json data is a string
-        if (data['sprice_modified'] && !(typeof data['sprice_modified'] === 'string' || data['sprice_modified'] instanceof String)) {
-            throw new Error("Expected the field `sprice_modified` to be a primitive type in the JSON string but got " + data['sprice_modified']);
+        if (data['short_description'] && !(typeof data['short_description'] === 'string' || data['short_description'] instanceof String)) {
+            throw new Error("Expected the field `short_description` to be a primitive type in the JSON string but got " + data['short_description']);
         }
         // ensure the json data is a string
-        if (data['sprice_expire'] && !(typeof data['sprice_expire'] === 'string' || data['sprice_expire'] instanceof String)) {
-            throw new Error("Expected the field `sprice_expire` to be a primitive type in the JSON string but got " + data['sprice_expire']);
+        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
+            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
+        }
+        // ensure the json data is a string
+        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
+            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
+        }
+        // ensure the json data is a string
+        if (data['visible'] && !(typeof data['visible'] === 'string' || data['visible'] instanceof String)) {
+            throw new Error("Expected the field `visible` to be a primitive type in the JSON string but got " + data['visible']);
+        }
+        // ensure the json data is a string
+        if (data['category_id'] && !(typeof data['category_id'] === 'string' || data['category_id'] instanceof String)) {
+            throw new Error("Expected the field `category_id` to be a primitive type in the JSON string but got " + data['category_id']);
+        }
+        // ensure the json data is a string
+        if (data['categories_ids'] && !(typeof data['categories_ids'] === 'string' || data['categories_ids'] instanceof String)) {
+            throw new Error("Expected the field `categories_ids` to be a primitive type in the JSON string but got " + data['categories_ids']);
+        }
+        // ensure the json data is a string
+        if (data['product_class'] && !(typeof data['product_class'] === 'string' || data['product_class'] instanceof String)) {
+            throw new Error("Expected the field `product_class` to be a primitive type in the JSON string but got " + data['product_class']);
+        }
+        // ensure the json data is a string
+        if (data['product_type'] && !(typeof data['product_type'] === 'string' || data['product_type'] instanceof String)) {
+            throw new Error("Expected the field `product_type` to be a primitive type in the JSON string but got " + data['product_type']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
+        if (data['stores_ids'] && !(typeof data['stores_ids'] === 'string' || data['stores_ids'] instanceof String)) {
+            throw new Error("Expected the field `stores_ids` to be a primitive type in the JSON string but got " + data['stores_ids']);
+        }
+        // ensure the json data is a string
+        if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
+            throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
         }
         if (data['tier_prices']) { // data not null
             // ensure the json data is an array
@@ -486,18 +518,6 @@ class ProductAdd {
             };
         }
         // ensure the json data is a string
-        if (data['weight_unit'] && !(typeof data['weight_unit'] === 'string' || data['weight_unit'] instanceof String)) {
-            throw new Error("Expected the field `weight_unit` to be a primitive type in the JSON string but got " + data['weight_unit']);
-        }
-        // ensure the json data is a string
-        if (data['dimensions_unit'] && !(typeof data['dimensions_unit'] === 'string' || data['dimensions_unit'] instanceof String)) {
-            throw new Error("Expected the field `dimensions_unit` to be a primitive type in the JSON string but got " + data['dimensions_unit']);
-        }
-        // ensure the json data is a string
-        if (data['short_description'] && !(typeof data['short_description'] === 'string' || data['short_description'] instanceof String)) {
-            throw new Error("Expected the field `short_description` to be a primitive type in the JSON string but got " + data['short_description']);
-        }
-        // ensure the json data is a string
         if (data['warehouse_id'] && !(typeof data['warehouse_id'] === 'string' || data['warehouse_id'] instanceof String)) {
             throw new Error("Expected the field `warehouse_id` to be a primitive type in the JSON string but got " + data['warehouse_id']);
         }
@@ -506,8 +526,52 @@ class ProductAdd {
             throw new Error("Expected the field `backorder_status` to be a primitive type in the JSON string but got " + data['backorder_status']);
         }
         // ensure the json data is a string
-        if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
-            throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+        if (data['weight_unit'] && !(typeof data['weight_unit'] === 'string' || data['weight_unit'] instanceof String)) {
+            throw new Error("Expected the field `weight_unit` to be a primitive type in the JSON string but got " + data['weight_unit']);
+        }
+        // ensure the json data is a string
+        if (data['dimensions_unit'] && !(typeof data['dimensions_unit'] === 'string' || data['dimensions_unit'] instanceof String)) {
+            throw new Error("Expected the field `dimensions_unit` to be a primitive type in the JSON string but got " + data['dimensions_unit']);
+        }
+        // ensure the json data is a string
+        if (data['barcode'] && !(typeof data['barcode'] === 'string' || data['barcode'] instanceof String)) {
+            throw new Error("Expected the field `barcode` to be a primitive type in the JSON string but got " + data['barcode']);
+        }
+        // ensure the json data is a string
+        if (data['upc'] && !(typeof data['upc'] === 'string' || data['upc'] instanceof String)) {
+            throw new Error("Expected the field `upc` to be a primitive type in the JSON string but got " + data['upc']);
+        }
+        // ensure the json data is a string
+        if (data['ean'] && !(typeof data['ean'] === 'string' || data['ean'] instanceof String)) {
+            throw new Error("Expected the field `ean` to be a primitive type in the JSON string but got " + data['ean']);
+        }
+        // ensure the json data is a string
+        if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
+            throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
+        }
+        // ensure the json data is a string
+        if (data['gtin'] && !(typeof data['gtin'] === 'string' || data['gtin'] instanceof String)) {
+            throw new Error("Expected the field `gtin` to be a primitive type in the JSON string but got " + data['gtin']);
+        }
+        // ensure the json data is a string
+        if (data['mpn'] && !(typeof data['mpn'] === 'string' || data['mpn'] instanceof String)) {
+            throw new Error("Expected the field `mpn` to be a primitive type in the JSON string but got " + data['mpn']);
+        }
+        // ensure the json data is a string
+        if (data['asin'] && !(typeof data['asin'] === 'string' || data['asin'] instanceof String)) {
+            throw new Error("Expected the field `asin` to be a primitive type in the JSON string but got " + data['asin']);
+        }
+        // ensure the json data is a string
+        if (data['product_reference'] && !(typeof data['product_reference'] === 'string' || data['product_reference'] instanceof String)) {
+            throw new Error("Expected the field `product_reference` to be a primitive type in the JSON string but got " + data['product_reference']);
+        }
+        // ensure the json data is a string
+        if (data['harmonized_system_code'] && !(typeof data['harmonized_system_code'] === 'string' || data['harmonized_system_code'] instanceof String)) {
+            throw new Error("Expected the field `harmonized_system_code` to be a primitive type in the JSON string but got " + data['harmonized_system_code']);
+        }
+        // ensure the json data is a string
+        if (data['country_of_origin'] && !(typeof data['country_of_origin'] === 'string' || data['country_of_origin'] instanceof String)) {
+            throw new Error("Expected the field `country_of_origin` to be a primitive type in the JSON string but got " + data['country_of_origin']);
         }
         // ensure the json data is a string
         if (data['manufacturer'] && !(typeof data['manufacturer'] === 'string' || data['manufacturer'] instanceof String)) {
@@ -517,9 +581,39 @@ class ProductAdd {
         if (data['manufacturer_id'] && !(typeof data['manufacturer_id'] === 'string' || data['manufacturer_id'] instanceof String)) {
             throw new Error("Expected the field `manufacturer_id` to be a primitive type in the JSON string but got " + data['manufacturer_id']);
         }
+        // validate the optional field `manufacturer_info`
+        if (data['manufacturer_info']) { // data not null
+          ProductAddManufacturerInfo.validateJSON(data['manufacturer_info']);
+        }
         // ensure the json data is a string
-        if (data['categories_ids'] && !(typeof data['categories_ids'] === 'string' || data['categories_ids'] instanceof String)) {
-            throw new Error("Expected the field `categories_ids` to be a primitive type in the JSON string but got " + data['categories_ids']);
+        if (data['brand_name'] && !(typeof data['brand_name'] === 'string' || data['brand_name'] instanceof String)) {
+            throw new Error("Expected the field `brand_name` to be a primitive type in the JSON string but got " + data['brand_name']);
+        }
+        // ensure the json data is a string
+        if (data['image_url'] && !(typeof data['image_url'] === 'string' || data['image_url'] instanceof String)) {
+            throw new Error("Expected the field `image_url` to be a primitive type in the JSON string but got " + data['image_url']);
+        }
+        // ensure the json data is a string
+        if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
+            throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['additional_image_urls'])) {
+            throw new Error("Expected the field `additional_image_urls` to be an array in the JSON data but got " + data['additional_image_urls']);
+        }
+        if (data['files']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['files'])) {
+                throw new Error("Expected the field `files` to be an array in the JSON data but got " + data['files']);
+            }
+            // validate the optional field `files` (array)
+            for (const item of data['files']) {
+                ProductAddFilesInner.validateJSON(item);
+            };
+        }
+        // validate the optional field `size_chart`
+        if (data['size_chart']) { // data not null
+          ProductAddSizeChart.validateJSON(data['size_chart']);
         }
         // ensure the json data is a string
         if (data['related_products_ids'] && !(typeof data['related_products_ids'] === 'string' || data['related_products_ids'] instanceof String)) {
@@ -534,12 +628,68 @@ class ProductAdd {
             throw new Error("Expected the field `cross_sell_products_ids` to be a primitive type in the JSON string but got " + data['cross_sell_products_ids']);
         }
         // ensure the json data is a string
-        if (data['tax_class_id'] && !(typeof data['tax_class_id'] === 'string' || data['tax_class_id'] instanceof String)) {
-            throw new Error("Expected the field `tax_class_id` to be a primitive type in the JSON string but got " + data['tax_class_id']);
+        if (data['attribute_set_name'] && !(typeof data['attribute_set_name'] === 'string' || data['attribute_set_name'] instanceof String)) {
+            throw new Error("Expected the field `attribute_set_name` to be a primitive type in the JSON string but got " + data['attribute_set_name']);
         }
         // ensure the json data is a string
-        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
-            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
+        if (data['attribute_name'] && !(typeof data['attribute_name'] === 'string' || data['attribute_name'] instanceof String)) {
+            throw new Error("Expected the field `attribute_name` to be a primitive type in the JSON string but got " + data['attribute_name']);
+        }
+        // ensure the json data is a string
+        if (data['search_keywords'] && !(typeof data['search_keywords'] === 'string' || data['search_keywords'] instanceof String)) {
+            throw new Error("Expected the field `search_keywords` to be a primitive type in the JSON string but got " + data['search_keywords']);
+        }
+        // ensure the json data is a string
+        if (data['tags'] && !(typeof data['tags'] === 'string' || data['tags'] instanceof String)) {
+            throw new Error("Expected the field `tags` to be a primitive type in the JSON string but got " + data['tags']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['materials'])) {
+            throw new Error("Expected the field `materials` to be an array in the JSON data but got " + data['materials']);
+        }
+        if (data['certifications']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['certifications'])) {
+                throw new Error("Expected the field `certifications` to be an array in the JSON data but got " + data['certifications']);
+            }
+            // validate the optional field `certifications` (array)
+            for (const item of data['certifications']) {
+                ProductAddCertificationsInner.validateJSON(item);
+            };
+        }
+        if (data['specifics']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['specifics'])) {
+                throw new Error("Expected the field `specifics` to be an array in the JSON data but got " + data['specifics']);
+            }
+            // validate the optional field `specifics` (array)
+            for (const item of data['specifics']) {
+                ProductAddSpecificsInner.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['avail_from'] && !(typeof data['avail_from'] === 'string' || data['avail_from'] instanceof String)) {
+            throw new Error("Expected the field `avail_from` to be a primitive type in the JSON string but got " + data['avail_from']);
+        }
+        // ensure the json data is a string
+        if (data['sprice_create'] && !(typeof data['sprice_create'] === 'string' || data['sprice_create'] instanceof String)) {
+            throw new Error("Expected the field `sprice_create` to be a primitive type in the JSON string but got " + data['sprice_create']);
+        }
+        // ensure the json data is a string
+        if (data['sprice_modified'] && !(typeof data['sprice_modified'] === 'string' || data['sprice_modified'] instanceof String)) {
+            throw new Error("Expected the field `sprice_modified` to be a primitive type in the JSON string but got " + data['sprice_modified']);
+        }
+        // ensure the json data is a string
+        if (data['sprice_expire'] && !(typeof data['sprice_expire'] === 'string' || data['sprice_expire'] instanceof String)) {
+            throw new Error("Expected the field `sprice_expire` to be a primitive type in the JSON string but got " + data['sprice_expire']);
+        }
+        // ensure the json data is a string
+        if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
+            throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+        }
+        // ensure the json data is a string
+        if (data['when_made'] && !(typeof data['when_made'] === 'string' || data['when_made'] instanceof String)) {
+            throw new Error("Expected the field `when_made` to be a primitive type in the JSON string but got " + data['when_made']);
         }
         // ensure the json data is a string
         if (data['meta_title'] && !(typeof data['meta_title'] === 'string' || data['meta_title'] instanceof String)) {
@@ -558,44 +708,32 @@ class ProductAdd {
             throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
         }
         // ensure the json data is a string
-        if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
-            throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
+        if (data['seo_url'] && !(typeof data['seo_url'] === 'string' || data['seo_url'] instanceof String)) {
+            throw new Error("Expected the field `seo_url` to be a primitive type in the JSON string but got " + data['seo_url']);
         }
         // ensure the json data is a string
-        if (data['stores_ids'] && !(typeof data['stores_ids'] === 'string' || data['stores_ids'] instanceof String)) {
-            throw new Error("Expected the field `stores_ids` to be a primitive type in the JSON string but got " + data['stores_ids']);
+        if (data['tax_class_id'] && !(typeof data['tax_class_id'] === 'string' || data['tax_class_id'] instanceof String)) {
+            throw new Error("Expected the field `tax_class_id` to be a primitive type in the JSON string but got " + data['tax_class_id']);
         }
-        // ensure the json data is a string
-        if (data['category_id'] && !(typeof data['category_id'] === 'string' || data['category_id'] instanceof String)) {
-            throw new Error("Expected the field `category_id` to be a primitive type in the JSON string but got " + data['category_id']);
-        }
-        // ensure the json data is a string
-        if (data['attribute_set_name'] && !(typeof data['attribute_set_name'] === 'string' || data['attribute_set_name'] instanceof String)) {
-            throw new Error("Expected the field `attribute_set_name` to be a primitive type in the JSON string but got " + data['attribute_set_name']);
-        }
-        // ensure the json data is a string
-        if (data['attribute_name'] && !(typeof data['attribute_name'] === 'string' || data['attribute_name'] instanceof String)) {
-            throw new Error("Expected the field `attribute_name` to be a primitive type in the JSON string but got " + data['attribute_name']);
-        }
-        // ensure the json data is a string
-        if (data['production_partner_ids'] && !(typeof data['production_partner_ids'] === 'string' || data['production_partner_ids'] instanceof String)) {
-            throw new Error("Expected the field `production_partner_ids` to be a primitive type in the JSON string but got " + data['production_partner_ids']);
+        // validate the optional field `sales_tax`
+        if (data['sales_tax']) { // data not null
+          ProductAddSalesTax.validateJSON(data['sales_tax']);
         }
         // ensure the json data is a string
         if (data['condition'] && !(typeof data['condition'] === 'string' || data['condition'] instanceof String)) {
             throw new Error("Expected the field `condition` to be a primitive type in the JSON string but got " + data['condition']);
         }
         // ensure the json data is a string
-        if (data['listing_duration'] && !(typeof data['listing_duration'] === 'string' || data['listing_duration'] instanceof String)) {
-            throw new Error("Expected the field `listing_duration` to be a primitive type in the JSON string but got " + data['listing_duration']);
-        }
-        // ensure the json data is a string
-        if (data['listing_type'] && !(typeof data['listing_type'] === 'string' || data['listing_type'] instanceof String)) {
-            throw new Error("Expected the field `listing_type` to be a primitive type in the JSON string but got " + data['listing_type']);
+        if (data['condition_description'] && !(typeof data['condition_description'] === 'string' || data['condition_description'] instanceof String)) {
+            throw new Error("Expected the field `condition_description` to be a primitive type in the JSON string but got " + data['condition_description']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['payment_methods'])) {
             throw new Error("Expected the field `payment_methods` to be an array in the JSON data but got " + data['payment_methods']);
+        }
+        // ensure the json data is a string
+        if (data['paypal_email'] && !(typeof data['paypal_email'] === 'string' || data['paypal_email'] instanceof String)) {
+            throw new Error("Expected the field `paypal_email` to be a primitive type in the JSON string but got " + data['paypal_email']);
         }
         if (data['shipping_details']) { // data not null
             // ensure the json data is an array
@@ -608,70 +746,20 @@ class ProductAdd {
             };
         }
         // ensure the json data is a string
-        if (data['paypal_email'] && !(typeof data['paypal_email'] === 'string' || data['paypal_email'] instanceof String)) {
-            throw new Error("Expected the field `paypal_email` to be a primitive type in the JSON string but got " + data['paypal_email']);
+        if (data['delivery_code'] && !(typeof data['delivery_code'] === 'string' || data['delivery_code'] instanceof String)) {
+            throw new Error("Expected the field `delivery_code` to be a primitive type in the JSON string but got " + data['delivery_code']);
         }
-        // validate the optional field `seller_profiles`
-        if (data['seller_profiles']) { // data not null
-          ProductAddSellerProfiles.validateJSON(data['seller_profiles']);
+        // ensure the json data is a string
+        if (data['delivery_type'] && !(typeof data['delivery_type'] === 'string' || data['delivery_type'] instanceof String)) {
+            throw new Error("Expected the field `delivery_type` to be a primitive type in the JSON string but got " + data['delivery_type']);
+        }
+        // ensure the json data is a string
+        if (data['delivery_option_ids'] && !(typeof data['delivery_option_ids'] === 'string' || data['delivery_option_ids'] instanceof String)) {
+            throw new Error("Expected the field `delivery_option_ids` to be a primitive type in the JSON string but got " + data['delivery_option_ids']);
         }
         // validate the optional field `package_details`
         if (data['package_details']) { // data not null
           ProductAddPackageDetails.validateJSON(data['package_details']);
-        }
-        // validate the optional field `best_offer`
-        if (data['best_offer']) { // data not null
-          ProductAddBestOffer.validateJSON(data['best_offer']);
-        }
-        // validate the optional field `sales_tax`
-        if (data['sales_tax']) { // data not null
-          ProductAddSalesTax.validateJSON(data['sales_tax']);
-        }
-        // ensure the json data is a string
-        if (data['barcode'] && !(typeof data['barcode'] === 'string' || data['barcode'] instanceof String)) {
-            throw new Error("Expected the field `barcode` to be a primitive type in the JSON string but got " + data['barcode']);
-        }
-        // ensure the json data is a string
-        if (data['upc'] && !(typeof data['upc'] === 'string' || data['upc'] instanceof String)) {
-            throw new Error("Expected the field `upc` to be a primitive type in the JSON string but got " + data['upc']);
-        }
-        // ensure the json data is a string
-        if (data['ean'] && !(typeof data['ean'] === 'string' || data['ean'] instanceof String)) {
-            throw new Error("Expected the field `ean` to be a primitive type in the JSON string but got " + data['ean']);
-        }
-        // ensure the json data is a string
-        if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
-            throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
-        }
-        if (data['specifics']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['specifics'])) {
-                throw new Error("Expected the field `specifics` to be an array in the JSON data but got " + data['specifics']);
-            }
-            // validate the optional field `specifics` (array)
-            for (const item of data['specifics']) {
-                ProductAddSpecificsInner.validateJSON(item);
-            };
-        }
-        // ensure the json data is a string
-        if (data['image_url'] && !(typeof data['image_url'] === 'string' || data['image_url'] instanceof String)) {
-            throw new Error("Expected the field `image_url` to be a primitive type in the JSON string but got " + data['image_url']);
-        }
-        // ensure the json data is a string
-        if (data['image_name'] && !(typeof data['image_name'] === 'string' || data['image_name'] instanceof String)) {
-            throw new Error("Expected the field `image_name` to be a primitive type in the JSON string but got " + data['image_name']);
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['additional_image_urls'])) {
-            throw new Error("Expected the field `additional_image_urls` to be an array in the JSON data but got " + data['additional_image_urls']);
-        }
-        // ensure the json data is a string
-        if (data['condition_description'] && !(typeof data['condition_description'] === 'string' || data['condition_description'] instanceof String)) {
-            throw new Error("Expected the field `condition_description` to be a primitive type in the JSON string but got " + data['condition_description']);
-        }
-        // ensure the json data is a string
-        if (data['auction_confidentiality_level'] && !(typeof data['auction_confidentiality_level'] === 'string' || data['auction_confidentiality_level'] instanceof String)) {
-            throw new Error("Expected the field `auction_confidentiality_level` to be a primitive type in the JSON string but got " + data['auction_confidentiality_level']);
         }
         if (data['logistic_info']) { // data not null
             // ensure the json data is an array
@@ -684,120 +772,32 @@ class ProductAdd {
             };
         }
         // ensure the json data is a string
-        if (data['avail_from'] && !(typeof data['avail_from'] === 'string' || data['avail_from'] instanceof String)) {
-            throw new Error("Expected the field `avail_from` to be a primitive type in the JSON string but got " + data['avail_from']);
+        if (data['listing_duration'] && !(typeof data['listing_duration'] === 'string' || data['listing_duration'] instanceof String)) {
+            throw new Error("Expected the field `listing_duration` to be a primitive type in the JSON string but got " + data['listing_duration']);
         }
         // ensure the json data is a string
-        if (data['tags'] && !(typeof data['tags'] === 'string' || data['tags'] instanceof String)) {
-            throw new Error("Expected the field `tags` to be a primitive type in the JSON string but got " + data['tags']);
+        if (data['listing_type'] && !(typeof data['listing_type'] === 'string' || data['listing_type'] instanceof String)) {
+            throw new Error("Expected the field `listing_type` to be a primitive type in the JSON string but got " + data['listing_type']);
+        }
+        // validate the optional field `seller_profiles`
+        if (data['seller_profiles']) { // data not null
+          ProductAddSellerProfiles.validateJSON(data['seller_profiles']);
         }
         // ensure the json data is a string
-        if (data['asin'] && !(typeof data['asin'] === 'string' || data['asin'] instanceof String)) {
-            throw new Error("Expected the field `asin` to be a primitive type in the JSON string but got " + data['asin']);
+        if (data['auction_confidentiality_level'] && !(typeof data['auction_confidentiality_level'] === 'string' || data['auction_confidentiality_level'] instanceof String)) {
+            throw new Error("Expected the field `auction_confidentiality_level` to be a primitive type in the JSON string but got " + data['auction_confidentiality_level']);
+        }
+        // validate the optional field `best_offer`
+        if (data['best_offer']) { // data not null
+          ProductAddBestOffer.validateJSON(data['best_offer']);
         }
         // ensure the json data is a string
-        if (data['gtin'] && !(typeof data['gtin'] === 'string' || data['gtin'] instanceof String)) {
-            throw new Error("Expected the field `gtin` to be a primitive type in the JSON string but got " + data['gtin']);
-        }
-        // ensure the json data is a string
-        if (data['mpn'] && !(typeof data['mpn'] === 'string' || data['mpn'] instanceof String)) {
-            throw new Error("Expected the field `mpn` to be a primitive type in the JSON string but got " + data['mpn']);
-        }
-        // ensure the json data is a string
-        if (data['visible'] && !(typeof data['visible'] === 'string' || data['visible'] instanceof String)) {
-            throw new Error("Expected the field `visible` to be a primitive type in the JSON string but got " + data['visible']);
-        }
-        // ensure the json data is a string
-        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
-            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
-        }
-        // ensure the json data is a string
-        if (data['seo_url'] && !(typeof data['seo_url'] === 'string' || data['seo_url'] instanceof String)) {
-            throw new Error("Expected the field `seo_url` to be a primitive type in the JSON string but got " + data['seo_url']);
-        }
-        // ensure the json data is a string
-        if (data['product_class'] && !(typeof data['product_class'] === 'string' || data['product_class'] instanceof String)) {
-            throw new Error("Expected the field `product_class` to be a primitive type in the JSON string but got " + data['product_class']);
-        }
-        // ensure the json data is a string
-        if (data['product_type'] && !(typeof data['product_type'] === 'string' || data['product_type'] instanceof String)) {
-            throw new Error("Expected the field `product_type` to be a primitive type in the JSON string but got " + data['product_type']);
+        if (data['production_partner_ids'] && !(typeof data['production_partner_ids'] === 'string' || data['production_partner_ids'] instanceof String)) {
+            throw new Error("Expected the field `production_partner_ids` to be a primitive type in the JSON string but got " + data['production_partner_ids']);
         }
         // ensure the json data is a string
         if (data['marketplace_item_properties'] && !(typeof data['marketplace_item_properties'] === 'string' || data['marketplace_item_properties'] instanceof String)) {
             throw new Error("Expected the field `marketplace_item_properties` to be a primitive type in the JSON string but got " + data['marketplace_item_properties']);
-        }
-        // ensure the json data is a string
-        if (data['harmonized_system_code'] && !(typeof data['harmonized_system_code'] === 'string' || data['harmonized_system_code'] instanceof String)) {
-            throw new Error("Expected the field `harmonized_system_code` to be a primitive type in the JSON string but got " + data['harmonized_system_code']);
-        }
-        // ensure the json data is a string
-        if (data['country_of_origin'] && !(typeof data['country_of_origin'] === 'string' || data['country_of_origin'] instanceof String)) {
-            throw new Error("Expected the field `country_of_origin` to be a primitive type in the JSON string but got " + data['country_of_origin']);
-        }
-        if (data['files']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['files'])) {
-                throw new Error("Expected the field `files` to be an array in the JSON data but got " + data['files']);
-            }
-            // validate the optional field `files` (array)
-            for (const item of data['files']) {
-                ProductAddFilesInner.validateJSON(item);
-            };
-        }
-        // ensure the json data is a string
-        if (data['search_keywords'] && !(typeof data['search_keywords'] === 'string' || data['search_keywords'] instanceof String)) {
-            throw new Error("Expected the field `search_keywords` to be a primitive type in the JSON string but got " + data['search_keywords']);
-        }
-        // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
-        if (data['brand_name'] && !(typeof data['brand_name'] === 'string' || data['brand_name'] instanceof String)) {
-            throw new Error("Expected the field `brand_name` to be a primitive type in the JSON string but got " + data['brand_name']);
-        }
-        // ensure the json data is a string
-        if (data['delivery_code'] && !(typeof data['delivery_code'] === 'string' || data['delivery_code'] instanceof String)) {
-            throw new Error("Expected the field `delivery_code` to be a primitive type in the JSON string but got " + data['delivery_code']);
-        }
-        // ensure the json data is a string
-        if (data['product_reference'] && !(typeof data['product_reference'] === 'string' || data['product_reference'] instanceof String)) {
-            throw new Error("Expected the field `product_reference` to be a primitive type in the JSON string but got " + data['product_reference']);
-        }
-        // ensure the json data is a string
-        if (data['delivery_type'] && !(typeof data['delivery_type'] === 'string' || data['delivery_type'] instanceof String)) {
-            throw new Error("Expected the field `delivery_type` to be a primitive type in the JSON string but got " + data['delivery_type']);
-        }
-        // validate the optional field `size_chart`
-        if (data['size_chart']) { // data not null
-          ProductAddSizeChart.validateJSON(data['size_chart']);
-        }
-        if (data['certifications']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['certifications'])) {
-                throw new Error("Expected the field `certifications` to be an array in the JSON data but got " + data['certifications']);
-            }
-            // validate the optional field `certifications` (array)
-            for (const item of data['certifications']) {
-                ProductAddCertificationsInner.validateJSON(item);
-            };
-        }
-        // ensure the json data is a string
-        if (data['delivery_option_ids'] && !(typeof data['delivery_option_ids'] === 'string' || data['delivery_option_ids'] instanceof String)) {
-            throw new Error("Expected the field `delivery_option_ids` to be a primitive type in the JSON string but got " + data['delivery_option_ids']);
-        }
-        // validate the optional field `manufacturer_info`
-        if (data['manufacturer_info']) { // data not null
-          ProductAddManufacturerInfo.validateJSON(data['manufacturer_info']);
-        }
-        // ensure the json data is a string
-        if (data['when_made'] && !(typeof data['when_made'] === 'string' || data['when_made'] instanceof String)) {
-            throw new Error("Expected the field `when_made` to be a primitive type in the JSON string but got " + data['when_made']);
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['materials'])) {
-            throw new Error("Expected the field `materials` to be an array in the JSON data but got " + data['materials']);
         }
 
         return true;
@@ -821,12 +821,6 @@ ProductAdd.prototype['name'] = undefined;
 ProductAdd.prototype['model'] = undefined;
 
 /**
- * Defines product's sku that has to be added
- * @member {String} sku
- */
-ProductAdd.prototype['sku'] = undefined;
-
-/**
  * Defines product's description that has to be added
  * @member {String} description
  */
@@ -839,58 +833,80 @@ ProductAdd.prototype['description'] = undefined;
 ProductAdd.prototype['price'] = undefined;
 
 /**
- * Defines product's old price
- * @member {Number} old_price
+ * Defines product's sku that has to be added
+ * @member {String} sku
  */
-ProductAdd.prototype['old_price'] = undefined;
+ProductAdd.prototype['sku'] = undefined;
 
 /**
- * Defines product's model that has to be added
- * @member {Number} special_price
+ * Defines short description
+ * @member {String} short_description
  */
-ProductAdd.prototype['special_price'] = undefined;
+ProductAdd.prototype['short_description'] = undefined;
 
 /**
- * Defines new product's cost price
- * @member {Number} cost_price
+ * Defines product's type
+ * @member {String} type
+ * @default 'simple'
  */
-ProductAdd.prototype['cost_price'] = undefined;
+ProductAdd.prototype['type'] = 'simple';
 
 /**
- * Specifies product's fixed cost shipping price
- * @member {Number} fixed_cost_shipping_price
+ * Defines product's status
+ * @member {String} status
  */
-ProductAdd.prototype['fixed_cost_shipping_price'] = undefined;
+ProductAdd.prototype['status'] = undefined;
 
 /**
- * Defines the date of special price creation
- * @member {String} sprice_create
+ * Set visibility status
+ * @member {String} visible
  */
-ProductAdd.prototype['sprice_create'] = undefined;
+ProductAdd.prototype['visible'] = undefined;
 
 /**
- * Defines the date of special price modification
- * @member {String} sprice_modified
+ * Defines product add that is specified by category id
+ * @member {String} category_id
  */
-ProductAdd.prototype['sprice_modified'] = undefined;
+ProductAdd.prototype['category_id'] = undefined;
 
 /**
- * Defines the term of special price offer duration
- * @member {String} sprice_expire
+ * Defines product add that is specified by comma-separated categories id
+ * @member {String} categories_ids
  */
-ProductAdd.prototype['sprice_expire'] = undefined;
+ProductAdd.prototype['categories_ids'] = undefined;
 
 /**
- * Defines product's tier prices
- * @member {Array.<module:model/ProductAddTierPricesInner>} tier_prices
+ * A categorization for the product
+ * @member {String} product_class
  */
-ProductAdd.prototype['tier_prices'] = undefined;
+ProductAdd.prototype['product_class'] = undefined;
 
 /**
- * Defines product's group prices
- * @member {Array.<module:model/ProductAddGroupPricesInner>} group_prices
+ * A categorization for the product
+ * @member {String} product_type
  */
-ProductAdd.prototype['group_prices'] = undefined;
+ProductAdd.prototype['product_type'] = undefined;
+
+/**
+ * Defines whether the product is virtual
+ * @member {Boolean} is_virtual
+ * @default false
+ */
+ProductAdd.prototype['is_virtual'] = false;
+
+/**
+ * Defines whether the product is downloadable
+ * @member {Boolean} downloadable
+ * @default false
+ */
+ProductAdd.prototype['downloadable'] = false;
+
+/**
+ * If true, it indicates the product as a supply, otherwise it indicates that it is a finished product.
+ * @member {Boolean} is_supply
+ * @default true
+ */
+ProductAdd.prototype['is_supply'] = true;
 
 /**
  * Specifies the set of visible/invisible products for users
@@ -907,11 +923,132 @@ ProductAdd.prototype['available_for_view'] = true;
 ProductAdd.prototype['available_for_sale'] = true;
 
 /**
+ * Store Id
+ * @member {String} store_id
+ */
+ProductAdd.prototype['store_id'] = undefined;
+
+/**
+ * Assign product to the stores that is specified by comma-separated stores' id
+ * @member {String} stores_ids
+ */
+ProductAdd.prototype['stores_ids'] = undefined;
+
+/**
+ * Language id
+ * @member {String} lang_id
+ */
+ProductAdd.prototype['lang_id'] = undefined;
+
+/**
+ * Defines product's old price
+ * @member {Number} old_price
+ */
+ProductAdd.prototype['old_price'] = undefined;
+
+/**
+ * Defines product's model that has to be added
+ * @member {Number} special_price
+ */
+ProductAdd.prototype['special_price'] = undefined;
+
+/**
+ * Defines product's sale price
+ * @member {Number} wholesale_price
+ */
+ProductAdd.prototype['wholesale_price'] = undefined;
+
+/**
+ * Defines new product's cost price
+ * @member {Number} cost_price
+ */
+ProductAdd.prototype['cost_price'] = undefined;
+
+/**
+ * Specifies product's fixed cost shipping price
+ * @member {Number} fixed_cost_shipping_price
+ */
+ProductAdd.prototype['fixed_cost_shipping_price'] = undefined;
+
+/**
+ * Defines product's tier prices
+ * @member {Array.<module:model/ProductAddTierPricesInner>} tier_prices
+ */
+ProductAdd.prototype['tier_prices'] = undefined;
+
+/**
+ * Defines product's group prices
+ * @member {Array.<module:model/ProductAddGroupPricesInner>} group_prices
+ */
+ProductAdd.prototype['group_prices'] = undefined;
+
+/**
+ * Defines buy it now value
+ * @member {Number} buyitnow_price
+ */
+ProductAdd.prototype['buyitnow_price'] = undefined;
+
+/**
+ * Defines reserve price value
+ * @member {Number} reserve_price
+ */
+ProductAdd.prototype['reserve_price'] = undefined;
+
+/**
+ * Defines product's quantity that has to be added
+ * @member {Number} quantity
+ * @default 0
+ */
+ProductAdd.prototype['quantity'] = 0;
+
+/**
+ * Set stock status
+ * @member {Boolean} in_stock
+ */
+ProductAdd.prototype['in_stock'] = undefined;
+
+/**
+ * Defines inventory tracking for product
+ * @member {Boolean} manage_stock
+ */
+ProductAdd.prototype['manage_stock'] = undefined;
+
+/**
+ * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+ * @member {String} warehouse_id
+ */
+ProductAdd.prototype['warehouse_id'] = undefined;
+
+/**
+ * Set backorder status
+ * @member {String} backorder_status
+ */
+ProductAdd.prototype['backorder_status'] = undefined;
+
+/**
+ * The minimum quantity an order must contain, to be eligible to purchase this product.
+ * @member {Number} min_order_quantity
+ */
+ProductAdd.prototype['min_order_quantity'] = undefined;
+
+/**
+ * The maximum quantity an order can contain when purchasing the product.
+ * @member {Number} max_order_quantity
+ */
+ProductAdd.prototype['max_order_quantity'] = undefined;
+
+/**
  * Weight
  * @member {Number} weight
  * @default 0
  */
 ProductAdd.prototype['weight'] = 0;
+
+/**
+ * Weight Unit
+ * @member {String} weight_unit
+ */
+ProductAdd.prototype['weight_unit'] = undefined;
 
 /**
  * Defines product's width
@@ -933,253 +1070,9 @@ ProductAdd.prototype['length'] = undefined;
 
 /**
  * Weight Unit
- * @member {String} weight_unit
- */
-ProductAdd.prototype['weight_unit'] = undefined;
-
-/**
- * Weight Unit
  * @member {String} dimensions_unit
  */
 ProductAdd.prototype['dimensions_unit'] = undefined;
-
-/**
- * Defines short description
- * @member {String} short_description
- */
-ProductAdd.prototype['short_description'] = undefined;
-
-/**
- * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
- * @member {String} warehouse_id
- */
-ProductAdd.prototype['warehouse_id'] = undefined;
-
-/**
- * Set backorder status
- * @member {String} backorder_status
- */
-ProductAdd.prototype['backorder_status'] = undefined;
-
-/**
- * Defines product's quantity that has to be added
- * @member {Number} quantity
- * @default 0
- */
-ProductAdd.prototype['quantity'] = 0;
-
-/**
- * Defines whether the product is downloadable
- * @member {Boolean} downloadable
- * @default false
- */
-ProductAdd.prototype['downloadable'] = false;
-
-/**
- * Defines product's sale price
- * @member {Number} wholesale_price
- */
-ProductAdd.prototype['wholesale_price'] = undefined;
-
-/**
- * Defines the date of entity creation
- * @member {String} created_at
- */
-ProductAdd.prototype['created_at'] = undefined;
-
-/**
- * Defines product's manufacturer
- * @member {String} manufacturer
- */
-ProductAdd.prototype['manufacturer'] = undefined;
-
-/**
- * Defines product's manufacturer by manufacturer_id
- * @member {String} manufacturer_id
- */
-ProductAdd.prototype['manufacturer_id'] = undefined;
-
-/**
- * Defines product add that is specified by comma-separated categories id
- * @member {String} categories_ids
- */
-ProductAdd.prototype['categories_ids'] = undefined;
-
-/**
- * Defines product's related products ids that has to be added
- * @member {String} related_products_ids
- */
-ProductAdd.prototype['related_products_ids'] = undefined;
-
-/**
- * Defines product's up-sell products ids that has to be added
- * @member {String} up_sell_products_ids
- */
-ProductAdd.prototype['up_sell_products_ids'] = undefined;
-
-/**
- * Defines product's cross-sell products ids that has to be added
- * @member {String} cross_sell_products_ids
- */
-ProductAdd.prototype['cross_sell_products_ids'] = undefined;
-
-/**
- * Defines tax classes where entity has to be added
- * @member {String} tax_class_id
- */
-ProductAdd.prototype['tax_class_id'] = undefined;
-
-/**
- * Defines product's type
- * @member {String} type
- * @default 'simple'
- */
-ProductAdd.prototype['type'] = 'simple';
-
-/**
- * Defines unique meta title for each entity
- * @member {String} meta_title
- */
-ProductAdd.prototype['meta_title'] = undefined;
-
-/**
- * Defines unique meta keywords for each entity
- * @member {String} meta_keywords
- */
-ProductAdd.prototype['meta_keywords'] = undefined;
-
-/**
- * Defines unique meta description of a entity
- * @member {String} meta_description
- */
-ProductAdd.prototype['meta_description'] = undefined;
-
-/**
- * Defines unique product's URL
- * @member {String} url
- */
-ProductAdd.prototype['url'] = undefined;
-
-/**
- * Language id
- * @member {String} lang_id
- */
-ProductAdd.prototype['lang_id'] = undefined;
-
-/**
- * Assign product to the stores that is specified by comma-separated stores' id
- * @member {String} stores_ids
- */
-ProductAdd.prototype['stores_ids'] = undefined;
-
-/**
- * Defines product add that is specified by category id
- * @member {String} category_id
- */
-ProductAdd.prototype['category_id'] = undefined;
-
-/**
- * Specifies the number of product's reviews
- * @member {Number} viewed_count
- * @default 0
- */
-ProductAdd.prototype['viewed_count'] = 0;
-
-/**
- * Defines how many times the product was ordered
- * @member {Number} ordered_count
- * @default 0
- */
-ProductAdd.prototype['ordered_count'] = 0;
-
-/**
- * Defines product’s attribute set name in Magento
- * @member {String} attribute_set_name
- * @default 'Default'
- */
-ProductAdd.prototype['attribute_set_name'] = 'Default';
-
-/**
- * Defines product’s attribute name separated with a comma in Magento
- * @member {String} attribute_name
- */
-ProductAdd.prototype['attribute_name'] = undefined;
-
-/**
- * The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
- * @member {Number} shipping_template_id
- * @default 0
- */
-ProductAdd.prototype['shipping_template_id'] = 0;
-
-/**
- * Defines product's production partner ids that has to be added
- * @member {String} production_partner_ids
- */
-ProductAdd.prototype['production_partner_ids'] = undefined;
-
-/**
- * The human-readable label for the condition (e.g., \"New\").
- * @member {String} condition
- */
-ProductAdd.prototype['condition'] = undefined;
-
-/**
- * Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values.
- * @member {String} listing_duration
- */
-ProductAdd.prototype['listing_duration'] = undefined;
-
-/**
- * Indicates the selling format of the marketplace listing.
- * @member {String} listing_type
- * @default 'FixedPrice'
- */
-ProductAdd.prototype['listing_type'] = 'FixedPrice';
-
-/**
- * Identifies the payment method (such as PayPal) that the seller will accept when the buyer pays for the item. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">payment_methods[0] = string</br>payment_methods[1] = string</br></code></div></div>
- * @member {Array.<String>} payment_methods
- */
-ProductAdd.prototype['payment_methods'] = undefined;
-
-/**
- * Indicates whether the seller allows the buyer to return the item.
- * @member {Boolean} return_accepted
- */
-ProductAdd.prototype['return_accepted'] = undefined;
-
-/**
- * The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>
- * @member {Array.<module:model/ProductAddShippingDetailsInner>} shipping_details
- */
-ProductAdd.prototype['shipping_details'] = undefined;
-
-/**
- * Valid PayPal email address for the PayPal account that the seller will use if they offer PayPal as a payment method for the listing.
- * @member {String} paypal_email
- */
-ProductAdd.prototype['paypal_email'] = undefined;
-
-/**
- * @member {module:model/ProductAddSellerProfiles} seller_profiles
- */
-ProductAdd.prototype['seller_profiles'] = undefined;
-
-/**
- * @member {module:model/ProductAddPackageDetails} package_details
- */
-ProductAdd.prototype['package_details'] = undefined;
-
-/**
- * @member {module:model/ProductAddBestOffer} best_offer
- */
-ProductAdd.prototype['best_offer'] = undefined;
-
-/**
- * @member {module:model/ProductAddSalesTax} sales_tax
- */
-ProductAdd.prototype['sales_tax'] = undefined;
 
 /**
  * A barcode is a unique code composed of numbers used as a product identifier.
@@ -1206,10 +1099,63 @@ ProductAdd.prototype['ean'] = undefined;
 ProductAdd.prototype['isbn'] = undefined;
 
 /**
- * An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
- * @member {Array.<module:model/ProductAddSpecificsInner>} specifics
+ * Global Trade Item Number. An GTIN is an identifier for trade items.
+ * @member {String} gtin
  */
-ProductAdd.prototype['specifics'] = undefined;
+ProductAdd.prototype['gtin'] = undefined;
+
+/**
+ * Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
+ * @member {String} mpn
+ */
+ProductAdd.prototype['mpn'] = undefined;
+
+/**
+ * Amazon Standard Identification Number.
+ * @member {String} asin
+ */
+ProductAdd.prototype['asin'] = undefined;
+
+/**
+ * Groups all variations, that you want to combine into one product.
+ * @member {String} product_reference
+ */
+ProductAdd.prototype['product_reference'] = undefined;
+
+/**
+ * Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+ * @member {String} harmonized_system_code
+ */
+ProductAdd.prototype['harmonized_system_code'] = undefined;
+
+/**
+ * The country where the inventory item was made
+ * @member {String} country_of_origin
+ */
+ProductAdd.prototype['country_of_origin'] = undefined;
+
+/**
+ * Defines product's manufacturer
+ * @member {String} manufacturer
+ */
+ProductAdd.prototype['manufacturer'] = undefined;
+
+/**
+ * Defines product's manufacturer by manufacturer_id
+ * @member {String} manufacturer_id
+ */
+ProductAdd.prototype['manufacturer_id'] = undefined;
+
+/**
+ * @member {module:model/ProductAddManufacturerInfo} manufacturer_info
+ */
+ProductAdd.prototype['manufacturer_info'] = undefined;
+
+/**
+ * Defines product brand name
+ * @member {String} brand_name
+ */
+ProductAdd.prototype['brand_name'] = undefined;
 
 /**
  * Image Url
@@ -1230,40 +1176,52 @@ ProductAdd.prototype['image_name'] = undefined;
 ProductAdd.prototype['additional_image_urls'] = undefined;
 
 /**
- * Defines reserve price value
- * @member {Number} reserve_price
+ * File Url
+ * @member {Array.<module:model/ProductAddFilesInner>} files
  */
-ProductAdd.prototype['reserve_price'] = undefined;
+ProductAdd.prototype['files'] = undefined;
 
 /**
- * Defines buy it now value
- * @member {Number} buyitnow_price
+ * @member {module:model/ProductAddSizeChart} size_chart
  */
-ProductAdd.prototype['buyitnow_price'] = undefined;
+ProductAdd.prototype['size_chart'] = undefined;
 
 /**
- * Detailed description of the product condition.
- * @member {String} condition_description
+ * Defines product's related products ids that has to be added
+ * @member {String} related_products_ids
  */
-ProductAdd.prototype['condition_description'] = undefined;
+ProductAdd.prototype['related_products_ids'] = undefined;
 
 /**
- * This allows buyers to remain anonymous when the bid or buy an item.
- * @member {String} auction_confidentiality_level
+ * Defines product's up-sell products ids that has to be added
+ * @member {String} up_sell_products_ids
  */
-ProductAdd.prototype['auction_confidentiality_level'] = undefined;
+ProductAdd.prototype['up_sell_products_ids'] = undefined;
 
 /**
- * Defines product's logistic channel settings
- * @member {Array.<module:model/ProductAddLogisticInfoInner>} logistic_info
+ * Defines product's cross-sell products ids that has to be added
+ * @member {String} cross_sell_products_ids
  */
-ProductAdd.prototype['logistic_info'] = undefined;
+ProductAdd.prototype['cross_sell_products_ids'] = undefined;
 
 /**
- * Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
- * @member {String} avail_from
+ * Defines product’s attribute set name in Magento
+ * @member {String} attribute_set_name
+ * @default 'Default'
  */
-ProductAdd.prototype['avail_from'] = undefined;
+ProductAdd.prototype['attribute_set_name'] = 'Default';
+
+/**
+ * Defines product’s attribute name separated with a comma in Magento
+ * @member {String} attribute_name
+ */
+ProductAdd.prototype['attribute_name'] = undefined;
+
+/**
+ * Defines unique search keywords
+ * @member {String} search_keywords
+ */
+ProductAdd.prototype['search_keywords'] = undefined;
 
 /**
  * Product tags
@@ -1272,29 +1230,102 @@ ProductAdd.prototype['avail_from'] = undefined;
 ProductAdd.prototype['tags'] = undefined;
 
 /**
- * Is cache clear required
- * @member {Boolean} clear_cache
- * @default true
+ * A list of material strings for materials used in the product.
+ * @member {Array.<String>} materials
  */
-ProductAdd.prototype['clear_cache'] = true;
+ProductAdd.prototype['materials'] = undefined;
 
 /**
- * Amazon Standard Identification Number.
- * @member {String} asin
+ * An array of product certifications. The list of possible certifications can be obtained using the \"<i>category.info</i>\" method (<i>additional_fields->rules->product_certifications</i>).
+ * @member {Array.<module:model/ProductAddCertificationsInner>} certifications
  */
-ProductAdd.prototype['asin'] = undefined;
+ProductAdd.prototype['certifications'] = undefined;
 
 /**
- * Global Trade Item Number. An GTIN is an identifier for trade items.
- * @member {String} gtin
+ * An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+ * @member {Array.<module:model/ProductAddSpecificsInner>} specifics
  */
-ProductAdd.prototype['gtin'] = undefined;
+ProductAdd.prototype['specifics'] = undefined;
 
 /**
- * Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
- * @member {String} mpn
+ * Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
+ * @member {String} avail_from
  */
-ProductAdd.prototype['mpn'] = undefined;
+ProductAdd.prototype['avail_from'] = undefined;
+
+/**
+ * Defines the date of special price creation
+ * @member {String} sprice_create
+ */
+ProductAdd.prototype['sprice_create'] = undefined;
+
+/**
+ * Defines the date of special price modification
+ * @member {String} sprice_modified
+ */
+ProductAdd.prototype['sprice_modified'] = undefined;
+
+/**
+ * Defines the term of special price offer duration
+ * @member {String} sprice_expire
+ */
+ProductAdd.prototype['sprice_expire'] = undefined;
+
+/**
+ * Defines the date of entity creation
+ * @member {String} created_at
+ */
+ProductAdd.prototype['created_at'] = undefined;
+
+/**
+ * When true, automatically renews a listing upon its expiration.
+ * @member {Boolean} auto_renew
+ * @default false
+ */
+ProductAdd.prototype['auto_renew'] = false;
+
+/**
+ * An enumerated string for the era in which the maker made the product.
+ * @member {String} when_made
+ * @default 'made_to_order'
+ */
+ProductAdd.prototype['when_made'] = 'made_to_order';
+
+/**
+ * Defines unique meta title for each entity
+ * @member {String} meta_title
+ */
+ProductAdd.prototype['meta_title'] = undefined;
+
+/**
+ * Defines unique meta keywords for each entity
+ * @member {String} meta_keywords
+ */
+ProductAdd.prototype['meta_keywords'] = undefined;
+
+/**
+ * Defines unique meta description of a entity
+ * @member {String} meta_description
+ */
+ProductAdd.prototype['meta_description'] = undefined;
+
+/**
+ * Defines unique product's URL
+ * @member {String} url
+ */
+ProductAdd.prototype['url'] = undefined;
+
+/**
+ * Defines unique URL for SEO
+ * @member {String} seo_url
+ */
+ProductAdd.prototype['seo_url'] = undefined;
+
+/**
+ * Defines tax classes where entity has to be added
+ * @member {String} tax_class_id
+ */
+ProductAdd.prototype['tax_class_id'] = undefined;
 
 /**
  * Specifies whether a tax is charged
@@ -1304,89 +1335,52 @@ ProductAdd.prototype['mpn'] = undefined;
 ProductAdd.prototype['taxable'] = true;
 
 /**
- * Set visibility status
- * @member {String} visible
+ * @member {module:model/ProductAddSalesTax} sales_tax
  */
-ProductAdd.prototype['visible'] = undefined;
+ProductAdd.prototype['sales_tax'] = undefined;
 
 /**
- * Defines product's status
- * @member {String} status
+ * The human-readable label for the condition (e.g., \"New\").
+ * @member {String} condition
  */
-ProductAdd.prototype['status'] = undefined;
+ProductAdd.prototype['condition'] = undefined;
 
 /**
- * Defines unique URL for SEO
- * @member {String} seo_url
+ * Detailed description of the product condition.
+ * @member {String} condition_description
  */
-ProductAdd.prototype['seo_url'] = undefined;
+ProductAdd.prototype['condition_description'] = undefined;
 
 /**
- * A categorization for the product
- * @member {String} product_class
+ * Flag used to determine whether the product condition is shown to the customer on the product page.
+ * @member {Boolean} allow_display_condition
  */
-ProductAdd.prototype['product_class'] = undefined;
+ProductAdd.prototype['allow_display_condition'] = undefined;
 
 /**
- * A categorization for the product
- * @member {String} product_type
+ * Identifies the payment method (such as PayPal) that the seller will accept when the buyer pays for the item. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">payment_methods[0] = string</br>payment_methods[1] = string</br></code></div></div>
+ * @member {Array.<String>} payment_methods
  */
-ProductAdd.prototype['product_type'] = undefined;
+ProductAdd.prototype['payment_methods'] = undefined;
 
 /**
- * String containing the JSON representation of the supplied data
- * @member {String} marketplace_item_properties
+ * Valid PayPal email address for the PayPal account that the seller will use if they offer PayPal as a payment method for the listing.
+ * @member {String} paypal_email
  */
-ProductAdd.prototype['marketplace_item_properties'] = undefined;
+ProductAdd.prototype['paypal_email'] = undefined;
 
 /**
- * Defines inventory tracking for product
- * @member {Boolean} manage_stock
+ * The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
+ * @member {Number} shipping_template_id
+ * @default 0
  */
-ProductAdd.prototype['manage_stock'] = undefined;
+ProductAdd.prototype['shipping_template_id'] = 0;
 
 /**
- * Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
- * @member {String} harmonized_system_code
+ * The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>
+ * @member {Array.<module:model/ProductAddShippingDetailsInner>} shipping_details
  */
-ProductAdd.prototype['harmonized_system_code'] = undefined;
-
-/**
- * The country where the inventory item was made
- * @member {String} country_of_origin
- */
-ProductAdd.prototype['country_of_origin'] = undefined;
-
-/**
- * File Url
- * @member {Array.<module:model/ProductAddFilesInner>} files
- */
-ProductAdd.prototype['files'] = undefined;
-
-/**
- * Defines unique search keywords
- * @member {String} search_keywords
- */
-ProductAdd.prototype['search_keywords'] = undefined;
-
-/**
- * Store Id
- * @member {String} store_id
- */
-ProductAdd.prototype['store_id'] = undefined;
-
-/**
- * Defines product brand name
- * @member {String} brand_name
- */
-ProductAdd.prototype['brand_name'] = undefined;
-
-/**
- * Defines whether the product is virtual
- * @member {Boolean} is_virtual
- * @default false
- */
-ProductAdd.prototype['is_virtual'] = false;
+ProductAdd.prototype['shipping_details'] = undefined;
 
 /**
  * Specifies product's free shipping flag that has to be added
@@ -1395,22 +1389,10 @@ ProductAdd.prototype['is_virtual'] = false;
 ProductAdd.prototype['is_free_shipping'] = undefined;
 
 /**
- * Set stock status
- * @member {Boolean} in_stock
- */
-ProductAdd.prototype['in_stock'] = undefined;
-
-/**
  * The delivery promise that applies to offer
  * @member {String} delivery_code
  */
 ProductAdd.prototype['delivery_code'] = undefined;
-
-/**
- * Groups all variations, that you want to combine into one product.
- * @member {String} product_reference
- */
-ProductAdd.prototype['product_reference'] = undefined;
 
 /**
  * Defines the type of the delivery.
@@ -1425,71 +1407,89 @@ ProductAdd.prototype['delivery_type'] = undefined;
 ProductAdd.prototype['delivery_time'] = undefined;
 
 /**
- * @member {module:model/ProductAddSizeChart} size_chart
- */
-ProductAdd.prototype['size_chart'] = undefined;
-
-/**
- * An array of product certifications. The list of possible certifications can be obtained using the \"<i>category.info</i>\" method (<i>additional_fields->rules->product_certifications</i>).
- * @member {Array.<module:model/ProductAddCertificationsInner>} certifications
- */
-ProductAdd.prototype['certifications'] = undefined;
-
-/**
  * Defines delivery options for product by ids.
  * @member {String} delivery_option_ids
  */
 ProductAdd.prototype['delivery_option_ids'] = undefined;
 
 /**
- * @member {module:model/ProductAddManufacturerInfo} manufacturer_info
+ * @member {module:model/ProductAddPackageDetails} package_details
  */
-ProductAdd.prototype['manufacturer_info'] = undefined;
+ProductAdd.prototype['package_details'] = undefined;
 
 /**
- * An enumerated string for the era in which the maker made the product.
- * @member {String} when_made
- * @default 'made_to_order'
+ * Defines product's logistic channel settings
+ * @member {Array.<module:model/ProductAddLogisticInfoInner>} logistic_info
  */
-ProductAdd.prototype['when_made'] = 'made_to_order';
+ProductAdd.prototype['logistic_info'] = undefined;
 
 /**
- * If true, it indicates the product as a supply, otherwise it indicates that it is a finished product.
- * @member {Boolean} is_supply
+ * Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values.
+ * @member {String} listing_duration
+ */
+ProductAdd.prototype['listing_duration'] = undefined;
+
+/**
+ * Indicates the selling format of the marketplace listing.
+ * @member {String} listing_type
+ * @default 'FixedPrice'
+ */
+ProductAdd.prototype['listing_type'] = 'FixedPrice';
+
+/**
+ * Indicates whether the seller allows the buyer to return the item.
+ * @member {Boolean} return_accepted
+ */
+ProductAdd.prototype['return_accepted'] = undefined;
+
+/**
+ * @member {module:model/ProductAddSellerProfiles} seller_profiles
+ */
+ProductAdd.prototype['seller_profiles'] = undefined;
+
+/**
+ * This allows buyers to remain anonymous when the bid or buy an item.
+ * @member {String} auction_confidentiality_level
+ */
+ProductAdd.prototype['auction_confidentiality_level'] = undefined;
+
+/**
+ * @member {module:model/ProductAddBestOffer} best_offer
+ */
+ProductAdd.prototype['best_offer'] = undefined;
+
+/**
+ * Defines product's production partner ids that has to be added
+ * @member {String} production_partner_ids
+ */
+ProductAdd.prototype['production_partner_ids'] = undefined;
+
+/**
+ * String containing the JSON representation of the supplied data
+ * @member {String} marketplace_item_properties
+ */
+ProductAdd.prototype['marketplace_item_properties'] = undefined;
+
+/**
+ * Is cache clear required
+ * @member {Boolean} clear_cache
  * @default true
  */
-ProductAdd.prototype['is_supply'] = true;
+ProductAdd.prototype['clear_cache'] = true;
 
 /**
- * A list of material strings for materials used in the product.
- * @member {Array.<String>} materials
+ * Specifies the number of product's reviews
+ * @member {Number} viewed_count
+ * @default 0
  */
-ProductAdd.prototype['materials'] = undefined;
+ProductAdd.prototype['viewed_count'] = 0;
 
 /**
- * When true, automatically renews a listing upon its expiration.
- * @member {Boolean} auto_renew
- * @default false
+ * Defines how many times the product was ordered
+ * @member {Number} ordered_count
+ * @default 0
  */
-ProductAdd.prototype['auto_renew'] = false;
-
-/**
- * Flag used to determine whether the product condition is shown to the customer on the product page.
- * @member {Boolean} allow_display_condition
- */
-ProductAdd.prototype['allow_display_condition'] = undefined;
-
-/**
- * The minimum quantity an order must contain, to be eligible to purchase this product.
- * @member {Number} min_order_quantity
- */
-ProductAdd.prototype['min_order_quantity'] = undefined;
-
-/**
- * The maximum quantity an order can contain when purchasing the product.
- * @member {Number} max_order_quantity
- */
-ProductAdd.prototype['max_order_quantity'] = undefined;
+ProductAdd.prototype['ordered_count'] = 0;
 
 
 

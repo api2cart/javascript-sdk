@@ -273,9 +273,9 @@ let apiInstance = new Api2CartOpenApi.AttributeApi();
 let opts = {
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'responseFields': "{result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,name" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.attributeAttributesetList(opts, (error, data, response) => {
   if (error) {
@@ -293,9 +293,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
 
 ### Return type
 
@@ -469,11 +469,11 @@ let apiInstance = new Api2CartOpenApi.AttributeApi();
 let opts = {
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'attributeSetId': "4", // String | Attribute set id
   'langId': "3", // String | Language id
-  'params': "id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   'responseFields': "{result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'attributeSetId': "4" // String | Attribute set id
+  'params': "id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,name" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.attributeGroupList(opts, (error, data, response) => {
   if (error) {
@@ -491,11 +491,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **attributeSetId** | **String**| Attribute set id | [optional] 
  **langId** | **String**| Language id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
- **attributeSetId** | **String**| Attribute set id | [optional] 
 
 ### Return type
 
@@ -541,9 +541,9 @@ let opts = {
   'attributeSetId': "4", // String | Attribute set id
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Language id
+  'responseFields': "{result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "force_all", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "name" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.attributeInfo(id, opts, (error, data, response) => {
   if (error) {
@@ -563,9 +563,9 @@ Name | Type | Description  | Notes
  **attributeSetId** | **String**| Attribute set id | [optional] 
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Language id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
 
 ### Return type
 
@@ -609,17 +609,17 @@ let apiInstance = new Api2CartOpenApi.AttributeApi();
 let opts = {
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  'type': "text", // String | Defines attribute's type
   'attributeIds': "1,2,3", // String | Filter attributes by ids
   'attributeSetId': "4", // String | Filter items by attribute set id
   'storeId': "1", // String | Store Id
   'langId': "3", // String | Retrieves attributes on specified language id
-  'params': "id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "id,name", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'type': "text", // String | Defines attribute's type
   'visible': true, // Boolean | Filter items by visibility status
   'required': true, // Boolean | Defines if the option is required
-  'system': false // Boolean | True if attribute is system
+  'system': false, // Boolean | True if attribute is system
+  'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'params': "id,name", // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "id,name" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.attributeList(opts, (error, data, response) => {
   if (error) {
@@ -637,17 +637,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
- **type** | **String**| Defines attribute&#39;s type | [optional] 
  **attributeIds** | **String**| Filter attributes by ids | [optional] 
  **attributeSetId** | **String**| Filter items by attribute set id | [optional] 
  **storeId** | **String**| Store Id | [optional] 
  **langId** | **String**| Retrieves attributes on specified language id | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;]
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **type** | **String**| Defines attribute&#39;s type | [optional] 
  **visible** | **Boolean**| Filter items by visibility status | [optional] 
  **required** | **Boolean**| Defines if the option is required | [optional] 
  **system** | **Boolean**| True if attribute is system | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
+ **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;]
+ **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
 
 ### Return type
 

@@ -237,13 +237,13 @@ export default class WebhookApi {
      * webhook.list
      * List registered webhook on the store.
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'id,entity,action,callback')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [entity] The entity you want to filter webhooks by (e.g. order or product)
      * @param {String} [action] The action you want to filter webhooks by (e.g. add, update, or delete)
      * @param {Boolean} [active] The webhook status you want to filter webhooks by
      * @param {String} [ids] List of сomma-separated webhook ids
+     * @param {String} [params = 'id,entity,action,callback')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/WebhookApi~webhookListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookList200Response}
      */
@@ -254,13 +254,13 @@ export default class WebhookApi {
       let pathParams = {
       };
       let queryParams = {
-        'params': opts['params'],
         'start': opts['start'],
         'count': opts['count'],
         'entity': opts['entity'],
         'action': opts['action'],
         'active': opts['active'],
-        'ids': opts['ids']
+        'ids': opts['ids'],
+        'params': opts['params']
       };
       let headerParams = {
       };

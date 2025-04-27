@@ -50,8 +50,8 @@ export default class TaxApi {
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
-     * @param {String} [params = 'tax_class_id,name,avail')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'tax_class_id,name,avail')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/TaxApi~taxClassInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseTaxClassInfo}
@@ -70,8 +70,8 @@ export default class TaxApi {
         'tax_class_id': taxClassId,
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -102,15 +102,15 @@ export default class TaxApi {
      * tax.class.list
      * Get list of tax classes from your store.
      * @param {Object} opts Optional parameters
+     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [storeId] Store Id
+     * @param {String} [findValue] Entity search that is specified by some value
+     * @param {String} [findWhere] Tax class search that is specified by field
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [findValue] Entity search that is specified by some value
-     * @param {String} [findWhere] Tax class search that is specified by field
-     * @param {String} [storeId] Store Id
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [responseFields = '{return_code,return_message,pagination,result}')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/TaxApi~taxClassListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseTaxClassList}
@@ -122,15 +122,15 @@ export default class TaxApi {
       let pathParams = {
       };
       let queryParams = {
+        'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
+        'store_id': opts['storeId'],
+        'find_value': opts['findValue'],
+        'find_where': opts['findWhere'],
         'created_to': opts['createdTo'],
         'created_from': opts['createdFrom'],
         'modified_to': opts['modifiedTo'],
         'modified_from': opts['modifiedFrom'],
-        'find_value': opts['findValue'],
-        'find_where': opts['findWhere'],
-        'store_id': opts['storeId'],
-        'count': opts['count'],
-        'page_cursor': opts['pageCursor'],
         'response_fields': opts['responseFields']
       };
       let headerParams = {

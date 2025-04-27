@@ -47,8 +47,6 @@ class OrderAdd {
      */
     static initialize(obj, orderStatus, customerEmail, billFirstName, billLastName, billAddress1, billCity, billPostcode, billState, billCountry, orderItem) { 
         obj['order_status'] = orderStatus;
-        obj['send_notifications'] = false;
-        obj['send_admin_notifications'] = false;
         obj['customer_email'] = customerEmail;
         obj['bill_first_name'] = billFirstName;
         obj['bill_last_name'] = billLastName;
@@ -60,6 +58,8 @@ class OrderAdd {
         obj['tax_price'] = 0;
         obj['prices_inc_tax'] = false;
         obj['shipping_price'] = 0;
+        obj['send_notifications'] = false;
+        obj['send_admin_notifications'] = false;
         obj['inventory_behaviour'] = 'bypass';
         obj['create_invoice'] = false;
         obj['clear_cache'] = true;
@@ -92,95 +92,14 @@ class OrderAdd {
             if (data.hasOwnProperty('order_status')) {
                 obj['order_status'] = ApiClient.convertToType(data['order_status'], 'String');
             }
-            if (data.hasOwnProperty('send_notifications')) {
-                obj['send_notifications'] = ApiClient.convertToType(data['send_notifications'], 'Boolean');
+            if (data.hasOwnProperty('fulfillment_status')) {
+                obj['fulfillment_status'] = ApiClient.convertToType(data['fulfillment_status'], 'String');
             }
-            if (data.hasOwnProperty('send_admin_notifications')) {
-                obj['send_admin_notifications'] = ApiClient.convertToType(data['send_admin_notifications'], 'Boolean');
+            if (data.hasOwnProperty('financial_status')) {
+                obj['financial_status'] = ApiClient.convertToType(data['financial_status'], 'String');
             }
             if (data.hasOwnProperty('customer_email')) {
                 obj['customer_email'] = ApiClient.convertToType(data['customer_email'], 'String');
-            }
-            if (data.hasOwnProperty('bill_first_name')) {
-                obj['bill_first_name'] = ApiClient.convertToType(data['bill_first_name'], 'String');
-            }
-            if (data.hasOwnProperty('bill_last_name')) {
-                obj['bill_last_name'] = ApiClient.convertToType(data['bill_last_name'], 'String');
-            }
-            if (data.hasOwnProperty('bill_address_1')) {
-                obj['bill_address_1'] = ApiClient.convertToType(data['bill_address_1'], 'String');
-            }
-            if (data.hasOwnProperty('bill_city')) {
-                obj['bill_city'] = ApiClient.convertToType(data['bill_city'], 'String');
-            }
-            if (data.hasOwnProperty('bill_postcode')) {
-                obj['bill_postcode'] = ApiClient.convertToType(data['bill_postcode'], 'String');
-            }
-            if (data.hasOwnProperty('bill_state')) {
-                obj['bill_state'] = ApiClient.convertToType(data['bill_state'], 'String');
-            }
-            if (data.hasOwnProperty('bill_country')) {
-                obj['bill_country'] = ApiClient.convertToType(data['bill_country'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_first_name')) {
-                obj['shipp_first_name'] = ApiClient.convertToType(data['shipp_first_name'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_last_name')) {
-                obj['shipp_last_name'] = ApiClient.convertToType(data['shipp_last_name'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_address_1')) {
-                obj['shipp_address_1'] = ApiClient.convertToType(data['shipp_address_1'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_city')) {
-                obj['shipp_city'] = ApiClient.convertToType(data['shipp_city'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_postcode')) {
-                obj['shipp_postcode'] = ApiClient.convertToType(data['shipp_postcode'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_state')) {
-                obj['shipp_state'] = ApiClient.convertToType(data['shipp_state'], 'String');
-            }
-            if (data.hasOwnProperty('shipp_country')) {
-                obj['shipp_country'] = ApiClient.convertToType(data['shipp_country'], 'String');
-            }
-            if (data.hasOwnProperty('total_price')) {
-                obj['total_price'] = ApiClient.convertToType(data['total_price'], 'Number');
-            }
-            if (data.hasOwnProperty('date')) {
-                obj['date'] = ApiClient.convertToType(data['date'], 'String');
-            }
-            if (data.hasOwnProperty('order_payment_method')) {
-                obj['order_payment_method'] = ApiClient.convertToType(data['order_payment_method'], 'String');
-            }
-            if (data.hasOwnProperty('transaction_id')) {
-                obj['transaction_id'] = ApiClient.convertToType(data['transaction_id'], 'String');
-            }
-            if (data.hasOwnProperty('order_shipping_method')) {
-                obj['order_shipping_method'] = ApiClient.convertToType(data['order_shipping_method'], 'String');
-            }
-            if (data.hasOwnProperty('currency')) {
-                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-            }
-            if (data.hasOwnProperty('bill_address_2')) {
-                obj['bill_address_2'] = ApiClient.convertToType(data['bill_address_2'], 'String');
-            }
-            if (data.hasOwnProperty('bill_company')) {
-                obj['bill_company'] = ApiClient.convertToType(data['bill_company'], 'String');
-            }
-            if (data.hasOwnProperty('bill_phone')) {
-                obj['bill_phone'] = ApiClient.convertToType(data['bill_phone'], 'String');
-            }
-            if (data.hasOwnProperty('bill_fax')) {
-                obj['bill_fax'] = ApiClient.convertToType(data['bill_fax'], 'String');
-            }
-            if (data.hasOwnProperty('comment')) {
-                obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
-            }
-            if (data.hasOwnProperty('admin_comment')) {
-                obj['admin_comment'] = ApiClient.convertToType(data['admin_comment'], 'String');
-            }
-            if (data.hasOwnProperty('admin_private_comment')) {
-                obj['admin_private_comment'] = ApiClient.convertToType(data['admin_private_comment'], 'String');
             }
             if (data.hasOwnProperty('customer_first_name')) {
                 obj['customer_first_name'] = ApiClient.convertToType(data['customer_first_name'], 'String');
@@ -200,8 +119,80 @@ class OrderAdd {
             if (data.hasOwnProperty('customer_fax')) {
                 obj['customer_fax'] = ApiClient.convertToType(data['customer_fax'], 'String');
             }
+            if (data.hasOwnProperty('order_payment_method')) {
+                obj['order_payment_method'] = ApiClient.convertToType(data['order_payment_method'], 'String');
+            }
+            if (data.hasOwnProperty('transaction_id')) {
+                obj['transaction_id'] = ApiClient.convertToType(data['transaction_id'], 'String');
+            }
+            if (data.hasOwnProperty('currency')) {
+                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+            }
+            if (data.hasOwnProperty('date')) {
+                obj['date'] = ApiClient.convertToType(data['date'], 'String');
+            }
+            if (data.hasOwnProperty('date_modified')) {
+                obj['date_modified'] = ApiClient.convertToType(data['date_modified'], 'String');
+            }
+            if (data.hasOwnProperty('date_finished')) {
+                obj['date_finished'] = ApiClient.convertToType(data['date_finished'], 'String');
+            }
+            if (data.hasOwnProperty('bill_first_name')) {
+                obj['bill_first_name'] = ApiClient.convertToType(data['bill_first_name'], 'String');
+            }
+            if (data.hasOwnProperty('bill_last_name')) {
+                obj['bill_last_name'] = ApiClient.convertToType(data['bill_last_name'], 'String');
+            }
+            if (data.hasOwnProperty('bill_address_1')) {
+                obj['bill_address_1'] = ApiClient.convertToType(data['bill_address_1'], 'String');
+            }
+            if (data.hasOwnProperty('bill_address_2')) {
+                obj['bill_address_2'] = ApiClient.convertToType(data['bill_address_2'], 'String');
+            }
+            if (data.hasOwnProperty('bill_city')) {
+                obj['bill_city'] = ApiClient.convertToType(data['bill_city'], 'String');
+            }
+            if (data.hasOwnProperty('bill_postcode')) {
+                obj['bill_postcode'] = ApiClient.convertToType(data['bill_postcode'], 'String');
+            }
+            if (data.hasOwnProperty('bill_state')) {
+                obj['bill_state'] = ApiClient.convertToType(data['bill_state'], 'String');
+            }
+            if (data.hasOwnProperty('bill_country')) {
+                obj['bill_country'] = ApiClient.convertToType(data['bill_country'], 'String');
+            }
+            if (data.hasOwnProperty('bill_company')) {
+                obj['bill_company'] = ApiClient.convertToType(data['bill_company'], 'String');
+            }
+            if (data.hasOwnProperty('bill_phone')) {
+                obj['bill_phone'] = ApiClient.convertToType(data['bill_phone'], 'String');
+            }
+            if (data.hasOwnProperty('bill_fax')) {
+                obj['bill_fax'] = ApiClient.convertToType(data['bill_fax'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_first_name')) {
+                obj['shipp_first_name'] = ApiClient.convertToType(data['shipp_first_name'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_last_name')) {
+                obj['shipp_last_name'] = ApiClient.convertToType(data['shipp_last_name'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_address_1')) {
+                obj['shipp_address_1'] = ApiClient.convertToType(data['shipp_address_1'], 'String');
+            }
             if (data.hasOwnProperty('shipp_address_2')) {
                 obj['shipp_address_2'] = ApiClient.convertToType(data['shipp_address_2'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_city')) {
+                obj['shipp_city'] = ApiClient.convertToType(data['shipp_city'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_postcode')) {
+                obj['shipp_postcode'] = ApiClient.convertToType(data['shipp_postcode'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_state')) {
+                obj['shipp_state'] = ApiClient.convertToType(data['shipp_state'], 'String');
+            }
+            if (data.hasOwnProperty('shipp_country')) {
+                obj['shipp_country'] = ApiClient.convertToType(data['shipp_country'], 'String');
             }
             if (data.hasOwnProperty('shipp_company')) {
                 obj['shipp_company'] = ApiClient.convertToType(data['shipp_company'], 'String');
@@ -212,17 +203,20 @@ class OrderAdd {
             if (data.hasOwnProperty('shipp_fax')) {
                 obj['shipp_fax'] = ApiClient.convertToType(data['shipp_fax'], 'String');
             }
-            if (data.hasOwnProperty('date_modified')) {
-                obj['date_modified'] = ApiClient.convertToType(data['date_modified'], 'String');
-            }
-            if (data.hasOwnProperty('date_finished')) {
-                obj['date_finished'] = ApiClient.convertToType(data['date_finished'], 'String');
-            }
             if (data.hasOwnProperty('subtotal_price')) {
                 obj['subtotal_price'] = ApiClient.convertToType(data['subtotal_price'], 'Number');
             }
             if (data.hasOwnProperty('tax_price')) {
                 obj['tax_price'] = ApiClient.convertToType(data['tax_price'], 'Number');
+            }
+            if (data.hasOwnProperty('total_price')) {
+                obj['total_price'] = ApiClient.convertToType(data['total_price'], 'Number');
+            }
+            if (data.hasOwnProperty('total_paid')) {
+                obj['total_paid'] = ApiClient.convertToType(data['total_paid'], 'Number');
+            }
+            if (data.hasOwnProperty('total_weight')) {
+                obj['total_weight'] = ApiClient.convertToType(data['total_weight'], 'Number');
             }
             if (data.hasOwnProperty('prices_inc_tax')) {
                 obj['prices_inc_tax'] = ApiClient.convertToType(data['prices_inc_tax'], 'Boolean');
@@ -233,38 +227,47 @@ class OrderAdd {
             if (data.hasOwnProperty('shipping_tax')) {
                 obj['shipping_tax'] = ApiClient.convertToType(data['shipping_tax'], 'Number');
             }
-            if (data.hasOwnProperty('carrier_id')) {
-                obj['carrier_id'] = ApiClient.convertToType(data['carrier_id'], 'String');
-            }
-            if (data.hasOwnProperty('warehouse_id')) {
-                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
-            }
             if (data.hasOwnProperty('discount')) {
                 obj['discount'] = ApiClient.convertToType(data['discount'], 'Number');
             }
             if (data.hasOwnProperty('coupon_discount')) {
                 obj['coupon_discount'] = ApiClient.convertToType(data['coupon_discount'], 'Number');
             }
-            if (data.hasOwnProperty('coupons')) {
-                obj['coupons'] = ApiClient.convertToType(data['coupons'], ['String']);
-            }
             if (data.hasOwnProperty('gift_certificate_discount')) {
                 obj['gift_certificate_discount'] = ApiClient.convertToType(data['gift_certificate_discount'], 'Number');
             }
-            if (data.hasOwnProperty('fulfillment_status')) {
-                obj['fulfillment_status'] = ApiClient.convertToType(data['fulfillment_status'], 'String');
+            if (data.hasOwnProperty('order_shipping_method')) {
+                obj['order_shipping_method'] = ApiClient.convertToType(data['order_shipping_method'], 'String');
             }
-            if (data.hasOwnProperty('financial_status')) {
-                obj['financial_status'] = ApiClient.convertToType(data['financial_status'], 'String');
+            if (data.hasOwnProperty('carrier_id')) {
+                obj['carrier_id'] = ApiClient.convertToType(data['carrier_id'], 'String');
             }
-            if (data.hasOwnProperty('total_paid')) {
-                obj['total_paid'] = ApiClient.convertToType(data['total_paid'], 'Number');
+            if (data.hasOwnProperty('warehouse_id')) {
+                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
             }
-            if (data.hasOwnProperty('external_source')) {
-                obj['external_source'] = ApiClient.convertToType(data['external_source'], 'String');
+            if (data.hasOwnProperty('coupons')) {
+                obj['coupons'] = ApiClient.convertToType(data['coupons'], ['String']);
             }
             if (data.hasOwnProperty('tags')) {
                 obj['tags'] = ApiClient.convertToType(data['tags'], 'String');
+            }
+            if (data.hasOwnProperty('comment')) {
+                obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+            }
+            if (data.hasOwnProperty('admin_comment')) {
+                obj['admin_comment'] = ApiClient.convertToType(data['admin_comment'], 'String');
+            }
+            if (data.hasOwnProperty('admin_private_comment')) {
+                obj['admin_private_comment'] = ApiClient.convertToType(data['admin_private_comment'], 'String');
+            }
+            if (data.hasOwnProperty('send_notifications')) {
+                obj['send_notifications'] = ApiClient.convertToType(data['send_notifications'], 'Boolean');
+            }
+            if (data.hasOwnProperty('send_admin_notifications')) {
+                obj['send_admin_notifications'] = ApiClient.convertToType(data['send_admin_notifications'], 'Boolean');
+            }
+            if (data.hasOwnProperty('external_source')) {
+                obj['external_source'] = ApiClient.convertToType(data['external_source'], 'String');
             }
             if (data.hasOwnProperty('inventory_behaviour')) {
                 obj['inventory_behaviour'] = ApiClient.convertToType(data['inventory_behaviour'], 'String');
@@ -274,9 +277,6 @@ class OrderAdd {
             }
             if (data.hasOwnProperty('note_attributes')) {
                 obj['note_attributes'] = ApiClient.convertToType(data['note_attributes'], [OrderAddNoteAttributesInner]);
-            }
-            if (data.hasOwnProperty('total_weight')) {
-                obj['total_weight'] = ApiClient.convertToType(data['total_weight'], 'Number');
             }
             if (data.hasOwnProperty('clear_cache')) {
                 obj['clear_cache'] = ApiClient.convertToType(data['clear_cache'], 'Boolean');
@@ -324,112 +324,16 @@ class OrderAdd {
             throw new Error("Expected the field `order_status` to be a primitive type in the JSON string but got " + data['order_status']);
         }
         // ensure the json data is a string
+        if (data['fulfillment_status'] && !(typeof data['fulfillment_status'] === 'string' || data['fulfillment_status'] instanceof String)) {
+            throw new Error("Expected the field `fulfillment_status` to be a primitive type in the JSON string but got " + data['fulfillment_status']);
+        }
+        // ensure the json data is a string
+        if (data['financial_status'] && !(typeof data['financial_status'] === 'string' || data['financial_status'] instanceof String)) {
+            throw new Error("Expected the field `financial_status` to be a primitive type in the JSON string but got " + data['financial_status']);
+        }
+        // ensure the json data is a string
         if (data['customer_email'] && !(typeof data['customer_email'] === 'string' || data['customer_email'] instanceof String)) {
             throw new Error("Expected the field `customer_email` to be a primitive type in the JSON string but got " + data['customer_email']);
-        }
-        // ensure the json data is a string
-        if (data['bill_first_name'] && !(typeof data['bill_first_name'] === 'string' || data['bill_first_name'] instanceof String)) {
-            throw new Error("Expected the field `bill_first_name` to be a primitive type in the JSON string but got " + data['bill_first_name']);
-        }
-        // ensure the json data is a string
-        if (data['bill_last_name'] && !(typeof data['bill_last_name'] === 'string' || data['bill_last_name'] instanceof String)) {
-            throw new Error("Expected the field `bill_last_name` to be a primitive type in the JSON string but got " + data['bill_last_name']);
-        }
-        // ensure the json data is a string
-        if (data['bill_address_1'] && !(typeof data['bill_address_1'] === 'string' || data['bill_address_1'] instanceof String)) {
-            throw new Error("Expected the field `bill_address_1` to be a primitive type in the JSON string but got " + data['bill_address_1']);
-        }
-        // ensure the json data is a string
-        if (data['bill_city'] && !(typeof data['bill_city'] === 'string' || data['bill_city'] instanceof String)) {
-            throw new Error("Expected the field `bill_city` to be a primitive type in the JSON string but got " + data['bill_city']);
-        }
-        // ensure the json data is a string
-        if (data['bill_postcode'] && !(typeof data['bill_postcode'] === 'string' || data['bill_postcode'] instanceof String)) {
-            throw new Error("Expected the field `bill_postcode` to be a primitive type in the JSON string but got " + data['bill_postcode']);
-        }
-        // ensure the json data is a string
-        if (data['bill_state'] && !(typeof data['bill_state'] === 'string' || data['bill_state'] instanceof String)) {
-            throw new Error("Expected the field `bill_state` to be a primitive type in the JSON string but got " + data['bill_state']);
-        }
-        // ensure the json data is a string
-        if (data['bill_country'] && !(typeof data['bill_country'] === 'string' || data['bill_country'] instanceof String)) {
-            throw new Error("Expected the field `bill_country` to be a primitive type in the JSON string but got " + data['bill_country']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_first_name'] && !(typeof data['shipp_first_name'] === 'string' || data['shipp_first_name'] instanceof String)) {
-            throw new Error("Expected the field `shipp_first_name` to be a primitive type in the JSON string but got " + data['shipp_first_name']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_last_name'] && !(typeof data['shipp_last_name'] === 'string' || data['shipp_last_name'] instanceof String)) {
-            throw new Error("Expected the field `shipp_last_name` to be a primitive type in the JSON string but got " + data['shipp_last_name']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_address_1'] && !(typeof data['shipp_address_1'] === 'string' || data['shipp_address_1'] instanceof String)) {
-            throw new Error("Expected the field `shipp_address_1` to be a primitive type in the JSON string but got " + data['shipp_address_1']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_city'] && !(typeof data['shipp_city'] === 'string' || data['shipp_city'] instanceof String)) {
-            throw new Error("Expected the field `shipp_city` to be a primitive type in the JSON string but got " + data['shipp_city']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_postcode'] && !(typeof data['shipp_postcode'] === 'string' || data['shipp_postcode'] instanceof String)) {
-            throw new Error("Expected the field `shipp_postcode` to be a primitive type in the JSON string but got " + data['shipp_postcode']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_state'] && !(typeof data['shipp_state'] === 'string' || data['shipp_state'] instanceof String)) {
-            throw new Error("Expected the field `shipp_state` to be a primitive type in the JSON string but got " + data['shipp_state']);
-        }
-        // ensure the json data is a string
-        if (data['shipp_country'] && !(typeof data['shipp_country'] === 'string' || data['shipp_country'] instanceof String)) {
-            throw new Error("Expected the field `shipp_country` to be a primitive type in the JSON string but got " + data['shipp_country']);
-        }
-        // ensure the json data is a string
-        if (data['date'] && !(typeof data['date'] === 'string' || data['date'] instanceof String)) {
-            throw new Error("Expected the field `date` to be a primitive type in the JSON string but got " + data['date']);
-        }
-        // ensure the json data is a string
-        if (data['order_payment_method'] && !(typeof data['order_payment_method'] === 'string' || data['order_payment_method'] instanceof String)) {
-            throw new Error("Expected the field `order_payment_method` to be a primitive type in the JSON string but got " + data['order_payment_method']);
-        }
-        // ensure the json data is a string
-        if (data['transaction_id'] && !(typeof data['transaction_id'] === 'string' || data['transaction_id'] instanceof String)) {
-            throw new Error("Expected the field `transaction_id` to be a primitive type in the JSON string but got " + data['transaction_id']);
-        }
-        // ensure the json data is a string
-        if (data['order_shipping_method'] && !(typeof data['order_shipping_method'] === 'string' || data['order_shipping_method'] instanceof String)) {
-            throw new Error("Expected the field `order_shipping_method` to be a primitive type in the JSON string but got " + data['order_shipping_method']);
-        }
-        // ensure the json data is a string
-        if (data['currency'] && !(typeof data['currency'] === 'string' || data['currency'] instanceof String)) {
-            throw new Error("Expected the field `currency` to be a primitive type in the JSON string but got " + data['currency']);
-        }
-        // ensure the json data is a string
-        if (data['bill_address_2'] && !(typeof data['bill_address_2'] === 'string' || data['bill_address_2'] instanceof String)) {
-            throw new Error("Expected the field `bill_address_2` to be a primitive type in the JSON string but got " + data['bill_address_2']);
-        }
-        // ensure the json data is a string
-        if (data['bill_company'] && !(typeof data['bill_company'] === 'string' || data['bill_company'] instanceof String)) {
-            throw new Error("Expected the field `bill_company` to be a primitive type in the JSON string but got " + data['bill_company']);
-        }
-        // ensure the json data is a string
-        if (data['bill_phone'] && !(typeof data['bill_phone'] === 'string' || data['bill_phone'] instanceof String)) {
-            throw new Error("Expected the field `bill_phone` to be a primitive type in the JSON string but got " + data['bill_phone']);
-        }
-        // ensure the json data is a string
-        if (data['bill_fax'] && !(typeof data['bill_fax'] === 'string' || data['bill_fax'] instanceof String)) {
-            throw new Error("Expected the field `bill_fax` to be a primitive type in the JSON string but got " + data['bill_fax']);
-        }
-        // ensure the json data is a string
-        if (data['comment'] && !(typeof data['comment'] === 'string' || data['comment'] instanceof String)) {
-            throw new Error("Expected the field `comment` to be a primitive type in the JSON string but got " + data['comment']);
-        }
-        // ensure the json data is a string
-        if (data['admin_comment'] && !(typeof data['admin_comment'] === 'string' || data['admin_comment'] instanceof String)) {
-            throw new Error("Expected the field `admin_comment` to be a primitive type in the JSON string but got " + data['admin_comment']);
-        }
-        // ensure the json data is a string
-        if (data['admin_private_comment'] && !(typeof data['admin_private_comment'] === 'string' || data['admin_private_comment'] instanceof String)) {
-            throw new Error("Expected the field `admin_private_comment` to be a primitive type in the JSON string but got " + data['admin_private_comment']);
         }
         // ensure the json data is a string
         if (data['customer_first_name'] && !(typeof data['customer_first_name'] === 'string' || data['customer_first_name'] instanceof String)) {
@@ -456,8 +360,104 @@ class OrderAdd {
             throw new Error("Expected the field `customer_fax` to be a primitive type in the JSON string but got " + data['customer_fax']);
         }
         // ensure the json data is a string
+        if (data['order_payment_method'] && !(typeof data['order_payment_method'] === 'string' || data['order_payment_method'] instanceof String)) {
+            throw new Error("Expected the field `order_payment_method` to be a primitive type in the JSON string but got " + data['order_payment_method']);
+        }
+        // ensure the json data is a string
+        if (data['transaction_id'] && !(typeof data['transaction_id'] === 'string' || data['transaction_id'] instanceof String)) {
+            throw new Error("Expected the field `transaction_id` to be a primitive type in the JSON string but got " + data['transaction_id']);
+        }
+        // ensure the json data is a string
+        if (data['currency'] && !(typeof data['currency'] === 'string' || data['currency'] instanceof String)) {
+            throw new Error("Expected the field `currency` to be a primitive type in the JSON string but got " + data['currency']);
+        }
+        // ensure the json data is a string
+        if (data['date'] && !(typeof data['date'] === 'string' || data['date'] instanceof String)) {
+            throw new Error("Expected the field `date` to be a primitive type in the JSON string but got " + data['date']);
+        }
+        // ensure the json data is a string
+        if (data['date_modified'] && !(typeof data['date_modified'] === 'string' || data['date_modified'] instanceof String)) {
+            throw new Error("Expected the field `date_modified` to be a primitive type in the JSON string but got " + data['date_modified']);
+        }
+        // ensure the json data is a string
+        if (data['date_finished'] && !(typeof data['date_finished'] === 'string' || data['date_finished'] instanceof String)) {
+            throw new Error("Expected the field `date_finished` to be a primitive type in the JSON string but got " + data['date_finished']);
+        }
+        // ensure the json data is a string
+        if (data['bill_first_name'] && !(typeof data['bill_first_name'] === 'string' || data['bill_first_name'] instanceof String)) {
+            throw new Error("Expected the field `bill_first_name` to be a primitive type in the JSON string but got " + data['bill_first_name']);
+        }
+        // ensure the json data is a string
+        if (data['bill_last_name'] && !(typeof data['bill_last_name'] === 'string' || data['bill_last_name'] instanceof String)) {
+            throw new Error("Expected the field `bill_last_name` to be a primitive type in the JSON string but got " + data['bill_last_name']);
+        }
+        // ensure the json data is a string
+        if (data['bill_address_1'] && !(typeof data['bill_address_1'] === 'string' || data['bill_address_1'] instanceof String)) {
+            throw new Error("Expected the field `bill_address_1` to be a primitive type in the JSON string but got " + data['bill_address_1']);
+        }
+        // ensure the json data is a string
+        if (data['bill_address_2'] && !(typeof data['bill_address_2'] === 'string' || data['bill_address_2'] instanceof String)) {
+            throw new Error("Expected the field `bill_address_2` to be a primitive type in the JSON string but got " + data['bill_address_2']);
+        }
+        // ensure the json data is a string
+        if (data['bill_city'] && !(typeof data['bill_city'] === 'string' || data['bill_city'] instanceof String)) {
+            throw new Error("Expected the field `bill_city` to be a primitive type in the JSON string but got " + data['bill_city']);
+        }
+        // ensure the json data is a string
+        if (data['bill_postcode'] && !(typeof data['bill_postcode'] === 'string' || data['bill_postcode'] instanceof String)) {
+            throw new Error("Expected the field `bill_postcode` to be a primitive type in the JSON string but got " + data['bill_postcode']);
+        }
+        // ensure the json data is a string
+        if (data['bill_state'] && !(typeof data['bill_state'] === 'string' || data['bill_state'] instanceof String)) {
+            throw new Error("Expected the field `bill_state` to be a primitive type in the JSON string but got " + data['bill_state']);
+        }
+        // ensure the json data is a string
+        if (data['bill_country'] && !(typeof data['bill_country'] === 'string' || data['bill_country'] instanceof String)) {
+            throw new Error("Expected the field `bill_country` to be a primitive type in the JSON string but got " + data['bill_country']);
+        }
+        // ensure the json data is a string
+        if (data['bill_company'] && !(typeof data['bill_company'] === 'string' || data['bill_company'] instanceof String)) {
+            throw new Error("Expected the field `bill_company` to be a primitive type in the JSON string but got " + data['bill_company']);
+        }
+        // ensure the json data is a string
+        if (data['bill_phone'] && !(typeof data['bill_phone'] === 'string' || data['bill_phone'] instanceof String)) {
+            throw new Error("Expected the field `bill_phone` to be a primitive type in the JSON string but got " + data['bill_phone']);
+        }
+        // ensure the json data is a string
+        if (data['bill_fax'] && !(typeof data['bill_fax'] === 'string' || data['bill_fax'] instanceof String)) {
+            throw new Error("Expected the field `bill_fax` to be a primitive type in the JSON string but got " + data['bill_fax']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_first_name'] && !(typeof data['shipp_first_name'] === 'string' || data['shipp_first_name'] instanceof String)) {
+            throw new Error("Expected the field `shipp_first_name` to be a primitive type in the JSON string but got " + data['shipp_first_name']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_last_name'] && !(typeof data['shipp_last_name'] === 'string' || data['shipp_last_name'] instanceof String)) {
+            throw new Error("Expected the field `shipp_last_name` to be a primitive type in the JSON string but got " + data['shipp_last_name']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_address_1'] && !(typeof data['shipp_address_1'] === 'string' || data['shipp_address_1'] instanceof String)) {
+            throw new Error("Expected the field `shipp_address_1` to be a primitive type in the JSON string but got " + data['shipp_address_1']);
+        }
+        // ensure the json data is a string
         if (data['shipp_address_2'] && !(typeof data['shipp_address_2'] === 'string' || data['shipp_address_2'] instanceof String)) {
             throw new Error("Expected the field `shipp_address_2` to be a primitive type in the JSON string but got " + data['shipp_address_2']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_city'] && !(typeof data['shipp_city'] === 'string' || data['shipp_city'] instanceof String)) {
+            throw new Error("Expected the field `shipp_city` to be a primitive type in the JSON string but got " + data['shipp_city']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_postcode'] && !(typeof data['shipp_postcode'] === 'string' || data['shipp_postcode'] instanceof String)) {
+            throw new Error("Expected the field `shipp_postcode` to be a primitive type in the JSON string but got " + data['shipp_postcode']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_state'] && !(typeof data['shipp_state'] === 'string' || data['shipp_state'] instanceof String)) {
+            throw new Error("Expected the field `shipp_state` to be a primitive type in the JSON string but got " + data['shipp_state']);
+        }
+        // ensure the json data is a string
+        if (data['shipp_country'] && !(typeof data['shipp_country'] === 'string' || data['shipp_country'] instanceof String)) {
+            throw new Error("Expected the field `shipp_country` to be a primitive type in the JSON string but got " + data['shipp_country']);
         }
         // ensure the json data is a string
         if (data['shipp_company'] && !(typeof data['shipp_company'] === 'string' || data['shipp_company'] instanceof String)) {
@@ -472,12 +472,8 @@ class OrderAdd {
             throw new Error("Expected the field `shipp_fax` to be a primitive type in the JSON string but got " + data['shipp_fax']);
         }
         // ensure the json data is a string
-        if (data['date_modified'] && !(typeof data['date_modified'] === 'string' || data['date_modified'] instanceof String)) {
-            throw new Error("Expected the field `date_modified` to be a primitive type in the JSON string but got " + data['date_modified']);
-        }
-        // ensure the json data is a string
-        if (data['date_finished'] && !(typeof data['date_finished'] === 'string' || data['date_finished'] instanceof String)) {
-            throw new Error("Expected the field `date_finished` to be a primitive type in the JSON string but got " + data['date_finished']);
+        if (data['order_shipping_method'] && !(typeof data['order_shipping_method'] === 'string' || data['order_shipping_method'] instanceof String)) {
+            throw new Error("Expected the field `order_shipping_method` to be a primitive type in the JSON string but got " + data['order_shipping_method']);
         }
         // ensure the json data is a string
         if (data['carrier_id'] && !(typeof data['carrier_id'] === 'string' || data['carrier_id'] instanceof String)) {
@@ -492,20 +488,24 @@ class OrderAdd {
             throw new Error("Expected the field `coupons` to be an array in the JSON data but got " + data['coupons']);
         }
         // ensure the json data is a string
-        if (data['fulfillment_status'] && !(typeof data['fulfillment_status'] === 'string' || data['fulfillment_status'] instanceof String)) {
-            throw new Error("Expected the field `fulfillment_status` to be a primitive type in the JSON string but got " + data['fulfillment_status']);
+        if (data['tags'] && !(typeof data['tags'] === 'string' || data['tags'] instanceof String)) {
+            throw new Error("Expected the field `tags` to be a primitive type in the JSON string but got " + data['tags']);
         }
         // ensure the json data is a string
-        if (data['financial_status'] && !(typeof data['financial_status'] === 'string' || data['financial_status'] instanceof String)) {
-            throw new Error("Expected the field `financial_status` to be a primitive type in the JSON string but got " + data['financial_status']);
+        if (data['comment'] && !(typeof data['comment'] === 'string' || data['comment'] instanceof String)) {
+            throw new Error("Expected the field `comment` to be a primitive type in the JSON string but got " + data['comment']);
+        }
+        // ensure the json data is a string
+        if (data['admin_comment'] && !(typeof data['admin_comment'] === 'string' || data['admin_comment'] instanceof String)) {
+            throw new Error("Expected the field `admin_comment` to be a primitive type in the JSON string but got " + data['admin_comment']);
+        }
+        // ensure the json data is a string
+        if (data['admin_private_comment'] && !(typeof data['admin_private_comment'] === 'string' || data['admin_private_comment'] instanceof String)) {
+            throw new Error("Expected the field `admin_private_comment` to be a primitive type in the JSON string but got " + data['admin_private_comment']);
         }
         // ensure the json data is a string
         if (data['external_source'] && !(typeof data['external_source'] === 'string' || data['external_source'] instanceof String)) {
             throw new Error("Expected the field `external_source` to be a primitive type in the JSON string but got " + data['external_source']);
-        }
-        // ensure the json data is a string
-        if (data['tags'] && !(typeof data['tags'] === 'string' || data['tags'] instanceof String)) {
-            throw new Error("Expected the field `tags` to be a primitive type in the JSON string but got " + data['tags']);
         }
         // ensure the json data is a string
         if (data['inventory_behaviour'] && !(typeof data['inventory_behaviour'] === 'string' || data['inventory_behaviour'] instanceof String)) {
@@ -575,186 +575,22 @@ OrderAdd.prototype['channel_id'] = undefined;
 OrderAdd.prototype['order_status'] = undefined;
 
 /**
- * Send notifications to customer after order was created
- * @member {Boolean} send_notifications
- * @default false
+ * Create order with fulfillment status
+ * @member {String} fulfillment_status
  */
-OrderAdd.prototype['send_notifications'] = false;
+OrderAdd.prototype['fulfillment_status'] = undefined;
 
 /**
- * Notify admin when new order was created.
- * @member {Boolean} send_admin_notifications
- * @default false
+ * Create order with financial status
+ * @member {String} financial_status
  */
-OrderAdd.prototype['send_admin_notifications'] = false;
+OrderAdd.prototype['financial_status'] = undefined;
 
 /**
  * Defines the customer specified by email for whom order has to be created
  * @member {String} customer_email
  */
 OrderAdd.prototype['customer_email'] = undefined;
-
-/**
- * Specifies billing first name
- * @member {String} bill_first_name
- */
-OrderAdd.prototype['bill_first_name'] = undefined;
-
-/**
- * Specifies billing last name
- * @member {String} bill_last_name
- */
-OrderAdd.prototype['bill_last_name'] = undefined;
-
-/**
- * Specifies first billing address
- * @member {String} bill_address_1
- */
-OrderAdd.prototype['bill_address_1'] = undefined;
-
-/**
- * Specifies billing city
- * @member {String} bill_city
- */
-OrderAdd.prototype['bill_city'] = undefined;
-
-/**
- * Specifies billing postcode
- * @member {String} bill_postcode
- */
-OrderAdd.prototype['bill_postcode'] = undefined;
-
-/**
- * Specifies billing state code
- * @member {String} bill_state
- */
-OrderAdd.prototype['bill_state'] = undefined;
-
-/**
- * Specifies billing country code
- * @member {String} bill_country
- */
-OrderAdd.prototype['bill_country'] = undefined;
-
-/**
- * Specifies shipping first name
- * @member {String} shipp_first_name
- */
-OrderAdd.prototype['shipp_first_name'] = undefined;
-
-/**
- * Specifies shipping last name
- * @member {String} shipp_last_name
- */
-OrderAdd.prototype['shipp_last_name'] = undefined;
-
-/**
- * Specifies first shipping address
- * @member {String} shipp_address_1
- */
-OrderAdd.prototype['shipp_address_1'] = undefined;
-
-/**
- * Specifies shipping city
- * @member {String} shipp_city
- */
-OrderAdd.prototype['shipp_city'] = undefined;
-
-/**
- * Specifies shipping postcode
- * @member {String} shipp_postcode
- */
-OrderAdd.prototype['shipp_postcode'] = undefined;
-
-/**
- * Specifies shipping state code
- * @member {String} shipp_state
- */
-OrderAdd.prototype['shipp_state'] = undefined;
-
-/**
- * Specifies shipping country code
- * @member {String} shipp_country
- */
-OrderAdd.prototype['shipp_country'] = undefined;
-
-/**
- * Defines order's total price
- * @member {Number} total_price
- */
-OrderAdd.prototype['total_price'] = undefined;
-
-/**
- * Specifies an order creation date in format Y-m-d H:i:s
- * @member {String} date
- */
-OrderAdd.prototype['date'] = undefined;
-
-/**
- * Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
- * @member {String} order_payment_method
- */
-OrderAdd.prototype['order_payment_method'] = undefined;
-
-/**
- * Payment transaction id
- * @member {String} transaction_id
- */
-OrderAdd.prototype['transaction_id'] = undefined;
-
-/**
- * Defines order shipping method
- * @member {String} order_shipping_method
- */
-OrderAdd.prototype['order_shipping_method'] = undefined;
-
-/**
- * Currency code of order
- * @member {String} currency
- */
-OrderAdd.prototype['currency'] = undefined;
-
-/**
- * Specifies second billing address
- * @member {String} bill_address_2
- */
-OrderAdd.prototype['bill_address_2'] = undefined;
-
-/**
- * Specifies billing company
- * @member {String} bill_company
- */
-OrderAdd.prototype['bill_company'] = undefined;
-
-/**
- * Specifies billing phone
- * @member {String} bill_phone
- */
-OrderAdd.prototype['bill_phone'] = undefined;
-
-/**
- * Specifies billing fax
- * @member {String} bill_fax
- */
-OrderAdd.prototype['bill_fax'] = undefined;
-
-/**
- * Specifies order comment
- * @member {String} comment
- */
-OrderAdd.prototype['comment'] = undefined;
-
-/**
- * Specifies admin's order comment
- * @member {String} admin_comment
- */
-OrderAdd.prototype['admin_comment'] = undefined;
-
-/**
- * Specifies private admin's order comment
- * @member {String} admin_private_comment
- */
-OrderAdd.prototype['admin_private_comment'] = undefined;
 
 /**
  * Specifies customer's first name
@@ -793,10 +629,154 @@ OrderAdd.prototype['customer_birthday'] = undefined;
 OrderAdd.prototype['customer_fax'] = undefined;
 
 /**
+ * Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
+ * @member {String} order_payment_method
+ */
+OrderAdd.prototype['order_payment_method'] = undefined;
+
+/**
+ * Payment transaction id
+ * @member {String} transaction_id
+ */
+OrderAdd.prototype['transaction_id'] = undefined;
+
+/**
+ * Currency code of order
+ * @member {String} currency
+ */
+OrderAdd.prototype['currency'] = undefined;
+
+/**
+ * Specifies an order creation date in format Y-m-d H:i:s
+ * @member {String} date
+ */
+OrderAdd.prototype['date'] = undefined;
+
+/**
+ * Specifies order's  modification date
+ * @member {String} date_modified
+ */
+OrderAdd.prototype['date_modified'] = undefined;
+
+/**
+ * Specifies order's  finished date
+ * @member {String} date_finished
+ */
+OrderAdd.prototype['date_finished'] = undefined;
+
+/**
+ * Specifies billing first name
+ * @member {String} bill_first_name
+ */
+OrderAdd.prototype['bill_first_name'] = undefined;
+
+/**
+ * Specifies billing last name
+ * @member {String} bill_last_name
+ */
+OrderAdd.prototype['bill_last_name'] = undefined;
+
+/**
+ * Specifies first billing address
+ * @member {String} bill_address_1
+ */
+OrderAdd.prototype['bill_address_1'] = undefined;
+
+/**
+ * Specifies second billing address
+ * @member {String} bill_address_2
+ */
+OrderAdd.prototype['bill_address_2'] = undefined;
+
+/**
+ * Specifies billing city
+ * @member {String} bill_city
+ */
+OrderAdd.prototype['bill_city'] = undefined;
+
+/**
+ * Specifies billing postcode
+ * @member {String} bill_postcode
+ */
+OrderAdd.prototype['bill_postcode'] = undefined;
+
+/**
+ * Specifies billing state code
+ * @member {String} bill_state
+ */
+OrderAdd.prototype['bill_state'] = undefined;
+
+/**
+ * Specifies billing country code
+ * @member {String} bill_country
+ */
+OrderAdd.prototype['bill_country'] = undefined;
+
+/**
+ * Specifies billing company
+ * @member {String} bill_company
+ */
+OrderAdd.prototype['bill_company'] = undefined;
+
+/**
+ * Specifies billing phone
+ * @member {String} bill_phone
+ */
+OrderAdd.prototype['bill_phone'] = undefined;
+
+/**
+ * Specifies billing fax
+ * @member {String} bill_fax
+ */
+OrderAdd.prototype['bill_fax'] = undefined;
+
+/**
+ * Specifies shipping first name
+ * @member {String} shipp_first_name
+ */
+OrderAdd.prototype['shipp_first_name'] = undefined;
+
+/**
+ * Specifies shipping last name
+ * @member {String} shipp_last_name
+ */
+OrderAdd.prototype['shipp_last_name'] = undefined;
+
+/**
+ * Specifies first shipping address
+ * @member {String} shipp_address_1
+ */
+OrderAdd.prototype['shipp_address_1'] = undefined;
+
+/**
  * Specifies second address line of a shipping street address
  * @member {String} shipp_address_2
  */
 OrderAdd.prototype['shipp_address_2'] = undefined;
+
+/**
+ * Specifies shipping city
+ * @member {String} shipp_city
+ */
+OrderAdd.prototype['shipp_city'] = undefined;
+
+/**
+ * Specifies shipping postcode
+ * @member {String} shipp_postcode
+ */
+OrderAdd.prototype['shipp_postcode'] = undefined;
+
+/**
+ * Specifies shipping state code
+ * @member {String} shipp_state
+ */
+OrderAdd.prototype['shipp_state'] = undefined;
+
+/**
+ * Specifies shipping country code
+ * @member {String} shipp_country
+ */
+OrderAdd.prototype['shipp_country'] = undefined;
 
 /**
  * Specifies shipping company
@@ -817,18 +797,6 @@ OrderAdd.prototype['shipp_phone'] = undefined;
 OrderAdd.prototype['shipp_fax'] = undefined;
 
 /**
- * Specifies order's  modification date
- * @member {String} date_modified
- */
-OrderAdd.prototype['date_modified'] = undefined;
-
-/**
- * Specifies order's  finished date
- * @member {String} date_finished
- */
-OrderAdd.prototype['date_finished'] = undefined;
-
-/**
  * Total price of all ordered products multiplied by their number, excluding tax, shipping price and discounts
  * @member {Number} subtotal_price
  */
@@ -840,6 +808,24 @@ OrderAdd.prototype['subtotal_price'] = undefined;
  * @default 0
  */
 OrderAdd.prototype['tax_price'] = 0;
+
+/**
+ * Defines order's total price
+ * @member {Number} total_price
+ */
+OrderAdd.prototype['total_price'] = undefined;
+
+/**
+ * Defines total paid amount for the order
+ * @member {Number} total_paid
+ */
+OrderAdd.prototype['total_paid'] = undefined;
+
+/**
+ * Defines the sum of all line item weights in grams for the order
+ * @member {Number} total_weight
+ */
+OrderAdd.prototype['total_weight'] = undefined;
 
 /**
  * Indicates whether prices and subtotal includes tax.
@@ -862,18 +848,6 @@ OrderAdd.prototype['shipping_price'] = 0;
 OrderAdd.prototype['shipping_tax'] = undefined;
 
 /**
- * Defines tracking carrier id
- * @member {String} carrier_id
- */
-OrderAdd.prototype['carrier_id'] = undefined;
-
-/**
- * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
- * @member {String} warehouse_id
- */
-OrderAdd.prototype['warehouse_id'] = undefined;
-
-/**
  * Specifies order's discount
  * @member {Number} discount
  */
@@ -886,46 +860,78 @@ OrderAdd.prototype['discount'] = undefined;
 OrderAdd.prototype['coupon_discount'] = undefined;
 
 /**
- * Coupons that will be applied to order
- * @member {Array.<String>} coupons
- */
-OrderAdd.prototype['coupons'] = undefined;
-
-/**
  * Discounts for order with gift certificates
  * @member {Number} gift_certificate_discount
  */
 OrderAdd.prototype['gift_certificate_discount'] = undefined;
 
 /**
- * Create order with fulfillment status
- * @member {String} fulfillment_status
+ * Defines order shipping method
+ * @member {String} order_shipping_method
  */
-OrderAdd.prototype['fulfillment_status'] = undefined;
+OrderAdd.prototype['order_shipping_method'] = undefined;
 
 /**
- * Create order with financial status
- * @member {String} financial_status
+ * Defines tracking carrier id
+ * @member {String} carrier_id
  */
-OrderAdd.prototype['financial_status'] = undefined;
+OrderAdd.prototype['carrier_id'] = undefined;
 
 /**
- * Defines total paid amount for the order
- * @member {Number} total_paid
+ * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+ * @member {String} warehouse_id
  */
-OrderAdd.prototype['total_paid'] = undefined;
+OrderAdd.prototype['warehouse_id'] = undefined;
 
 /**
- * Identifying the system used to generate the order
- * @member {String} external_source
+ * Coupons that will be applied to order
+ * @member {Array.<String>} coupons
  */
-OrderAdd.prototype['external_source'] = undefined;
+OrderAdd.prototype['coupons'] = undefined;
 
 /**
  * Order tags
  * @member {String} tags
  */
 OrderAdd.prototype['tags'] = undefined;
+
+/**
+ * Specifies order comment
+ * @member {String} comment
+ */
+OrderAdd.prototype['comment'] = undefined;
+
+/**
+ * Specifies admin's order comment
+ * @member {String} admin_comment
+ */
+OrderAdd.prototype['admin_comment'] = undefined;
+
+/**
+ * Specifies private admin's order comment
+ * @member {String} admin_private_comment
+ */
+OrderAdd.prototype['admin_private_comment'] = undefined;
+
+/**
+ * Send notifications to customer after order was created
+ * @member {Boolean} send_notifications
+ * @default false
+ */
+OrderAdd.prototype['send_notifications'] = false;
+
+/**
+ * Notify admin when new order was created.
+ * @member {Boolean} send_admin_notifications
+ * @default false
+ */
+OrderAdd.prototype['send_admin_notifications'] = false;
+
+/**
+ * Identifying the system used to generate the order
+ * @member {String} external_source
+ */
+OrderAdd.prototype['external_source'] = undefined;
 
 /**
  * The behaviour to use when updating inventory.<hr><div style=\"font-style:normal\">Values description:<div style=\"margin-left: 2%; padding-top: 2%\"><div style=\"font-size:85%\"><b>bypass</b> = Do not claim inventory </br></br><b>decrement_ignoring_policy</b> = Ignore the product's </br> inventory policy and claim amounts</br></br><b>decrement_obeying_policy</b> =  Obey the product's </br> inventory policy.</br></br></div></div></div>
@@ -946,12 +952,6 @@ OrderAdd.prototype['create_invoice'] = false;
  * @member {Array.<module:model/OrderAddNoteAttributesInner>} note_attributes
  */
 OrderAdd.prototype['note_attributes'] = undefined;
-
-/**
- * Defines the sum of all line item weights in grams for the order
- * @member {Number} total_weight
- */
-OrderAdd.prototype['total_weight'] = undefined;
 
 /**
  * Is cache clear required

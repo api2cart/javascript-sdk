@@ -52,9 +52,6 @@ class OrderShipmentTrackingAdd {
         if (data) {
             obj = obj || new OrderShipmentTrackingAdd();
 
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('order_id')) {
                 obj['order_id'] = ApiClient.convertToType(data['order_id'], 'String');
             }
@@ -63,6 +60,9 @@ class OrderShipmentTrackingAdd {
             }
             if (data.hasOwnProperty('carrier_id')) {
                 obj['carrier_id'] = ApiClient.convertToType(data['carrier_id'], 'String');
+            }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('tracking_provider')) {
                 obj['tracking_provider'] = ApiClient.convertToType(data['tracking_provider'], 'String');
@@ -93,10 +93,6 @@ class OrderShipmentTrackingAdd {
             }
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['order_id'] && !(typeof data['order_id'] === 'string' || data['order_id'] instanceof String)) {
             throw new Error("Expected the field `order_id` to be a primitive type in the JSON string but got " + data['order_id']);
         }
@@ -107,6 +103,10 @@ class OrderShipmentTrackingAdd {
         // ensure the json data is a string
         if (data['carrier_id'] && !(typeof data['carrier_id'] === 'string' || data['carrier_id'] instanceof String)) {
             throw new Error("Expected the field `carrier_id` to be a primitive type in the JSON string but got " + data['carrier_id']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         // ensure the json data is a string
         if (data['tracking_provider'] && !(typeof data['tracking_provider'] === 'string' || data['tracking_provider'] instanceof String)) {
@@ -130,12 +130,6 @@ class OrderShipmentTrackingAdd {
 OrderShipmentTrackingAdd.RequiredProperties = ["shipment_id", "tracking_number"];
 
 /**
- * Store Id
- * @member {String} store_id
- */
-OrderShipmentTrackingAdd.prototype['store_id'] = undefined;
-
-/**
  * Defines the order id
  * @member {String} order_id
  */
@@ -152,6 +146,12 @@ OrderShipmentTrackingAdd.prototype['shipment_id'] = undefined;
  * @member {String} carrier_id
  */
 OrderShipmentTrackingAdd.prototype['carrier_id'] = undefined;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+OrderShipmentTrackingAdd.prototype['store_id'] = undefined;
 
 /**
  * Defines name of the company which provides shipment tracking

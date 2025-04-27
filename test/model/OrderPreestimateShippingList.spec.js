@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(Api2CartOpenApi.OrderPreestimateShippingList);
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
+    it('should have the property warehouseId (base name: "warehouse_id")', function() {
+      // uncomment below and update the code to test the property warehouseId
       //var instance = new Api2CartOpenApi.OrderPreestimateShippingList();
       //expect(instance).to.be();
     });
 
-    it('should have the property warehouseId (base name: "warehouse_id")', function() {
-      // uncomment below and update the code to test the property warehouseId
+    it('should have the property customerId (base name: "customer_id")', function() {
+      // uncomment below and update the code to test the property customerId
       //var instance = new Api2CartOpenApi.OrderPreestimateShippingList();
       //expect(instance).to.be();
     });
@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property customerId (base name: "customer_id")', function() {
-      // uncomment below and update the code to test the property customerId
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.OrderPreestimateShippingList();
       //expect(instance).to.be();
     });

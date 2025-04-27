@@ -36,10 +36,10 @@ class OrderShipmentAdd {
      * Only for internal use.
      */
     static initialize(obj) { 
+        obj['is_shipped'] = true;
         obj['send_notifications'] = false;
         obj['adjust_stock'] = false;
         obj['enable_cache'] = false;
-        obj['is_shipped'] = true;
         obj['check_process_status'] = false;
         obj['use_latest_api_version'] = false;
     }
@@ -58,11 +58,11 @@ class OrderShipmentAdd {
             if (data.hasOwnProperty('order_id')) {
                 obj['order_id'] = ApiClient.convertToType(data['order_id'], 'String');
             }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('warehouse_id')) {
                 obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
+            }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('shipment_provider')) {
                 obj['shipment_provider'] = ApiClient.convertToType(data['shipment_provider'], 'String');
@@ -73,23 +73,23 @@ class OrderShipmentAdd {
             if (data.hasOwnProperty('items')) {
                 obj['items'] = ApiClient.convertToType(data['items'], [OrderShipmentAddItemsInner]);
             }
-            if (data.hasOwnProperty('send_notifications')) {
-                obj['send_notifications'] = ApiClient.convertToType(data['send_notifications'], 'Boolean');
-            }
             if (data.hasOwnProperty('tracking_numbers')) {
                 obj['tracking_numbers'] = ApiClient.convertToType(data['tracking_numbers'], [OrderShipmentAddTrackingNumbersInner]);
-            }
-            if (data.hasOwnProperty('adjust_stock')) {
-                obj['adjust_stock'] = ApiClient.convertToType(data['adjust_stock'], 'Boolean');
-            }
-            if (data.hasOwnProperty('enable_cache')) {
-                obj['enable_cache'] = ApiClient.convertToType(data['enable_cache'], 'Boolean');
             }
             if (data.hasOwnProperty('tracking_link')) {
                 obj['tracking_link'] = ApiClient.convertToType(data['tracking_link'], 'String');
             }
             if (data.hasOwnProperty('is_shipped')) {
                 obj['is_shipped'] = ApiClient.convertToType(data['is_shipped'], 'Boolean');
+            }
+            if (data.hasOwnProperty('send_notifications')) {
+                obj['send_notifications'] = ApiClient.convertToType(data['send_notifications'], 'Boolean');
+            }
+            if (data.hasOwnProperty('adjust_stock')) {
+                obj['adjust_stock'] = ApiClient.convertToType(data['adjust_stock'], 'Boolean');
+            }
+            if (data.hasOwnProperty('enable_cache')) {
+                obj['enable_cache'] = ApiClient.convertToType(data['enable_cache'], 'Boolean');
             }
             if (data.hasOwnProperty('check_process_status')) {
                 obj['check_process_status'] = ApiClient.convertToType(data['check_process_status'], 'Boolean');
@@ -112,12 +112,12 @@ class OrderShipmentAdd {
             throw new Error("Expected the field `order_id` to be a primitive type in the JSON string but got " + data['order_id']);
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['warehouse_id'] && !(typeof data['warehouse_id'] === 'string' || data['warehouse_id'] instanceof String)) {
             throw new Error("Expected the field `warehouse_id` to be a primitive type in the JSON string but got " + data['warehouse_id']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         // ensure the json data is a string
         if (data['shipment_provider'] && !(typeof data['shipment_provider'] === 'string' || data['shipment_provider'] instanceof String)) {
@@ -167,16 +167,16 @@ class OrderShipmentAdd {
 OrderShipmentAdd.prototype['order_id'] = undefined;
 
 /**
- * Store Id
- * @member {String} store_id
- */
-OrderShipmentAdd.prototype['store_id'] = undefined;
-
-/**
  * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
  * @member {String} warehouse_id
  */
 OrderShipmentAdd.prototype['warehouse_id'] = undefined;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+OrderShipmentAdd.prototype['store_id'] = undefined;
 
 /**
  * Defines company name that provide tracking of shipment
@@ -197,17 +197,30 @@ OrderShipmentAdd.prototype['shipping_method'] = undefined;
 OrderShipmentAdd.prototype['items'] = undefined;
 
 /**
+ * Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
+ * @member {Array.<module:model/OrderShipmentAddTrackingNumbersInner>} tracking_numbers
+ */
+OrderShipmentAdd.prototype['tracking_numbers'] = undefined;
+
+/**
+ * Defines custom tracking link
+ * @member {String} tracking_link
+ */
+OrderShipmentAdd.prototype['tracking_link'] = undefined;
+
+/**
+ * Defines shipment's status
+ * @member {Boolean} is_shipped
+ * @default true
+ */
+OrderShipmentAdd.prototype['is_shipped'] = true;
+
+/**
  * Send notifications to customer after shipment was created
  * @member {Boolean} send_notifications
  * @default false
  */
 OrderShipmentAdd.prototype['send_notifications'] = false;
-
-/**
- * Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
- * @member {Array.<module:model/OrderShipmentAddTrackingNumbersInner>} tracking_numbers
- */
-OrderShipmentAdd.prototype['tracking_numbers'] = undefined;
 
 /**
  * This parameter is used for adjust stock.
@@ -222,19 +235,6 @@ OrderShipmentAdd.prototype['adjust_stock'] = false;
  * @default false
  */
 OrderShipmentAdd.prototype['enable_cache'] = false;
-
-/**
- * Defines custom tracking link
- * @member {String} tracking_link
- */
-OrderShipmentAdd.prototype['tracking_link'] = undefined;
-
-/**
- * Defines shipment's status
- * @member {Boolean} is_shipped
- * @default true
- */
-OrderShipmentAdd.prototype['is_shipped'] = true;
 
 /**
  * Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.

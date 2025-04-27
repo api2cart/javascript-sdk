@@ -46,20 +46,20 @@ export default class MarketplaceApi {
      * marketplace.product.find
      * Search product in global catalog.
      * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Store Id
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [categoriesIds] Defines product add that is specified by comma-separated categories id
      * @param {String} [keyword] Defines search keyword
+     * @param {String} [categoriesIds] Defines product add that is specified by comma-separated categories id
+     * @param {String} [storeId] Store Id
      * @param {String} [asin] Amazon Standard Identification Number.
      * @param {String} [ean] European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
      * @param {String} [gtin] Global Trade Item Number. An GTIN is an identifier for trade items.
      * @param {String} [upc] Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
      * @param {String} [mpn] Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
      * @param {String} [isbn] International Standard Book Number. An ISBN is a unique identifier for books.
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/MarketplaceApi~marketplaceProductFindCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseMarketplaceProductFind}
      */
@@ -70,20 +70,20 @@ export default class MarketplaceApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
-        'categories_ids': opts['categoriesIds'],
         'keyword': opts['keyword'],
+        'categories_ids': opts['categoriesIds'],
+        'store_id': opts['storeId'],
         'asin': opts['asin'],
         'ean': opts['ean'],
         'gtin': opts['gtin'],
         'upc': opts['upc'],
         'mpn': opts['mpn'],
         'isbn': opts['isbn'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };

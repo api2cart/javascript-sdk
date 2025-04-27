@@ -25,12 +25,10 @@ class CustomerAdd {
      * Constructs a new <code>CustomerAdd</code>.
      * @alias module:model/CustomerAdd
      * @param email {String} Defines customer's email
-     * @param firstName {String} Defines customer's first name
-     * @param lastName {String} Defines customer's last name
      */
-    constructor(email, firstName, lastName) { 
+    constructor(email) { 
         
-        CustomerAdd.initialize(this, email, firstName, lastName);
+        CustomerAdd.initialize(this, email);
     }
 
     /**
@@ -38,12 +36,9 @@ class CustomerAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, email, firstName, lastName) { 
+    static initialize(obj, email) { 
         obj['email'] = email;
-        obj['first_name'] = firstName;
-        obj['last_name'] = lastName;
         obj['status'] = 'enabled';
-        obj['news_letter_subscription'] = false;
     }
 
     /**
@@ -75,6 +70,9 @@ class CustomerAdd {
             if (data.hasOwnProperty('group_ids')) {
                 obj['group_ids'] = ApiClient.convertToType(data['group_ids'], 'String');
             }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('created_time')) {
                 obj['created_time'] = ApiClient.convertToType(data['created_time'], 'String');
             }
@@ -90,9 +88,6 @@ class CustomerAdd {
             if (data.hasOwnProperty('birth_day')) {
                 obj['birth_day'] = ApiClient.convertToType(data['birth_day'], 'String');
             }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
-            }
             if (data.hasOwnProperty('news_letter_subscription')) {
                 obj['news_letter_subscription'] = ApiClient.convertToType(data['news_letter_subscription'], 'Boolean');
             }
@@ -104,9 +99,6 @@ class CustomerAdd {
             }
             if (data.hasOwnProperty('website')) {
                 obj['website'] = ApiClient.convertToType(data['website'], 'String');
-            }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('fax')) {
                 obj['fax'] = ApiClient.convertToType(data['fax'], 'String');
@@ -122,6 +114,9 @@ class CustomerAdd {
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], [CustomerAddAddressInner]);
@@ -167,6 +162,10 @@ class CustomerAdd {
             throw new Error("Expected the field `group_ids` to be a primitive type in the JSON string but got " + data['group_ids']);
         }
         // ensure the json data is a string
+        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
+            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
+        }
+        // ensure the json data is a string
         if (data['created_time'] && !(typeof data['created_time'] === 'string' || data['created_time'] instanceof String)) {
             throw new Error("Expected the field `created_time` to be a primitive type in the JSON string but got " + data['created_time']);
         }
@@ -186,10 +185,6 @@ class CustomerAdd {
         if (data['birth_day'] && !(typeof data['birth_day'] === 'string' || data['birth_day'] instanceof String)) {
             throw new Error("Expected the field `birth_day` to be a primitive type in the JSON string but got " + data['birth_day']);
         }
-        // ensure the json data is a string
-        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
-            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
-        }
         if (data['consents']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['consents'])) {
@@ -207,10 +202,6 @@ class CustomerAdd {
         // ensure the json data is a string
         if (data['website'] && !(typeof data['website'] === 'string' || data['website'] instanceof String)) {
             throw new Error("Expected the field `website` to be a primitive type in the JSON string but got " + data['website']);
-        }
-        // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         // ensure the json data is a string
         if (data['fax'] && !(typeof data['fax'] === 'string' || data['fax'] instanceof String)) {
@@ -232,6 +223,10 @@ class CustomerAdd {
         if (data['country'] && !(typeof data['country'] === 'string' || data['country'] instanceof String)) {
             throw new Error("Expected the field `country` to be a primitive type in the JSON string but got " + data['country']);
         }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
         if (data['address']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['address'])) {
@@ -249,7 +244,7 @@ class CustomerAdd {
 
 }
 
-CustomerAdd.RequiredProperties = ["email", "first_name", "last_name"];
+CustomerAdd.RequiredProperties = ["email"];
 
 /**
  * Defines customer's email
@@ -288,6 +283,13 @@ CustomerAdd.prototype['group'] = undefined;
 CustomerAdd.prototype['group_ids'] = undefined;
 
 /**
+ * Defines customer's status
+ * @member {String} status
+ * @default 'enabled'
+ */
+CustomerAdd.prototype['status'] = 'enabled';
+
+/**
  * Entity's date creation
  * @member {String} created_time
  */
@@ -318,18 +320,10 @@ CustomerAdd.prototype['last_login'] = undefined;
 CustomerAdd.prototype['birth_day'] = undefined;
 
 /**
- * Defines customer's status
- * @member {String} status
- * @default 'enabled'
- */
-CustomerAdd.prototype['status'] = 'enabled';
-
-/**
  * Defines whether the newsletter subscription is available for the user
  * @member {Boolean} news_letter_subscription
- * @default false
  */
-CustomerAdd.prototype['news_letter_subscription'] = false;
+CustomerAdd.prototype['news_letter_subscription'] = undefined;
 
 /**
  * Defines consents to notifications
@@ -348,12 +342,6 @@ CustomerAdd.prototype['gender'] = undefined;
  * @member {String} website
  */
 CustomerAdd.prototype['website'] = undefined;
-
-/**
- * Store Id
- * @member {String} store_id
- */
-CustomerAdd.prototype['store_id'] = undefined;
 
 /**
  * Defines customer's fax
@@ -384,6 +372,12 @@ CustomerAdd.prototype['note'] = undefined;
  * @member {String} country
  */
 CustomerAdd.prototype['country'] = undefined;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+CustomerAdd.prototype['store_id'] = undefined;
 
 /**
  * @member {Array.<module:model/CustomerAddAddressInner>} address

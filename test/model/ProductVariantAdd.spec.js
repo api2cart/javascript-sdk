@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property attributes (base name: "attributes")', function() {
+      // uncomment below and update the code to test the property attributes
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
@@ -72,20 +78,56 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sku (base name: "sku")', function() {
-      // uncomment below and update the code to test the property sku
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property barcode (base name: "barcode")', function() {
-      // uncomment below and update the code to test the property barcode
+    it('should have the property shortDescription (base name: "short_description")', function() {
+      // uncomment below and update the code to test the property shortDescription
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property gtin (base name: "gtin")', function() {
-      // uncomment below and update the code to test the property gtin
+    it('should have the property availableForView (base name: "available_for_view")', function() {
+      // uncomment below and update the code to test the property availableForView
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property availableForSale (base name: "available_for_sale")', function() {
+      // uncomment below and update the code to test the property availableForSale
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isVirtual (base name: "is_virtual")', function() {
+      // uncomment below and update the code to test the property isVirtual
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isDefault (base name: "is_default")', function() {
+      // uncomment below and update the code to test the property isDefault
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storesIds (base name: "stores_ids")', function() {
+      // uncomment below and update the code to test the property storesIds
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property langId (base name: "lang_id")', function() {
+      // uncomment below and update the code to test the property langId
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -104,24 +146,6 @@
 
     it('should have the property costPrice (base name: "cost_price")', function() {
       // uncomment below and update the code to test the property costPrice
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fixedCostShippingPrice (base name: "fixed_cost_shipping_price")', function() {
-      // uncomment below and update the code to test the property fixedCostShippingPrice
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property attributes (base name: "attributes")', function() {
-      // uncomment below and update the code to test the property attributes
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -150,14 +174,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property availableForView (base name: "available_for_view")', function() {
-      // uncomment below and update the code to test the property availableForView
+    it('should have the property tierPrices (base name: "tier_prices")', function() {
+      // uncomment below and update the code to test the property tierPrices
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property availableForSale (base name: "available_for_sale")', function() {
-      // uncomment below and update the code to test the property availableForSale
+    it('should have the property quantity (base name: "quantity")', function() {
+      // uncomment below and update the code to test the property quantity
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property warehouseId (base name: "warehouse_id")', function() {
+      // uncomment below and update the code to test the property warehouseId
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property inStock (base name: "in_stock")', function() {
+      // uncomment below and update the code to test the property inStock
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property backorderStatus (base name: "backorder_status")', function() {
+      // uncomment below and update the code to test the property backorderStatus
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property manageStock (base name: "manage_stock")', function() {
+      // uncomment below and update the code to test the property manageStock
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -192,26 +240,44 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property shortDescription (base name: "short_description")', function() {
-      // uncomment below and update the code to test the property shortDescription
+    it('should have the property sku (base name: "sku")', function() {
+      // uncomment below and update the code to test the property sku
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property warehouseId (base name: "warehouse_id")', function() {
-      // uncomment below and update the code to test the property warehouseId
+    it('should have the property barcode (base name: "barcode")', function() {
+      // uncomment below and update the code to test the property barcode
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property quantity (base name: "quantity")', function() {
-      // uncomment below and update the code to test the property quantity
+    it('should have the property gtin (base name: "gtin")', function() {
+      // uncomment below and update the code to test the property gtin
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
+    it('should have the property upc (base name: "upc")', function() {
+      // uncomment below and update the code to test the property upc
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ean (base name: "ean")', function() {
+      // uncomment below and update the code to test the property ean
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mpn (base name: "mpn")', function() {
+      // uncomment below and update the code to test the property mpn
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isbn (base name: "isbn")', function() {
+      // uncomment below and update the code to test the property isbn
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -222,8 +288,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property taxClassId (base name: "tax_class_id")', function() {
-      // uncomment below and update the code to test the property taxClassId
+    it('should have the property createdAt (base name: "created_at")', function() {
+      // uncomment below and update the code to test the property createdAt
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -252,20 +318,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property langId (base name: "lang_id")', function() {
-      // uncomment below and update the code to test the property langId
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property clearCache (base name: "clear_cache")', function() {
-      // uncomment below and update the code to test the property clearCache
+    it('should have the property taxClassId (base name: "tax_class_id")', function() {
+      // uncomment below and update the code to test the property taxClassId
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -276,56 +330,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property harmonizedSystemCode (base name: "harmonized_system_code")', function() {
-      // uncomment below and update the code to test the property harmonizedSystemCode
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property countryOfOrigin (base name: "country_of_origin")', function() {
-      // uncomment below and update the code to test the property countryOfOrigin
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property manageStock (base name: "manage_stock")', function() {
-      // uncomment below and update the code to test the property manageStock
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property upc (base name: "upc")', function() {
-      // uncomment below and update the code to test the property upc
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property mpn (base name: "mpn")', function() {
-      // uncomment below and update the code to test the property mpn
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ean (base name: "ean")', function() {
-      // uncomment below and update the code to test the property ean
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isbn (base name: "isbn")', function() {
-      // uncomment below and update the code to test the property isbn
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property storesIds (base name: "stores_ids")', function() {
-      // uncomment below and update the code to test the property storesIds
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isDefault (base name: "is_default")', function() {
-      // uncomment below and update the code to test the property isDefault
+    it('should have the property fixedCostShippingPrice (base name: "fixed_cost_shipping_price")', function() {
+      // uncomment below and update the code to test the property fixedCostShippingPrice
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
@@ -336,32 +342,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property countryOfOrigin (base name: "country_of_origin")', function() {
+      // uncomment below and update the code to test the property countryOfOrigin
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property harmonizedSystemCode (base name: "harmonized_system_code")', function() {
+      // uncomment below and update the code to test the property harmonizedSystemCode
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property marketplaceItemProperties (base name: "marketplace_item_properties")', function() {
       // uncomment below and update the code to test the property marketplaceItemProperties
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });
 
-    it('should have the property inStock (base name: "in_stock")', function() {
-      // uncomment below and update the code to test the property inStock
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property backorderStatus (base name: "backorder_status")', function() {
-      // uncomment below and update the code to test the property backorderStatus
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tierPrices (base name: "tier_prices")', function() {
-      // uncomment below and update the code to test the property tierPrices
-      //var instance = new Api2CartOpenApi.ProductVariantAdd();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isVirtual (base name: "is_virtual")', function() {
-      // uncomment below and update the code to test the property isVirtual
+    it('should have the property clearCache (base name: "clear_cache")', function() {
+      // uncomment below and update the code to test the property clearCache
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });

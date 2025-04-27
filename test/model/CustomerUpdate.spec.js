@@ -132,12 +132,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property storeId (base name: "store_id")', function() {
-      // uncomment below and update the code to test the property storeId
-      //var instance = new Api2CartOpenApi.CustomerUpdate();
-      //expect(instance).to.be();
-    });
-
     it('should have the property note (base name: "note")', function() {
       // uncomment below and update the code to test the property note
       //var instance = new Api2CartOpenApi.CustomerUpdate();
@@ -146,6 +140,12 @@
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
+      //var instance = new Api2CartOpenApi.CustomerUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property storeId (base name: "store_id")', function() {
+      // uncomment below and update the code to test the property storeId
       //var instance = new Api2CartOpenApi.CustomerUpdate();
       //expect(instance).to.be();
     });

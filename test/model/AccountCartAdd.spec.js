@@ -492,6 +492,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shoplineSharedSecret (base name: "shopline_shared_secret")', function() {
+      // uncomment below and update the code to test the property shoplineSharedSecret
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shopifyAccessToken (base name: "shopify_access_token")', function() {
       // uncomment below and update the code to test the property shopifyAccessToken
       //var instance = new Api2CartOpenApi.AccountCartAdd();

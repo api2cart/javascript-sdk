@@ -183,19 +183,19 @@ export default class ProductApi {
      * Get list of attributes and values.
      * @param {String} productId Retrieves attributes specified by product id
      * @param {Object} opts Optional parameters
-     * @param {String} [attributeId] Retrieves info for specified attribute_id
-     * @param {String} [variantId] Defines product's variants specified by variant id
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [attributeId] Retrieves info for specified attribute_id
+     * @param {String} [variantId] Defines product's variants specified by variant id
      * @param {String} [attributeGroupId] Filter by attribute_group_id
-     * @param {String} [setName] Retrieves attributes specified by set_name in Magento
      * @param {String} [langId] Retrieves attributes specified by language id
      * @param {String} [storeId] Retrieves attributes specified by store id
+     * @param {String} [setName] Retrieves attributes specified by set_name in Magento
      * @param {String} [sortBy = 'attribute_id')] Set field to sort by
      * @param {String} [sortDirection = 'asc')] Set sorting direction
-     * @param {String} [params = 'attribute_id,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'attribute_id,name')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/ProductApi~productAttributeListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductAttributeList}
@@ -211,20 +211,20 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
+        'start': opts['start'],
+        'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'product_id': productId,
         'attribute_id': opts['attributeId'],
         'variant_id': opts['variantId'],
-        'page_cursor': opts['pageCursor'],
-        'start': opts['start'],
-        'count': opts['count'],
         'attribute_group_id': opts['attributeGroupId'],
-        'set_name': opts['setName'],
         'lang_id': opts['langId'],
         'store_id': opts['storeId'],
+        'set_name': opts['setName'],
         'sort_by': opts['sortBy'],
         'sort_direction': opts['sortDirection'],
-        'params': opts['params'],
         'response_fields': opts['responseFields'],
+        'params': opts['params'],
         'exclude': opts['exclude']
       };
       let headerParams = {
@@ -376,20 +376,20 @@ export default class ProductApi {
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [params = 'id,name,short_description,active,url')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [brandIds] Retrieves brands specified by brand ids
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [categoryId] Retrieves product brands specified by category id
+     * @param {String} [parentId] Retrieves brands specified by parent id
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
+     * @param {String} [findWhere] Entity search that is specified by the comma-separated unique fields
+     * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [parentId] Retrieves brands specified by parent id
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [findWhere] Entity search that is specified by the comma-separated unique fields
-     * @param {String} [findValue] Entity search that is specified by some value
+     * @param {String} [params = 'id,name,short_description,active,url')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/ProductApi~productBrandListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductBrandList}
      */
@@ -403,20 +403,20 @@ export default class ProductApi {
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],
-        'params': opts['params'],
         'brand_ids': opts['brandIds'],
-        'exclude': opts['exclude'],
         'category_id': opts['categoryId'],
+        'parent_id': opts['parentId'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
+        'find_where': opts['findWhere'],
+        'find_value': opts['findValue'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'parent_id': opts['parentId'],
         'response_fields': opts['responseFields'],
-        'find_where': opts['findWhere'],
-        'find_value': opts['findValue']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -495,12 +495,12 @@ export default class ProductApi {
      * @param {String} productId Filter by parent product id
      * @param {String} id Entity id
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Store Id
      * @param {String} [langId] Language id
      * @param {String} [currencyId] Currency Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {module:api/ProductApi~productChildItemInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductChildItemInfo200Response}
@@ -520,14 +520,14 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
         'product_id': productId,
         'id': id,
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'currency_id': opts['currencyId'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'use_latest_api_version': opts['useLatestApiVersion']
       };
       let headerParams = {
@@ -558,16 +558,9 @@ export default class ProductApi {
      * product.child_item.list
      * Get a list of a product's child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
+     * @param {String} [pageCursor] Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [productId] Filter by parent product id
      * @param {String} [productIds] Filter by parent product ids
      * @param {String} [sku] Filter by products variant's sku
@@ -577,10 +570,17 @@ export default class ProductApi {
      * @param {Boolean} [availSale] Specifies the set of available/not available products for sale
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Child products search that is specified by field
+     * @param {String} [createdFrom] Retrieve entities from their creation date
+     * @param {String} [createdTo] Retrieve entities to their creation date
+     * @param {String} [modifiedFrom] Retrieve entities from their modification date
+     * @param {String} [modifiedTo] Retrieve entities to their modification date
+     * @param {Boolean} [returnGlobal = false)] Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
-     * @param {Boolean} [returnGlobal = false)] Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
      * @param {module:api/ProductApi~productChildItemListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductChildItemList}
      */
@@ -591,16 +591,9 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
-        'created_from': opts['createdFrom'],
-        'created_to': opts['createdTo'],
-        'modified_from': opts['modifiedFrom'],
-        'modified_to': opts['modifiedTo'],
+        'page_cursor': opts['pageCursor'],
         'product_id': opts['productId'],
         'product_ids': opts['productIds'],
         'sku': opts['sku'],
@@ -610,10 +603,17 @@ export default class ProductApi {
         'avail_sale': opts['availSale'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
+        'created_from': opts['createdFrom'],
+        'created_to': opts['createdTo'],
+        'modified_from': opts['modifiedFrom'],
+        'modified_to': opts['modifiedTo'],
+        'return_global': opts['returnGlobal'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'report_request_id': opts['reportRequestId'],
         'disable_report_cache': opts['disableReportCache'],
-        'use_latest_api_version': opts['useLatestApiVersion'],
-        'return_global': opts['returnGlobal']
+        'use_latest_api_version': opts['useLatestApiVersion']
       };
       let headerParams = {
       };
@@ -643,28 +643,28 @@ export default class ProductApi {
      * product.count
      * Count products in store.
      * @param {Object} opts Optional parameters
+     * @param {String} [productIds] Counts products specified by product ids
+     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [categoriesIds] Defines product add that is specified by comma-separated categories id
      * @param {String} [categoryId] Counts products specified by category id
+     * @param {String} [storeId] Counts products specified by store id
+     * @param {String} [langId] Counts products specified by language id
+     * @param {Boolean} [availView] Specifies the set of visible/invisible products
+     * @param {Boolean} [availSale] Specifies the set of available/not available products for sale
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {Boolean} [availView] Specifies the set of visible/invisible products
-     * @param {Boolean} [availSale] Specifies the set of available/not available products for sale
-     * @param {String} [storeId] Counts products specified by store id
-     * @param {String} [langId] Counts products specified by language id
-     * @param {String} [productIds] Counts products specified by product ids
-     * @param {String} [sinceId] Retrieve entities starting from the specified id.
-     * @param {String} [reportRequestId] Report request id
-     * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {String} [brandName] Retrieves brands specified by brand name
      * @param {Array.<String>} [productAttributes] Defines product attributes
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Counts products that are searched specified by field
-     * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
+     * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [returnGlobal = false)] Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
-     * @param {String} [categoriesIds] Defines product add that is specified by comma-separated categories id
+     * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
+     * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {module:api/ProductApi~productCountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductCount200Response}
      */
@@ -675,28 +675,28 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
+        'product_ids': opts['productIds'],
+        'since_id': opts['sinceId'],
+        'categories_ids': opts['categoriesIds'],
         'category_id': opts['categoryId'],
+        'store_id': opts['storeId'],
+        'lang_id': opts['langId'],
+        'avail_view': opts['availView'],
+        'avail_sale': opts['availSale'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'avail_view': opts['availView'],
-        'avail_sale': opts['availSale'],
-        'store_id': opts['storeId'],
-        'lang_id': opts['langId'],
-        'product_ids': opts['productIds'],
-        'since_id': opts['sinceId'],
-        'report_request_id': opts['reportRequestId'],
-        'disable_report_cache': opts['disableReportCache'],
         'brand_name': opts['brandName'],
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
         'status': opts['status'],
         'type': opts['type'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
-        'use_latest_api_version': opts['useLatestApiVersion'],
+        'report_request_id': opts['reportRequestId'],
         'return_global': opts['returnGlobal'],
-        'categories_ids': opts['categoriesIds']
+        'disable_report_cache': opts['disableReportCache'],
+        'use_latest_api_version': opts['useLatestApiVersion']
       };
       let headerParams = {
       };
@@ -789,12 +789,12 @@ export default class ProductApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'name,iso3,default,avail')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {Boolean} [_default] Specifies the set of default/not default currencies
      * @param {Boolean} [avail] Specifies the set of available/not available currencies
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'name,iso3,default,avail')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/ProductApi~productCurrencyListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductCurrencyList}
      */
@@ -807,12 +807,12 @@ export default class ProductApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
         'page_cursor': opts['pageCursor'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields'],
         'default': opts['_default'],
-        'avail': opts['avail']
+        'avail': opts['avail'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -1121,12 +1121,12 @@ export default class ProductApi {
      * @param {String} id Defines image update specified by image id
      * @param {Object} opts Optional parameters
      * @param {String} [variantIds] Defines product's variants ids
+     * @param {String} [storeId] Store Id
+     * @param {String} [langId] Language id
      * @param {String} [imageName] Defines image's name
      * @param {String} [type = 'additional')] Defines image's types that are specified by comma-separated list
      * @param {String} [label] Defines alternative text that has to be attached to the picture
      * @param {Number} [position] Defines image’s position in the list
-     * @param {String} [storeId] Store Id
-     * @param {String} [langId] Language id
      * @param {Boolean} [hidden] Define is hide image
      * @param {module:api/ProductApi~productImageUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductImageUpdate200Response}
@@ -1147,14 +1147,14 @@ export default class ProductApi {
       };
       let queryParams = {
         'product_id': productId,
+        'id': id,
         'variant_ids': opts['variantIds'],
+        'store_id': opts['storeId'],
+        'lang_id': opts['langId'],
         'image_name': opts['imageName'],
         'type': opts['type'],
         'label': opts['label'],
         'position': opts['position'],
-        'id': id,
-        'store_id': opts['storeId'],
-        'lang_id': opts['langId'],
         'hidden': opts['hidden']
       };
       let headerParams = {
@@ -1186,12 +1186,12 @@ export default class ProductApi {
      * Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
      * @param {String} id Retrieves product's info specified by product id
      * @param {Object} opts Optional parameters
-     * @param {String} [params = 'id,name,description,price,categories_ids')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [storeId] Retrieves product info specified by store id
      * @param {String} [langId] Retrieves product info specified by language id
      * @param {String} [currencyId] Currency Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,description,price,categories_ids')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {String} [reportRequestId] Report request id
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
@@ -1210,12 +1210,12 @@ export default class ProductApi {
       };
       let queryParams = {
         'id': id,
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'currency_id': opts['currencyId'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude'],
         'report_request_id': opts['reportRequestId'],
         'disable_report_cache': opts['disableReportCache'],
         'use_latest_api_version': opts['useLatestApiVersion']
@@ -1248,39 +1248,39 @@ export default class ProductApi {
      * product.list
      * Get list of products from your store. Returns 10 products by default.
      * @param {Object} opts Optional parameters
-     * @param {String} [pageCursor] Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'id,name,description,price,categories_ids')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [pageCursor] Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter)
+     * @param {String} [productIds] Retrieves products specified by product ids
+     * @param {String} [sinceId] Retrieve entities starting from the specified id.
+     * @param {String} [categoriesIds] Retrieves products specified by categories ids
      * @param {String} [categoryId] Retrieves products specified by category id
+     * @param {String} [storeId] Retrieves products specified by store id
+     * @param {String} [langId] Retrieves products specified by language id
+     * @param {String} [currencyId] Currency Id
+     * @param {Boolean} [availView] Specifies the set of visible/invisible products
+     * @param {Boolean} [availSale] Specifies the set of available/not available products for sale
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {Boolean} [availView] Specifies the set of visible/invisible products
-     * @param {Boolean} [availSale] Specifies the set of available/not available products for sale
-     * @param {String} [storeId] Retrieves products specified by store id
-     * @param {String} [langId] Retrieves products specified by language id
-     * @param {String} [currencyId] Currency Id
-     * @param {String} [productIds] Retrieves products specified by product ids
-     * @param {String} [sinceId] Retrieve entities starting from the specified id.
-     * @param {String} [reportRequestId] Report request id
-     * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
-     * @param {String} [sortBy = 'id')] Set field to sort by
-     * @param {String} [sortDirection = 'asc')] Set sorting direction
      * @param {String} [sku] Filter by product's sku
-     * @param {Boolean} [disableCache = false)] Disable cache for current request
      * @param {String} [brandName] Retrieves brands specified by brand name
      * @param {Array.<String>} [productAttributes] Defines product attributes
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Product search that is specified by field
-     * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {Boolean} [returnGlobal = false)] Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
-     * @param {String} [categoriesIds] Retrieves products specified by categories ids
+     * @param {String} [params = 'id,name,description,price,categories_ids')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [sortBy = 'id')] Set field to sort by
+     * @param {String} [sortDirection = 'asc')] Set sorting direction
+     * @param {String} [reportRequestId] Report request id
+     * @param {Boolean} [disableCache = false)] Disable cache for current request
+     * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
+     * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
      * @param {module:api/ProductApi~productListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductList}
      */
@@ -1291,39 +1291,39 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
-        'page_cursor': opts['pageCursor'],
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
-        'response_fields': opts['responseFields'],
-        'exclude': opts['exclude'],
+        'page_cursor': opts['pageCursor'],
+        'product_ids': opts['productIds'],
+        'since_id': opts['sinceId'],
+        'categories_ids': opts['categoriesIds'],
         'category_id': opts['categoryId'],
+        'store_id': opts['storeId'],
+        'lang_id': opts['langId'],
+        'currency_id': opts['currencyId'],
+        'avail_view': opts['availView'],
+        'avail_sale': opts['availSale'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'avail_view': opts['availView'],
-        'avail_sale': opts['availSale'],
-        'store_id': opts['storeId'],
-        'lang_id': opts['langId'],
-        'currency_id': opts['currencyId'],
-        'product_ids': opts['productIds'],
-        'since_id': opts['sinceId'],
-        'report_request_id': opts['reportRequestId'],
-        'disable_report_cache': opts['disableReportCache'],
-        'sort_by': opts['sortBy'],
-        'sort_direction': opts['sortDirection'],
         'sku': opts['sku'],
-        'disable_cache': opts['disableCache'],
         'brand_name': opts['brandName'],
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
         'status': opts['status'],
         'type': opts['type'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
-        'use_latest_api_version': opts['useLatestApiVersion'],
         'return_global': opts['returnGlobal'],
-        'categories_ids': opts['categoriesIds']
+        'params': opts['params'],
+        'response_fields': opts['responseFields'],
+        'exclude': opts['exclude'],
+        'sort_by': opts['sortBy'],
+        'sort_direction': opts['sortDirection'],
+        'report_request_id': opts['reportRequestId'],
+        'disable_cache': opts['disableCache'],
+        'disable_report_cache': opts['disableReportCache'],
+        'use_latest_api_version': opts['useLatestApiVersion']
       };
       let headerParams = {
       };
@@ -1562,12 +1562,12 @@ export default class ProductApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [productId] Retrieves products' options specified by product id
      * @param {String} [langId] Language id
      * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [params = 'id,name,description')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/ProductApi~productOptionListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductOptionList}
      */
@@ -1580,12 +1580,12 @@ export default class ProductApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields'],
         'product_id': opts['productId'],
         'lang_id': opts['langId'],
-        'store_id': opts['storeId']
+        'store_id': opts['storeId'],
+        'response_fields': opts['responseFields'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -1990,14 +1990,14 @@ export default class ProductApi {
      * @param {String} productId Product id
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [ids] Retrieves reviews specified by ids
      * @param {String} [storeId] Store Id
      * @param {String} [status] Defines status
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/ProductApi~productReviewListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductReviewList}
      */
@@ -2013,15 +2013,15 @@ export default class ProductApi {
       };
       let queryParams = {
         'start': opts['start'],
-        'page_cursor': opts['pageCursor'],
         'count': opts['count'],
+        'page_cursor': opts['pageCursor'],
         'product_id': productId,
         'ids': opts['ids'],
         'store_id': opts['storeId'],
         'status': opts['status'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -2311,12 +2311,12 @@ export default class ProductApi {
      * Get count variants.
      * @param {String} productId Retrieves products' variants specified by product id
      * @param {Object} opts Optional parameters
+     * @param {String} [categoryId] Counts products’ variants specified by category id
+     * @param {String} [storeId] Retrieves variants specified by store id
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [categoryId] Counts products’ variants specified by category id
-     * @param {String} [storeId] Retrieves variants specified by store id
      * @param {module:api/ProductApi~productVariantCountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductVariantCount200Response}
      */
@@ -2331,13 +2331,13 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
+        'product_id': productId,
+        'category_id': opts['categoryId'],
+        'store_id': opts['storeId'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
-        'modified_to': opts['modifiedTo'],
-        'category_id': opts['categoryId'],
-        'product_id': productId,
-        'store_id': opts['storeId']
+        'modified_to': opts['modifiedTo']
       };
       let headerParams = {
       };
@@ -2564,9 +2564,9 @@ export default class ProductApi {
      * Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
      * @param {String} id Retrieves variant's info specified by variant id
      * @param {Object} opts Optional parameters
+     * @param {String} [storeId] Retrieves variant info specified by store id
      * @param {String} [params = 'id,name,description,price')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [storeId] Retrieves variant info specified by store id
      * @param {module:api/ProductApi~productVariantInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductInfo200Response}
      */
@@ -2581,10 +2581,10 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
-        'params': opts['params'],
-        'exclude': opts['exclude'],
         'id': id,
-        'store_id': opts['storeId']
+        'store_id': opts['storeId'],
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -2616,15 +2616,15 @@ export default class ProductApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [params = 'id,name,description,price')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param {String} [productId] Retrieves products' variants specified by product id
+     * @param {String} [categoryId] Retrieves products’ variants specified by category id
+     * @param {String} [storeId] Retrieves variants specified by store id
      * @param {String} [createdFrom] Retrieve entities from their creation date
      * @param {String} [createdTo] Retrieve entities to their creation date
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [categoryId] Retrieves products’ variants specified by category id
-     * @param {String} [productId] Retrieves products' variants specified by product id
-     * @param {String} [storeId] Retrieves variants specified by store id
+     * @param {String} [params = 'id,name,description,price')] Set this parameter in order to choose which entity fields you want to retrieve
+     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {module:api/ProductApi~productVariantListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductVariantList200Response}
      */
@@ -2637,15 +2637,15 @@ export default class ProductApi {
       let queryParams = {
         'start': opts['start'],
         'count': opts['count'],
-        'params': opts['params'],
-        'exclude': opts['exclude'],
+        'product_id': opts['productId'],
+        'category_id': opts['categoryId'],
+        'store_id': opts['storeId'],
         'created_from': opts['createdFrom'],
         'created_to': opts['createdTo'],
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
-        'category_id': opts['categoryId'],
-        'product_id': opts['productId'],
-        'store_id': opts['storeId']
+        'params': opts['params'],
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };

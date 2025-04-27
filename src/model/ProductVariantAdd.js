@@ -40,11 +40,11 @@ class ProductVariantAdd {
         obj['model'] = model;
         obj['available_for_view'] = true;
         obj['available_for_sale'] = true;
-        obj['weight'] = 0;
-        obj['quantity'] = 0;
-        obj['clear_cache'] = true;
-        obj['taxable'] = true;
         obj['is_virtual'] = false;
+        obj['quantity'] = 0;
+        obj['weight'] = 0;
+        obj['taxable'] = true;
+        obj['clear_cache'] = true;
     }
 
     /**
@@ -61,20 +61,41 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('product_id')) {
                 obj['product_id'] = ApiClient.convertToType(data['product_id'], 'String');
             }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], [ProductVariantAddAttributesInner]);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], 'String');
             }
-            if (data.hasOwnProperty('sku')) {
-                obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('barcode')) {
-                obj['barcode'] = ApiClient.convertToType(data['barcode'], 'String');
+            if (data.hasOwnProperty('short_description')) {
+                obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String');
             }
-            if (data.hasOwnProperty('gtin')) {
-                obj['gtin'] = ApiClient.convertToType(data['gtin'], 'String');
+            if (data.hasOwnProperty('available_for_view')) {
+                obj['available_for_view'] = ApiClient.convertToType(data['available_for_view'], 'Boolean');
+            }
+            if (data.hasOwnProperty('available_for_sale')) {
+                obj['available_for_sale'] = ApiClient.convertToType(data['available_for_sale'], 'Boolean');
+            }
+            if (data.hasOwnProperty('is_virtual')) {
+                obj['is_virtual'] = ApiClient.convertToType(data['is_virtual'], 'Boolean');
+            }
+            if (data.hasOwnProperty('is_default')) {
+                obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
+            }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            }
+            if (data.hasOwnProperty('stores_ids')) {
+                obj['stores_ids'] = ApiClient.convertToType(data['stores_ids'], 'String');
+            }
+            if (data.hasOwnProperty('lang_id')) {
+                obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
             }
             if (data.hasOwnProperty('price')) {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number');
@@ -84,15 +105,6 @@ class ProductVariantAdd {
             }
             if (data.hasOwnProperty('cost_price')) {
                 obj['cost_price'] = ApiClient.convertToType(data['cost_price'], 'Number');
-            }
-            if (data.hasOwnProperty('fixed_cost_shipping_price')) {
-                obj['fixed_cost_shipping_price'] = ApiClient.convertToType(data['fixed_cost_shipping_price'], 'Number');
-            }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], [ProductVariantAddAttributesInner]);
-            }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
             if (data.hasOwnProperty('special_price')) {
                 obj['special_price'] = ApiClient.convertToType(data['special_price'], 'Number');
@@ -106,11 +118,23 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('sprice_expire')) {
                 obj['sprice_expire'] = ApiClient.convertToType(data['sprice_expire'], 'String');
             }
-            if (data.hasOwnProperty('available_for_view')) {
-                obj['available_for_view'] = ApiClient.convertToType(data['available_for_view'], 'Boolean');
+            if (data.hasOwnProperty('tier_prices')) {
+                obj['tier_prices'] = ApiClient.convertToType(data['tier_prices'], [ProductAddTierPricesInner]);
             }
-            if (data.hasOwnProperty('available_for_sale')) {
-                obj['available_for_sale'] = ApiClient.convertToType(data['available_for_sale'], 'Boolean');
+            if (data.hasOwnProperty('quantity')) {
+                obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
+            }
+            if (data.hasOwnProperty('warehouse_id')) {
+                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
+            }
+            if (data.hasOwnProperty('in_stock')) {
+                obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
+            }
+            if (data.hasOwnProperty('backorder_status')) {
+                obj['backorder_status'] = ApiClient.convertToType(data['backorder_status'], 'String');
+            }
+            if (data.hasOwnProperty('manage_stock')) {
+                obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
             }
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
@@ -127,23 +151,32 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('weight_unit')) {
                 obj['weight_unit'] = ApiClient.convertToType(data['weight_unit'], 'String');
             }
-            if (data.hasOwnProperty('short_description')) {
-                obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String');
+            if (data.hasOwnProperty('sku')) {
+                obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
             }
-            if (data.hasOwnProperty('warehouse_id')) {
-                obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
+            if (data.hasOwnProperty('barcode')) {
+                obj['barcode'] = ApiClient.convertToType(data['barcode'], 'String');
             }
-            if (data.hasOwnProperty('quantity')) {
-                obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
+            if (data.hasOwnProperty('gtin')) {
+                obj['gtin'] = ApiClient.convertToType(data['gtin'], 'String');
             }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+            if (data.hasOwnProperty('upc')) {
+                obj['upc'] = ApiClient.convertToType(data['upc'], 'String');
+            }
+            if (data.hasOwnProperty('ean')) {
+                obj['ean'] = ApiClient.convertToType(data['ean'], 'String');
+            }
+            if (data.hasOwnProperty('mpn')) {
+                obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
+            }
+            if (data.hasOwnProperty('isbn')) {
+                obj['isbn'] = ApiClient.convertToType(data['isbn'], 'String');
             }
             if (data.hasOwnProperty('manufacturer')) {
                 obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
             }
-            if (data.hasOwnProperty('tax_class_id')) {
-                obj['tax_class_id'] = ApiClient.convertToType(data['tax_class_id'], 'String');
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
             if (data.hasOwnProperty('meta_title')) {
                 obj['meta_title'] = ApiClient.convertToType(data['meta_title'], 'String');
@@ -157,62 +190,29 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
-            if (data.hasOwnProperty('lang_id')) {
-                obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
-            }
-            if (data.hasOwnProperty('clear_cache')) {
-                obj['clear_cache'] = ApiClient.convertToType(data['clear_cache'], 'Boolean');
+            if (data.hasOwnProperty('tax_class_id')) {
+                obj['tax_class_id'] = ApiClient.convertToType(data['tax_class_id'], 'String');
             }
             if (data.hasOwnProperty('taxable')) {
                 obj['taxable'] = ApiClient.convertToType(data['taxable'], 'Boolean');
             }
-            if (data.hasOwnProperty('harmonized_system_code')) {
-                obj['harmonized_system_code'] = ApiClient.convertToType(data['harmonized_system_code'], 'String');
-            }
-            if (data.hasOwnProperty('country_of_origin')) {
-                obj['country_of_origin'] = ApiClient.convertToType(data['country_of_origin'], 'String');
-            }
-            if (data.hasOwnProperty('manage_stock')) {
-                obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
-            }
-            if (data.hasOwnProperty('upc')) {
-                obj['upc'] = ApiClient.convertToType(data['upc'], 'String');
-            }
-            if (data.hasOwnProperty('mpn')) {
-                obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
-            }
-            if (data.hasOwnProperty('ean')) {
-                obj['ean'] = ApiClient.convertToType(data['ean'], 'String');
-            }
-            if (data.hasOwnProperty('isbn')) {
-                obj['isbn'] = ApiClient.convertToType(data['isbn'], 'String');
-            }
-            if (data.hasOwnProperty('stores_ids')) {
-                obj['stores_ids'] = ApiClient.convertToType(data['stores_ids'], 'String');
-            }
-            if (data.hasOwnProperty('is_default')) {
-                obj['is_default'] = ApiClient.convertToType(data['is_default'], 'Boolean');
+            if (data.hasOwnProperty('fixed_cost_shipping_price')) {
+                obj['fixed_cost_shipping_price'] = ApiClient.convertToType(data['fixed_cost_shipping_price'], 'Number');
             }
             if (data.hasOwnProperty('is_free_shipping')) {
                 obj['is_free_shipping'] = ApiClient.convertToType(data['is_free_shipping'], 'Boolean');
             }
+            if (data.hasOwnProperty('country_of_origin')) {
+                obj['country_of_origin'] = ApiClient.convertToType(data['country_of_origin'], 'String');
+            }
+            if (data.hasOwnProperty('harmonized_system_code')) {
+                obj['harmonized_system_code'] = ApiClient.convertToType(data['harmonized_system_code'], 'String');
+            }
             if (data.hasOwnProperty('marketplace_item_properties')) {
                 obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], 'String');
             }
-            if (data.hasOwnProperty('in_stock')) {
-                obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
-            }
-            if (data.hasOwnProperty('backorder_status')) {
-                obj['backorder_status'] = ApiClient.convertToType(data['backorder_status'], 'String');
-            }
-            if (data.hasOwnProperty('tier_prices')) {
-                obj['tier_prices'] = ApiClient.convertToType(data['tier_prices'], [ProductAddTierPricesInner]);
-            }
-            if (data.hasOwnProperty('is_virtual')) {
-                obj['is_virtual'] = ApiClient.convertToType(data['is_virtual'], 'Boolean');
+            if (data.hasOwnProperty('clear_cache')) {
+                obj['clear_cache'] = ApiClient.convertToType(data['clear_cache'], 'Boolean');
             }
         }
         return obj;
@@ -234,26 +234,6 @@ class ProductVariantAdd {
         if (data['product_id'] && !(typeof data['product_id'] === 'string' || data['product_id'] instanceof String)) {
             throw new Error("Expected the field `product_id` to be a primitive type in the JSON string but got " + data['product_id']);
         }
-        // ensure the json data is a string
-        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
-            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
-        }
-        // ensure the json data is a string
-        if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
-            throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
-        }
-        // ensure the json data is a string
-        if (data['sku'] && !(typeof data['sku'] === 'string' || data['sku'] instanceof String)) {
-            throw new Error("Expected the field `sku` to be a primitive type in the JSON string but got " + data['sku']);
-        }
-        // ensure the json data is a string
-        if (data['barcode'] && !(typeof data['barcode'] === 'string' || data['barcode'] instanceof String)) {
-            throw new Error("Expected the field `barcode` to be a primitive type in the JSON string but got " + data['barcode']);
-        }
-        // ensure the json data is a string
-        if (data['gtin'] && !(typeof data['gtin'] === 'string' || data['gtin'] instanceof String)) {
-            throw new Error("Expected the field `gtin` to be a primitive type in the JSON string but got " + data['gtin']);
-        }
         if (data['attributes']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['attributes'])) {
@@ -265,8 +245,32 @@ class ProductVariantAdd {
             };
         }
         // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['model'] && !(typeof data['model'] === 'string' || data['model'] instanceof String)) {
+            throw new Error("Expected the field `model` to be a primitive type in the JSON string but got " + data['model']);
+        }
+        // ensure the json data is a string
         if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
             throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        }
+        // ensure the json data is a string
+        if (data['short_description'] && !(typeof data['short_description'] === 'string' || data['short_description'] instanceof String)) {
+            throw new Error("Expected the field `short_description` to be a primitive type in the JSON string but got " + data['short_description']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
+        if (data['stores_ids'] && !(typeof data['stores_ids'] === 'string' || data['stores_ids'] instanceof String)) {
+            throw new Error("Expected the field `stores_ids` to be a primitive type in the JSON string but got " + data['stores_ids']);
+        }
+        // ensure the json data is a string
+        if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
+            throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
         }
         // ensure the json data is a string
         if (data['sprice_create'] && !(typeof data['sprice_create'] === 'string' || data['sprice_create'] instanceof String)) {
@@ -280,29 +284,63 @@ class ProductVariantAdd {
         if (data['sprice_expire'] && !(typeof data['sprice_expire'] === 'string' || data['sprice_expire'] instanceof String)) {
             throw new Error("Expected the field `sprice_expire` to be a primitive type in the JSON string but got " + data['sprice_expire']);
         }
-        // ensure the json data is a string
-        if (data['weight_unit'] && !(typeof data['weight_unit'] === 'string' || data['weight_unit'] instanceof String)) {
-            throw new Error("Expected the field `weight_unit` to be a primitive type in the JSON string but got " + data['weight_unit']);
-        }
-        // ensure the json data is a string
-        if (data['short_description'] && !(typeof data['short_description'] === 'string' || data['short_description'] instanceof String)) {
-            throw new Error("Expected the field `short_description` to be a primitive type in the JSON string but got " + data['short_description']);
+        if (data['tier_prices']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['tier_prices'])) {
+                throw new Error("Expected the field `tier_prices` to be an array in the JSON data but got " + data['tier_prices']);
+            }
+            // validate the optional field `tier_prices` (array)
+            for (const item of data['tier_prices']) {
+                ProductAddTierPricesInner.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['warehouse_id'] && !(typeof data['warehouse_id'] === 'string' || data['warehouse_id'] instanceof String)) {
             throw new Error("Expected the field `warehouse_id` to be a primitive type in the JSON string but got " + data['warehouse_id']);
         }
         // ensure the json data is a string
-        if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
-            throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+        if (data['backorder_status'] && !(typeof data['backorder_status'] === 'string' || data['backorder_status'] instanceof String)) {
+            throw new Error("Expected the field `backorder_status` to be a primitive type in the JSON string but got " + data['backorder_status']);
+        }
+        // ensure the json data is a string
+        if (data['weight_unit'] && !(typeof data['weight_unit'] === 'string' || data['weight_unit'] instanceof String)) {
+            throw new Error("Expected the field `weight_unit` to be a primitive type in the JSON string but got " + data['weight_unit']);
+        }
+        // ensure the json data is a string
+        if (data['sku'] && !(typeof data['sku'] === 'string' || data['sku'] instanceof String)) {
+            throw new Error("Expected the field `sku` to be a primitive type in the JSON string but got " + data['sku']);
+        }
+        // ensure the json data is a string
+        if (data['barcode'] && !(typeof data['barcode'] === 'string' || data['barcode'] instanceof String)) {
+            throw new Error("Expected the field `barcode` to be a primitive type in the JSON string but got " + data['barcode']);
+        }
+        // ensure the json data is a string
+        if (data['gtin'] && !(typeof data['gtin'] === 'string' || data['gtin'] instanceof String)) {
+            throw new Error("Expected the field `gtin` to be a primitive type in the JSON string but got " + data['gtin']);
+        }
+        // ensure the json data is a string
+        if (data['upc'] && !(typeof data['upc'] === 'string' || data['upc'] instanceof String)) {
+            throw new Error("Expected the field `upc` to be a primitive type in the JSON string but got " + data['upc']);
+        }
+        // ensure the json data is a string
+        if (data['ean'] && !(typeof data['ean'] === 'string' || data['ean'] instanceof String)) {
+            throw new Error("Expected the field `ean` to be a primitive type in the JSON string but got " + data['ean']);
+        }
+        // ensure the json data is a string
+        if (data['mpn'] && !(typeof data['mpn'] === 'string' || data['mpn'] instanceof String)) {
+            throw new Error("Expected the field `mpn` to be a primitive type in the JSON string but got " + data['mpn']);
+        }
+        // ensure the json data is a string
+        if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
+            throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
         }
         // ensure the json data is a string
         if (data['manufacturer'] && !(typeof data['manufacturer'] === 'string' || data['manufacturer'] instanceof String)) {
             throw new Error("Expected the field `manufacturer` to be a primitive type in the JSON string but got " + data['manufacturer']);
         }
         // ensure the json data is a string
-        if (data['tax_class_id'] && !(typeof data['tax_class_id'] === 'string' || data['tax_class_id'] instanceof String)) {
-            throw new Error("Expected the field `tax_class_id` to be a primitive type in the JSON string but got " + data['tax_class_id']);
+        if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
+            throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
         }
         // ensure the json data is a string
         if (data['meta_title'] && !(typeof data['meta_title'] === 'string' || data['meta_title'] instanceof String)) {
@@ -321,58 +359,20 @@ class ProductVariantAdd {
             throw new Error("Expected the field `url` to be a primitive type in the JSON string but got " + data['url']);
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
-        if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
-            throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
-        }
-        // ensure the json data is a string
-        if (data['harmonized_system_code'] && !(typeof data['harmonized_system_code'] === 'string' || data['harmonized_system_code'] instanceof String)) {
-            throw new Error("Expected the field `harmonized_system_code` to be a primitive type in the JSON string but got " + data['harmonized_system_code']);
+        if (data['tax_class_id'] && !(typeof data['tax_class_id'] === 'string' || data['tax_class_id'] instanceof String)) {
+            throw new Error("Expected the field `tax_class_id` to be a primitive type in the JSON string but got " + data['tax_class_id']);
         }
         // ensure the json data is a string
         if (data['country_of_origin'] && !(typeof data['country_of_origin'] === 'string' || data['country_of_origin'] instanceof String)) {
             throw new Error("Expected the field `country_of_origin` to be a primitive type in the JSON string but got " + data['country_of_origin']);
         }
         // ensure the json data is a string
-        if (data['upc'] && !(typeof data['upc'] === 'string' || data['upc'] instanceof String)) {
-            throw new Error("Expected the field `upc` to be a primitive type in the JSON string but got " + data['upc']);
-        }
-        // ensure the json data is a string
-        if (data['mpn'] && !(typeof data['mpn'] === 'string' || data['mpn'] instanceof String)) {
-            throw new Error("Expected the field `mpn` to be a primitive type in the JSON string but got " + data['mpn']);
-        }
-        // ensure the json data is a string
-        if (data['ean'] && !(typeof data['ean'] === 'string' || data['ean'] instanceof String)) {
-            throw new Error("Expected the field `ean` to be a primitive type in the JSON string but got " + data['ean']);
-        }
-        // ensure the json data is a string
-        if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
-            throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
-        }
-        // ensure the json data is a string
-        if (data['stores_ids'] && !(typeof data['stores_ids'] === 'string' || data['stores_ids'] instanceof String)) {
-            throw new Error("Expected the field `stores_ids` to be a primitive type in the JSON string but got " + data['stores_ids']);
+        if (data['harmonized_system_code'] && !(typeof data['harmonized_system_code'] === 'string' || data['harmonized_system_code'] instanceof String)) {
+            throw new Error("Expected the field `harmonized_system_code` to be a primitive type in the JSON string but got " + data['harmonized_system_code']);
         }
         // ensure the json data is a string
         if (data['marketplace_item_properties'] && !(typeof data['marketplace_item_properties'] === 'string' || data['marketplace_item_properties'] instanceof String)) {
             throw new Error("Expected the field `marketplace_item_properties` to be a primitive type in the JSON string but got " + data['marketplace_item_properties']);
-        }
-        // ensure the json data is a string
-        if (data['backorder_status'] && !(typeof data['backorder_status'] === 'string' || data['backorder_status'] instanceof String)) {
-            throw new Error("Expected the field `backorder_status` to be a primitive type in the JSON string but got " + data['backorder_status']);
-        }
-        if (data['tier_prices']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['tier_prices'])) {
-                throw new Error("Expected the field `tier_prices` to be an array in the JSON data but got " + data['tier_prices']);
-            }
-            // validate the optional field `tier_prices` (array)
-            for (const item of data['tier_prices']) {
-                ProductAddTierPricesInner.validateJSON(item);
-            };
         }
 
         return true;
@@ -390,6 +390,12 @@ ProductVariantAdd.RequiredProperties = ["model"];
 ProductVariantAdd.prototype['product_id'] = undefined;
 
 /**
+ * Defines variant's attributes list
+ * @member {Array.<module:model/ProductVariantAddAttributesInner>} attributes
+ */
+ProductVariantAdd.prototype['attributes'] = undefined;
+
+/**
  * Defines variant's name that has to be added
  * @member {String} name
  */
@@ -402,22 +408,61 @@ ProductVariantAdd.prototype['name'] = undefined;
 ProductVariantAdd.prototype['model'] = undefined;
 
 /**
- * Defines variant's sku that has to be added
- * @member {String} sku
+ * Specifies variant's description
+ * @member {String} description
  */
-ProductVariantAdd.prototype['sku'] = undefined;
+ProductVariantAdd.prototype['description'] = undefined;
 
 /**
- * A barcode is a unique code composed of numbers used as a product identifier.
- * @member {String} barcode
+ * Defines short description
+ * @member {String} short_description
  */
-ProductVariantAdd.prototype['barcode'] = undefined;
+ProductVariantAdd.prototype['short_description'] = undefined;
 
 /**
- * Global Trade Item Number. An GTIN is an identifier for trade items.
- * @member {String} gtin
+ * Specifies the set of visible/invisible product's variants for users
+ * @member {Boolean} available_for_view
+ * @default true
  */
-ProductVariantAdd.prototype['gtin'] = undefined;
+ProductVariantAdd.prototype['available_for_view'] = true;
+
+/**
+ * Specifies the set of visible/invisible product's variants for sale
+ * @member {Boolean} available_for_sale
+ * @default true
+ */
+ProductVariantAdd.prototype['available_for_sale'] = true;
+
+/**
+ * Defines whether the product is virtual
+ * @member {Boolean} is_virtual
+ * @default false
+ */
+ProductVariantAdd.prototype['is_virtual'] = false;
+
+/**
+ * Defines as a default variant
+ * @member {Boolean} is_default
+ */
+ProductVariantAdd.prototype['is_default'] = undefined;
+
+/**
+ * Add variants specified by store id
+ * @member {String} store_id
+ */
+ProductVariantAdd.prototype['store_id'] = undefined;
+
+/**
+ * Assign variant to the stores that is specified by comma-separated stores' id
+ * @member {String} stores_ids
+ */
+ProductVariantAdd.prototype['stores_ids'] = undefined;
+
+/**
+ * Language id
+ * @member {String} lang_id
+ */
+ProductVariantAdd.prototype['lang_id'] = undefined;
 
 /**
  * Defines new product's variant price
@@ -436,24 +481,6 @@ ProductVariantAdd.prototype['old_price'] = undefined;
  * @member {Number} cost_price
  */
 ProductVariantAdd.prototype['cost_price'] = undefined;
-
-/**
- * Specifies fixed cost shipping price
- * @member {Number} fixed_cost_shipping_price
- */
-ProductVariantAdd.prototype['fixed_cost_shipping_price'] = undefined;
-
-/**
- * Defines variant's attributes list
- * @member {Array.<module:model/ProductVariantAddAttributesInner>} attributes
- */
-ProductVariantAdd.prototype['attributes'] = undefined;
-
-/**
- * Specifies variant's description
- * @member {String} description
- */
-ProductVariantAdd.prototype['description'] = undefined;
 
 /**
  * Specifies variant's model that has to be added
@@ -480,18 +507,41 @@ ProductVariantAdd.prototype['sprice_modified'] = undefined;
 ProductVariantAdd.prototype['sprice_expire'] = undefined;
 
 /**
- * Specifies the set of visible/invisible product's variants for users
- * @member {Boolean} available_for_view
- * @default true
+ * Defines product's tier prices
+ * @member {Array.<module:model/ProductAddTierPricesInner>} tier_prices
  */
-ProductVariantAdd.prototype['available_for_view'] = true;
+ProductVariantAdd.prototype['tier_prices'] = undefined;
 
 /**
- * Specifies the set of visible/invisible product's variants for sale
- * @member {Boolean} available_for_sale
- * @default true
+ * Defines product variant's quantity that has to be added
+ * @member {Number} quantity
+ * @default 0
  */
-ProductVariantAdd.prototype['available_for_sale'] = true;
+ProductVariantAdd.prototype['quantity'] = 0;
+
+/**
+ * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+ * @member {String} warehouse_id
+ */
+ProductVariantAdd.prototype['warehouse_id'] = undefined;
+
+/**
+ * Set stock status
+ * @member {Boolean} in_stock
+ */
+ProductVariantAdd.prototype['in_stock'] = undefined;
+
+/**
+ * Set backorder status
+ * @member {String} backorder_status
+ */
+ProductVariantAdd.prototype['backorder_status'] = undefined;
+
+/**
+ * Defines inventory tracking for product variant
+ * @member {Boolean} manage_stock
+ */
+ProductVariantAdd.prototype['manage_stock'] = undefined;
 
 /**
  * Weight
@@ -525,29 +575,46 @@ ProductVariantAdd.prototype['length'] = undefined;
 ProductVariantAdd.prototype['weight_unit'] = undefined;
 
 /**
- * Defines short description
- * @member {String} short_description
+ * Defines variant's sku that has to be added
+ * @member {String} sku
  */
-ProductVariantAdd.prototype['short_description'] = undefined;
+ProductVariantAdd.prototype['sku'] = undefined;
 
 /**
- * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
- * @member {String} warehouse_id
+ * A barcode is a unique code composed of numbers used as a product identifier.
+ * @member {String} barcode
  */
-ProductVariantAdd.prototype['warehouse_id'] = undefined;
+ProductVariantAdd.prototype['barcode'] = undefined;
 
 /**
- * Defines product variant's quantity that has to be added
- * @member {Number} quantity
- * @default 0
+ * Global Trade Item Number. An GTIN is an identifier for trade items.
+ * @member {String} gtin
  */
-ProductVariantAdd.prototype['quantity'] = 0;
+ProductVariantAdd.prototype['gtin'] = undefined;
 
 /**
- * Defines the date of entity creation
- * @member {String} created_at
+ * Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
+ * @member {String} upc
  */
-ProductVariantAdd.prototype['created_at'] = undefined;
+ProductVariantAdd.prototype['upc'] = undefined;
+
+/**
+ * European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
+ * @member {String} ean
+ */
+ProductVariantAdd.prototype['ean'] = undefined;
+
+/**
+ * Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
+ * @member {String} mpn
+ */
+ProductVariantAdd.prototype['mpn'] = undefined;
+
+/**
+ * International Standard Book Number. An ISBN is a unique identifier for books.
+ * @member {String} isbn
+ */
+ProductVariantAdd.prototype['isbn'] = undefined;
 
 /**
  * Specifies the product variant's manufacturer
@@ -556,10 +623,10 @@ ProductVariantAdd.prototype['created_at'] = undefined;
 ProductVariantAdd.prototype['manufacturer'] = undefined;
 
 /**
- * Defines tax classes where entity has to be added
- * @member {String} tax_class_id
+ * Defines the date of entity creation
+ * @member {String} created_at
  */
-ProductVariantAdd.prototype['tax_class_id'] = undefined;
+ProductVariantAdd.prototype['created_at'] = undefined;
 
 /**
  * Defines unique meta title for each entity
@@ -586,23 +653,10 @@ ProductVariantAdd.prototype['meta_description'] = undefined;
 ProductVariantAdd.prototype['url'] = undefined;
 
 /**
- * Add variants specified by store id
- * @member {String} store_id
+ * Defines tax classes where entity has to be added
+ * @member {String} tax_class_id
  */
-ProductVariantAdd.prototype['store_id'] = undefined;
-
-/**
- * Language id
- * @member {String} lang_id
- */
-ProductVariantAdd.prototype['lang_id'] = undefined;
-
-/**
- * Is cache clear required
- * @member {Boolean} clear_cache
- * @default true
- */
-ProductVariantAdd.prototype['clear_cache'] = true;
+ProductVariantAdd.prototype['tax_class_id'] = undefined;
 
 /**
  * Specifies whether a tax is charged
@@ -612,58 +666,10 @@ ProductVariantAdd.prototype['clear_cache'] = true;
 ProductVariantAdd.prototype['taxable'] = true;
 
 /**
- * Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
- * @member {String} harmonized_system_code
+ * Specifies fixed cost shipping price
+ * @member {Number} fixed_cost_shipping_price
  */
-ProductVariantAdd.prototype['harmonized_system_code'] = undefined;
-
-/**
- * The country where the inventory item was made
- * @member {String} country_of_origin
- */
-ProductVariantAdd.prototype['country_of_origin'] = undefined;
-
-/**
- * Defines inventory tracking for product variant
- * @member {Boolean} manage_stock
- */
-ProductVariantAdd.prototype['manage_stock'] = undefined;
-
-/**
- * Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
- * @member {String} upc
- */
-ProductVariantAdd.prototype['upc'] = undefined;
-
-/**
- * Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
- * @member {String} mpn
- */
-ProductVariantAdd.prototype['mpn'] = undefined;
-
-/**
- * European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
- * @member {String} ean
- */
-ProductVariantAdd.prototype['ean'] = undefined;
-
-/**
- * International Standard Book Number. An ISBN is a unique identifier for books.
- * @member {String} isbn
- */
-ProductVariantAdd.prototype['isbn'] = undefined;
-
-/**
- * Assign variant to the stores that is specified by comma-separated stores' id
- * @member {String} stores_ids
- */
-ProductVariantAdd.prototype['stores_ids'] = undefined;
-
-/**
- * Defines as a default variant
- * @member {Boolean} is_default
- */
-ProductVariantAdd.prototype['is_default'] = undefined;
+ProductVariantAdd.prototype['fixed_cost_shipping_price'] = undefined;
 
 /**
  * Specifies variant's free shipping flag that has to be added
@@ -672,35 +678,29 @@ ProductVariantAdd.prototype['is_default'] = undefined;
 ProductVariantAdd.prototype['is_free_shipping'] = undefined;
 
 /**
+ * The country where the inventory item was made
+ * @member {String} country_of_origin
+ */
+ProductVariantAdd.prototype['country_of_origin'] = undefined;
+
+/**
+ * Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+ * @member {String} harmonized_system_code
+ */
+ProductVariantAdd.prototype['harmonized_system_code'] = undefined;
+
+/**
  * String containing the JSON representation of the supplied data
  * @member {String} marketplace_item_properties
  */
 ProductVariantAdd.prototype['marketplace_item_properties'] = undefined;
 
 /**
- * Set stock status
- * @member {Boolean} in_stock
+ * Is cache clear required
+ * @member {Boolean} clear_cache
+ * @default true
  */
-ProductVariantAdd.prototype['in_stock'] = undefined;
-
-/**
- * Set backorder status
- * @member {String} backorder_status
- */
-ProductVariantAdd.prototype['backorder_status'] = undefined;
-
-/**
- * Defines product's tier prices
- * @member {Array.<module:model/ProductAddTierPricesInner>} tier_prices
- */
-ProductVariantAdd.prototype['tier_prices'] = undefined;
-
-/**
- * Defines whether the product is virtual
- * @member {Boolean} is_virtual
- * @default false
- */
-ProductVariantAdd.prototype['is_virtual'] = false;
+ProductVariantAdd.prototype['clear_cache'] = true;
 
 
 

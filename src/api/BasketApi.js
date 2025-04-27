@@ -52,9 +52,9 @@ export default class BasketApi {
      * @param {String} id Entity id
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'force_all')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {module:api/BasketApi~basketInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BasketInfo200Response}
      */
@@ -71,9 +71,9 @@ export default class BasketApi {
       let queryParams = {
         'id': id,
         'store_id': opts['storeId'],
+        'response_fields': opts['responseFields'],
         'params': opts['params'],
-        'exclude': opts['exclude'],
-        'response_fields': opts['responseFields']
+        'exclude': opts['exclude']
       };
       let headerParams = {
       };
@@ -181,9 +181,9 @@ export default class BasketApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'name': name,
-        'callback': callback
+        'callback': callback,
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };
@@ -256,9 +256,9 @@ export default class BasketApi {
      * basket.live_shipping_service.list
      * Retrieve a list of live shipping rate services.
      * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Store Id
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+     * @param {String} [storeId] Store Id
      * @param {module:api/BasketApi~basketLiveShippingServiceListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BasketLiveShippingServiceList200Response}
      */
@@ -269,9 +269,9 @@ export default class BasketApi {
       let pathParams = {
       };
       let queryParams = {
-        'store_id': opts['storeId'],
         'start': opts['start'],
-        'count': opts['count']
+        'count': opts['count'],
+        'store_id': opts['storeId']
       };
       let headerParams = {
       };

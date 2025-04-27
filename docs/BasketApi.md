@@ -40,9 +40,9 @@ let apiInstance = new Api2CartOpenApi.BasketApi();
 let id = "10"; // String | Entity id
 let opts = {
   'storeId': "1", // String | Store Id
+  'responseFields': "{result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "false", // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  'responseFields': "{result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
+  'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 };
 apiInstance.basketInfo(id, opts, (error, data, response) => {
   if (error) {
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Entity id | 
  **storeId** | **String**| Store Id | [optional] 
+ **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
- **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
 
 ### Return type
 
@@ -288,9 +288,9 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.BasketApi();
 let opts = {
-  'storeId': "1", // String | Store Id
   'start': 0, // Number | This parameter sets the number from which you want to get entities
-  'count': 20 // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  'storeId': "1" // String | Store Id
 };
 apiInstance.basketLiveShippingServiceList(opts, (error, data, response) => {
   if (error) {
@@ -306,9 +306,9 @@ apiInstance.basketLiveShippingServiceList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storeId** | **String**| Store Id | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
+ **storeId** | **String**| Store Id | [optional] 
 
 ### Return type
 

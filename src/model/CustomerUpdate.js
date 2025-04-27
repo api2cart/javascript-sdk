@@ -88,14 +88,14 @@ class CustomerUpdate {
             if (data.hasOwnProperty('gender')) {
                 obj['gender'] = ApiClient.convertToType(data['gender'], 'String');
             }
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('note')) {
                 obj['note'] = ApiClient.convertToType(data['note'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], [CustomerUpdateAddressInner]);
@@ -165,16 +165,16 @@ class CustomerUpdate {
             throw new Error("Expected the field `gender` to be a primitive type in the JSON string but got " + data['gender']);
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['note'] && !(typeof data['note'] === 'string' || data['note'] instanceof String)) {
             throw new Error("Expected the field `note` to be a primitive type in the JSON string but got " + data['note']);
         }
         // ensure the json data is a string
         if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
             throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
         if (data['address']) { // data not null
             // ensure the json data is an array
@@ -274,12 +274,6 @@ CustomerUpdate.prototype['tags'] = undefined;
 CustomerUpdate.prototype['gender'] = undefined;
 
 /**
- * Store Id
- * @member {String} store_id
- */
-CustomerUpdate.prototype['store_id'] = undefined;
-
-/**
  * The customer note.
  * @member {String} note
  */
@@ -290,6 +284,12 @@ CustomerUpdate.prototype['note'] = undefined;
  * @member {String} status
  */
 CustomerUpdate.prototype['status'] = undefined;
+
+/**
+ * Store Id
+ * @member {String} store_id
+ */
+CustomerUpdate.prototype['store_id'] = undefined;
 
 /**
  * @member {Array.<module:model/CustomerUpdateAddressInner>} address

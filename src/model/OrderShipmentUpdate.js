@@ -37,8 +37,8 @@ class OrderShipmentUpdate {
      */
     static initialize(obj, shipmentId) { 
         obj['shipment_id'] = shipmentId;
-        obj['replace'] = true;
         obj['is_shipped'] = true;
+        obj['replace'] = true;
     }
 
     /**
@@ -52,32 +52,32 @@ class OrderShipmentUpdate {
         if (data) {
             obj = obj || new OrderShipmentUpdate();
 
-            if (data.hasOwnProperty('store_id')) {
-                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
-            }
             if (data.hasOwnProperty('shipment_id')) {
                 obj['shipment_id'] = ApiClient.convertToType(data['shipment_id'], 'String');
             }
             if (data.hasOwnProperty('order_id')) {
                 obj['order_id'] = ApiClient.convertToType(data['order_id'], 'String');
             }
+            if (data.hasOwnProperty('store_id')) {
+                obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
+            }
+            if (data.hasOwnProperty('shipment_provider')) {
+                obj['shipment_provider'] = ApiClient.convertToType(data['shipment_provider'], 'String');
+            }
             if (data.hasOwnProperty('tracking_numbers')) {
                 obj['tracking_numbers'] = ApiClient.convertToType(data['tracking_numbers'], [OrderShipmentAddTrackingNumbersInner]);
-            }
-            if (data.hasOwnProperty('replace')) {
-                obj['replace'] = ApiClient.convertToType(data['replace'], 'Boolean');
-            }
-            if (data.hasOwnProperty('is_shipped')) {
-                obj['is_shipped'] = ApiClient.convertToType(data['is_shipped'], 'Boolean');
             }
             if (data.hasOwnProperty('tracking_link')) {
                 obj['tracking_link'] = ApiClient.convertToType(data['tracking_link'], 'String');
             }
+            if (data.hasOwnProperty('is_shipped')) {
+                obj['is_shipped'] = ApiClient.convertToType(data['is_shipped'], 'Boolean');
+            }
             if (data.hasOwnProperty('delivered_at')) {
                 obj['delivered_at'] = ApiClient.convertToType(data['delivered_at'], 'String');
             }
-            if (data.hasOwnProperty('shipment_provider')) {
-                obj['shipment_provider'] = ApiClient.convertToType(data['shipment_provider'], 'String');
+            if (data.hasOwnProperty('replace')) {
+                obj['replace'] = ApiClient.convertToType(data['replace'], 'Boolean');
             }
         }
         return obj;
@@ -96,16 +96,20 @@ class OrderShipmentUpdate {
             }
         }
         // ensure the json data is a string
-        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
-            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
-        }
-        // ensure the json data is a string
         if (data['shipment_id'] && !(typeof data['shipment_id'] === 'string' || data['shipment_id'] instanceof String)) {
             throw new Error("Expected the field `shipment_id` to be a primitive type in the JSON string but got " + data['shipment_id']);
         }
         // ensure the json data is a string
         if (data['order_id'] && !(typeof data['order_id'] === 'string' || data['order_id'] instanceof String)) {
             throw new Error("Expected the field `order_id` to be a primitive type in the JSON string but got " + data['order_id']);
+        }
+        // ensure the json data is a string
+        if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
+            throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
+        if (data['shipment_provider'] && !(typeof data['shipment_provider'] === 'string' || data['shipment_provider'] instanceof String)) {
+            throw new Error("Expected the field `shipment_provider` to be a primitive type in the JSON string but got " + data['shipment_provider']);
         }
         if (data['tracking_numbers']) { // data not null
             // ensure the json data is an array
@@ -125,10 +129,6 @@ class OrderShipmentUpdate {
         if (data['delivered_at'] && !(typeof data['delivered_at'] === 'string' || data['delivered_at'] instanceof String)) {
             throw new Error("Expected the field `delivered_at` to be a primitive type in the JSON string but got " + data['delivered_at']);
         }
-        // ensure the json data is a string
-        if (data['shipment_provider'] && !(typeof data['shipment_provider'] === 'string' || data['shipment_provider'] instanceof String)) {
-            throw new Error("Expected the field `shipment_provider` to be a primitive type in the JSON string but got " + data['shipment_provider']);
-        }
 
         return true;
     }
@@ -137,12 +137,6 @@ class OrderShipmentUpdate {
 }
 
 OrderShipmentUpdate.RequiredProperties = ["shipment_id"];
-
-/**
- * Store Id
- * @member {String} store_id
- */
-OrderShipmentUpdate.prototype['store_id'] = undefined;
 
 /**
  * Shipment id indicates the number of delivery
@@ -157,17 +151,28 @@ OrderShipmentUpdate.prototype['shipment_id'] = undefined;
 OrderShipmentUpdate.prototype['order_id'] = undefined;
 
 /**
+ * Store Id
+ * @member {String} store_id
+ */
+OrderShipmentUpdate.prototype['store_id'] = undefined;
+
+/**
+ * Defines company name that provide tracking of shipment
+ * @member {String} shipment_provider
+ */
+OrderShipmentUpdate.prototype['shipment_provider'] = undefined;
+
+/**
  * Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
  * @member {Array.<module:model/OrderShipmentAddTrackingNumbersInner>} tracking_numbers
  */
 OrderShipmentUpdate.prototype['tracking_numbers'] = undefined;
 
 /**
- * Allows rewrite tracking numbers
- * @member {Boolean} replace
- * @default true
+ * Defines custom tracking link
+ * @member {String} tracking_link
  */
-OrderShipmentUpdate.prototype['replace'] = true;
+OrderShipmentUpdate.prototype['tracking_link'] = undefined;
 
 /**
  * Defines shipment's status
@@ -177,22 +182,17 @@ OrderShipmentUpdate.prototype['replace'] = true;
 OrderShipmentUpdate.prototype['is_shipped'] = true;
 
 /**
- * Defines custom tracking link
- * @member {String} tracking_link
- */
-OrderShipmentUpdate.prototype['tracking_link'] = undefined;
-
-/**
  * Defines the date of delivery
  * @member {String} delivered_at
  */
 OrderShipmentUpdate.prototype['delivered_at'] = undefined;
 
 /**
- * Defines company name that provide tracking of shipment
- * @member {String} shipment_provider
+ * Allows rewrite tracking numbers
+ * @member {Boolean} replace
+ * @default true
  */
-OrderShipmentUpdate.prototype['shipment_provider'] = undefined;
+OrderShipmentUpdate.prototype['replace'] = true;
 
 
 

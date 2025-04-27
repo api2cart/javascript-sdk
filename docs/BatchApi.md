@@ -37,11 +37,11 @@ let apiInstance = new Api2CartOpenApi.BatchApi();
 let opts = {
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  'ids': "24,25", // String | Filter batch jobs by ids
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
   'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
   'processedFrom': "2100-08-29 13:45:52", // String | Retrieve entities according to their processing datetime
   'processedTo': "2100-08-29 13:45:52", // String | Retrieve entities according to their processing datetime
-  'ids': "24,25", // String | Filter batch jobs by ids
   'responseFields': "{result}" // String | Set this parameter in order to choose which entity fields you want to retrieve
 };
 apiInstance.batchJobList(opts, (error, data, response) => {
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
+ **ids** | **String**| Filter batch jobs by ids | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
  **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
  **processedFrom** | **String**| Retrieve entities according to their processing datetime | [optional] 
  **processedTo** | **String**| Retrieve entities according to their processing datetime | [optional] 
- **ids** | **String**| Filter batch jobs by ids | [optional] 
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;]
 
 ### Return type
