@@ -1425,6 +1425,12 @@ CartCreate['CartIdEnum'] = {
     "AspDotNetStorefront": "AspDotNetStorefront",
 
     /**
+     * value: "BigCartel"
+     * @const
+     */
+    "BigCartel": "BigCartel",
+
+    /**
      * value: "BigcommerceApi"
      * @const
      */

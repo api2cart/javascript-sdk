@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property trackingProvider (base name: "tracking_provider")', function() {
+      // uncomment below and update the code to test the property trackingProvider
+      //var instance = new Api2CartOpenApi.OrderShipmentAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property useLatestApiVersion (base name: "use_latest_api_version")', function() {
       // uncomment below and update the code to test the property useLatestApiVersion
       //var instance = new Api2CartOpenApi.OrderShipmentAdd();

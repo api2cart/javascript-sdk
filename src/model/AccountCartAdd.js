@@ -24,12 +24,14 @@ class AccountCartAdd {
      * Constructs a new <code>AccountCartAdd</code>.
      * @alias module:model/AccountCartAdd
      * @param cartId {module:model/AccountCartAdd.CartIdEnum} Store’s identifier which you can get from cart_list method
+     * @param bigcartelUserName {String} Subdomain of store
+     * @param bigcartelPassword {String} BigCartel account password
      * @param wixAppId {String} Wix App ID
      * @param wixAppSecretKey {String} Wix App Secret Key
      */
-    constructor(cartId, wixAppId, wixAppSecretKey) { 
+    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey) { 
         
-        AccountCartAdd.initialize(this, cartId, wixAppId, wixAppSecretKey);
+        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey);
     }
 
     /**
@@ -37,11 +39,13 @@ class AccountCartAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cartId, wixAppId, wixAppSecretKey) { 
+    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey) { 
         obj['cart_id'] = cartId;
         obj['validate_version'] = false;
         obj['verify'] = true;
         obj['amazon_sp_api_environment'] = 'production';
+        obj['bigcartel_user_name'] = bigcartelUserName;
+        obj['bigcartel_password'] = bigcartelPassword;
         obj['ebay_environment'] = 'production';
         obj['ebay_site_id'] = 0;
         obj['walmart_environment'] = 'production';
@@ -164,6 +168,12 @@ class AccountCartAdd {
             }
             if (data.hasOwnProperty('bol_retailer_id')) {
                 obj['bol_retailer_id'] = ApiClient.convertToType(data['bol_retailer_id'], 'Number');
+            }
+            if (data.hasOwnProperty('bigcartel_user_name')) {
+                obj['bigcartel_user_name'] = ApiClient.convertToType(data['bigcartel_user_name'], 'String');
+            }
+            if (data.hasOwnProperty('bigcartel_password')) {
+                obj['bigcartel_password'] = ApiClient.convertToType(data['bigcartel_password'], 'String');
             }
             if (data.hasOwnProperty('demandware_client_id')) {
                 obj['demandware_client_id'] = ApiClient.convertToType(data['demandware_client_id'], 'String');
@@ -647,6 +657,14 @@ class AccountCartAdd {
             throw new Error("Expected the field `bol_api_secret` to be a primitive type in the JSON string but got " + data['bol_api_secret']);
         }
         // ensure the json data is a string
+        if (data['bigcartel_user_name'] && !(typeof data['bigcartel_user_name'] === 'string' || data['bigcartel_user_name'] instanceof String)) {
+            throw new Error("Expected the field `bigcartel_user_name` to be a primitive type in the JSON string but got " + data['bigcartel_user_name']);
+        }
+        // ensure the json data is a string
+        if (data['bigcartel_password'] && !(typeof data['bigcartel_password'] === 'string' || data['bigcartel_password'] instanceof String)) {
+            throw new Error("Expected the field `bigcartel_password` to be a primitive type in the JSON string but got " + data['bigcartel_password']);
+        }
+        // ensure the json data is a string
         if (data['demandware_client_id'] && !(typeof data['demandware_client_id'] === 'string' || data['demandware_client_id'] instanceof String)) {
             throw new Error("Expected the field `demandware_client_id` to be a primitive type in the JSON string but got " + data['demandware_client_id']);
         }
@@ -1107,7 +1125,7 @@ class AccountCartAdd {
 
 }
 
-AccountCartAdd.RequiredProperties = ["cart_id", "wix_app_id", "wix_app_secret_key"];
+AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key"];
 
 /**
  * Store’s identifier which you can get from cart_list method
@@ -1315,6 +1333,18 @@ AccountCartAdd.prototype['bol_api_secret'] = undefined;
  * @member {Number} bol_retailer_id
  */
 AccountCartAdd.prototype['bol_retailer_id'] = undefined;
+
+/**
+ * Subdomain of store
+ * @member {String} bigcartel_user_name
+ */
+AccountCartAdd.prototype['bigcartel_user_name'] = undefined;
+
+/**
+ * BigCartel account password
+ * @member {String} bigcartel_password
+ */
+AccountCartAdd.prototype['bigcartel_password'] = undefined;
 
 /**
  * Demandware client id
@@ -2052,6 +2082,12 @@ AccountCartAdd['CartIdEnum'] = {
      * @const
      */
     "AspDotNetStorefront": "AspDotNetStorefront",
+
+    /**
+     * value: "BigCartel"
+     * @const
+     */
+    "BigCartel": "BigCartel",
 
     /**
      * value: "BigcommerceApi"

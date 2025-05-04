@@ -223,6 +223,8 @@ let opts = {
   'shopwareAccessKey': "SWSCS3O1RJBSRNBYQLFIYJN2ZQ", // String | Shopware access key
   'shopwareApiKey': "SWSCS3O1RJBSRNBYQLFIYJN2ZQ", // String | Shopware api key
   'shopwareApiSecret': "V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ", // String | Shopware client secret access key
+  'bigcartelUserName': "subdomain", // String | Subdomain of store
+  'bigcartelPassword': "4GrrZCLNNoSUuhAjesKuchxo9SL", // String | BigCartel account password
   'volusionLogin': "admin", // String | It's a Volusion account for which API is enabled
   'volusionPassword': "7943CA5F3990E00D9A4CCF0BD998211F", // String | Volusion API Password
   'walmartClientId': "423f6A24-123z-8654-989u-6fa96478289", // String | Walmart client ID. For the region 'ca' use Consumer ID
@@ -380,6 +382,8 @@ Name | Type | Description  | Notes
  **shopwareAccessKey** | **String**| Shopware access key | [optional] 
  **shopwareApiKey** | **String**| Shopware api key | [optional] 
  **shopwareApiSecret** | **String**| Shopware client secret access key | [optional] 
+ **bigcartelUserName** | **String**| Subdomain of store | [optional] 
+ **bigcartelPassword** | **String**| BigCartel account password | [optional] 
  **volusionLogin** | **String**| It&#39;s a Volusion account for which API is enabled | [optional] 
  **volusionPassword** | **String**| Volusion API Password | [optional] 
  **walmartClientId** | **String**| Walmart client ID. For the region &#39;ca&#39; use Consumer ID | [optional] 

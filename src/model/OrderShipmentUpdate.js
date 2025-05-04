@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import OrderShipmentAddItemsInner from './OrderShipmentAddItemsInner';
 import OrderShipmentAddTrackingNumbersInner from './OrderShipmentAddTrackingNumbersInner';
 
 /**
@@ -39,6 +40,7 @@ class OrderShipmentUpdate {
         obj['shipment_id'] = shipmentId;
         obj['is_shipped'] = true;
         obj['replace'] = true;
+        obj['send_notifications'] = false;
     }
 
     /**
@@ -78,6 +80,15 @@ class OrderShipmentUpdate {
             }
             if (data.hasOwnProperty('replace')) {
                 obj['replace'] = ApiClient.convertToType(data['replace'], 'Boolean');
+            }
+            if (data.hasOwnProperty('send_notifications')) {
+                obj['send_notifications'] = ApiClient.convertToType(data['send_notifications'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tracking_provider')) {
+                obj['tracking_provider'] = ApiClient.convertToType(data['tracking_provider'], 'String');
+            }
+            if (data.hasOwnProperty('items')) {
+                obj['items'] = ApiClient.convertToType(data['items'], [OrderShipmentAddItemsInner]);
             }
         }
         return obj;
@@ -128,6 +139,20 @@ class OrderShipmentUpdate {
         // ensure the json data is a string
         if (data['delivered_at'] && !(typeof data['delivered_at'] === 'string' || data['delivered_at'] instanceof String)) {
             throw new Error("Expected the field `delivered_at` to be a primitive type in the JSON string but got " + data['delivered_at']);
+        }
+        // ensure the json data is a string
+        if (data['tracking_provider'] && !(typeof data['tracking_provider'] === 'string' || data['tracking_provider'] instanceof String)) {
+            throw new Error("Expected the field `tracking_provider` to be a primitive type in the JSON string but got " + data['tracking_provider']);
+        }
+        if (data['items']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['items'])) {
+                throw new Error("Expected the field `items` to be an array in the JSON data but got " + data['items']);
+            }
+            // validate the optional field `items` (array)
+            for (const item of data['items']) {
+                OrderShipmentAddItemsInner.validateJSON(item);
+            };
         }
 
         return true;
@@ -193,6 +218,25 @@ OrderShipmentUpdate.prototype['delivered_at'] = undefined;
  * @default true
  */
 OrderShipmentUpdate.prototype['replace'] = true;
+
+/**
+ * Send notifications to customer after order was created
+ * @member {Boolean} send_notifications
+ * @default false
+ */
+OrderShipmentUpdate.prototype['send_notifications'] = false;
+
+/**
+ * Defines name of the company which provides shipment tracking
+ * @member {String} tracking_provider
+ */
+OrderShipmentUpdate.prototype['tracking_provider'] = undefined;
+
+/**
+ * Defines items in the order that will be shipped
+ * @member {Array.<module:model/OrderShipmentAddItemsInner>} items
+ */
+OrderShipmentUpdate.prototype['items'] = undefined;
 
 
 

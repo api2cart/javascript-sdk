@@ -108,6 +108,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sendNotifications (base name: "send_notifications")', function() {
+      // uncomment below and update the code to test the property sendNotifications
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property trackingProvider (base name: "tracking_provider")', function() {
+      // uncomment below and update the code to test the property trackingProvider
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property items (base name: "items")', function() {
+      // uncomment below and update the code to test the property items
+      //var instance = new Api2CartOpenApi.OrderShipmentUpdate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

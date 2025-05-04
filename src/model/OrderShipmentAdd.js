@@ -94,6 +94,9 @@ class OrderShipmentAdd {
             if (data.hasOwnProperty('check_process_status')) {
                 obj['check_process_status'] = ApiClient.convertToType(data['check_process_status'], 'Boolean');
             }
+            if (data.hasOwnProperty('tracking_provider')) {
+                obj['tracking_provider'] = ApiClient.convertToType(data['tracking_provider'], 'String');
+            }
             if (data.hasOwnProperty('use_latest_api_version')) {
                 obj['use_latest_api_version'] = ApiClient.convertToType(data['use_latest_api_version'], 'Boolean');
             }
@@ -150,6 +153,10 @@ class OrderShipmentAdd {
         // ensure the json data is a string
         if (data['tracking_link'] && !(typeof data['tracking_link'] === 'string' || data['tracking_link'] instanceof String)) {
             throw new Error("Expected the field `tracking_link` to be a primitive type in the JSON string but got " + data['tracking_link']);
+        }
+        // ensure the json data is a string
+        if (data['tracking_provider'] && !(typeof data['tracking_provider'] === 'string' || data['tracking_provider'] instanceof String)) {
+            throw new Error("Expected the field `tracking_provider` to be a primitive type in the JSON string but got " + data['tracking_provider']);
         }
 
         return true;
@@ -242,6 +249,12 @@ OrderShipmentAdd.prototype['enable_cache'] = false;
  * @default false
  */
 OrderShipmentAdd.prototype['check_process_status'] = false;
+
+/**
+ * Defines name of the company which provides shipment tracking
+ * @member {String} tracking_provider
+ */
+OrderShipmentAdd.prototype['tracking_provider'] = undefined;
 
 /**
  * Use the latest platform API version

@@ -258,6 +258,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bigcartelUserName (base name: "bigcartel_user_name")', function() {
+      // uncomment below and update the code to test the property bigcartelUserName
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bigcartelPassword (base name: "bigcartel_password")', function() {
+      // uncomment below and update the code to test the property bigcartelPassword
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property demandwareClientId (base name: "demandware_client_id")', function() {
       // uncomment below and update the code to test the property demandwareClientId
       //var instance = new Api2CartOpenApi.AccountCartAdd();

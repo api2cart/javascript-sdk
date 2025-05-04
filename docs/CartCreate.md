@@ -120,6 +120,8 @@ Name | Type | Description | Notes
 
 * `AspDotNetStorefront` (value: `"AspDotNetStorefront"`)
 
+* `BigCartel` (value: `"BigCartel"`)
+
 * `BigcommerceApi` (value: `"BigcommerceApi"`)
 
 * `Bol` (value: `"Bol"`)
