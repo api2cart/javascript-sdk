@@ -34,6 +34,7 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.SubscriberApi();
 let opts = {
+  'ids': "24,25", // String | Retrieves subscribers specified by ids
   'start': 0, // Number | This parameter sets the number from which you want to get entities
   'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -62,6 +63,7 @@ apiInstance.subscriberList(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | **String**| Retrieves subscribers specified by ids | [optional] 
  **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
  **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 

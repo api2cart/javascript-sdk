@@ -286,6 +286,7 @@ docs/ProductAddGroupPricesInner.md
 docs/ProductAddLogisticInfoInner.md
 docs/ProductAddManufacturerInfo.md
 docs/ProductAddPackageDetails.md
+docs/ProductAddPersonalizationDetails.md
 docs/ProductAddSalesTax.md
 docs/ProductAddSellerProfiles.md
 docs/ProductAddShippingDetailsInner.md
@@ -748,6 +749,7 @@ src/model/ProductAddGroupPricesInner.js
 src/model/ProductAddLogisticInfoInner.js
 src/model/ProductAddManufacturerInfo.js
 src/model/ProductAddPackageDetails.js
+src/model/ProductAddPersonalizationDetails.js
 src/model/ProductAddSalesTax.js
 src/model/ProductAddSellerProfiles.js
 src/model/ProductAddShippingDetailsInner.js
@@ -1200,6 +1202,7 @@ test/model/ProductAddGroupPricesInner.spec.js
 test/model/ProductAddLogisticInfoInner.spec.js
 test/model/ProductAddManufacturerInfo.spec.js
 test/model/ProductAddPackageDetails.spec.js
+test/model/ProductAddPersonalizationDetails.spec.js
 test/model/ProductAddSalesTax.spec.js
 test/model/ProductAddSellerProfiles.spec.js
 test/model/ProductAddShippingDetailsInner.spec.js

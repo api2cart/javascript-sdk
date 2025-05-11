@@ -286,6 +286,7 @@ import ProductAddGroupPricesInner from './model/ProductAddGroupPricesInner';
 import ProductAddLogisticInfoInner from './model/ProductAddLogisticInfoInner';
 import ProductAddManufacturerInfo from './model/ProductAddManufacturerInfo';
 import ProductAddPackageDetails from './model/ProductAddPackageDetails';
+import ProductAddPersonalizationDetails from './model/ProductAddPersonalizationDetails';
 import ProductAddSalesTax from './model/ProductAddSalesTax';
 import ProductAddSellerProfiles from './model/ProductAddSellerProfiles';
 import ProductAddShippingDetailsInner from './model/ProductAddShippingDetailsInner';
@@ -2142,6 +2143,12 @@ export {
      * @property {module:model/ProductAddPackageDetails}
      */
     ProductAddPackageDetails,
+
+    /**
+     * The ProductAddPersonalizationDetails model constructor.
+     * @property {module:model/ProductAddPersonalizationDetails}
+     */
+    ProductAddPersonalizationDetails,
 
     /**
      * The ProductAddSalesTax model constructor.

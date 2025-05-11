@@ -19,6 +19,7 @@ import ProductAddGroupPricesInner from './ProductAddGroupPricesInner';
 import ProductAddLogisticInfoInner from './ProductAddLogisticInfoInner';
 import ProductAddManufacturerInfo from './ProductAddManufacturerInfo';
 import ProductAddPackageDetails from './ProductAddPackageDetails';
+import ProductAddPersonalizationDetails from './ProductAddPersonalizationDetails';
 import ProductAddSalesTax from './ProductAddSalesTax';
 import ProductAddSellerProfiles from './ProductAddSellerProfiles';
 import ProductAddShippingDetailsInner from './ProductAddShippingDetailsInner';
@@ -421,6 +422,15 @@ class ProductAdd {
             if (data.hasOwnProperty('ordered_count')) {
                 obj['ordered_count'] = ApiClient.convertToType(data['ordered_count'], 'Number');
             }
+            if (data.hasOwnProperty('shop_section_id')) {
+                obj['shop_section_id'] = ApiClient.convertToType(data['shop_section_id'], 'Number');
+            }
+            if (data.hasOwnProperty('return_policy_id')) {
+                obj['return_policy_id'] = ApiClient.convertToType(data['return_policy_id'], 'Number');
+            }
+            if (data.hasOwnProperty('personalization_details')) {
+                obj['personalization_details'] = ProductAddPersonalizationDetails.constructFromObject(data['personalization_details']);
+            }
         }
         return obj;
     }
@@ -798,6 +808,10 @@ class ProductAdd {
         // ensure the json data is a string
         if (data['marketplace_item_properties'] && !(typeof data['marketplace_item_properties'] === 'string' || data['marketplace_item_properties'] instanceof String)) {
             throw new Error("Expected the field `marketplace_item_properties` to be a primitive type in the JSON string but got " + data['marketplace_item_properties']);
+        }
+        // validate the optional field `personalization_details`
+        if (data['personalization_details']) { // data not null
+          ProductAddPersonalizationDetails.validateJSON(data['personalization_details']);
         }
 
         return true;
@@ -1490,6 +1504,23 @@ ProductAdd.prototype['viewed_count'] = 0;
  * @default 0
  */
 ProductAdd.prototype['ordered_count'] = 0;
+
+/**
+ * Add Shop Section Id
+ * @member {Number} shop_section_id
+ */
+ProductAdd.prototype['shop_section_id'] = undefined;
+
+/**
+ * Add Return Policy Id
+ * @member {Number} return_policy_id
+ */
+ProductAdd.prototype['return_policy_id'] = undefined;
+
+/**
+ * @member {module:model/ProductAddPersonalizationDetails} personalization_details
+ */
+ProductAdd.prototype['personalization_details'] = undefined;
 
 
 

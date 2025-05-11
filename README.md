@@ -580,6 +580,7 @@ Class | Method | HTTP request | Description
  - [Api2CartOpenApi.ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [Api2CartOpenApi.ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [Api2CartOpenApi.ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
+ - [Api2CartOpenApi.ProductAddPersonalizationDetails](docs/ProductAddPersonalizationDetails.md)
  - [Api2CartOpenApi.ProductAddSalesTax](docs/ProductAddSalesTax.md)
  - [Api2CartOpenApi.ProductAddSellerProfiles](docs/ProductAddSellerProfiles.md)
  - [Api2CartOpenApi.ProductAddShippingDetailsInner](docs/ProductAddShippingDetailsInner.md)

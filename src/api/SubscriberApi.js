@@ -46,6 +46,7 @@ export default class SubscriberApi {
      * subscriber.list
      * Get subscribers list
      * @param {Object} opts Optional parameters
+     * @param {String} [ids] Retrieves subscribers specified by ids
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
      * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -69,6 +70,7 @@ export default class SubscriberApi {
       let pathParams = {
       };
       let queryParams = {
+        'ids': opts['ids'],
         'start': opts['start'],
         'count': opts['count'],
         'page_cursor': opts['pageCursor'],

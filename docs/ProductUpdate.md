@@ -86,5 +86,8 @@ Name | Type | Description | Notes
 **reindex** | **Boolean** | Is reindex required | [optional] [default to true]
 **clearCache** | **Boolean** | Is cache clear required | [optional] [default to true]
 **checkProcessStatus** | **Boolean** | Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. | [optional] [default to false]
+**specifics** | [**[ProductAddSpecificsInner]**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; | [optional] 
+**shopSectionId** | **Number** | Add Shop Section Id | [optional] 
+**personalizationDetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] 
 
 

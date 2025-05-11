@@ -14,6 +14,8 @@
 import ApiClient from '../ApiClient';
 import ProductAddManufacturerInfo from './ProductAddManufacturerInfo';
 import ProductAddPackageDetails from './ProductAddPackageDetails';
+import ProductAddPersonalizationDetails from './ProductAddPersonalizationDetails';
+import ProductAddSpecificsInner from './ProductAddSpecificsInner';
 import ProductAddTierPricesInner from './ProductAddTierPricesInner';
 
 /**
@@ -309,6 +311,15 @@ class ProductUpdate {
             if (data.hasOwnProperty('check_process_status')) {
                 obj['check_process_status'] = ApiClient.convertToType(data['check_process_status'], 'Boolean');
             }
+            if (data.hasOwnProperty('specifics')) {
+                obj['specifics'] = ApiClient.convertToType(data['specifics'], [ProductAddSpecificsInner]);
+            }
+            if (data.hasOwnProperty('shop_section_id')) {
+                obj['shop_section_id'] = ApiClient.convertToType(data['shop_section_id'], 'Number');
+            }
+            if (data.hasOwnProperty('personalization_details')) {
+                obj['personalization_details'] = ProductAddPersonalizationDetails.constructFromObject(data['personalization_details']);
+            }
         }
         return obj;
     }
@@ -524,6 +535,20 @@ class ProductUpdate {
         // ensure the json data is a string
         if (data['report_request_id'] && !(typeof data['report_request_id'] === 'string' || data['report_request_id'] instanceof String)) {
             throw new Error("Expected the field `report_request_id` to be a primitive type in the JSON string but got " + data['report_request_id']);
+        }
+        if (data['specifics']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['specifics'])) {
+                throw new Error("Expected the field `specifics` to be an array in the JSON data but got " + data['specifics']);
+            }
+            // validate the optional field `specifics` (array)
+            for (const item of data['specifics']) {
+                ProductAddSpecificsInner.validateJSON(item);
+            };
+        }
+        // validate the optional field `personalization_details`
+        if (data['personalization_details']) { // data not null
+          ProductAddPersonalizationDetails.validateJSON(data['personalization_details']);
         }
 
         return true;
@@ -1036,6 +1061,23 @@ ProductUpdate.prototype['clear_cache'] = true;
  * @default false
  */
 ProductUpdate.prototype['check_process_status'] = false;
+
+/**
+ * An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+ * @member {Array.<module:model/ProductAddSpecificsInner>} specifics
+ */
+ProductUpdate.prototype['specifics'] = undefined;
+
+/**
+ * Add Shop Section Id
+ * @member {Number} shop_section_id
+ */
+ProductUpdate.prototype['shop_section_id'] = undefined;
+
+/**
+ * @member {module:model/ProductAddPersonalizationDetails} personalization_details
+ */
+ProductUpdate.prototype['personalization_details'] = undefined;
 
 
 

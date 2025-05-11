@@ -546,6 +546,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property specifics (base name: "specifics")', function() {
+      // uncomment below and update the code to test the property specifics
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopSectionId (base name: "shop_section_id")', function() {
+      // uncomment below and update the code to test the property shopSectionId
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property personalizationDetails (base name: "personalization_details")', function() {
+      // uncomment below and update the code to test the property personalizationDetails
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

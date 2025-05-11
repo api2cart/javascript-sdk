@@ -726,6 +726,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shopSectionId (base name: "shop_section_id")', function() {
+      // uncomment below and update the code to test the property shopSectionId
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property returnPolicyId (base name: "return_policy_id")', function() {
+      // uncomment below and update the code to test the property returnPolicyId
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property personalizationDetails (base name: "personalization_details")', function() {
+      // uncomment below and update the code to test the property personalizationDetails
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
