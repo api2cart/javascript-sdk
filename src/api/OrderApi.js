@@ -1262,6 +1262,7 @@ export default class OrderApi {
      * @param {Boolean} [sendNotifications = false)] Send notifications to customer after order was created
      * @param {Boolean} [createInvoice] Determines whether an invoice should be created if it has not already been created
      * @param {String} [origin] The source of the order
+     * @param {String} [tags] Order tags
      * @param {module:api/OrderApi~orderUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountConfigUpdate200Response}
      */
@@ -1291,7 +1292,8 @@ export default class OrderApi {
         'date_finished': opts['dateFinished'],
         'send_notifications': opts['sendNotifications'],
         'create_invoice': opts['createInvoice'],
-        'origin': opts['origin']
+        'origin': opts['origin'],
+        'tags': opts['tags']
       };
       let headerParams = {
       };

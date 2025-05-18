@@ -1555,7 +1555,8 @@ let opts = {
   'dateFinished': "2014-06-05 05:05:00", // String | Specifies order's  finished date
   'sendNotifications': true, // Boolean | Send notifications to customer after order was created
   'createInvoice': true, // Boolean | Determines whether an invoice should be created if it has not already been created
-  'origin': "newsletter" // String | The source of the order
+  'origin': "newsletter", // String | The source of the order
+  'tags': "tag1,tag2" // String | Order tags
 };
 apiInstance.orderUpdate(orderId, opts, (error, data, response) => {
   if (error) {
@@ -1587,6 +1588,7 @@ Name | Type | Description  | Notes
  **sendNotifications** | **Boolean**| Send notifications to customer after order was created | [optional] [default to false]
  **createInvoice** | **Boolean**| Determines whether an invoice should be created if it has not already been created | [optional] 
  **origin** | **String**| The source of the order | [optional] 
+ **tags** | **String**| Order tags | [optional] 
 
 ### Return type
 
