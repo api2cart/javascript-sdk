@@ -534,6 +534,42 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property shopeePartnerId (base name: "shopee_partner_id")', function() {
+      // uncomment below and update the code to test the property shopeePartnerId
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopeePartnerKey (base name: "shopee_partner_key")', function() {
+      // uncomment below and update the code to test the property shopeePartnerKey
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopeeShopId (base name: "shopee_shop_id")', function() {
+      // uncomment below and update the code to test the property shopeeShopId
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopeeRefreshToken (base name: "shopee_refresh_token")', function() {
+      // uncomment below and update the code to test the property shopeeRefreshToken
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopeeRegion (base name: "shopee_region")', function() {
+      // uncomment below and update the code to test the property shopeeRegion
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property shopeeEnvironment (base name: "shopee_environment")', function() {
+      // uncomment below and update the code to test the property shopeeEnvironment
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shoplazzaAccessToken (base name: "shoplazza_access_token")', function() {
       // uncomment below and update the code to test the property shoplazzaAccessToken
       //var instance = new Api2CartOpenApi.AccountCartAdd();
@@ -956,6 +992,30 @@
 
     it('should have the property sallaAccessToken (base name: "salla_access_token")', function() {
       // uncomment below and update the code to test the property sallaAccessToken
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property temuAppKey (base name: "temu_app_key")', function() {
+      // uncomment below and update the code to test the property temuAppKey
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property temuAppSecret (base name: "temu_app_secret")', function() {
+      // uncomment below and update the code to test the property temuAppSecret
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property temuAccessToken (base name: "temu_access_token")', function() {
+      // uncomment below and update the code to test the property temuAccessToken
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property temuRegion (base name: "temu_region")', function() {
+      // uncomment below and update the code to test the property temuRegion
       //var instance = new Api2CartOpenApi.AccountCartAdd();
       //expect(instance).to.be();
     });

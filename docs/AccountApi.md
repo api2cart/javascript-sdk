@@ -216,6 +216,12 @@ let opts = {
   'shopifyApiKey': "bbca57d8ff3c3677128112c15556d9e3", // String | Shopify API Key
   'shopifyApiPassword': "860f3a6fc87632301a42cd88e4b5ab3d", // String | Shopify API Password
   'shopifySharedSecret': "gmz3iz45x2", // String | Shared secret
+  'shopeePartnerId': "1276777", // String | Shopee Partner ID
+  'shopeePartnerKey': "6a46494b4d746576554646626775617a577542774850636375464d6a736d5598", // String | Shopee Partner Key
+  'shopeeShopId': "137968", // String | Shopee SHOP ID
+  'shopeeRefreshToken': "EAAPP06rM2n8BO4mZBuMPnu9zS0MaMbN7ue8aUkcxw4zewU987mVVb5br", // String | Shopee Refresh Token
+  'shopeeRegion': "CN", // String | Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+  'shopeeEnvironment': "sandbox", // String | Shopee Environment
   'shoplazzaAccessToken': "igse8e4rdmzkxdi937qe69d59en1imw", // String | Access token authorizing the app to access resources on behalf of a user
   'shoplazzaSharedSecret': "gmz3iz45x2", // String | Shared secret
   'mivaAccessToken': "227cbe434a1e358d72db0de993x9d9fd", // String | Miva access token
@@ -295,7 +301,11 @@ let opts = {
   'sallaClientId': "1bxxxcf9-5xx4-xxx-bxxf-929b8xxxxe11", // String | Salla Client ID
   'sallaClientSecret': "8x88axxxc25e1fxxxa1c06fxxx150xx5", // String | Salla Client Secret
   'sallaRefreshToken': "oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc", // String | Salla Refresh Token
-  'sallaAccessToken': "oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc" // String | Salla Access Token
+  'sallaAccessToken': "oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc", // String | Salla Access Token
+  'temuAppKey': "4ebbc9190ae410443d65b4c2faca9811", // String | Temu App Key
+  'temuAppSecret': "4782d2d827276688bf4758bed55dbdd4bbe79a78", // String | Temu App Secret
+  'temuAccessToken': "uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6", // String | Temu Access Token
+  'temuRegion': "US" // String | Temu API endpoint Region.
 };
 apiInstance.accountConfigUpdate(opts, (error, data, response) => {
   if (error) {
@@ -375,6 +385,12 @@ Name | Type | Description  | Notes
  **shopifyApiKey** | **String**| Shopify API Key | [optional] 
  **shopifyApiPassword** | **String**| Shopify API Password | [optional] 
  **shopifySharedSecret** | **String**| Shared secret | [optional] 
+ **shopeePartnerId** | **String**| Shopee Partner ID | [optional] 
+ **shopeePartnerKey** | **String**| Shopee Partner Key | [optional] 
+ **shopeeShopId** | **String**| Shopee SHOP ID | [optional] 
+ **shopeeRefreshToken** | **String**| Shopee Refresh Token | [optional] 
+ **shopeeRegion** | **String**| Shopee API endpoint Region. Use for Chinese Mainland or Brazil. | [optional] 
+ **shopeeEnvironment** | **String**| Shopee Environment | [optional] 
  **shoplazzaAccessToken** | **String**| Access token authorizing the app to access resources on behalf of a user | [optional] 
  **shoplazzaSharedSecret** | **String**| Shared secret | [optional] 
  **mivaAccessToken** | **String**| Miva access token | [optional] 
@@ -455,6 +471,10 @@ Name | Type | Description  | Notes
  **sallaClientSecret** | **String**| Salla Client Secret | [optional] 
  **sallaRefreshToken** | **String**| Salla Refresh Token | [optional] 
  **sallaAccessToken** | **String**| Salla Access Token | [optional] 
+ **temuAppKey** | **String**| Temu App Key | [optional] 
+ **temuAppSecret** | **String**| Temu App Secret | [optional] 
+ **temuAccessToken** | **String**| Temu Access Token | [optional] 
+ **temuRegion** | **String**| Temu API endpoint Region. | [optional] [default to &#39;US&#39;]
 
 ### Return type
 

@@ -188,6 +188,8 @@ Name | Type | Description | Notes
 
 * `Shopify` (value: `"Shopify"`)
 
+* `Shopee` (value: `"Shopee"`)
+
 * `Shoplazza` (value: `"Shoplazza"`)
 
 * `Shopline` (value: `"Shopline"`)

@@ -208,6 +208,12 @@ export default class AccountApi {
      * @param {String} [shopifyApiKey] Shopify API Key
      * @param {String} [shopifyApiPassword] Shopify API Password
      * @param {String} [shopifySharedSecret] Shared secret
+     * @param {String} [shopeePartnerId] Shopee Partner ID
+     * @param {String} [shopeePartnerKey] Shopee Partner Key
+     * @param {String} [shopeeShopId] Shopee SHOP ID
+     * @param {String} [shopeeRefreshToken] Shopee Refresh Token
+     * @param {String} [shopeeRegion] Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+     * @param {String} [shopeeEnvironment] Shopee Environment
      * @param {String} [shoplazzaAccessToken] Access token authorizing the app to access resources on behalf of a user
      * @param {String} [shoplazzaSharedSecret] Shared secret
      * @param {String} [mivaAccessToken] Miva access token
@@ -288,6 +294,10 @@ export default class AccountApi {
      * @param {String} [sallaClientSecret] Salla Client Secret
      * @param {String} [sallaRefreshToken] Salla Refresh Token
      * @param {String} [sallaAccessToken] Salla Access Token
+     * @param {String} [temuAppKey] Temu App Key
+     * @param {String} [temuAppSecret] Temu App Secret
+     * @param {String} [temuAccessToken] Temu Access Token
+     * @param {String} [temuRegion = 'US')] Temu API endpoint Region.
      * @param {module:api/AccountApi~accountConfigUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountConfigUpdate200Response}
      */
@@ -362,6 +372,12 @@ export default class AccountApi {
         'shopify_api_key': opts['shopifyApiKey'],
         'shopify_api_password': opts['shopifyApiPassword'],
         'shopify_shared_secret': opts['shopifySharedSecret'],
+        'shopee_partner_id': opts['shopeePartnerId'],
+        'shopee_partner_key': opts['shopeePartnerKey'],
+        'shopee_shop_id': opts['shopeeShopId'],
+        'shopee_refresh_token': opts['shopeeRefreshToken'],
+        'shopee_region': opts['shopeeRegion'],
+        'shopee_environment': opts['shopeeEnvironment'],
         'shoplazza_access_token': opts['shoplazzaAccessToken'],
         'shoplazza_shared_secret': opts['shoplazzaSharedSecret'],
         'miva_access_token': opts['mivaAccessToken'],
@@ -441,7 +457,11 @@ export default class AccountApi {
         'salla_client_id': opts['sallaClientId'],
         'salla_client_secret': opts['sallaClientSecret'],
         'salla_refresh_token': opts['sallaRefreshToken'],
-        'salla_access_token': opts['sallaAccessToken']
+        'salla_access_token': opts['sallaAccessToken'],
+        'temu_app_key': opts['temuAppKey'],
+        'temu_app_secret': opts['temuAppSecret'],
+        'temu_access_token': opts['temuAccessToken'],
+        'temu_region': opts['temuRegion']
       };
       let headerParams = {
       };

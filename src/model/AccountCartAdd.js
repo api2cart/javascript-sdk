@@ -28,10 +28,11 @@ class AccountCartAdd {
      * @param bigcartelPassword {String} BigCartel account password
      * @param wixAppId {String} Wix App ID
      * @param wixAppSecretKey {String} Wix App Secret Key
+     * @param temuAccessToken {String} Temu Access Token
      */
-    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey) { 
+    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken) { 
         
-        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey);
+        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken);
     }
 
     /**
@@ -39,7 +40,7 @@ class AccountCartAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey) { 
+    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken) { 
         obj['cart_id'] = cartId;
         obj['validate_version'] = false;
         obj['verify'] = true;
@@ -50,10 +51,13 @@ class AccountCartAdd {
         obj['ebay_site_id'] = 0;
         obj['walmart_environment'] = 'production';
         obj['walmart_region'] = 'us';
+        obj['shopee_environment'] = 'production';
         obj['wix_app_id'] = wixAppId;
         obj['wix_app_secret_key'] = wixAppSecretKey;
         obj['allegro_environment'] = 'production';
         obj['otto_environment'] = 'production';
+        obj['temu_access_token'] = temuAccessToken;
+        obj['temu_region'] = 'US';
     }
 
     /**
@@ -307,6 +311,24 @@ class AccountCartAdd {
             if (data.hasOwnProperty('shopify_shared_secret')) {
                 obj['shopify_shared_secret'] = ApiClient.convertToType(data['shopify_shared_secret'], 'String');
             }
+            if (data.hasOwnProperty('shopee_partner_id')) {
+                obj['shopee_partner_id'] = ApiClient.convertToType(data['shopee_partner_id'], 'String');
+            }
+            if (data.hasOwnProperty('shopee_partner_key')) {
+                obj['shopee_partner_key'] = ApiClient.convertToType(data['shopee_partner_key'], 'String');
+            }
+            if (data.hasOwnProperty('shopee_shop_id')) {
+                obj['shopee_shop_id'] = ApiClient.convertToType(data['shopee_shop_id'], 'String');
+            }
+            if (data.hasOwnProperty('shopee_refresh_token')) {
+                obj['shopee_refresh_token'] = ApiClient.convertToType(data['shopee_refresh_token'], 'String');
+            }
+            if (data.hasOwnProperty('shopee_region')) {
+                obj['shopee_region'] = ApiClient.convertToType(data['shopee_region'], 'String');
+            }
+            if (data.hasOwnProperty('shopee_environment')) {
+                obj['shopee_environment'] = ApiClient.convertToType(data['shopee_environment'], 'String');
+            }
             if (data.hasOwnProperty('shoplazza_access_token')) {
                 obj['shoplazza_access_token'] = ApiClient.convertToType(data['shoplazza_access_token'], 'String');
             }
@@ -519,6 +541,18 @@ class AccountCartAdd {
             }
             if (data.hasOwnProperty('salla_access_token')) {
                 obj['salla_access_token'] = ApiClient.convertToType(data['salla_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('temu_app_key')) {
+                obj['temu_app_key'] = ApiClient.convertToType(data['temu_app_key'], 'String');
+            }
+            if (data.hasOwnProperty('temu_app_secret')) {
+                obj['temu_app_secret'] = ApiClient.convertToType(data['temu_app_secret'], 'String');
+            }
+            if (data.hasOwnProperty('temu_access_token')) {
+                obj['temu_access_token'] = ApiClient.convertToType(data['temu_access_token'], 'String');
+            }
+            if (data.hasOwnProperty('temu_region')) {
+                obj['temu_region'] = ApiClient.convertToType(data['temu_region'], 'String');
             }
         }
         return obj;
@@ -837,6 +871,30 @@ class AccountCartAdd {
             throw new Error("Expected the field `shopify_shared_secret` to be a primitive type in the JSON string but got " + data['shopify_shared_secret']);
         }
         // ensure the json data is a string
+        if (data['shopee_partner_id'] && !(typeof data['shopee_partner_id'] === 'string' || data['shopee_partner_id'] instanceof String)) {
+            throw new Error("Expected the field `shopee_partner_id` to be a primitive type in the JSON string but got " + data['shopee_partner_id']);
+        }
+        // ensure the json data is a string
+        if (data['shopee_partner_key'] && !(typeof data['shopee_partner_key'] === 'string' || data['shopee_partner_key'] instanceof String)) {
+            throw new Error("Expected the field `shopee_partner_key` to be a primitive type in the JSON string but got " + data['shopee_partner_key']);
+        }
+        // ensure the json data is a string
+        if (data['shopee_shop_id'] && !(typeof data['shopee_shop_id'] === 'string' || data['shopee_shop_id'] instanceof String)) {
+            throw new Error("Expected the field `shopee_shop_id` to be a primitive type in the JSON string but got " + data['shopee_shop_id']);
+        }
+        // ensure the json data is a string
+        if (data['shopee_refresh_token'] && !(typeof data['shopee_refresh_token'] === 'string' || data['shopee_refresh_token'] instanceof String)) {
+            throw new Error("Expected the field `shopee_refresh_token` to be a primitive type in the JSON string but got " + data['shopee_refresh_token']);
+        }
+        // ensure the json data is a string
+        if (data['shopee_region'] && !(typeof data['shopee_region'] === 'string' || data['shopee_region'] instanceof String)) {
+            throw new Error("Expected the field `shopee_region` to be a primitive type in the JSON string but got " + data['shopee_region']);
+        }
+        // ensure the json data is a string
+        if (data['shopee_environment'] && !(typeof data['shopee_environment'] === 'string' || data['shopee_environment'] instanceof String)) {
+            throw new Error("Expected the field `shopee_environment` to be a primitive type in the JSON string but got " + data['shopee_environment']);
+        }
+        // ensure the json data is a string
         if (data['shoplazza_access_token'] && !(typeof data['shoplazza_access_token'] === 'string' || data['shoplazza_access_token'] instanceof String)) {
             throw new Error("Expected the field `shoplazza_access_token` to be a primitive type in the JSON string but got " + data['shoplazza_access_token']);
         }
@@ -1118,6 +1176,22 @@ class AccountCartAdd {
         if (data['salla_access_token'] && !(typeof data['salla_access_token'] === 'string' || data['salla_access_token'] instanceof String)) {
             throw new Error("Expected the field `salla_access_token` to be a primitive type in the JSON string but got " + data['salla_access_token']);
         }
+        // ensure the json data is a string
+        if (data['temu_app_key'] && !(typeof data['temu_app_key'] === 'string' || data['temu_app_key'] instanceof String)) {
+            throw new Error("Expected the field `temu_app_key` to be a primitive type in the JSON string but got " + data['temu_app_key']);
+        }
+        // ensure the json data is a string
+        if (data['temu_app_secret'] && !(typeof data['temu_app_secret'] === 'string' || data['temu_app_secret'] instanceof String)) {
+            throw new Error("Expected the field `temu_app_secret` to be a primitive type in the JSON string but got " + data['temu_app_secret']);
+        }
+        // ensure the json data is a string
+        if (data['temu_access_token'] && !(typeof data['temu_access_token'] === 'string' || data['temu_access_token'] instanceof String)) {
+            throw new Error("Expected the field `temu_access_token` to be a primitive type in the JSON string but got " + data['temu_access_token']);
+        }
+        // ensure the json data is a string
+        if (data['temu_region'] && !(typeof data['temu_region'] === 'string' || data['temu_region'] instanceof String)) {
+            throw new Error("Expected the field `temu_region` to be a primitive type in the JSON string but got " + data['temu_region']);
+        }
 
         return true;
     }
@@ -1125,7 +1199,7 @@ class AccountCartAdd {
 
 }
 
-AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key"];
+AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key", "temu_access_token"];
 
 /**
  * Store’s identifier which you can get from cart_list method
@@ -1615,6 +1689,43 @@ AccountCartAdd.prototype['shopify_api_password'] = undefined;
 AccountCartAdd.prototype['shopify_shared_secret'] = undefined;
 
 /**
+ * Shopee Partner ID
+ * @member {String} shopee_partner_id
+ */
+AccountCartAdd.prototype['shopee_partner_id'] = undefined;
+
+/**
+ * Shopee Partner Key
+ * @member {String} shopee_partner_key
+ */
+AccountCartAdd.prototype['shopee_partner_key'] = undefined;
+
+/**
+ * Shopee SHOP ID
+ * @member {String} shopee_shop_id
+ */
+AccountCartAdd.prototype['shopee_shop_id'] = undefined;
+
+/**
+ * Shopee Refresh Token
+ * @member {String} shopee_refresh_token
+ */
+AccountCartAdd.prototype['shopee_refresh_token'] = undefined;
+
+/**
+ * Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+ * @member {String} shopee_region
+ */
+AccountCartAdd.prototype['shopee_region'] = undefined;
+
+/**
+ * Shopee Environment
+ * @member {String} shopee_environment
+ * @default 'production'
+ */
+AccountCartAdd.prototype['shopee_environment'] = 'production';
+
+/**
  * Access token authorizing the app to access resources on behalf of a user
  * @member {String} shoplazza_access_token
  */
@@ -2042,6 +2153,31 @@ AccountCartAdd.prototype['salla_refresh_token'] = undefined;
  */
 AccountCartAdd.prototype['salla_access_token'] = undefined;
 
+/**
+ * Temu App Key
+ * @member {String} temu_app_key
+ */
+AccountCartAdd.prototype['temu_app_key'] = undefined;
+
+/**
+ * Temu App Secret
+ * @member {String} temu_app_secret
+ */
+AccountCartAdd.prototype['temu_app_secret'] = undefined;
+
+/**
+ * Temu Access Token
+ * @member {String} temu_access_token
+ */
+AccountCartAdd.prototype['temu_access_token'] = undefined;
+
+/**
+ * Temu API endpoint Region.
+ * @member {String} temu_region
+ * @default 'US'
+ */
+AccountCartAdd.prototype['temu_region'] = 'US';
+
 
 
 
@@ -2286,6 +2422,12 @@ AccountCartAdd['CartIdEnum'] = {
      * @const
      */
     "Shopify": "Shopify",
+
+    /**
+     * value: "Shopee"
+     * @const
+     */
+    "Shopee": "Shopee",
 
     /**
      * value: "Shoplazza"

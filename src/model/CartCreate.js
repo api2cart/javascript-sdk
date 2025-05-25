@@ -1629,6 +1629,12 @@ CartCreate['CartIdEnum'] = {
     "Shopify": "Shopify",
 
     /**
+     * value: "Shopee"
+     * @const
+     */
+    "Shopee": "Shopee",
+
+    /**
      * value: "Shoplazza"
      * @const
      */
