@@ -297,7 +297,7 @@ export default class AccountApi {
      * @param {String} [temuAppKey] Temu App Key
      * @param {String} [temuAppSecret] Temu App Secret
      * @param {String} [temuAccessToken] Temu Access Token
-     * @param {String} [temuRegion = 'US')] Temu API endpoint Region.
+     * @param {String} [temuRegion] Temu API endpoint Region.
      * @param {module:api/AccountApi~accountConfigUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountConfigUpdate200Response}
      */

@@ -164,7 +164,7 @@ Name | Type | Description | Notes
 **temuAppKey** | **String** | Temu App Key | [optional] 
 **temuAppSecret** | **String** | Temu App Secret | [optional] 
 **temuAccessToken** | **String** | Temu Access Token | 
-**temuRegion** | **String** | Temu API endpoint Region. | [optional] [default to &#39;US&#39;]
+**temuRegion** | **String** | Temu API endpoint Region. | 
 
 
 
@@ -300,6 +300,19 @@ Name | Type | Description | Notes
 * `Zoey` (value: `"Zoey"`)
 
 * `Zoho` (value: `"Zoho"`)
+
+
+
+
+
+## Enum: TemuRegionEnum
+
+
+* `US` (value: `"US"`)
+
+* `EU` (value: `"EU"`)
+
+* `GLOBAL` (value: `"GLOBAL"`)
 
 
 

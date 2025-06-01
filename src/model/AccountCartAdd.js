@@ -29,10 +29,11 @@ class AccountCartAdd {
      * @param wixAppId {String} Wix App ID
      * @param wixAppSecretKey {String} Wix App Secret Key
      * @param temuAccessToken {String} Temu Access Token
+     * @param temuRegion {module:model/AccountCartAdd.TemuRegionEnum} Temu API endpoint Region.
      */
-    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken) { 
+    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
         
-        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken);
+        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion);
     }
 
     /**
@@ -40,7 +41,7 @@ class AccountCartAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken) { 
+    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
         obj['cart_id'] = cartId;
         obj['validate_version'] = false;
         obj['verify'] = true;
@@ -57,7 +58,7 @@ class AccountCartAdd {
         obj['allegro_environment'] = 'production';
         obj['otto_environment'] = 'production';
         obj['temu_access_token'] = temuAccessToken;
-        obj['temu_region'] = 'US';
+        obj['temu_region'] = temuRegion;
     }
 
     /**
@@ -1199,7 +1200,7 @@ class AccountCartAdd {
 
 }
 
-AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key", "temu_access_token"];
+AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key", "temu_access_token", "temu_region"];
 
 /**
  * Store’s identifier which you can get from cart_list method
@@ -2173,10 +2174,9 @@ AccountCartAdd.prototype['temu_access_token'] = undefined;
 
 /**
  * Temu API endpoint Region.
- * @member {String} temu_region
- * @default 'US'
+ * @member {module:model/AccountCartAdd.TemuRegionEnum} temu_region
  */
-AccountCartAdd.prototype['temu_region'] = 'US';
+AccountCartAdd.prototype['temu_region'] = undefined;
 
 
 
@@ -2578,6 +2578,33 @@ AccountCartAdd['CartIdEnum'] = {
      * @const
      */
     "Zoho": "Zoho"
+};
+
+
+/**
+ * Allowed values for the <code>temu_region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+AccountCartAdd['TemuRegionEnum'] = {
+
+    /**
+     * value: "US"
+     * @const
+     */
+    "US": "US",
+
+    /**
+     * value: "EU"
+     * @const
+     */
+    "EU": "EU",
+
+    /**
+     * value: "GLOBAL"
+     * @const
+     */
+    "GLOBAL": "GLOBAL"
 };
 
 
