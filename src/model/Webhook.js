@@ -56,6 +56,9 @@ class Webhook {
             if (data.hasOwnProperty('store_id')) {
                 obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
+            if (data.hasOwnProperty('lang_id')) {
+                obj['lang_id'] = ApiClient.convertToType(data['lang_id'], 'String');
+            }
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
@@ -100,6 +103,10 @@ class Webhook {
         // ensure the json data is a string
         if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
             throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
+        if (data['lang_id'] && !(typeof data['lang_id'] === 'string' || data['lang_id'] instanceof String)) {
+            throw new Error("Expected the field `lang_id` to be a primitive type in the JSON string but got " + data['lang_id']);
         }
         // ensure the json data is a string
         if (data['callback'] && !(typeof data['callback'] === 'string' || data['callback'] instanceof String)) {
@@ -148,6 +155,11 @@ Webhook.prototype['label'] = undefined;
  * @member {String} store_id
  */
 Webhook.prototype['store_id'] = undefined;
+
+/**
+ * @member {String} lang_id
+ */
+Webhook.prototype['lang_id'] = undefined;
 
 /**
  * @member {Boolean} active

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property langId (base name: "lang_id")', function() {
+      // uncomment below and update the code to test the property langId
+      //var instance = new Api2CartOpenApi.Webhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property active (base name: "active")', function() {
       // uncomment below and update the code to test the property active
       //var instance = new Api2CartOpenApi.Webhook();

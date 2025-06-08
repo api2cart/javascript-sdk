@@ -107,6 +107,7 @@ let opts = {
   'label': "Super webhook", // String | The name you give to the webhook
   'fields': "id, name, description", // String | Fields the webhook should send
   'active': true, // Boolean | Webhook status
+  'langId': "3", // String | Language id
   'storeId': "1" // String | Defines store id where the webhook should be assigned
 };
 apiInstance.webhookCreate(entity, action, opts, (error, data, response) => {
@@ -129,6 +130,7 @@ Name | Type | Description  | Notes
  **label** | **String**| The name you give to the webhook | [optional] 
  **fields** | **String**| Fields the webhook should send | [optional] [default to &#39;force_all&#39;]
  **active** | **Boolean**| Webhook status | [optional] [default to true]
+ **langId** | **String**| Language id | [optional] 
  **storeId** | **String**| Defines store id where the webhook should be assigned | [optional] 
 
 ### Return type
@@ -353,7 +355,8 @@ let opts = {
   'callback': "https://example.com/callback", // String | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
   'label': "Super webhook", // String | The name you give to the webhook
   'fields': "id, name, description", // String | Fields the webhook should send
-  'active': true // Boolean | Webhook status
+  'active': true, // Boolean | Webhook status
+  'langId': "3" // String | Language id
 };
 apiInstance.webhookUpdate(id, opts, (error, data, response) => {
   if (error) {
@@ -374,6 +377,7 @@ Name | Type | Description  | Notes
  **label** | **String**| The name you give to the webhook | [optional] 
  **fields** | **String**| Fields the webhook should send | [optional] 
  **active** | **Boolean**| Webhook status | [optional] 
+ **langId** | **String**| Language id | [optional] 
 
 ### Return type
 

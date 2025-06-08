@@ -102,6 +102,7 @@ export default class WebhookApi {
      * @param {String} [label] The name you give to the webhook
      * @param {String} [fields = 'force_all')] Fields the webhook should send
      * @param {Boolean} [active = true)] Webhook status
+     * @param {String} [langId] Language id
      * @param {String} [storeId] Defines store id where the webhook should be assigned
      * @param {module:api/WebhookApi~webhookCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BasketLiveShippingServiceCreate200Response}
@@ -127,6 +128,7 @@ export default class WebhookApi {
         'label': opts['label'],
         'fields': opts['fields'],
         'active': opts['active'],
+        'lang_id': opts['langId'],
         'store_id': opts['storeId']
       };
       let headerParams = {
@@ -295,6 +297,7 @@ export default class WebhookApi {
      * @param {String} [label] The name you give to the webhook
      * @param {String} [fields] Fields the webhook should send
      * @param {Boolean} [active] Webhook status
+     * @param {String} [langId] Language id
      * @param {module:api/WebhookApi~webhookUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductImageUpdate200Response}
      */
@@ -313,7 +316,8 @@ export default class WebhookApi {
         'callback': opts['callback'],
         'label': opts['label'],
         'fields': opts['fields'],
-        'active': opts['active']
+        'active': opts['active'],
+        'lang_id': opts['langId']
       };
       let headerParams = {
       };
