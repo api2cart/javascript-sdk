@@ -134,6 +134,9 @@ class Child {
             if (data.hasOwnProperty('in_stock')) {
                 obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
             }
+            if (data.hasOwnProperty('on_sale')) {
+                obj['on_sale'] = ApiClient.convertToType(data['on_sale'], 'Boolean');
+            }
             if (data.hasOwnProperty('manage_stock')) {
                 obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
             }
@@ -478,6 +481,11 @@ Child.prototype['allow_backorders'] = undefined;
  * @member {Boolean} in_stock
  */
 Child.prototype['in_stock'] = undefined;
+
+/**
+ * @member {Boolean} on_sale
+ */
+Child.prototype['on_sale'] = undefined;
 
 /**
  * @member {Boolean} manage_stock

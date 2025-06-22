@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property responseFields (base name: "response_fields")', function() {
+      // uncomment below and update the code to test the property responseFields
+      //var instance = new Api2CartOpenApi.Webhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instance = new Api2CartOpenApi.Webhook();

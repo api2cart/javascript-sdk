@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **availForSale** | **Boolean** |  | [optional] 
 **allowBackorders** | **Boolean** |  | [optional] 
 **inStock** | **Boolean** |  | [optional] 
+**onSale** | **Boolean** |  | [optional] 
 **manageStock** | **Boolean** |  | [optional] 
 **inventoryLevel** | **Number** |  | [optional] 
 **inventory** | [**[ProductInventory]**](ProductInventory.md) |  | [optional] 

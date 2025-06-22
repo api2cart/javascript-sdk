@@ -68,6 +68,9 @@ class Webhook {
             if (data.hasOwnProperty('fields')) {
                 obj['fields'] = ApiClient.convertToType(data['fields'], 'String');
             }
+            if (data.hasOwnProperty('response_fields')) {
+                obj['response_fields'] = ApiClient.convertToType(data['response_fields'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
@@ -115,6 +118,10 @@ class Webhook {
         // ensure the json data is a string
         if (data['fields'] && !(typeof data['fields'] === 'string' || data['fields'] instanceof String)) {
             throw new Error("Expected the field `fields` to be a primitive type in the JSON string but got " + data['fields']);
+        }
+        // ensure the json data is a string
+        if (data['response_fields'] && !(typeof data['response_fields'] === 'string' || data['response_fields'] instanceof String)) {
+            throw new Error("Expected the field `response_fields` to be a primitive type in the JSON string but got " + data['response_fields']);
         }
         // ensure the json data is a string
         if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
@@ -175,6 +182,11 @@ Webhook.prototype['callback'] = undefined;
  * @member {String} fields
  */
 Webhook.prototype['fields'] = undefined;
+
+/**
+ * @member {String} response_fields
+ */
+Webhook.prototype['response_fields'] = undefined;
 
 /**
  * @member {String} created_at

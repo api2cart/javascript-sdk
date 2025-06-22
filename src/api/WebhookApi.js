@@ -101,6 +101,7 @@ export default class WebhookApi {
      * @param {String} [callback] Callback url that returns shipping rates. It should be able to accept POST requests with json data.
      * @param {String} [label] The name you give to the webhook
      * @param {String} [fields = 'force_all')] Fields the webhook should send
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {Boolean} [active = true)] Webhook status
      * @param {String} [langId] Language id
      * @param {String} [storeId] Defines store id where the webhook should be assigned
@@ -127,6 +128,7 @@ export default class WebhookApi {
         'callback': opts['callback'],
         'label': opts['label'],
         'fields': opts['fields'],
+        'response_fields': opts['responseFields'],
         'active': opts['active'],
         'lang_id': opts['langId'],
         'store_id': opts['storeId']
@@ -296,6 +298,7 @@ export default class WebhookApi {
      * @param {String} [callback] Callback url that returns shipping rates. It should be able to accept POST requests with json data.
      * @param {String} [label] The name you give to the webhook
      * @param {String} [fields] Fields the webhook should send
+     * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {Boolean} [active] Webhook status
      * @param {String} [langId] Language id
      * @param {module:api/WebhookApi~webhookUpdateCallback} callback The callback function, accepting three arguments: error, data, response
@@ -316,6 +319,7 @@ export default class WebhookApi {
         'callback': opts['callback'],
         'label': opts['label'],
         'fields': opts['fields'],
+        'response_fields': opts['responseFields'],
         'active': opts['active'],
         'lang_id': opts['langId']
       };
