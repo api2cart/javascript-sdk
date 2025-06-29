@@ -66,6 +66,9 @@ class ProductAddSpecificsInner {
             if (data.hasOwnProperty('scale_id')) {
                 obj['scale_id'] = ApiClient.convertToType(data['scale_id'], 'Number');
             }
+            if (data.hasOwnProperty('input_value')) {
+                obj['input_value'] = ApiClient.convertToType(data['input_value'], 'String');
+            }
             if (data.hasOwnProperty('food_details')) {
                 obj['food_details'] = ProductAddSpecificsInnerFoodDetails.constructFromObject(data['food_details']);
             }
@@ -96,6 +99,10 @@ class ProductAddSpecificsInner {
         // ensure the json data is an array
         if (!Array.isArray(data['values'])) {
             throw new Error("Expected the field `values` to be an array in the JSON data but got " + data['values']);
+        }
+        // ensure the json data is a string
+        if (data['input_value'] && !(typeof data['input_value'] === 'string' || data['input_value'] instanceof String)) {
+            throw new Error("Expected the field `input_value` to be a primitive type in the JSON string but got " + data['input_value']);
         }
         // validate the optional field `food_details`
         if (data['food_details']) { // data not null
@@ -149,6 +156,11 @@ ProductAddSpecificsInner.prototype['used_for_variations'] = false;
  * @member {Number} scale_id
  */
 ProductAddSpecificsInner.prototype['scale_id'] = undefined;
+
+/**
+ * @member {String} input_value
+ */
+ProductAddSpecificsInner.prototype['input_value'] = undefined;
 
 /**
  * @member {module:model/ProductAddSpecificsInnerFoodDetails} food_details

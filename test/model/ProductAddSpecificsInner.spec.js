@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property inputValue (base name: "input_value")', function() {
+      // uncomment below and update the code to test the property inputValue
+      //var instance = new Api2CartOpenApi.ProductAddSpecificsInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property foodDetails (base name: "food_details")', function() {
       // uncomment below and update the code to test the property foodDetails
       //var instance = new Api2CartOpenApi.ProductAddSpecificsInner();

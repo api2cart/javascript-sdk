@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property orderItemTaxClass (base name: "order_item_tax_class")', function() {
+      // uncomment below and update the code to test the property orderItemTaxClass
+      //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderItemPriceIncludesTax (base name: "order_item_price_includes_tax")', function() {
       // uncomment below and update the code to test the property orderItemPriceIncludesTax
       //var instance = new Api2CartOpenApi.OrderAddOrderItemInner();

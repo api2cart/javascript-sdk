@@ -672,6 +672,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property categoryType (base name: "category_type")', function() {
+      // uncomment below and update the code to test the property categoryType
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property returnAccepted (base name: "return_accepted")', function() {
       // uncomment below and update the code to test the property returnAccepted
       //var instance = new Api2CartOpenApi.ProductAdd();

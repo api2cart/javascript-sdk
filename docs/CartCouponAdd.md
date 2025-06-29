@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **actionConditionValue** | **String** | Defines condition attribute value/s. Can be comma separated string. | [optional] 
 **includeTax** | **Boolean** | Indicates whether to apply a discount for taxes. | [optional] [default to false]
 **storeId** | **String** | Store Id | [optional] 
+**freeCashOnDelivery** | **Boolean** | Defines whether the coupon provides free cash on delivery | [optional] 
 
 
 

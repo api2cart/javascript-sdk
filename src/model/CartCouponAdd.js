@@ -110,6 +110,9 @@ class CartCouponAdd {
             if (data.hasOwnProperty('store_id')) {
                 obj['store_id'] = ApiClient.convertToType(data['store_id'], 'String');
             }
+            if (data.hasOwnProperty('free_cash_on_delivery')) {
+                obj['free_cash_on_delivery'] = ApiClient.convertToType(data['free_cash_on_delivery'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -290,6 +293,12 @@ CartCouponAdd.prototype['include_tax'] = false;
  * @member {String} store_id
  */
 CartCouponAdd.prototype['store_id'] = undefined;
+
+/**
+ * Defines whether the coupon provides free cash on delivery
+ * @member {Boolean} free_cash_on_delivery
+ */
+CartCouponAdd.prototype['free_cash_on_delivery'] = undefined;
 
 
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **values** | **[String]** |  | [optional] 
 **usedForVariations** | **Boolean** |  | [optional] [default to false]
 **scaleId** | **Number** |  | [optional] 
+**inputValue** | **String** |  | [optional] 
 **foodDetails** | [**ProductAddSpecificsInnerFoodDetails**](ProductAddSpecificsInnerFoodDetails.md) |  | [optional] 
 **groupProductsDetails** | [**[ProductAddSpecificsInnerGroupProductsDetailsInner]**](ProductAddSpecificsInnerGroupProductsDetailsInner.md) |  | [optional] 
 **bookingDetails** | [**ProductAddSpecificsInnerBookingDetails**](ProductAddSpecificsInnerBookingDetails.md) |  | [optional] 

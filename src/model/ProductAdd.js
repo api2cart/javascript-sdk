@@ -395,6 +395,9 @@ class ProductAdd {
             if (data.hasOwnProperty('listing_type')) {
                 obj['listing_type'] = ApiClient.convertToType(data['listing_type'], 'String');
             }
+            if (data.hasOwnProperty('category_type')) {
+                obj['category_type'] = ApiClient.convertToType(data['category_type'], 'String');
+            }
             if (data.hasOwnProperty('return_accepted')) {
                 obj['return_accepted'] = ApiClient.convertToType(data['return_accepted'], 'Boolean');
             }
@@ -788,6 +791,10 @@ class ProductAdd {
         // ensure the json data is a string
         if (data['listing_type'] && !(typeof data['listing_type'] === 'string' || data['listing_type'] instanceof String)) {
             throw new Error("Expected the field `listing_type` to be a primitive type in the JSON string but got " + data['listing_type']);
+        }
+        // ensure the json data is a string
+        if (data['category_type'] && !(typeof data['category_type'] === 'string' || data['category_type'] instanceof String)) {
+            throw new Error("Expected the field `category_type` to be a primitive type in the JSON string but got " + data['category_type']);
         }
         // validate the optional field `seller_profiles`
         if (data['seller_profiles']) { // data not null
@@ -1449,6 +1456,12 @@ ProductAdd.prototype['listing_duration'] = undefined;
  * @default 'FixedPrice'
  */
 ProductAdd.prototype['listing_type'] = 'FixedPrice';
+
+/**
+ * Specifies the type of category (e.g., apparel or other) for the product being added.
+ * @member {String} category_type
+ */
+ProductAdd.prototype['category_type'] = undefined;
 
 /**
  * Indicates whether the seller allows the buyer to return the item.

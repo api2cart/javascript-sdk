@@ -659,6 +659,7 @@ export default class ProductApi {
      * @param {Array.<String>} [productAttributes] Defines product attributes
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
+     * @param {String} [visible = 'everywhere')] Filter items by visibility status
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Counts products that are searched specified by field
      * @param {String} [reportRequestId] Report request id
@@ -691,6 +692,7 @@ export default class ProductApi {
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
         'status': opts['status'],
         'type': opts['type'],
+        'visible': opts['visible'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
         'report_request_id': opts['reportRequestId'],
@@ -1269,6 +1271,7 @@ export default class ProductApi {
      * @param {Array.<String>} [productAttributes] Defines product attributes
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
+     * @param {String} [visible = 'everywhere')] Filter items by visibility status
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Product search that is specified by field
      * @param {Boolean} [returnGlobal = false)] Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -1312,6 +1315,7 @@ export default class ProductApi {
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
         'status': opts['status'],
         'type': opts['type'],
+        'visible': opts['visible'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
         'return_global': opts['returnGlobal'],

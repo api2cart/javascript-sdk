@@ -991,7 +991,7 @@ export default class OrderApi {
 
     /**
      * order.shipment.list
-     * Get list of shipments by orders.
+     * Get list of shipments per order.
      * @param {String} orderId Retrieves shipments specified by order id
      * @param {Object} opts Optional parameters
      * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities

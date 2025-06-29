@@ -83,6 +83,9 @@ class OrderAddOrderItemInner {
             if (data.hasOwnProperty('order_item_tax')) {
                 obj['order_item_tax'] = ApiClient.convertToType(data['order_item_tax'], 'Number');
             }
+            if (data.hasOwnProperty('order_item_tax_class')) {
+                obj['order_item_tax_class'] = ApiClient.convertToType(data['order_item_tax_class'], 'String');
+            }
             if (data.hasOwnProperty('order_item_price_includes_tax')) {
                 obj['order_item_price_includes_tax'] = ApiClient.convertToType(data['order_item_price_includes_tax'], 'Boolean');
             }
@@ -135,6 +138,10 @@ class OrderAddOrderItemInner {
         // ensure the json data is a string
         if (data['order_item_variant_id'] && !(typeof data['order_item_variant_id'] === 'string' || data['order_item_variant_id'] instanceof String)) {
             throw new Error("Expected the field `order_item_variant_id` to be a primitive type in the JSON string but got " + data['order_item_variant_id']);
+        }
+        // ensure the json data is a string
+        if (data['order_item_tax_class'] && !(typeof data['order_item_tax_class'] === 'string' || data['order_item_tax_class'] instanceof String)) {
+            throw new Error("Expected the field `order_item_tax_class` to be a primitive type in the JSON string but got " + data['order_item_tax_class']);
         }
         // ensure the json data is a string
         if (data['order_item_parent_option_name'] && !(typeof data['order_item_parent_option_name'] === 'string' || data['order_item_parent_option_name'] instanceof String)) {
@@ -217,6 +224,12 @@ OrderAddOrderItemInner.prototype['order_item_variant_id'] = undefined;
  * @default 0
  */
 OrderAddOrderItemInner.prototype['order_item_tax'] = 0;
+
+/**
+ * Id of the tax class of product.
+ * @member {String} order_item_tax_class
+ */
+OrderAddOrderItemInner.prototype['order_item_tax_class'] = undefined;
 
 /**
  * Defines if item price includes tax

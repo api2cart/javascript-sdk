@@ -769,6 +769,7 @@ let opts = {
   'productAttributes': ["null"], // [String] | Defines product attributes
   'status': "disabled", // String | Defines product's status
   'type': "simple", // String | Defines products's type
+  'visible': "everywhere", // String | Filter items by visibility status
   'findValue': "Phone", // String | Entity search that is specified by some value
   'findWhere': "name", // String | Counts products that are searched specified by field
   'reportRequestId': "105245017661", // String | Report request id
@@ -806,6 +807,7 @@ Name | Type | Description  | Notes
  **productAttributes** | [**[String]**](String.md)| Defines product attributes | [optional] 
  **status** | **String**| Defines product&#39;s status | [optional] 
  **type** | **String**| Defines products&#39;s type | [optional] 
+ **visible** | **String**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;]
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Counts products that are searched specified by field | [optional] 
  **reportRequestId** | **String**| Report request id | [optional] 
@@ -1522,6 +1524,7 @@ let opts = {
   'productAttributes': ["null"], // [String] | Defines product attributes
   'status': "disabled", // String | Defines product's status
   'type': "simple", // String | Defines products's type
+  'visible': "everywhere", // String | Filter items by visibility status
   'findValue': "Phone", // String | Entity search that is specified by some value
   'findWhere': "name", // String | Product search that is specified by field
   'returnGlobal': false, // Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -1570,6 +1573,7 @@ Name | Type | Description  | Notes
  **productAttributes** | [**[String]**](String.md)| Defines product attributes | [optional] 
  **status** | **String**| Defines product&#39;s status | [optional] 
  **type** | **String**| Defines products&#39;s type | [optional] 
+ **visible** | **String**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;]
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Product search that is specified by field | [optional] 
  **returnGlobal** | **Boolean**| Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional] [default to false]

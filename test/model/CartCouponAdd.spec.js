@@ -156,6 +156,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property freeCashOnDelivery (base name: "free_cash_on_delivery")', function() {
+      // uncomment below and update the code to test the property freeCashOnDelivery
+      //var instance = new Api2CartOpenApi.CartCouponAdd();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
