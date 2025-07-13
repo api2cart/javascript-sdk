@@ -209,6 +209,7 @@ export default class CustomerApi {
      * @param {String} [groupId] Customer group_id
      * @param {String} [storeId] Counts customer specified by store id
      * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {Boolean} [includeGuests = false)] Indicates whether to include guest customers in the total count.
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Counts customers that are searched specified by field
      * @param {String} [createdFrom] Retrieve entities from their creation date
@@ -231,6 +232,7 @@ export default class CustomerApi {
         'group_id': opts['groupId'],
         'store_id': opts['storeId'],
         'avail': opts['avail'],
+        'include_guests': opts['includeGuests'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
         'created_from': opts['createdFrom'],
@@ -313,6 +315,7 @@ export default class CustomerApi {
      * @param {String} [findWhere = 'email')] Entity search that is specified by the comma-separated unique fields
      * @param {String} [findParams = 'whole_words')] Entity search that is specified by comma-separated parameters
      * @param {String} [storeId] Store Id
+     * @param {Boolean} [includeGuests = false)] Indicates whether to search among guest customers when looking up a customer.
      * @param {module:api/CustomerApi~customerFindCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomerFind200Response}
      */
@@ -330,7 +333,8 @@ export default class CustomerApi {
         'find_value': findValue,
         'find_where': opts['findWhere'],
         'find_params': opts['findParams'],
-        'store_id': opts['storeId']
+        'store_id': opts['storeId'],
+        'include_guests': opts['includeGuests']
       };
       let headerParams = {
       };
@@ -530,6 +534,7 @@ export default class CustomerApi {
      * @param {String} [groupId] Customer group_id
      * @param {String} [storeId] Retrieves customers specified by store id
      * @param {Boolean} [avail = true)] Defines category's visibility status
+     * @param {Boolean} [includeGuests = false)] Indicates whether to include guest customers in the list results.
      * @param {String} [findValue] Entity search that is specified by some value
      * @param {String} [findWhere] Customer search that is specified by field
      * @param {String} [createdFrom] Retrieve entities from their creation date
@@ -560,6 +565,7 @@ export default class CustomerApi {
         'group_id': opts['groupId'],
         'store_id': opts['storeId'],
         'avail': opts['avail'],
+        'include_guests': opts['includeGuests'],
         'find_value': opts['findValue'],
         'find_where': opts['findWhere'],
         'created_from': opts['createdFrom'],

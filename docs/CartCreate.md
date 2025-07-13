@@ -202,6 +202,8 @@ Name | Type | Description | Notes
 
 * `Squarespace` (value: `"Squarespace"`)
 
+* `Temu` (value: `"Temu"`)
+
 * `Tiendanube` (value: `"Tiendanube"`)
 
 * `TikTokShop` (value: `"TikTokShop"`)

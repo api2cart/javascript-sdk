@@ -235,6 +235,7 @@ let opts = {
   'groupId': "3", // String | Customer group_id
   'storeId': "1", // String | Counts customer specified by store id
   'avail': false, // Boolean | Defines category's visibility status
+  'includeGuests': true, // Boolean | Indicates whether to include guest customers in the total count.
   'findValue': "mail@gmail.com", // String | Entity search that is specified by some value
   'findWhere': "email", // String | Counts customers that are searched specified by field
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
@@ -262,6 +263,7 @@ Name | Type | Description  | Notes
  **groupId** | **String**| Customer group_id | [optional] 
  **storeId** | **String**| Counts customer specified by store id | [optional] 
  **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **includeGuests** | **Boolean**| Indicates whether to include guest customers in the total count. | [optional] [default to false]
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Counts customers that are searched specified by field | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
@@ -368,7 +370,8 @@ let findValue = "mail@gmail.com"; // String | Entity search that is specified by
 let opts = {
   'findWhere': "email", // String | Entity search that is specified by the comma-separated unique fields
   'findParams': "regex", // String | Entity search that is specified by comma-separated parameters
-  'storeId': "1" // String | Store Id
+  'storeId': "1", // String | Store Id
+  'includeGuests': true // Boolean | Indicates whether to search among guest customers when looking up a customer.
 };
 apiInstance.customerFind(findValue, opts, (error, data, response) => {
   if (error) {
@@ -388,6 +391,7 @@ Name | Type | Description  | Notes
  **findWhere** | **String**| Entity search that is specified by the comma-separated unique fields | [optional] [default to &#39;email&#39;]
  **findParams** | **String**| Entity search that is specified by comma-separated parameters | [optional] [default to &#39;whole_words&#39;]
  **storeId** | **String**| Store Id | [optional] 
+ **includeGuests** | **Boolean**| Indicates whether to search among guest customers when looking up a customer. | [optional] [default to false]
 
 ### Return type
 
@@ -642,6 +646,7 @@ let opts = {
   'groupId': "3", // String | Customer group_id
   'storeId': "1", // String | Retrieves customers specified by store id
   'avail': false, // Boolean | Defines category's visibility status
+  'includeGuests': true, // Boolean | Indicates whether to include guest customers in the list results.
   'findValue': "mail@gmail.com", // String | Entity search that is specified by some value
   'findWhere': "email", // String | Customer search that is specified by field
   'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
@@ -677,6 +682,7 @@ Name | Type | Description  | Notes
  **groupId** | **String**| Customer group_id | [optional] 
  **storeId** | **String**| Retrieves customers specified by store id | [optional] 
  **avail** | **Boolean**| Defines category&#39;s visibility status | [optional] [default to true]
+ **includeGuests** | **Boolean**| Indicates whether to include guest customers in the list results. | [optional] [default to false]
  **findValue** | **String**| Entity search that is specified by some value | [optional] 
  **findWhere** | **String**| Customer search that is specified by field | [optional] 
  **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 

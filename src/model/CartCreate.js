@@ -1671,6 +1671,12 @@ CartCreate['CartIdEnum'] = {
     "Squarespace": "Squarespace",
 
     /**
+     * value: "Temu"
+     * @const
+     */
+    "Temu": "Temu",
+
+    /**
      * value: "Tiendanube"
      * @const
      */

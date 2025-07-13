@@ -87,6 +87,9 @@ class Customer {
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
+            if (data.hasOwnProperty('is_guest')) {
+                obj['is_guest'] = ApiClient.convertToType(data['is_guest'], 'Boolean');
+            }
             if (data.hasOwnProperty('news_letter_subscription')) {
                 obj['news_letter_subscription'] = ApiClient.convertToType(data['news_letter_subscription'], 'Boolean');
             }
@@ -313,6 +316,11 @@ Customer.prototype['birth_day'] = undefined;
  * @member {String} status
  */
 Customer.prototype['status'] = undefined;
+
+/**
+ * @member {Boolean} is_guest
+ */
+Customer.prototype['is_guest'] = undefined;
 
 /**
  * @member {Boolean} news_letter_subscription

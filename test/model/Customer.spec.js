@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isGuest (base name: "is_guest")', function() {
+      // uncomment below and update the code to test the property isGuest
+      //var instance = new Api2CartOpenApi.Customer();
+      //expect(instance).to.be();
+    });
+
     it('should have the property newsLetterSubscription (base name: "news_letter_subscription")', function() {
       // uncomment below and update the code to test the property newsLetterSubscription
       //var instance = new Api2CartOpenApi.Customer();
