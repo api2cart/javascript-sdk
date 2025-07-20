@@ -270,6 +270,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bricklinkConsumerKey (base name: "bricklink_consumer_key")', function() {
+      // uncomment below and update the code to test the property bricklinkConsumerKey
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bricklinkConsumerSecret (base name: "bricklink_consumer_secret")', function() {
+      // uncomment below and update the code to test the property bricklinkConsumerSecret
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bricklinkToken (base name: "bricklink_token")', function() {
+      // uncomment below and update the code to test the property bricklinkToken
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bricklinkTokenSecret (base name: "bricklink_token_secret")', function() {
+      // uncomment below and update the code to test the property bricklinkTokenSecret
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property demandwareClientId (base name: "demandware_client_id")', function() {
       // uncomment below and update the code to test the property demandwareClientId
       //var instance = new Api2CartOpenApi.AccountCartAdd();

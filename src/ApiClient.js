@@ -32,11 +32,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://api.api2cart.com/v1.1') {
+    constructor(basePath = 'https://api.api2cart.local.com/v1.1') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://api.api2cart.com/v1.1
+         * @default https://api.api2cart.local.com/v1.1
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -596,7 +596,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://api.api2cart.com/v1.1",
+              'url': "https://api.api2cart.local.com/v1.1",
               'description': "API2Cart Production Server",
             }
       ];

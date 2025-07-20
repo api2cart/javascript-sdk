@@ -88,16 +88,6 @@
         done();
       });
     });
-    describe('orderFind', function() {
-      it('should call orderFind successfully', function(done) {
-        //uncomment below and update the code to test orderFind
-        //instance.orderFind(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('orderFulfillmentStatusList', function() {
       it('should call orderFulfillmentStatusList successfully', function(done) {
         //uncomment below and update the code to test orderFulfillmentStatusList

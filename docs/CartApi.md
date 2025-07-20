@@ -1,29 +1,22 @@
 # Api2CartOpenApi.CartApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cartBridge**](CartApi.md#cartBridge) | **GET** /cart.bridge.json | cart.bridge
 [**cartCatalogPriceRulesCount**](CartApi.md#cartCatalogPriceRulesCount) | **GET** /cart.catalog_price_rules.count.json | cart.catalog_price_rules.count
 [**cartCatalogPriceRulesList**](CartApi.md#cartCatalogPriceRulesList) | **GET** /cart.catalog_price_rules.list.json | cart.catalog_price_rules.list
-[**cartClearCache**](CartApi.md#cartClearCache) | **POST** /cart.clear_cache.json | cart.clear_cache
-[**cartConfig**](CartApi.md#cartConfig) | **GET** /cart.config.json | cart.config
-[**cartConfigUpdate**](CartApi.md#cartConfigUpdate) | **PUT** /cart.config.update.json | cart.config.update
 [**cartCouponAdd**](CartApi.md#cartCouponAdd) | **POST** /cart.coupon.add.json | cart.coupon.add
 [**cartCouponConditionAdd**](CartApi.md#cartCouponConditionAdd) | **POST** /cart.coupon.condition.add.json | cart.coupon.condition.add
 [**cartCouponCount**](CartApi.md#cartCouponCount) | **GET** /cart.coupon.count.json | cart.coupon.count
 [**cartCouponDelete**](CartApi.md#cartCouponDelete) | **DELETE** /cart.coupon.delete.json | cart.coupon.delete
 [**cartCouponList**](CartApi.md#cartCouponList) | **GET** /cart.coupon.list.json | cart.coupon.list
-[**cartCreate**](CartApi.md#cartCreate) | **POST** /cart.create.json | cart.create
 [**cartDelete**](CartApi.md#cartDelete) | **DELETE** /cart.delete.json | cart.delete
-[**cartDisconnect**](CartApi.md#cartDisconnect) | **GET** /cart.disconnect.json | cart.disconnect
 [**cartGiftcardAdd**](CartApi.md#cartGiftcardAdd) | **POST** /cart.giftcard.add.json | cart.giftcard.add
 [**cartGiftcardCount**](CartApi.md#cartGiftcardCount) | **GET** /cart.giftcard.count.json | cart.giftcard.count
 [**cartGiftcardDelete**](CartApi.md#cartGiftcardDelete) | **DELETE** /cart.giftcard.delete.json | cart.giftcard.delete
 [**cartGiftcardList**](CartApi.md#cartGiftcardList) | **GET** /cart.giftcard.list.json | cart.giftcard.list
 [**cartInfo**](CartApi.md#cartInfo) | **GET** /cart.info.json | cart.info
-[**cartList**](CartApi.md#cartList) | **GET** /cart.list.json | cart.list
 [**cartMetaDataList**](CartApi.md#cartMetaDataList) | **GET** /cart.meta_data.list.json | cart.meta_data.list
 [**cartMetaDataSet**](CartApi.md#cartMetaDataSet) | **POST** /cart.meta_data.set.json | cart.meta_data.set
 [**cartMetaDataUnset**](CartApi.md#cartMetaDataUnset) | **DELETE** /cart.meta_data.unset.json | cart.meta_data.unset
@@ -35,53 +28,6 @@ Method | HTTP request | Description
 [**cartShippingZonesList**](CartApi.md#cartShippingZonesList) | **GET** /cart.shipping_zones.list.json | cart.shipping_zones.list
 [**cartValidate**](CartApi.md#cartValidate) | **GET** /cart.validate.json | cart.validate
 
-
-
-## cartBridge
-
-> CartBridge200Response cartBridge()
-
-cart.bridge
-
-Get bridge key and store key
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-apiInstance.cartBridge((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartBridge200Response**](CartBridge200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 
 ## cartCatalogPriceRulesCount
@@ -203,178 +149,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## cartClearCache
-
-> CartClearCache200Response cartClearCache(cacheType)
-
-cart.clear_cache
-
-Clear cache on store.
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: StoreKeyAuth
-let StoreKeyAuth = defaultClient.authentications['StoreKeyAuth'];
-StoreKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//StoreKeyAuth.apiKeyPrefix = 'Token';
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-let cacheType = "storage_cache"; // String | Defines which cache should be cleared.
-apiInstance.cartClearCache(cacheType, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cacheType** | **String**| Defines which cache should be cleared. | 
-
-### Return type
-
-[**CartClearCache200Response**](CartClearCache200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## cartConfig
-
-> CartConfig200Response cartConfig(opts)
-
-cart.config
-
-Get list of cart configs
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: StoreKeyAuth
-let StoreKeyAuth = defaultClient.authentications['StoreKeyAuth'];
-StoreKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//StoreKeyAuth.apiKeyPrefix = 'Token';
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-let opts = {
-  'params': "store_name,store_url,db_prefix", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "store_name,store_url,db_prefix" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-};
-apiInstance.cartConfig(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;store_name,store_url,db_prefix&#39;]
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
-
-### Return type
-
-[**CartConfig200Response**](CartConfig200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## cartConfigUpdate
-
-> CartConfigUpdate200Response cartConfigUpdate(cartConfigUpdate)
-
-cart.config.update
-
-Use this API method to update custom data in client database.
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: StoreKeyAuth
-let StoreKeyAuth = defaultClient.authentications['StoreKeyAuth'];
-StoreKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//StoreKeyAuth.apiKeyPrefix = 'Token';
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-let cartConfigUpdate = new Api2CartOpenApi.CartConfigUpdate(); // CartConfigUpdate | 
-apiInstance.cartConfigUpdate(cartConfigUpdate, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartConfigUpdate** | [**CartConfigUpdate**](CartConfigUpdate.md)|  | 
-
-### Return type
-
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -720,57 +494,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## cartCreate
-
-> AccountCartAdd200Response cartCreate(cartCreate)
-
-cart.create
-
-Add store to the account
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-let cartCreate = new Api2CartOpenApi.CartCreate(); // CartCreate | 
-apiInstance.cartCreate(cartCreate, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartCreate** | [**CartCreate**](CartCreate.md)|  | 
-
-### Return type
-
-[**AccountCartAdd200Response**](AccountCartAdd200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## cartDelete
 
 > CartDelete200Response cartDelete(opts)
@@ -818,64 +541,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CartDelete200Response**](CartDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## cartDisconnect
-
-> CartDisconnect200Response cartDisconnect(opts)
-
-cart.disconnect
-
-Disconnect with the store and clear store session data.
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: StoreKeyAuth
-let StoreKeyAuth = defaultClient.authentications['StoreKeyAuth'];
-StoreKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//StoreKeyAuth.apiKeyPrefix = 'Token';
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-let opts = {
-  'deleteBridge': true // Boolean | Identifies if there is a necessity to delete bridge
-};
-apiInstance.cartDisconnect(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **deleteBridge** | **Boolean**| Identifies if there is a necessity to delete bridge | [optional] [default to false]
-
-### Return type
-
-[**CartDisconnect200Response**](CartDisconnect200Response.md)
 
 ### Authorization
 
@@ -1196,53 +861,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## cartList
-
-> CartList200Response cartList()
-
-cart.list
-
-Get list of supported carts
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.CartApi();
-apiInstance.cartList((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartList200Response**](CartList200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

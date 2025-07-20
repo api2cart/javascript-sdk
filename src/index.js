@@ -68,35 +68,21 @@ import BatchJobResultItem from './model/BatchJobResultItem';
 import Brand from './model/Brand';
 import Carrier from './model/Carrier';
 import Cart from './model/Cart';
-import CartBridge200Response from './model/CartBridge200Response';
-import CartBridge200ResponseResult from './model/CartBridge200ResponseResult';
 import CartCatalogPriceRulesCount200Response from './model/CartCatalogPriceRulesCount200Response';
 import CartCatalogPriceRulesCount200ResponseResult from './model/CartCatalogPriceRulesCount200ResponseResult';
 import CartChannel from './model/CartChannel';
-import CartClearCache200Response from './model/CartClearCache200Response';
-import CartClearCache200ResponseResult from './model/CartClearCache200ResponseResult';
-import CartConfig200Response from './model/CartConfig200Response';
-import CartConfig200ResponseResult from './model/CartConfig200ResponseResult';
-import CartConfigUpdate from './model/CartConfigUpdate';
-import CartConfigUpdate200Response from './model/CartConfigUpdate200Response';
 import CartCouponAdd from './model/CartCouponAdd';
 import CartCouponAdd200Response from './model/CartCouponAdd200Response';
 import CartCouponAdd200ResponseResult from './model/CartCouponAdd200ResponseResult';
 import CartCouponCount200Response from './model/CartCouponCount200Response';
 import CartCouponCount200ResponseResult from './model/CartCouponCount200ResponseResult';
-import CartCreate from './model/CartCreate';
 import CartDelete200Response from './model/CartDelete200Response';
 import CartDelete200ResponseResult from './model/CartDelete200ResponseResult';
-import CartDisconnect200Response from './model/CartDisconnect200Response';
-import CartDisconnect200ResponseResult from './model/CartDisconnect200ResponseResult';
 import CartGiftcardAdd200Response from './model/CartGiftcardAdd200Response';
 import CartGiftcardAdd200ResponseResult from './model/CartGiftcardAdd200ResponseResult';
 import CartGiftcardCount200Response from './model/CartGiftcardCount200Response';
 import CartGiftcardCount200ResponseResult from './model/CartGiftcardCount200ResponseResult';
 import CartInfo200Response from './model/CartInfo200Response';
-import CartList200Response from './model/CartList200Response';
-import CartList200ResponseResult from './model/CartList200ResponseResult';
-import CartList200ResponseResultSupportedCartsInner from './model/CartList200ResponseResultSupportedCartsInner';
 import CartMetaData from './model/CartMetaData';
 import CartMethods200Response from './model/CartMethods200Response';
 import CartMethods200ResponseResult from './model/CartMethods200ResponseResult';
@@ -122,6 +108,7 @@ import CategoryAddBatch200Response from './model/CategoryAddBatch200Response';
 import CategoryAddBatch200ResponseResult from './model/CategoryAddBatch200ResponseResult';
 import CategoryAddBatchPayloadInner from './model/CategoryAddBatchPayloadInner';
 import CategoryAddBatchPayloadInnerImagesInner from './model/CategoryAddBatchPayloadInnerImagesInner';
+import CategoryAssign200Response from './model/CategoryAssign200Response';
 import CategoryCount200Response from './model/CategoryCount200Response';
 import CategoryCount200ResponseResult from './model/CategoryCount200ResponseResult';
 import CategoryDelete200Response from './model/CategoryDelete200Response';
@@ -219,8 +206,6 @@ import OrderCount200ResponseResult from './model/OrderCount200ResponseResult';
 import OrderFinancialStatusList200Response from './model/OrderFinancialStatusList200Response';
 import OrderFinancialStatusList200ResponseResult from './model/OrderFinancialStatusList200ResponseResult';
 import OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner from './model/OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner';
-import OrderFind200Response from './model/OrderFind200Response';
-import OrderFind200ResponseResult from './model/OrderFind200ResponseResult';
 import OrderFulfillmentStatusList200Response from './model/OrderFulfillmentStatusList200Response';
 import OrderFulfillmentStatusList200ResponseResult from './model/OrderFulfillmentStatusList200ResponseResult';
 import OrderInfo200Response from './model/OrderInfo200Response';
@@ -363,15 +348,11 @@ import ProductVariantAddAttributesInner from './model/ProductVariantAddAttribute
 import ProductVariantAddBatch from './model/ProductVariantAddBatch';
 import ProductVariantAddBatchPayloadInner from './model/ProductVariantAddBatchPayloadInner';
 import ProductVariantAddBatchPayloadInnerCombinationInner from './model/ProductVariantAddBatchPayloadInnerCombinationInner';
-import ProductVariantCount200Response from './model/ProductVariantCount200Response';
-import ProductVariantCount200ResponseResult from './model/ProductVariantCount200ResponseResult';
 import ProductVariantDeleteBatch from './model/ProductVariantDeleteBatch';
 import ProductVariantDeleteBatchPayloadInner from './model/ProductVariantDeleteBatchPayloadInner';
 import ProductVariantImageAdd from './model/ProductVariantImageAdd';
 import ProductVariantImageAdd200Response from './model/ProductVariantImageAdd200Response';
 import ProductVariantImageAdd200ResponseResult from './model/ProductVariantImageAdd200ResponseResult';
-import ProductVariantList200Response from './model/ProductVariantList200Response';
-import ProductVariantList200ResponseResult from './model/ProductVariantList200ResponseResult';
 import ProductVariantPriceAdd from './model/ProductVariantPriceAdd';
 import ProductVariantPriceUpdate from './model/ProductVariantPriceUpdate';
 import ProductVariantUpdate from './model/ProductVariantUpdate';
@@ -837,18 +818,6 @@ export {
     Cart,
 
     /**
-     * The CartBridge200Response model constructor.
-     * @property {module:model/CartBridge200Response}
-     */
-    CartBridge200Response,
-
-    /**
-     * The CartBridge200ResponseResult model constructor.
-     * @property {module:model/CartBridge200ResponseResult}
-     */
-    CartBridge200ResponseResult,
-
-    /**
      * The CartCatalogPriceRulesCount200Response model constructor.
      * @property {module:model/CartCatalogPriceRulesCount200Response}
      */
@@ -865,42 +834,6 @@ export {
      * @property {module:model/CartChannel}
      */
     CartChannel,
-
-    /**
-     * The CartClearCache200Response model constructor.
-     * @property {module:model/CartClearCache200Response}
-     */
-    CartClearCache200Response,
-
-    /**
-     * The CartClearCache200ResponseResult model constructor.
-     * @property {module:model/CartClearCache200ResponseResult}
-     */
-    CartClearCache200ResponseResult,
-
-    /**
-     * The CartConfig200Response model constructor.
-     * @property {module:model/CartConfig200Response}
-     */
-    CartConfig200Response,
-
-    /**
-     * The CartConfig200ResponseResult model constructor.
-     * @property {module:model/CartConfig200ResponseResult}
-     */
-    CartConfig200ResponseResult,
-
-    /**
-     * The CartConfigUpdate model constructor.
-     * @property {module:model/CartConfigUpdate}
-     */
-    CartConfigUpdate,
-
-    /**
-     * The CartConfigUpdate200Response model constructor.
-     * @property {module:model/CartConfigUpdate200Response}
-     */
-    CartConfigUpdate200Response,
 
     /**
      * The CartCouponAdd model constructor.
@@ -933,12 +866,6 @@ export {
     CartCouponCount200ResponseResult,
 
     /**
-     * The CartCreate model constructor.
-     * @property {module:model/CartCreate}
-     */
-    CartCreate,
-
-    /**
      * The CartDelete200Response model constructor.
      * @property {module:model/CartDelete200Response}
      */
@@ -949,18 +876,6 @@ export {
      * @property {module:model/CartDelete200ResponseResult}
      */
     CartDelete200ResponseResult,
-
-    /**
-     * The CartDisconnect200Response model constructor.
-     * @property {module:model/CartDisconnect200Response}
-     */
-    CartDisconnect200Response,
-
-    /**
-     * The CartDisconnect200ResponseResult model constructor.
-     * @property {module:model/CartDisconnect200ResponseResult}
-     */
-    CartDisconnect200ResponseResult,
 
     /**
      * The CartGiftcardAdd200Response model constructor.
@@ -991,24 +906,6 @@ export {
      * @property {module:model/CartInfo200Response}
      */
     CartInfo200Response,
-
-    /**
-     * The CartList200Response model constructor.
-     * @property {module:model/CartList200Response}
-     */
-    CartList200Response,
-
-    /**
-     * The CartList200ResponseResult model constructor.
-     * @property {module:model/CartList200ResponseResult}
-     */
-    CartList200ResponseResult,
-
-    /**
-     * The CartList200ResponseResultSupportedCartsInner model constructor.
-     * @property {module:model/CartList200ResponseResultSupportedCartsInner}
-     */
-    CartList200ResponseResultSupportedCartsInner,
 
     /**
      * The CartMetaData model constructor.
@@ -1159,6 +1056,12 @@ export {
      * @property {module:model/CategoryAddBatchPayloadInnerImagesInner}
      */
     CategoryAddBatchPayloadInnerImagesInner,
+
+    /**
+     * The CategoryAssign200Response model constructor.
+     * @property {module:model/CategoryAssign200Response}
+     */
+    CategoryAssign200Response,
 
     /**
      * The CategoryCount200Response model constructor.
@@ -1741,18 +1644,6 @@ export {
      * @property {module:model/OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner}
      */
     OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner,
-
-    /**
-     * The OrderFind200Response model constructor.
-     * @property {module:model/OrderFind200Response}
-     */
-    OrderFind200Response,
-
-    /**
-     * The OrderFind200ResponseResult model constructor.
-     * @property {module:model/OrderFind200ResponseResult}
-     */
-    OrderFind200ResponseResult,
 
     /**
      * The OrderFulfillmentStatusList200Response model constructor.
@@ -2607,18 +2498,6 @@ export {
     ProductVariantAddBatchPayloadInnerCombinationInner,
 
     /**
-     * The ProductVariantCount200Response model constructor.
-     * @property {module:model/ProductVariantCount200Response}
-     */
-    ProductVariantCount200Response,
-
-    /**
-     * The ProductVariantCount200ResponseResult model constructor.
-     * @property {module:model/ProductVariantCount200ResponseResult}
-     */
-    ProductVariantCount200ResponseResult,
-
-    /**
      * The ProductVariantDeleteBatch model constructor.
      * @property {module:model/ProductVariantDeleteBatch}
      */
@@ -2647,18 +2526,6 @@ export {
      * @property {module:model/ProductVariantImageAdd200ResponseResult}
      */
     ProductVariantImageAdd200ResponseResult,
-
-    /**
-     * The ProductVariantList200Response model constructor.
-     * @property {module:model/ProductVariantList200Response}
-     */
-    ProductVariantList200Response,
-
-    /**
-     * The ProductVariantList200ResponseResult model constructor.
-     * @property {module:model/ProductVariantList200ResponseResult}
-     */
-    ProductVariantList200ResponseResult,
 
     /**
      * The ProductVariantPriceAdd model constructor.

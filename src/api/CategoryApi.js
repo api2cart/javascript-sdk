@@ -15,10 +15,10 @@
 import ApiClient from "../ApiClient";
 import AccountConfigUpdate200Response from '../model/AccountConfigUpdate200Response';
 import AttributeDelete200Response from '../model/AttributeDelete200Response';
-import CartConfigUpdate200Response from '../model/CartConfigUpdate200Response';
 import CategoryAdd200Response from '../model/CategoryAdd200Response';
 import CategoryAddBatch from '../model/CategoryAddBatch';
 import CategoryAddBatch200Response from '../model/CategoryAddBatch200Response';
+import CategoryAssign200Response from '../model/CategoryAssign200Response';
 import CategoryCount200Response from '../model/CategoryCount200Response';
 import CategoryDelete200Response from '../model/CategoryDelete200Response';
 import CategoryFind200Response from '../model/CategoryFind200Response';
@@ -164,7 +164,7 @@ export default class CategoryApi {
      * Callback function to receive the result of the categoryAssign operation.
      * @callback module:api/CategoryApi~categoryAssignCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CartConfigUpdate200Response} data The data returned by the service call.
+     * @param {module:model/CategoryAssign200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -176,7 +176,7 @@ export default class CategoryApi {
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
      * @param {module:api/CategoryApi~categoryAssignCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartConfigUpdate200Response}
+     * data is of type: {@link module:model/CategoryAssign200Response}
      */
     categoryAssign(categoryId, productId, opts, callback) {
       opts = opts || {};
@@ -205,7 +205,7 @@ export default class CategoryApi {
       let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = CartConfigUpdate200Response;
+      let returnType = CategoryAssign200Response;
       return this.apiClient.callApi(
         '/category.assign.json', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -646,7 +646,7 @@ export default class CategoryApi {
      * Callback function to receive the result of the categoryUnassign operation.
      * @callback module:api/CategoryApi~categoryUnassignCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CartConfigUpdate200Response} data The data returned by the service call.
+     * @param {module:model/CategoryAssign200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -658,7 +658,7 @@ export default class CategoryApi {
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
      * @param {module:api/CategoryApi~categoryUnassignCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartConfigUpdate200Response}
+     * data is of type: {@link module:model/CategoryAssign200Response}
      */
     categoryUnassign(categoryId, productId, opts, callback) {
       opts = opts || {};
@@ -687,7 +687,7 @@ export default class CategoryApi {
       let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = CartConfigUpdate200Response;
+      let returnType = CategoryAssign200Response;
       return this.apiClient.callApi(
         '/category.unassign.json', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

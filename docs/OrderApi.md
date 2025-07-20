@@ -1,6 +1,6 @@
 # Api2CartOpenApi.OrderApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**orderAdd**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add
 [**orderCount**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count
 [**orderFinancialStatusList**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list
-[**orderFind**](OrderApi.md#orderFind) | **GET** /order.find.json | order.find
 [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 [**orderInfo**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info
 [**orderList**](OrderApi.md#orderList) | **GET** /order.list.json | order.list
@@ -307,86 +306,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OrderFinancialStatusList200Response**](OrderFinancialStatusList200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## orderFind
-
-> OrderFind200Response orderFind(opts)
-
-order.find
-
-This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
-
-### Example
-
-```javascript
-import Api2CartOpenApi from 'api2_cart_open_api';
-let defaultClient = Api2CartOpenApi.ApiClient.instance;
-// Configure API key authorization: StoreKeyAuth
-let StoreKeyAuth = defaultClient.authentications['StoreKeyAuth'];
-StoreKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//StoreKeyAuth.apiKeyPrefix = 'Token';
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
-
-let apiInstance = new Api2CartOpenApi.OrderApi();
-let opts = {
-  'start': 0, // Number | This parameter sets the number from which you want to get entities
-  'count': 20, // Number | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  'customerId': "5", // String | Retrieves orders specified by customer id
-  'customerEmail': "jubari@hannsgroup.com", // String | Retrieves orders specified by customer email
-  'orderStatus': "Completed", // String | Retrieves orders specified by order status
-  'financialStatus': "paid", // String | Retrieves orders specified by financial status
-  'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
-  'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
-  'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
-  'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
-  'params': "order_id,totals,status", // String | Set this parameter in order to choose which entity fields you want to retrieve
-  'exclude': "order_id,totals,status" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-};
-apiInstance.orderFind(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **start** | **Number**| This parameter sets the number from which you want to get entities | [optional] [default to 0]
- **count** | **Number**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10]
- **customerId** | **String**| Retrieves orders specified by customer id | [optional] 
- **customerEmail** | **String**| Retrieves orders specified by customer email | [optional] 
- **orderStatus** | **String**| Retrieves orders specified by order status | [optional] 
- **financialStatus** | **String**| Retrieves orders specified by financial status | [optional] 
- **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
- **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
- **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
- **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
- **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;]
- **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 
-
-### Return type
-
-[**OrderFind200Response**](OrderFind200Response.md)
 
 ### Authorization
 

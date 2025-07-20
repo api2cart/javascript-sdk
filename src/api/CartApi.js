@@ -13,26 +13,17 @@
 
 
 import ApiClient from "../ApiClient";
-import AccountCartAdd200Response from '../model/AccountCartAdd200Response';
 import AttributeAdd200Response from '../model/AttributeAdd200Response';
 import AttributeDelete200Response from '../model/AttributeDelete200Response';
 import BasketLiveShippingServiceDelete200Response from '../model/BasketLiveShippingServiceDelete200Response';
-import CartBridge200Response from '../model/CartBridge200Response';
 import CartCatalogPriceRulesCount200Response from '../model/CartCatalogPriceRulesCount200Response';
-import CartClearCache200Response from '../model/CartClearCache200Response';
-import CartConfig200Response from '../model/CartConfig200Response';
-import CartConfigUpdate from '../model/CartConfigUpdate';
-import CartConfigUpdate200Response from '../model/CartConfigUpdate200Response';
 import CartCouponAdd from '../model/CartCouponAdd';
 import CartCouponAdd200Response from '../model/CartCouponAdd200Response';
 import CartCouponCount200Response from '../model/CartCouponCount200Response';
-import CartCreate from '../model/CartCreate';
 import CartDelete200Response from '../model/CartDelete200Response';
-import CartDisconnect200Response from '../model/CartDisconnect200Response';
 import CartGiftcardAdd200Response from '../model/CartGiftcardAdd200Response';
 import CartGiftcardCount200Response from '../model/CartGiftcardCount200Response';
 import CartInfo200Response from '../model/CartInfo200Response';
-import CartList200Response from '../model/CartList200Response';
 import CartMethods200Response from '../model/CartMethods200Response';
 import CartPluginList200Response from '../model/CartPluginList200Response';
 import CartScriptAdd200Response from '../model/CartScriptAdd200Response';
@@ -62,43 +53,6 @@ export default class CartApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the cartBridge operation.
-     * @callback module:api/CartApi~cartBridgeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartBridge200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.bridge
-     * Get bridge key and store key
-     * @param {module:api/CartApi~cartBridgeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartBridge200Response}
-     */
-    cartBridge(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartBridge200Response;
-      return this.apiClient.callApi(
-        '/cart.bridge.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the cartCatalogPriceRulesCount operation.
@@ -185,134 +139,6 @@ export default class CartApi {
       let returnType = ModelResponseCartCatalogPriceRulesList;
       return this.apiClient.callApi(
         '/cart.catalog_price_rules.list.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the cartClearCache operation.
-     * @callback module:api/CartApi~cartClearCacheCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartClearCache200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.clear_cache
-     * Clear cache on store.
-     * @param {String} cacheType Defines which cache should be cleared.
-     * @param {module:api/CartApi~cartClearCacheCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartClearCache200Response}
-     */
-    cartClearCache(cacheType, callback) {
-      let postBody = null;
-      // verify the required parameter 'cacheType' is set
-      if (cacheType === undefined || cacheType === null) {
-        throw new Error("Missing the required parameter 'cacheType' when calling cartClearCache");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'cache_type': cacheType
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartClearCache200Response;
-      return this.apiClient.callApi(
-        '/cart.clear_cache.json', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the cartConfig operation.
-     * @callback module:api/CartApi~cartConfigCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartConfig200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.config
-     * Get list of cart configs
-     * @param {Object} opts Optional parameters
-     * @param {String} [params = 'store_name,store_url,db_prefix')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {module:api/CartApi~cartConfigCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartConfig200Response}
-     */
-    cartConfig(opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'params': opts['params'],
-        'exclude': opts['exclude']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartConfig200Response;
-      return this.apiClient.callApi(
-        '/cart.config.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the cartConfigUpdate operation.
-     * @callback module:api/CartApi~cartConfigUpdateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartConfigUpdate200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.config.update
-     * Use this API method to update custom data in client database.
-     * @param {module:model/CartConfigUpdate} cartConfigUpdate 
-     * @param {module:api/CartApi~cartConfigUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartConfigUpdate200Response}
-     */
-    cartConfigUpdate(cartConfigUpdate, callback) {
-      let postBody = cartConfigUpdate;
-      // verify the required parameter 'cartConfigUpdate' is set
-      if (cartConfigUpdate === undefined || cartConfigUpdate === null) {
-        throw new Error("Missing the required parameter 'cartConfigUpdate' when calling cartConfigUpdate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CartConfigUpdate200Response;
-      return this.apiClient.callApi(
-        '/cart.config.update.json', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -603,48 +429,6 @@ export default class CartApi {
     }
 
     /**
-     * Callback function to receive the result of the cartCreate operation.
-     * @callback module:api/CartApi~cartCreateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AccountCartAdd200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.create
-     * Add store to the account
-     * @param {module:model/CartCreate} cartCreate 
-     * @param {module:api/CartApi~cartCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountCartAdd200Response}
-     */
-    cartCreate(cartCreate, callback) {
-      let postBody = cartCreate;
-      // verify the required parameter 'cartCreate' is set
-      if (cartCreate === undefined || cartCreate === null) {
-        throw new Error("Missing the required parameter 'cartCreate' when calling cartCreate");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKeyAuth'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = AccountCartAdd200Response;
-      return this.apiClient.callApi(
-        '/cart.create.json', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the cartDelete operation.
      * @callback module:api/CartApi~cartDeleteCallback
      * @param {String} error Error message, if any.
@@ -680,47 +464,6 @@ export default class CartApi {
       let returnType = CartDelete200Response;
       return this.apiClient.callApi(
         '/cart.delete.json', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the cartDisconnect operation.
-     * @callback module:api/CartApi~cartDisconnectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartDisconnect200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.disconnect
-     * Disconnect with the store and clear store session data.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} [deleteBridge = false)] Identifies if there is a necessity to delete bridge
-     * @param {module:api/CartApi~cartDisconnectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartDisconnect200Response}
-     */
-    cartDisconnect(opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'delete_bridge': opts['deleteBridge']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartDisconnect200Response;
-      return this.apiClient.callApi(
-        '/cart.disconnect.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -960,43 +703,6 @@ export default class CartApi {
       let returnType = CartInfo200Response;
       return this.apiClient.callApi(
         '/cart.info.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the cartList operation.
-     * @callback module:api/CartApi~cartListCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartList200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * cart.list
-     * Get list of supported carts
-     * @param {module:api/CartApi~cartListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartList200Response}
-     */
-    cartList(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartList200Response;
-      return this.apiClient.callApi(
-        '/cart.list.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

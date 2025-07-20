@@ -16,7 +16,6 @@ import ApiClient from "../ApiClient";
 import AccountConfigUpdate200Response from '../model/AccountConfigUpdate200Response';
 import AttributeDelete200Response from '../model/AttributeDelete200Response';
 import AttributeValueDelete200Response from '../model/AttributeValueDelete200Response';
-import CartConfigUpdate200Response from '../model/CartConfigUpdate200Response';
 import CartValidate200Response from '../model/CartValidate200Response';
 import CategoryAddBatch200Response from '../model/CategoryAddBatch200Response';
 import CustomerDelete200Response from '../model/CustomerDelete200Response';
@@ -57,11 +56,9 @@ import ProductUpdateBatch from '../model/ProductUpdateBatch';
 import ProductVariantAdd from '../model/ProductVariantAdd';
 import ProductVariantAdd200Response from '../model/ProductVariantAdd200Response';
 import ProductVariantAddBatch from '../model/ProductVariantAddBatch';
-import ProductVariantCount200Response from '../model/ProductVariantCount200Response';
 import ProductVariantDeleteBatch from '../model/ProductVariantDeleteBatch';
 import ProductVariantImageAdd from '../model/ProductVariantImageAdd';
 import ProductVariantImageAdd200Response from '../model/ProductVariantImageAdd200Response';
-import ProductVariantList200Response from '../model/ProductVariantList200Response';
 import ProductVariantPriceAdd from '../model/ProductVariantPriceAdd';
 import ProductVariantPriceUpdate from '../model/ProductVariantPriceUpdate';
 import ProductVariantUpdate from '../model/ProductVariantUpdate';
@@ -916,43 +913,6 @@ export default class ProductApi {
       let returnType = CategoryAddBatch200Response;
       return this.apiClient.callApi(
         '/product.delete.batch.json', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the productFields operation.
-     * @callback module:api/ProductApi~productFieldsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CartConfigUpdate200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * product.fields
-     * Retrieve all available fields for product item in store.
-     * @param {module:api/ProductApi~productFieldsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CartConfigUpdate200Response}
-     */
-    productFields(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CartConfigUpdate200Response;
-      return this.apiClient.callApi(
-        '/product.fields.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -2303,63 +2263,6 @@ export default class ProductApi {
     }
 
     /**
-     * Callback function to receive the result of the productVariantCount operation.
-     * @callback module:api/ProductApi~productVariantCountCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ProductVariantCount200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * product.variant.count
-     * Get count variants.
-     * @param {String} productId Retrieves products' variants specified by product id
-     * @param {Object} opts Optional parameters
-     * @param {String} [categoryId] Counts products’ variants specified by category id
-     * @param {String} [storeId] Retrieves variants specified by store id
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {module:api/ProductApi~productVariantCountCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductVariantCount200Response}
-     */
-    productVariantCount(productId, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'productId' is set
-      if (productId === undefined || productId === null) {
-        throw new Error("Missing the required parameter 'productId' when calling productVariantCount");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'product_id': productId,
-        'category_id': opts['categoryId'],
-        'store_id': opts['storeId'],
-        'created_from': opts['createdFrom'],
-        'created_to': opts['createdTo'],
-        'modified_from': opts['modifiedFrom'],
-        'modified_to': opts['modifiedTo']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ProductVariantCount200Response;
-      return this.apiClient.callApi(
-        '/product.variant.count.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the productVariantDelete operation.
      * @callback module:api/ProductApi~productVariantDeleteCallback
      * @param {String} error Error message, if any.
@@ -2550,118 +2453,6 @@ export default class ProductApi {
       let returnType = AttributeDelete200Response;
       return this.apiClient.callApi(
         '/product.variant.image.delete.json', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the productVariantInfo operation.
-     * @callback module:api/ProductApi~productVariantInfoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ProductInfo200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * product.variant.info
-     * Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
-     * @param {String} id Retrieves variant's info specified by variant id
-     * @param {Object} opts Optional parameters
-     * @param {String} [storeId] Retrieves variant info specified by store id
-     * @param {String} [params = 'id,name,description,price')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {module:api/ProductApi~productVariantInfoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductInfo200Response}
-     */
-    productVariantInfo(id, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling productVariantInfo");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'id': id,
-        'store_id': opts['storeId'],
-        'params': opts['params'],
-        'exclude': opts['exclude']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ProductInfo200Response;
-      return this.apiClient.callApi(
-        '/product.variant.info.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the productVariantList operation.
-     * @callback module:api/ProductApi~productVariantListCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ProductVariantList200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * product.variant.list
-     * Get a list of variants. This method is deprecated, and its development is stopped. Please use \"product.child_item.list\" instead.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [productId] Retrieves products' variants specified by product id
-     * @param {String} [categoryId] Retrieves products’ variants specified by category id
-     * @param {String} [storeId] Retrieves variants specified by store id
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [params = 'id,name,description,price')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {module:api/ProductApi~productVariantListCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProductVariantList200Response}
-     */
-    productVariantList(opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'start': opts['start'],
-        'count': opts['count'],
-        'product_id': opts['productId'],
-        'category_id': opts['categoryId'],
-        'store_id': opts['storeId'],
-        'created_from': opts['createdFrom'],
-        'created_to': opts['createdTo'],
-        'modified_from': opts['modifiedFrom'],
-        'modified_to': opts['modifiedTo'],
-        'params': opts['params'],
-        'exclude': opts['exclude']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = ProductVariantList200Response;
-      return this.apiClient.callApi(
-        '/product.variant.list.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

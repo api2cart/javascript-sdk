@@ -26,14 +26,18 @@ class AccountCartAdd {
      * @param cartId {module:model/AccountCartAdd.CartIdEnum} Store’s identifier which you can get from cart_list method
      * @param bigcartelUserName {String} Subdomain of store
      * @param bigcartelPassword {String} BigCartel account password
+     * @param bricklinkConsumerKey {String} Bricklink Consumer Key
+     * @param bricklinkConsumerSecret {String} Bricklink Consumer Secret
+     * @param bricklinkToken {String} Bricklink Access Token
+     * @param bricklinkTokenSecret {String} Bricklink Access Token Secret
      * @param wixAppId {String} Wix App ID
      * @param wixAppSecretKey {String} Wix App Secret Key
      * @param temuAccessToken {String} Temu Access Token
      * @param temuRegion {module:model/AccountCartAdd.TemuRegionEnum} Temu API endpoint Region.
      */
-    constructor(cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
+    constructor(cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
         
-        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion);
+        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion);
     }
 
     /**
@@ -41,13 +45,17 @@ class AccountCartAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
+    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
         obj['cart_id'] = cartId;
         obj['validate_version'] = false;
         obj['verify'] = true;
         obj['amazon_sp_api_environment'] = 'production';
         obj['bigcartel_user_name'] = bigcartelUserName;
         obj['bigcartel_password'] = bigcartelPassword;
+        obj['bricklink_consumer_key'] = bricklinkConsumerKey;
+        obj['bricklink_consumer_secret'] = bricklinkConsumerSecret;
+        obj['bricklink_token'] = bricklinkToken;
+        obj['bricklink_token_secret'] = bricklinkTokenSecret;
         obj['ebay_environment'] = 'production';
         obj['ebay_site_id'] = 0;
         obj['walmart_environment'] = 'production';
@@ -179,6 +187,18 @@ class AccountCartAdd {
             }
             if (data.hasOwnProperty('bigcartel_password')) {
                 obj['bigcartel_password'] = ApiClient.convertToType(data['bigcartel_password'], 'String');
+            }
+            if (data.hasOwnProperty('bricklink_consumer_key')) {
+                obj['bricklink_consumer_key'] = ApiClient.convertToType(data['bricklink_consumer_key'], 'String');
+            }
+            if (data.hasOwnProperty('bricklink_consumer_secret')) {
+                obj['bricklink_consumer_secret'] = ApiClient.convertToType(data['bricklink_consumer_secret'], 'String');
+            }
+            if (data.hasOwnProperty('bricklink_token')) {
+                obj['bricklink_token'] = ApiClient.convertToType(data['bricklink_token'], 'String');
+            }
+            if (data.hasOwnProperty('bricklink_token_secret')) {
+                obj['bricklink_token_secret'] = ApiClient.convertToType(data['bricklink_token_secret'], 'String');
             }
             if (data.hasOwnProperty('demandware_client_id')) {
                 obj['demandware_client_id'] = ApiClient.convertToType(data['demandware_client_id'], 'String');
@@ -700,6 +720,22 @@ class AccountCartAdd {
             throw new Error("Expected the field `bigcartel_password` to be a primitive type in the JSON string but got " + data['bigcartel_password']);
         }
         // ensure the json data is a string
+        if (data['bricklink_consumer_key'] && !(typeof data['bricklink_consumer_key'] === 'string' || data['bricklink_consumer_key'] instanceof String)) {
+            throw new Error("Expected the field `bricklink_consumer_key` to be a primitive type in the JSON string but got " + data['bricklink_consumer_key']);
+        }
+        // ensure the json data is a string
+        if (data['bricklink_consumer_secret'] && !(typeof data['bricklink_consumer_secret'] === 'string' || data['bricklink_consumer_secret'] instanceof String)) {
+            throw new Error("Expected the field `bricklink_consumer_secret` to be a primitive type in the JSON string but got " + data['bricklink_consumer_secret']);
+        }
+        // ensure the json data is a string
+        if (data['bricklink_token'] && !(typeof data['bricklink_token'] === 'string' || data['bricklink_token'] instanceof String)) {
+            throw new Error("Expected the field `bricklink_token` to be a primitive type in the JSON string but got " + data['bricklink_token']);
+        }
+        // ensure the json data is a string
+        if (data['bricklink_token_secret'] && !(typeof data['bricklink_token_secret'] === 'string' || data['bricklink_token_secret'] instanceof String)) {
+            throw new Error("Expected the field `bricklink_token_secret` to be a primitive type in the JSON string but got " + data['bricklink_token_secret']);
+        }
+        // ensure the json data is a string
         if (data['demandware_client_id'] && !(typeof data['demandware_client_id'] === 'string' || data['demandware_client_id'] instanceof String)) {
             throw new Error("Expected the field `demandware_client_id` to be a primitive type in the JSON string but got " + data['demandware_client_id']);
         }
@@ -1200,7 +1236,7 @@ class AccountCartAdd {
 
 }
 
-AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "wix_app_id", "wix_app_secret_key", "temu_access_token", "temu_region"];
+AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "bricklink_consumer_key", "bricklink_consumer_secret", "bricklink_token", "bricklink_token_secret", "wix_app_id", "wix_app_secret_key", "temu_access_token", "temu_region"];
 
 /**
  * Store’s identifier which you can get from cart_list method
@@ -1420,6 +1456,30 @@ AccountCartAdd.prototype['bigcartel_user_name'] = undefined;
  * @member {String} bigcartel_password
  */
 AccountCartAdd.prototype['bigcartel_password'] = undefined;
+
+/**
+ * Bricklink Consumer Key
+ * @member {String} bricklink_consumer_key
+ */
+AccountCartAdd.prototype['bricklink_consumer_key'] = undefined;
+
+/**
+ * Bricklink Consumer Secret
+ * @member {String} bricklink_consumer_secret
+ */
+AccountCartAdd.prototype['bricklink_consumer_secret'] = undefined;
+
+/**
+ * Bricklink Access Token
+ * @member {String} bricklink_token
+ */
+AccountCartAdd.prototype['bricklink_token'] = undefined;
+
+/**
+ * Bricklink Access Token Secret
+ * @member {String} bricklink_token_secret
+ */
+AccountCartAdd.prototype['bricklink_token_secret'] = undefined;
 
 /**
  * Demandware client id

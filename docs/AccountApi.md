@@ -1,6 +1,6 @@
 # Api2CartOpenApi.AccountApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -231,6 +231,10 @@ let opts = {
   'shopwareApiSecret': "V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ", // String | Shopware client secret access key
   'bigcartelUserName': "subdomain", // String | Subdomain of store
   'bigcartelPassword': "4GrrZCLNNoSUuhAjesKuchxo9SL", // String | BigCartel account password
+  'bricklinkConsumerKey': "26F6CDA087D9444EAA71AC09E7A1D39A", // String | Bricklink Consumer Key
+  'bricklinkConsumerSecret': "a46abc3kxyinlbggy06i9g975xqo6gjq", // String | Bricklink Consumer Secret
+  'bricklinkToken': "ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy", // String | Bricklink Access Token
+  'bricklinkTokenSecret': "a46abc3kxyinlbggy06i9g975xqo6gjq", // String | Bricklink Access Token Secret
   'volusionLogin': "admin", // String | It's a Volusion account for which API is enabled
   'volusionPassword': "7943CA5F3990E00D9A4CCF0BD998211F", // String | Volusion API Password
   'walmartClientId': "423f6A24-123z-8654-989u-6fa96478289", // String | Walmart client ID. For the region 'ca' use Consumer ID
@@ -400,6 +404,10 @@ Name | Type | Description  | Notes
  **shopwareApiSecret** | **String**| Shopware client secret access key | [optional] 
  **bigcartelUserName** | **String**| Subdomain of store | [optional] 
  **bigcartelPassword** | **String**| BigCartel account password | [optional] 
+ **bricklinkConsumerKey** | **String**| Bricklink Consumer Key | [optional] 
+ **bricklinkConsumerSecret** | **String**| Bricklink Consumer Secret | [optional] 
+ **bricklinkToken** | **String**| Bricklink Access Token | [optional] 
+ **bricklinkTokenSecret** | **String**| Bricklink Access Token Secret | [optional] 
  **volusionLogin** | **String**| It&#39;s a Volusion account for which API is enabled | [optional] 
  **volusionPassword** | **String**| Volusion API Password | [optional] 
  **walmartClientId** | **String**| Walmart client ID. For the region &#39;ca&#39; use Consumer ID | [optional] 

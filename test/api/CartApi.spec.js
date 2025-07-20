@@ -48,16 +48,6 @@
   }
 
   describe('CartApi', function() {
-    describe('cartBridge', function() {
-      it('should call cartBridge successfully', function(done) {
-        //uncomment below and update the code to test cartBridge
-        //instance.cartBridge(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('cartCatalogPriceRulesCount', function() {
       it('should call cartCatalogPriceRulesCount successfully', function(done) {
         //uncomment below and update the code to test cartCatalogPriceRulesCount
@@ -72,36 +62,6 @@
       it('should call cartCatalogPriceRulesList successfully', function(done) {
         //uncomment below and update the code to test cartCatalogPriceRulesList
         //instance.cartCatalogPriceRulesList(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cartClearCache', function() {
-      it('should call cartClearCache successfully', function(done) {
-        //uncomment below and update the code to test cartClearCache
-        //instance.cartClearCache(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cartConfig', function() {
-      it('should call cartConfig successfully', function(done) {
-        //uncomment below and update the code to test cartConfig
-        //instance.cartConfig(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cartConfigUpdate', function() {
-      it('should call cartConfigUpdate successfully', function(done) {
-        //uncomment below and update the code to test cartConfigUpdate
-        //instance.cartConfigUpdate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -158,30 +118,10 @@
         done();
       });
     });
-    describe('cartCreate', function() {
-      it('should call cartCreate successfully', function(done) {
-        //uncomment below and update the code to test cartCreate
-        //instance.cartCreate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('cartDelete', function() {
       it('should call cartDelete successfully', function(done) {
         //uncomment below and update the code to test cartDelete
         //instance.cartDelete(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cartDisconnect', function() {
-      it('should call cartDisconnect successfully', function(done) {
-        //uncomment below and update the code to test cartDisconnect
-        //instance.cartDisconnect(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -232,16 +172,6 @@
       it('should call cartInfo successfully', function(done) {
         //uncomment below and update the code to test cartInfo
         //instance.cartInfo(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cartList', function() {
-      it('should call cartList successfully', function(done) {
-        //uncomment below and update the code to test cartList
-        //instance.cartList(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

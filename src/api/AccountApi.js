@@ -223,6 +223,10 @@ export default class AccountApi {
      * @param {String} [shopwareApiSecret] Shopware client secret access key
      * @param {String} [bigcartelUserName] Subdomain of store
      * @param {String} [bigcartelPassword] BigCartel account password
+     * @param {String} [bricklinkConsumerKey] Bricklink Consumer Key
+     * @param {String} [bricklinkConsumerSecret] Bricklink Consumer Secret
+     * @param {String} [bricklinkToken] Bricklink Access Token
+     * @param {String} [bricklinkTokenSecret] Bricklink Access Token Secret
      * @param {String} [volusionLogin] It's a Volusion account for which API is enabled
      * @param {String} [volusionPassword] Volusion API Password
      * @param {String} [walmartClientId] Walmart client ID. For the region 'ca' use Consumer ID
@@ -387,6 +391,10 @@ export default class AccountApi {
         'shopware_api_secret': opts['shopwareApiSecret'],
         'bigcartel_user_name': opts['bigcartelUserName'],
         'bigcartel_password': opts['bigcartelPassword'],
+        'bricklink_consumer_key': opts['bricklinkConsumerKey'],
+        'bricklink_consumer_secret': opts['bricklinkConsumerSecret'],
+        'bricklink_token': opts['bricklinkToken'],
+        'bricklink_token_secret': opts['bricklinkTokenSecret'],
         'volusion_login': opts['volusionLogin'],
         'volusion_password': opts['volusionPassword'],
         'walmart_client_id': opts['walmartClientId'],

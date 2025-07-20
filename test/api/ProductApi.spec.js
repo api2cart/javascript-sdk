@@ -188,16 +188,6 @@
         done();
       });
     });
-    describe('productFields', function() {
-      it('should call productFields successfully', function(done) {
-        //uncomment below and update the code to test productFields
-        //instance.productFields(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('productFind', function() {
       it('should call productFind successfully', function(done) {
         //uncomment below and update the code to test productFind
@@ -448,16 +438,6 @@
         done();
       });
     });
-    describe('productVariantCount', function() {
-      it('should call productVariantCount successfully', function(done) {
-        //uncomment below and update the code to test productVariantCount
-        //instance.productVariantCount(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('productVariantDelete', function() {
       it('should call productVariantDelete successfully', function(done) {
         //uncomment below and update the code to test productVariantDelete
@@ -492,26 +472,6 @@
       it('should call productVariantImageDelete successfully', function(done) {
         //uncomment below and update the code to test productVariantImageDelete
         //instance.productVariantImageDelete(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('productVariantInfo', function() {
-      it('should call productVariantInfo successfully', function(done) {
-        //uncomment below and update the code to test productVariantInfo
-        //instance.productVariantInfo(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('productVariantList', function() {
-      it('should call productVariantList successfully', function(done) {
-        //uncomment below and update the code to test productVariantList
-        //instance.productVariantList(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

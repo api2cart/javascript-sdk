@@ -1,6 +1,6 @@
 # Api2CartOpenApi.CategoryApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## categoryAssign
 
-> CartConfigUpdate200Response categoryAssign(categoryId, productId, opts)
+> CategoryAssign200Response categoryAssign(categoryId, productId, opts)
 
 category.assign
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ## categoryUnassign
 
-> CartConfigUpdate200Response categoryUnassign(categoryId, productId, opts)
+> CategoryAssign200Response categoryUnassign(categoryId, productId, opts)
 
 category.unassign
 
@@ -785,7 +785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 

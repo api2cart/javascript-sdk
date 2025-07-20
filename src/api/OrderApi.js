@@ -26,7 +26,6 @@ import OrderAdd from '../model/OrderAdd';
 import OrderAdd200Response from '../model/OrderAdd200Response';
 import OrderCount200Response from '../model/OrderCount200Response';
 import OrderFinancialStatusList200Response from '../model/OrderFinancialStatusList200Response';
-import OrderFind200Response from '../model/OrderFind200Response';
 import OrderFulfillmentStatusList200Response from '../model/OrderFulfillmentStatusList200Response';
 import OrderInfo200Response from '../model/OrderInfo200Response';
 import OrderPreestimateShippingList from '../model/OrderPreestimateShippingList';
@@ -283,69 +282,6 @@ export default class OrderApi {
       let returnType = OrderFinancialStatusList200Response;
       return this.apiClient.callApi(
         '/order.financial_status.list.json', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the orderFind operation.
-     * @callback module:api/OrderApi~orderFindCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrderFind200Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * order.find
-     * This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
-     * @param {Object} opts Optional parameters
-     * @param {Number} [start = 0)] This parameter sets the number from which you want to get entities
-     * @param {Number} [count = 10)] This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-     * @param {String} [customerId] Retrieves orders specified by customer id
-     * @param {String} [customerEmail] Retrieves orders specified by customer email
-     * @param {String} [orderStatus] Retrieves orders specified by order status
-     * @param {String} [financialStatus] Retrieves orders specified by financial status
-     * @param {String} [createdTo] Retrieve entities to their creation date
-     * @param {String} [createdFrom] Retrieve entities from their creation date
-     * @param {String} [modifiedTo] Retrieve entities to their modification date
-     * @param {String} [modifiedFrom] Retrieve entities from their modification date
-     * @param {String} [params = 'order_id,customer,totals,address,items,bundles,status')] Set this parameter in order to choose which entity fields you want to retrieve
-     * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-     * @param {module:api/OrderApi~orderFindCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrderFind200Response}
-     */
-    orderFind(opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'start': opts['start'],
-        'count': opts['count'],
-        'customer_id': opts['customerId'],
-        'customer_email': opts['customerEmail'],
-        'order_status': opts['orderStatus'],
-        'financial_status': opts['financialStatus'],
-        'created_to': opts['createdTo'],
-        'created_from': opts['createdFrom'],
-        'modified_to': opts['modifiedTo'],
-        'modified_from': opts['modifiedFrom'],
-        'params': opts['params'],
-        'exclude': opts['exclude']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = OrderFind200Response;
-      return this.apiClient.callApi(
-        '/order.find.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
