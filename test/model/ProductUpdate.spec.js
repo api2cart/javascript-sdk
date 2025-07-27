@@ -276,6 +276,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lowStockThreshold (base name: "low_stock_threshold")', function() {
+      // uncomment below and update the code to test the property lowStockThreshold
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property warehouseId (base name: "warehouse_id")', function() {
       // uncomment below and update the code to test the property warehouseId
       //var instance = new Api2CartOpenApi.ProductUpdate();

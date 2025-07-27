@@ -1480,7 +1480,8 @@ let opts = {
   'reportRequestId': "105245017661", // String | Report request id
   'disableCache': false, // Boolean | Disable cache for current request
   'disableReportCache': false, // Boolean | Disable report cache for current request
-  'useLatestApiVersion': true // Boolean | Use the latest platform API version
+  'useLatestApiVersion': true, // Boolean | Use the latest platform API version
+  'productType': "BICYCLE" // String | A categorization for the product
 };
 apiInstance.productList(opts, (error, data, response) => {
   if (error) {
@@ -1530,6 +1531,7 @@ Name | Type | Description  | Notes
  **disableCache** | **Boolean**| Disable cache for current request | [optional] [default to false]
  **disableReportCache** | **Boolean**| Disable report cache for current request | [optional] [default to false]
  **useLatestApiVersion** | **Boolean**| Use the latest platform API version | [optional] [default to false]
+ **productType** | **String**| A categorization for the product | [optional] 
 
 ### Return type
 

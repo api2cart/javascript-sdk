@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lowStockThreshold (base name: "low_stock_threshold")', function() {
+      // uncomment below and update the code to test the property lowStockThreshold
+      //var instance = new Api2CartOpenApi.ProductVariantUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property availableForSale (base name: "available_for_sale")', function() {
       // uncomment below and update the code to test the property availableForSale
       //var instance = new Api2CartOpenApi.ProductVariantUpdate();

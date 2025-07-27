@@ -149,6 +149,9 @@ class Child {
             if (data.hasOwnProperty('min_quantity')) {
                 obj['min_quantity'] = ApiClient.convertToType(data['min_quantity'], 'Number');
             }
+            if (data.hasOwnProperty('low_stock_threshold')) {
+                obj['low_stock_threshold'] = ApiClient.convertToType(data['low_stock_threshold'], 'Number');
+            }
             if (data.hasOwnProperty('default_qty_in_pack')) {
                 obj['default_qty_in_pack'] = ApiClient.convertToType(data['default_qty_in_pack'], 'Number');
             }
@@ -506,6 +509,11 @@ Child.prototype['inventory'] = undefined;
  * @member {Number} min_quantity
  */
 Child.prototype['min_quantity'] = undefined;
+
+/**
+ * @member {Number} low_stock_threshold
+ */
+Child.prototype['low_stock_threshold'] = undefined;
 
 /**
  * @member {Number} default_qty_in_pack

@@ -96,6 +96,9 @@ class ProductVariantUpdate {
             if (data.hasOwnProperty('backorder_status')) {
                 obj['backorder_status'] = ApiClient.convertToType(data['backorder_status'], 'String');
             }
+            if (data.hasOwnProperty('low_stock_threshold')) {
+                obj['low_stock_threshold'] = ApiClient.convertToType(data['low_stock_threshold'], 'Number');
+            }
             if (data.hasOwnProperty('available_for_sale')) {
                 obj['available_for_sale'] = ApiClient.convertToType(data['available_for_sale'], 'Boolean');
             }
@@ -434,6 +437,12 @@ ProductVariantUpdate.prototype['status'] = undefined;
  * @member {String} backorder_status
  */
 ProductVariantUpdate.prototype['backorder_status'] = undefined;
+
+/**
+ * Specify the quantity threshold below which the product is considered low in stock
+ * @member {Number} low_stock_threshold
+ */
+ProductVariantUpdate.prototype['low_stock_threshold'] = undefined;
 
 /**
  * Specifies the set of visible/invisible product's variants for sale

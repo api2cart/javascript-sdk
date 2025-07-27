@@ -197,6 +197,9 @@ class ProductAdd {
             if (data.hasOwnProperty('max_order_quantity')) {
                 obj['max_order_quantity'] = ApiClient.convertToType(data['max_order_quantity'], 'Number');
             }
+            if (data.hasOwnProperty('low_stock_threshold')) {
+                obj['low_stock_threshold'] = ApiClient.convertToType(data['low_stock_threshold'], 'Number');
+            }
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
             }
@@ -1057,6 +1060,12 @@ ProductAdd.prototype['min_order_quantity'] = undefined;
  * @member {Number} max_order_quantity
  */
 ProductAdd.prototype['max_order_quantity'] = undefined;
+
+/**
+ * Specify the quantity threshold below which the product is considered low in stock
+ * @member {Number} low_stock_threshold
+ */
+ProductAdd.prototype['low_stock_threshold'] = undefined;
 
 /**
  * Weight

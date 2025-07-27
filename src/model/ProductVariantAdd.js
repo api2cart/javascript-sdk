@@ -136,6 +136,9 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('manage_stock')) {
                 obj['manage_stock'] = ApiClient.convertToType(data['manage_stock'], 'Boolean');
             }
+            if (data.hasOwnProperty('low_stock_threshold')) {
+                obj['low_stock_threshold'] = ApiClient.convertToType(data['low_stock_threshold'], 'Number');
+            }
             if (data.hasOwnProperty('weight')) {
                 obj['weight'] = ApiClient.convertToType(data['weight'], 'Number');
             }
@@ -542,6 +545,12 @@ ProductVariantAdd.prototype['backorder_status'] = undefined;
  * @member {Boolean} manage_stock
  */
 ProductVariantAdd.prototype['manage_stock'] = undefined;
+
+/**
+ * Specify the quantity threshold below which the product is considered low in stock
+ * @member {Number} low_stock_threshold
+ */
+ProductVariantAdd.prototype['low_stock_threshold'] = undefined;
 
 /**
  * Weight

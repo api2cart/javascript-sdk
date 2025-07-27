@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **inventoryLevel** | **Number** |  | [optional] 
 **inventory** | [**[ProductInventory]**](ProductInventory.md) |  | [optional] 
 **minQuantity** | **Number** |  | [optional] 
+**lowStockThreshold** | **Number** |  | [optional] 
 **defaultQtyInPack** | **Number** |  | [optional] 
 **isQtyInPackFixed** | **Boolean** |  | [optional] 
 **weightUnit** | **String** |  | [optional] 

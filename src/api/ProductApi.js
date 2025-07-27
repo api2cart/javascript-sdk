@@ -1244,6 +1244,7 @@ export default class ProductApi {
      * @param {Boolean} [disableCache = false)] Disable cache for current request
      * @param {Boolean} [disableReportCache = false)] Disable report cache for current request
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
+     * @param {String} [productType] A categorization for the product
      * @param {module:api/ProductApi~productListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseProductList}
      */
@@ -1287,7 +1288,8 @@ export default class ProductApi {
         'report_request_id': opts['reportRequestId'],
         'disable_cache': opts['disableCache'],
         'disable_report_cache': opts['disableReportCache'],
-        'use_latest_api_version': opts['useLatestApiVersion']
+        'use_latest_api_version': opts['useLatestApiVersion'],
+        'product_type': opts['productType']
       };
       let headerParams = {
       };

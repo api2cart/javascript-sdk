@@ -246,6 +246,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property lowStockThreshold (base name: "low_stock_threshold")', function() {
+      // uncomment below and update the code to test the property lowStockThreshold
+      //var instance = new Api2CartOpenApi.Child();
+      //expect(instance).to.be();
+    });
+
     it('should have the property defaultQtyInPack (base name: "default_qty_in_pack")', function() {
       // uncomment below and update the code to test the property defaultQtyInPack
       //var instance = new Api2CartOpenApi.Child();

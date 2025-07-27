@@ -176,6 +176,9 @@ class ProductUpdate {
             if (data.hasOwnProperty('reduce_quantity')) {
                 obj['reduce_quantity'] = ApiClient.convertToType(data['reduce_quantity'], 'Number');
             }
+            if (data.hasOwnProperty('low_stock_threshold')) {
+                obj['low_stock_threshold'] = ApiClient.convertToType(data['low_stock_threshold'], 'Number');
+            }
             if (data.hasOwnProperty('warehouse_id')) {
                 obj['warehouse_id'] = ApiClient.convertToType(data['warehouse_id'], 'String');
             }
@@ -782,6 +785,12 @@ ProductUpdate.prototype['increase_quantity'] = undefined;
  * @member {Number} reduce_quantity
  */
 ProductUpdate.prototype['reduce_quantity'] = undefined;
+
+/**
+ * Specify the quantity threshold below which the product is considered low in stock
+ * @member {Number} low_stock_threshold
+ */
+ProductUpdate.prototype['low_stock_threshold'] = undefined;
 
 /**
  * This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
