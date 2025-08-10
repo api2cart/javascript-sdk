@@ -24,20 +24,10 @@ class AccountCartAdd {
      * Constructs a new <code>AccountCartAdd</code>.
      * @alias module:model/AccountCartAdd
      * @param cartId {module:model/AccountCartAdd.CartIdEnum} Store’s identifier which you can get from cart_list method
-     * @param bigcartelUserName {String} Subdomain of store
-     * @param bigcartelPassword {String} BigCartel account password
-     * @param bricklinkConsumerKey {String} Bricklink Consumer Key
-     * @param bricklinkConsumerSecret {String} Bricklink Consumer Secret
-     * @param bricklinkToken {String} Bricklink Access Token
-     * @param bricklinkTokenSecret {String} Bricklink Access Token Secret
-     * @param wixAppId {String} Wix App ID
-     * @param wixAppSecretKey {String} Wix App Secret Key
-     * @param temuAccessToken {String} Temu Access Token
-     * @param temuRegion {module:model/AccountCartAdd.TemuRegionEnum} Temu API endpoint Region.
      */
-    constructor(cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
+    constructor(cartId) { 
         
-        AccountCartAdd.initialize(this, cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion);
+        AccountCartAdd.initialize(this, cartId);
     }
 
     /**
@@ -45,28 +35,18 @@ class AccountCartAdd {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, cartId, bigcartelUserName, bigcartelPassword, bricklinkConsumerKey, bricklinkConsumerSecret, bricklinkToken, bricklinkTokenSecret, wixAppId, wixAppSecretKey, temuAccessToken, temuRegion) { 
+    static initialize(obj, cartId) { 
         obj['cart_id'] = cartId;
         obj['validate_version'] = false;
         obj['verify'] = true;
         obj['amazon_sp_api_environment'] = 'production';
-        obj['bigcartel_user_name'] = bigcartelUserName;
-        obj['bigcartel_password'] = bigcartelPassword;
-        obj['bricklink_consumer_key'] = bricklinkConsumerKey;
-        obj['bricklink_consumer_secret'] = bricklinkConsumerSecret;
-        obj['bricklink_token'] = bricklinkToken;
-        obj['bricklink_token_secret'] = bricklinkTokenSecret;
         obj['ebay_environment'] = 'production';
         obj['ebay_site_id'] = 0;
         obj['walmart_environment'] = 'production';
         obj['walmart_region'] = 'us';
         obj['shopee_environment'] = 'production';
-        obj['wix_app_id'] = wixAppId;
-        obj['wix_app_secret_key'] = wixAppSecretKey;
         obj['allegro_environment'] = 'production';
         obj['otto_environment'] = 'production';
-        obj['temu_access_token'] = temuAccessToken;
-        obj['temu_region'] = temuRegion;
     }
 
     /**
@@ -1236,7 +1216,7 @@ class AccountCartAdd {
 
 }
 
-AccountCartAdd.RequiredProperties = ["cart_id", "bigcartel_user_name", "bigcartel_password", "bricklink_consumer_key", "bricklink_consumer_secret", "bricklink_token", "bricklink_token_secret", "wix_app_id", "wix_app_secret_key", "temu_access_token", "temu_region"];
+AccountCartAdd.RequiredProperties = ["cart_id"];
 
 /**
  * Store’s identifier which you can get from cart_list method
@@ -2234,7 +2214,7 @@ AccountCartAdd.prototype['temu_access_token'] = undefined;
 
 /**
  * Temu API endpoint Region.
- * @member {module:model/AccountCartAdd.TemuRegionEnum} temu_region
+ * @member {String} temu_region
  */
 AccountCartAdd.prototype['temu_region'] = undefined;
 
@@ -2644,33 +2624,6 @@ AccountCartAdd['CartIdEnum'] = {
      * @const
      */
     "Zoho": "Zoho"
-};
-
-
-/**
- * Allowed values for the <code>temu_region</code> property.
- * @enum {String}
- * @readonly
- */
-AccountCartAdd['TemuRegionEnum'] = {
-
-    /**
-     * value: "US"
-     * @const
-     */
-    "US": "US",
-
-    /**
-     * value: "EU"
-     * @const
-     */
-    "EU": "EU",
-
-    /**
-     * value: "GLOBAL"
-     * @const
-     */
-    "GLOBAL": "GLOBAL"
 };
 
 

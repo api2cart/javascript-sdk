@@ -59,6 +59,9 @@ class Cart {
             if (data.hasOwnProperty('version')) {
                 obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
+            if (data.hasOwnProperty('bridge_version')) {
+                obj['bridge_version'] = ApiClient.convertToType(data['bridge_version'], 'String');
+            }
             if (data.hasOwnProperty('db_prefix')) {
                 obj['db_prefix'] = ApiClient.convertToType(data['db_prefix'], 'String');
             }
@@ -98,6 +101,10 @@ class Cart {
         // ensure the json data is a string
         if (data['version'] && !(typeof data['version'] === 'string' || data['version'] instanceof String)) {
             throw new Error("Expected the field `version` to be a primitive type in the JSON string but got " + data['version']);
+        }
+        // ensure the json data is a string
+        if (data['bridge_version'] && !(typeof data['bridge_version'] === 'string' || data['bridge_version'] instanceof String)) {
+            throw new Error("Expected the field `bridge_version` to be a primitive type in the JSON string but got " + data['bridge_version']);
         }
         // ensure the json data is a string
         if (data['db_prefix'] && !(typeof data['db_prefix'] === 'string' || data['db_prefix'] instanceof String)) {
@@ -156,6 +163,11 @@ Cart.prototype['url'] = undefined;
  * @member {String} version
  */
 Cart.prototype['version'] = undefined;
+
+/**
+ * @member {String} bridge_version
+ */
+Cart.prototype['bridge_version'] = undefined;
 
 /**
  * @member {String} db_prefix

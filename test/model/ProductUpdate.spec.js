@@ -570,6 +570,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property marketplaceItemProperties (base name: "marketplace_item_properties")', function() {
+      // uncomment below and update the code to test the property marketplaceItemProperties
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property minOrderQuantity (base name: "min_order_quantity")', function() {
+      // uncomment below and update the code to test the property minOrderQuantity
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

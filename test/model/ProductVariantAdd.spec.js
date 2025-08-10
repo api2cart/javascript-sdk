@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isVirtual (base name: "is_virtual")', function() {
       // uncomment below and update the code to test the property isVirtual
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
@@ -284,6 +290,12 @@
 
     it('should have the property isbn (base name: "isbn")', function() {
       // uncomment below and update the code to test the property isbn
+      //var instance = new Api2CartOpenApi.ProductVariantAdd();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property seoUrl (base name: "seo_url")', function() {
+      // uncomment below and update the code to test the property seoUrl
       //var instance = new Api2CartOpenApi.ProductVariantAdd();
       //expect(instance).to.be();
     });

@@ -323,6 +323,12 @@ class ProductUpdate {
             if (data.hasOwnProperty('personalization_details')) {
                 obj['personalization_details'] = ProductAddPersonalizationDetails.constructFromObject(data['personalization_details']);
             }
+            if (data.hasOwnProperty('marketplace_item_properties')) {
+                obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], 'String');
+            }
+            if (data.hasOwnProperty('min_order_quantity')) {
+                obj['min_order_quantity'] = ApiClient.convertToType(data['min_order_quantity'], 'Number');
+            }
         }
         return obj;
     }
@@ -552,6 +558,10 @@ class ProductUpdate {
         // validate the optional field `personalization_details`
         if (data['personalization_details']) { // data not null
           ProductAddPersonalizationDetails.validateJSON(data['personalization_details']);
+        }
+        // ensure the json data is a string
+        if (data['marketplace_item_properties'] && !(typeof data['marketplace_item_properties'] === 'string' || data['marketplace_item_properties'] instanceof String)) {
+            throw new Error("Expected the field `marketplace_item_properties` to be a primitive type in the JSON string but got " + data['marketplace_item_properties']);
         }
 
         return true;
@@ -1087,6 +1097,18 @@ ProductUpdate.prototype['shop_section_id'] = undefined;
  * @member {module:model/ProductAddPersonalizationDetails} personalization_details
  */
 ProductUpdate.prototype['personalization_details'] = undefined;
+
+/**
+ * String containing the JSON representation of the supplied data
+ * @member {String} marketplace_item_properties
+ */
+ProductUpdate.prototype['marketplace_item_properties'] = undefined;
+
+/**
+ * The minimum quantity an order must contain, to be eligible to purchase this product.
+ * @member {Number} min_order_quantity
+ */
+ProductUpdate.prototype['min_order_quantity'] = undefined;
 
 
 

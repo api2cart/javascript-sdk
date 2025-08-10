@@ -147,9 +147,6 @@ class Product {
             if (data.hasOwnProperty('in_stock')) {
                 obj['in_stock'] = ApiClient.convertToType(data['in_stock'], 'Boolean');
             }
-            if (data.hasOwnProperty('on_sale')) {
-                obj['on_sale'] = ApiClient.convertToType(data['on_sale'], 'Boolean');
-            }
             if (data.hasOwnProperty('backorders')) {
                 obj['backorders'] = ApiClient.convertToType(data['backorders'], 'String');
             }
@@ -158,6 +155,9 @@ class Product {
             }
             if (data.hasOwnProperty('is_stock_managed')) {
                 obj['is_stock_managed'] = ApiClient.convertToType(data['is_stock_managed'], 'Boolean');
+            }
+            if (data.hasOwnProperty('on_sale')) {
+                obj['on_sale'] = ApiClient.convertToType(data['on_sale'], 'Boolean');
             }
             if (data.hasOwnProperty('create_at')) {
                 obj['create_at'] = A2CDateTime.constructFromObject(data['create_at']);
@@ -606,11 +606,6 @@ Product.prototype['sort_order'] = undefined;
 Product.prototype['in_stock'] = undefined;
 
 /**
- * @member {Boolean} on_sale
- */
-Product.prototype['on_sale'] = undefined;
-
-/**
  * @member {String} backorders
  */
 Product.prototype['backorders'] = undefined;
@@ -624,6 +619,11 @@ Product.prototype['manage_stock'] = undefined;
  * @member {Boolean} is_stock_managed
  */
 Product.prototype['is_stock_managed'] = undefined;
+
+/**
+ * @member {Boolean} on_sale
+ */
+Product.prototype['on_sale'] = undefined;
 
 /**
  * @member {module:model/A2CDateTime} create_at

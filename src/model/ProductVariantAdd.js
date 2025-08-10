@@ -82,6 +82,9 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('available_for_sale')) {
                 obj['available_for_sale'] = ApiClient.convertToType(data['available_for_sale'], 'Boolean');
             }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('is_virtual')) {
                 obj['is_virtual'] = ApiClient.convertToType(data['is_virtual'], 'Boolean');
             }
@@ -175,6 +178,9 @@ class ProductVariantAdd {
             if (data.hasOwnProperty('isbn')) {
                 obj['isbn'] = ApiClient.convertToType(data['isbn'], 'String');
             }
+            if (data.hasOwnProperty('seo_url')) {
+                obj['seo_url'] = ApiClient.convertToType(data['seo_url'], 'String');
+            }
             if (data.hasOwnProperty('manufacturer')) {
                 obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
             }
@@ -264,6 +270,10 @@ class ProductVariantAdd {
             throw new Error("Expected the field `short_description` to be a primitive type in the JSON string but got " + data['short_description']);
         }
         // ensure the json data is a string
+        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
+            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
+        }
+        // ensure the json data is a string
         if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
             throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
         }
@@ -336,6 +346,10 @@ class ProductVariantAdd {
         // ensure the json data is a string
         if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
             throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
+        }
+        // ensure the json data is a string
+        if (data['seo_url'] && !(typeof data['seo_url'] === 'string' || data['seo_url'] instanceof String)) {
+            throw new Error("Expected the field `seo_url` to be a primitive type in the JSON string but got " + data['seo_url']);
         }
         // ensure the json data is a string
         if (data['manufacturer'] && !(typeof data['manufacturer'] === 'string' || data['manufacturer'] instanceof String)) {
@@ -435,6 +449,12 @@ ProductVariantAdd.prototype['available_for_view'] = true;
  * @default true
  */
 ProductVariantAdd.prototype['available_for_sale'] = true;
+
+/**
+ * Defines status
+ * @member {String} status
+ */
+ProductVariantAdd.prototype['status'] = undefined;
 
 /**
  * Defines whether the product is virtual
@@ -624,6 +644,12 @@ ProductVariantAdd.prototype['mpn'] = undefined;
  * @member {String} isbn
  */
 ProductVariantAdd.prototype['isbn'] = undefined;
+
+/**
+ * Defines unique URL for SEO
+ * @member {String} seo_url
+ */
+ProductVariantAdd.prototype['seo_url'] = undefined;
 
 /**
  * Specifies the product variant's manufacturer

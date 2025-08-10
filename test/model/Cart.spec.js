@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bridgeVersion (base name: "bridge_version")', function() {
+      // uncomment below and update the code to test the property bridgeVersion
+      //var instance = new Api2CartOpenApi.Cart();
+      //expect(instance).to.be();
+    });
+
     it('should have the property dbPrefix (base name: "db_prefix")', function() {
       // uncomment below and update the code to test the property dbPrefix
       //var instance = new Api2CartOpenApi.Cart();
