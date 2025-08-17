@@ -162,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property customerId (base name: "customer_id")', function() {
+      // uncomment below and update the code to test the property customerId
+      //var instance = new Api2CartOpenApi.CartCouponAdd();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

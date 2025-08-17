@@ -242,6 +242,9 @@ class ProductAdd {
             if (data.hasOwnProperty('product_reference')) {
                 obj['product_reference'] = ApiClient.convertToType(data['product_reference'], 'String');
             }
+            if (data.hasOwnProperty('external_product_link')) {
+                obj['external_product_link'] = ApiClient.convertToType(data['external_product_link'], 'String');
+            }
             if (data.hasOwnProperty('harmonized_system_code')) {
                 obj['harmonized_system_code'] = ApiClient.convertToType(data['harmonized_system_code'], 'String');
             }
@@ -580,6 +583,10 @@ class ProductAdd {
         // ensure the json data is a string
         if (data['product_reference'] && !(typeof data['product_reference'] === 'string' || data['product_reference'] instanceof String)) {
             throw new Error("Expected the field `product_reference` to be a primitive type in the JSON string but got " + data['product_reference']);
+        }
+        // ensure the json data is a string
+        if (data['external_product_link'] && !(typeof data['external_product_link'] === 'string' || data['external_product_link'] instanceof String)) {
+            throw new Error("Expected the field `external_product_link` to be a primitive type in the JSON string but got " + data['external_product_link']);
         }
         // ensure the json data is a string
         if (data['harmonized_system_code'] && !(typeof data['harmonized_system_code'] === 'string' || data['harmonized_system_code'] instanceof String)) {
@@ -1151,6 +1158,12 @@ ProductAdd.prototype['asin'] = undefined;
  * @member {String} product_reference
  */
 ProductAdd.prototype['product_reference'] = undefined;
+
+/**
+ * External product link
+ * @member {String} external_product_link
+ */
+ProductAdd.prototype['external_product_link'] = undefined;
 
 /**
  * Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes

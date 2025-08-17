@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **includeTax** | **Boolean** | Indicates whether to apply a discount for taxes. | [optional] [default to false]
 **storeId** | **String** | Store Id | [optional] 
 **freeCashOnDelivery** | **Boolean** | Defines whether the coupon provides free cash on delivery | [optional] 
+**customerId** | **String** | Retrieves orders specified by customer id | [optional] 
 
 
 

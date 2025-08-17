@@ -113,6 +113,9 @@ class CartCouponAdd {
             if (data.hasOwnProperty('free_cash_on_delivery')) {
                 obj['free_cash_on_delivery'] = ApiClient.convertToType(data['free_cash_on_delivery'], 'Boolean');
             }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+            }
         }
         return obj;
     }
@@ -180,6 +183,10 @@ class CartCouponAdd {
         // ensure the json data is a string
         if (data['store_id'] && !(typeof data['store_id'] === 'string' || data['store_id'] instanceof String)) {
             throw new Error("Expected the field `store_id` to be a primitive type in the JSON string but got " + data['store_id']);
+        }
+        // ensure the json data is a string
+        if (data['customer_id'] && !(typeof data['customer_id'] === 'string' || data['customer_id'] instanceof String)) {
+            throw new Error("Expected the field `customer_id` to be a primitive type in the JSON string but got " + data['customer_id']);
         }
 
         return true;
@@ -299,6 +306,12 @@ CartCouponAdd.prototype['store_id'] = undefined;
  * @member {Boolean} free_cash_on_delivery
  */
 CartCouponAdd.prototype['free_cash_on_delivery'] = undefined;
+
+/**
+ * Retrieves orders specified by customer id
+ * @member {String} customer_id
+ */
+CartCouponAdd.prototype['customer_id'] = undefined;
 
 
 

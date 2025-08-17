@@ -2266,6 +2266,12 @@ AccountCartAdd['CartIdEnum'] = {
     "BigCartel": "BigCartel",
 
     /**
+     * value: "Bricklink"
+     * @const
+     */
+    "Bricklink": "Bricklink",
+
+    /**
      * value: "BigcommerceApi"
      * @const
      */

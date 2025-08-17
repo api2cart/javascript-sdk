@@ -366,6 +366,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property externalProductLink (base name: "external_product_link")', function() {
+      // uncomment below and update the code to test the property externalProductLink
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property harmonizedSystemCode (base name: "harmonized_system_code")', function() {
       // uncomment below and update the code to test the property harmonizedSystemCode
       //var instance = new Api2CartOpenApi.ProductAdd();

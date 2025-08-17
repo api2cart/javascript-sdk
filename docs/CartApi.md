@@ -443,6 +443,7 @@ let opts = {
   'storeId': "1", // String | Filter coupons by store id
   'langId': "3", // String | Language id
   'avail': false, // Boolean | Filter coupons by avail status
+  'status': "disabled", // String | Defines coupon's status
   'dateStartFrom': "2016-12-29 16:44:30", // String | Filter entity by date_start (greater or equal)
   'dateStartTo': "2016-12-29 16:44:30", // String | Filter entity by date_start (less or equal)
   'dateEndFrom': "2016-12-29 16:44:30", // String | Filter entity by date_end (greater or equal)
@@ -472,6 +473,7 @@ Name | Type | Description  | Notes
  **storeId** | **String**| Filter coupons by store id | [optional] 
  **langId** | **String**| Language id | [optional] 
  **avail** | **Boolean**| Filter coupons by avail status | [optional] 
+ **status** | **String**| Defines coupon&#39;s status | [optional] 
  **dateStartFrom** | **String**| Filter entity by date_start (greater or equal) | [optional] 
  **dateStartTo** | **String**| Filter entity by date_start (less or equal) | [optional] 
  **dateEndFrom** | **String**| Filter entity by date_end (greater or equal) | [optional] 

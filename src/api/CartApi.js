@@ -380,6 +380,7 @@ export default class CartApi {
      * @param {String} [storeId] Filter coupons by store id
      * @param {String} [langId] Language id
      * @param {Boolean} [avail] Filter coupons by avail status
+     * @param {String} [status] Defines coupon's status
      * @param {String} [dateStartFrom] Filter entity by date_start (greater or equal)
      * @param {String} [dateStartTo] Filter entity by date_start (less or equal)
      * @param {String} [dateEndFrom] Filter entity by date_end (greater or equal)
@@ -404,6 +405,7 @@ export default class CartApi {
         'store_id': opts['storeId'],
         'lang_id': opts['langId'],
         'avail': opts['avail'],
+        'status': opts['status'],
         'date_start_from': opts['dateStartFrom'],
         'date_start_to': opts['dateStartTo'],
         'date_end_from': opts['dateEndFrom'],

@@ -187,6 +187,8 @@ Name | Type | Description | Notes
 
 * `BigCartel` (value: `"BigCartel"`)
 
+* `Bricklink` (value: `"Bricklink"`)
+
 * `BigcommerceApi` (value: `"BigcommerceApi"`)
 
 * `Bol` (value: `"Bol"`)
