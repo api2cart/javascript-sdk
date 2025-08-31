@@ -570,6 +570,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property externalProductLink (base name: "external_product_link")', function() {
+      // uncomment below and update the code to test the property externalProductLink
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property marketplaceItemProperties (base name: "marketplace_item_properties")', function() {
       // uncomment below and update the code to test the property marketplaceItemProperties
       //var instance = new Api2CartOpenApi.ProductUpdate();

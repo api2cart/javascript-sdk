@@ -323,6 +323,9 @@ class ProductUpdate {
             if (data.hasOwnProperty('personalization_details')) {
                 obj['personalization_details'] = ProductAddPersonalizationDetails.constructFromObject(data['personalization_details']);
             }
+            if (data.hasOwnProperty('external_product_link')) {
+                obj['external_product_link'] = ApiClient.convertToType(data['external_product_link'], 'String');
+            }
             if (data.hasOwnProperty('marketplace_item_properties')) {
                 obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], 'String');
             }
@@ -558,6 +561,10 @@ class ProductUpdate {
         // validate the optional field `personalization_details`
         if (data['personalization_details']) { // data not null
           ProductAddPersonalizationDetails.validateJSON(data['personalization_details']);
+        }
+        // ensure the json data is a string
+        if (data['external_product_link'] && !(typeof data['external_product_link'] === 'string' || data['external_product_link'] instanceof String)) {
+            throw new Error("Expected the field `external_product_link` to be a primitive type in the JSON string but got " + data['external_product_link']);
         }
         // ensure the json data is a string
         if (data['marketplace_item_properties'] && !(typeof data['marketplace_item_properties'] === 'string' || data['marketplace_item_properties'] instanceof String)) {
@@ -1097,6 +1104,12 @@ ProductUpdate.prototype['shop_section_id'] = undefined;
  * @member {module:model/ProductAddPersonalizationDetails} personalization_details
  */
 ProductUpdate.prototype['personalization_details'] = undefined;
+
+/**
+ * External product link
+ * @member {String} external_product_link
+ */
+ProductUpdate.prototype['external_product_link'] = undefined;
 
 /**
  * String containing the JSON representation of the supplied data
