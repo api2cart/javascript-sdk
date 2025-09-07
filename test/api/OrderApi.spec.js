@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('orderCalculate', function() {
+      it('should call orderCalculate successfully', function(done) {
+        //uncomment below and update the code to test orderCalculate
+        //instance.orderCalculate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('orderCount', function() {
       it('should call orderCount successfully', function(done) {
         //uncomment below and update the code to test orderCount

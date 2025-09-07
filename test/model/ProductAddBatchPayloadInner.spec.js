@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property specifics (base name: "specifics")', function() {
+      // uncomment below and update the code to test the property specifics
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isFreeShipping (base name: "is_free_shipping")', function() {
       // uncomment below and update the code to test the property isFreeShipping
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
@@ -392,6 +398,12 @@
 
     it('should have the property seoUrl (base name: "seo_url")', function() {
       // uncomment below and update the code to test the property seoUrl
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property externalProductLink (base name: "external_product_link")', function() {
+      // uncomment below and update the code to test the property externalProductLink
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
       //expect(instance).to.be();
     });

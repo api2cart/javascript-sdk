@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property modifiedTime (base name: "modified_time")', function() {
+      // uncomment below and update the code to test the property modifiedTime
+      //var instance = new Api2CartOpenApi.ProductReview();
+      //expect(instance).to.be();
+    });
+
     it('should have the property medias (base name: "medias")', function() {
       // uncomment below and update the code to test the property medias
       //var instance = new Api2CartOpenApi.ProductReview();

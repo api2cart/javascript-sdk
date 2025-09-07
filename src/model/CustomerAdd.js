@@ -67,6 +67,9 @@ class CustomerAdd {
             if (data.hasOwnProperty('group')) {
                 obj['group'] = ApiClient.convertToType(data['group'], 'String');
             }
+            if (data.hasOwnProperty('group_id')) {
+                obj['group_id'] = ApiClient.convertToType(data['group_id'], 'String');
+            }
             if (data.hasOwnProperty('group_ids')) {
                 obj['group_ids'] = ApiClient.convertToType(data['group_ids'], 'String');
             }
@@ -156,6 +159,10 @@ class CustomerAdd {
         // ensure the json data is a string
         if (data['group'] && !(typeof data['group'] === 'string' || data['group'] instanceof String)) {
             throw new Error("Expected the field `group` to be a primitive type in the JSON string but got " + data['group']);
+        }
+        // ensure the json data is a string
+        if (data['group_id'] && !(typeof data['group_id'] === 'string' || data['group_id'] instanceof String)) {
+            throw new Error("Expected the field `group_id` to be a primitive type in the JSON string but got " + data['group_id']);
         }
         // ensure the json data is a string
         if (data['group_ids'] && !(typeof data['group_ids'] === 'string' || data['group_ids'] instanceof String)) {
@@ -275,6 +282,12 @@ CustomerAdd.prototype['password'] = undefined;
  * @member {String} group
  */
 CustomerAdd.prototype['group'] = undefined;
+
+/**
+ * Customer group_id
+ * @member {String} group_id
+ */
+CustomerAdd.prototype['group_id'] = undefined;
 
 /**
  * Groups that will be assigned to a customer

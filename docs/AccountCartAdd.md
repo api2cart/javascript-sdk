@@ -209,6 +209,8 @@ Name | Type | Description | Notes
 
 * `EtsyAPIv3` (value: `"EtsyAPIv3"`)
 
+* `Facebook` (value: `"Facebook"`)
+
 * `Flipkart` (value: `"Flipkart"`)
 
 * `Gambio` (value: `"Gambio"`)

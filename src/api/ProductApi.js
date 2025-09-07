@@ -1322,6 +1322,12 @@ export default class ProductApi {
      * @param {String} manufacturer Defines product’s manufacturer's name
      * @param {Object} opts Optional parameters
      * @param {String} [storeId] Store Id
+     * @param {String} [metaTitle] Defines unique meta title for each entity
+     * @param {String} [metaKeywords] Defines unique meta keywords for each entity
+     * @param {String} [metaDescription] Defines unique meta description of a entity
+     * @param {String} [searchKeywords] Defines unique search keywords
+     * @param {String} [imageUrl] Image Url
+     * @param {String} [seoUrl] Defines unique URL for SEO
      * @param {module:api/ProductApi~productManufacturerAddCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProductManufacturerAdd200Response}
      */
@@ -1342,7 +1348,13 @@ export default class ProductApi {
       let queryParams = {
         'product_id': productId,
         'manufacturer': manufacturer,
-        'store_id': opts['storeId']
+        'store_id': opts['storeId'],
+        'meta_title': opts['metaTitle'],
+        'meta_keywords': opts['metaKeywords'],
+        'meta_description': opts['metaDescription'],
+        'search_keywords': opts['searchKeywords'],
+        'image_url': opts['imageUrl'],
+        'seo_url': opts['seoUrl']
       };
       let headerParams = {
       };
@@ -1960,7 +1972,13 @@ export default class ProductApi {
      * @param {String} [pageCursor] Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
      * @param {String} [ids] Retrieves reviews specified by ids
      * @param {String} [storeId] Store Id
+     * @param {String} [langId] Language id
      * @param {String} [status] Defines status
+     * @param {String} [createdFrom] Retrieve entities from their creation date
+     * @param {String} [createdTo] Retrieve entities to their creation date
+     * @param {String} [customerId] Retrieves orders specified by customer id
+     * @param {String} [sortBy = 'id')] Set field to sort by
+     * @param {String} [sortDirection = 'asc')] Set sorting direction
      * @param {String} [responseFields] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')] Set this parameter in order to choose which entity fields you want to retrieve
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
@@ -1984,7 +2002,13 @@ export default class ProductApi {
         'product_id': productId,
         'ids': opts['ids'],
         'store_id': opts['storeId'],
+        'lang_id': opts['langId'],
         'status': opts['status'],
+        'created_from': opts['createdFrom'],
+        'created_to': opts['createdTo'],
+        'customer_id': opts['customerId'],
+        'sort_by': opts['sortBy'],
+        'sort_direction': opts['sortDirection'],
         'response_fields': opts['responseFields'],
         'params': opts['params'],
         'exclude': opts['exclude']

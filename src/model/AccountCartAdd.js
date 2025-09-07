@@ -2332,6 +2332,12 @@ AccountCartAdd['CartIdEnum'] = {
     "EtsyAPIv3": "EtsyAPIv3",
 
     /**
+     * value: "Facebook"
+     * @const
+     */
+    "Facebook": "Facebook",
+
+    /**
      * value: "Flipkart"
      * @const
      */

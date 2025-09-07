@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property groupId (base name: "group_id")', function() {
+      // uncomment below and update the code to test the property groupId
+      //var instance = new Api2CartOpenApi.CustomerAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property groupIds (base name: "group_ids")', function() {
       // uncomment below and update the code to test the property groupIds
       //var instance = new Api2CartOpenApi.CustomerAdd();

@@ -208,6 +208,7 @@ Class | Method | HTTP request | Description
 *Api2CartOpenApi.MarketplaceApi* | [**marketplaceProductFind**](docs/MarketplaceApi.md#marketplaceProductFind) | **GET** /marketplace.product.find.json | marketplace.product.find
 *Api2CartOpenApi.OrderApi* | [**orderAbandonedList**](docs/OrderApi.md#orderAbandonedList) | **GET** /order.abandoned.list.json | order.abandoned.list
 *Api2CartOpenApi.OrderApi* | [**orderAdd**](docs/OrderApi.md#orderAdd) | **POST** /order.add.json | order.add
+*Api2CartOpenApi.OrderApi* | [**orderCalculate**](docs/OrderApi.md#orderCalculate) | **POST** /order.calculate.json | order.calculate
 *Api2CartOpenApi.OrderApi* | [**orderCount**](docs/OrderApi.md#orderCount) | **GET** /order.count.json | order.count
 *Api2CartOpenApi.OrderApi* | [**orderFinancialStatusList**](docs/OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list
 *Api2CartOpenApi.OrderApi* | [**orderFulfillmentStatusList**](docs/OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
@@ -483,6 +484,15 @@ Class | Method | HTTP request | Description
  - [Api2CartOpenApi.OrderAddOrderItemInner](docs/OrderAddOrderItemInner.md)
  - [Api2CartOpenApi.OrderAddOrderItemInnerOrderItemOptionInner](docs/OrderAddOrderItemInnerOrderItemOptionInner.md)
  - [Api2CartOpenApi.OrderAddOrderItemInnerOrderItemPropertyInner](docs/OrderAddOrderItemInnerOrderItemPropertyInner.md)
+ - [Api2CartOpenApi.OrderCalculate](docs/OrderCalculate.md)
+ - [Api2CartOpenApi.OrderCalculate200Response](docs/OrderCalculate200Response.md)
+ - [Api2CartOpenApi.OrderCalculateDiscount](docs/OrderCalculateDiscount.md)
+ - [Api2CartOpenApi.OrderCalculateItem](docs/OrderCalculateItem.md)
+ - [Api2CartOpenApi.OrderCalculateOrderItemInner](docs/OrderCalculateOrderItemInner.md)
+ - [Api2CartOpenApi.OrderCalculateOrderItemInnerOrderItemOptionInner](docs/OrderCalculateOrderItemInnerOrderItemOptionInner.md)
+ - [Api2CartOpenApi.OrderCalculateShippingRate](docs/OrderCalculateShippingRate.md)
+ - [Api2CartOpenApi.OrderCalculateSubtotal](docs/OrderCalculateSubtotal.md)
+ - [Api2CartOpenApi.OrderCalculateTax](docs/OrderCalculateTax.md)
  - [Api2CartOpenApi.OrderCount200Response](docs/OrderCount200Response.md)
  - [Api2CartOpenApi.OrderCount200ResponseResult](docs/OrderCount200ResponseResult.md)
  - [Api2CartOpenApi.OrderFinancialStatusList200Response](docs/OrderFinancialStatusList200Response.md)

@@ -83,6 +83,9 @@ class ProductReview {
             if (data.hasOwnProperty('created_time')) {
                 obj['created_time'] = A2CDateTime.constructFromObject(data['created_time']);
             }
+            if (data.hasOwnProperty('modified_time')) {
+                obj['modified_time'] = A2CDateTime.constructFromObject(data['modified_time']);
+            }
             if (data.hasOwnProperty('medias')) {
                 obj['medias'] = ApiClient.convertToType(data['medias'], [Media]);
             }
@@ -147,6 +150,10 @@ class ProductReview {
         // validate the optional field `created_time`
         if (data['created_time']) { // data not null
           A2CDateTime.validateJSON(data['created_time']);
+        }
+        // validate the optional field `modified_time`
+        if (data['modified_time']) { // data not null
+          A2CDateTime.validateJSON(data['modified_time']);
         }
         if (data['medias']) { // data not null
             // ensure the json data is an array
@@ -221,6 +228,11 @@ ProductReview.prototype['status'] = undefined;
  * @member {module:model/A2CDateTime} created_time
  */
 ProductReview.prototype['created_time'] = undefined;
+
+/**
+ * @member {module:model/A2CDateTime} modified_time
+ */
+ProductReview.prototype['modified_time'] = undefined;
 
 /**
  * @member {Array.<module:model/Media>} medias

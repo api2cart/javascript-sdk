@@ -1575,7 +1575,13 @@ let apiInstance = new Api2CartOpenApi.ProductApi();
 let productId = "10"; // String | Defines products specified by product id
 let manufacturer = "Samsung"; // String | Defines product’s manufacturer's name
 let opts = {
-  'storeId': "1" // String | Store Id
+  'storeId': "1", // String | Store Id
+  'metaTitle': "category,test", // String | Defines unique meta title for each entity
+  'metaKeywords': "category,test", // String | Defines unique meta keywords for each entity
+  'metaDescription': "category,test", // String | Defines unique meta description of a entity
+  'searchKeywords': "key1,key2,key3", // String | Defines unique search keywords
+  'imageUrl': "https://docs.api2cart.com/img/logo.png", // String | Image Url
+  'seoUrl': "some seo url" // String | Defines unique URL for SEO
 };
 apiInstance.productManufacturerAdd(productId, manufacturer, opts, (error, data, response) => {
   if (error) {
@@ -1594,6 +1600,12 @@ Name | Type | Description  | Notes
  **productId** | **String**| Defines products specified by product id | 
  **manufacturer** | **String**| Defines product’s manufacturer&#39;s name | 
  **storeId** | **String**| Store Id | [optional] 
+ **metaTitle** | **String**| Defines unique meta title for each entity | [optional] 
+ **metaKeywords** | **String**| Defines unique meta keywords for each entity | [optional] 
+ **metaDescription** | **String**| Defines unique meta description of a entity | [optional] 
+ **searchKeywords** | **String**| Defines unique search keywords | [optional] 
+ **imageUrl** | **String**| Image Url | [optional] 
+ **seoUrl** | **String**| Defines unique URL for SEO | [optional] 
 
 ### Return type
 
@@ -2341,7 +2353,13 @@ let opts = {
   'pageCursor': "", // String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   'ids': "24,25", // String | Retrieves reviews specified by ids
   'storeId': "1", // String | Store Id
+  'langId': "3", // String | Language id
   'status': "disabled", // String | Defines status
+  'createdFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their creation date
+  'createdTo': "2100-08-29 13:45:52", // String | Retrieve entities to their creation date
+  'customerId': "5", // String | Retrieves orders specified by customer id
+  'sortBy': "value_id", // String | Set field to sort by
+  'sortDirection': "asc", // String | Set sorting direction
   'responseFields': "{return_code,return_message,pagination,result}", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'params': "id,model,price,images", // String | Set this parameter in order to choose which entity fields you want to retrieve
   'exclude': "false" // String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
@@ -2366,7 +2384,13 @@ Name | Type | Description  | Notes
  **pageCursor** | **String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] 
  **ids** | **String**| Retrieves reviews specified by ids | [optional] 
  **storeId** | **String**| Store Id | [optional] 
+ **langId** | **String**| Language id | [optional] 
  **status** | **String**| Defines status | [optional] 
+ **createdFrom** | **String**| Retrieve entities from their creation date | [optional] 
+ **createdTo** | **String**| Retrieve entities to their creation date | [optional] 
+ **customerId** | **String**| Retrieves orders specified by customer id | [optional] 
+ **sortBy** | **String**| Set field to sort by | [optional] [default to &#39;id&#39;]
+ **sortDirection** | **String**| Set sorting direction | [optional] [default to &#39;asc&#39;]
  **responseFields** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] 
  **params** | **String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time&#39;]
  **exclude** | **String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] 

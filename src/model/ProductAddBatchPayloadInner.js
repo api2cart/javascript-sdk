@@ -119,6 +119,9 @@ class ProductAddBatchPayloadInner {
             if (data.hasOwnProperty('marketplace_item_properties')) {
                 obj['marketplace_item_properties'] = ApiClient.convertToType(data['marketplace_item_properties'], Object);
             }
+            if (data.hasOwnProperty('specifics')) {
+                obj['specifics'] = ApiClient.convertToType(data['specifics'], Object);
+            }
             if (data.hasOwnProperty('is_free_shipping')) {
                 obj['is_free_shipping'] = ApiClient.convertToType(data['is_free_shipping'], 'Boolean');
             }
@@ -220,6 +223,9 @@ class ProductAddBatchPayloadInner {
             }
             if (data.hasOwnProperty('seo_url')) {
                 obj['seo_url'] = ApiClient.convertToType(data['seo_url'], 'String');
+            }
+            if (data.hasOwnProperty('external_product_link')) {
+                obj['external_product_link'] = ApiClient.convertToType(data['external_product_link'], 'String');
             }
             if (data.hasOwnProperty('manufacturer')) {
                 obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
@@ -408,6 +414,10 @@ class ProductAddBatchPayloadInner {
             throw new Error("Expected the field `seo_url` to be a primitive type in the JSON string but got " + data['seo_url']);
         }
         // ensure the json data is a string
+        if (data['external_product_link'] && !(typeof data['external_product_link'] === 'string' || data['external_product_link'] instanceof String)) {
+            throw new Error("Expected the field `external_product_link` to be a primitive type in the JSON string but got " + data['external_product_link']);
+        }
+        // ensure the json data is a string
         if (data['manufacturer'] && !(typeof data['manufacturer'] === 'string' || data['manufacturer'] instanceof String)) {
             throw new Error("Expected the field `manufacturer` to be a primitive type in the JSON string but got " + data['manufacturer']);
         }
@@ -566,6 +576,11 @@ ProductAddBatchPayloadInner.prototype['product_type'] = undefined;
  * @member {Object} marketplace_item_properties
  */
 ProductAddBatchPayloadInner.prototype['marketplace_item_properties'] = undefined;
+
+/**
+ * @member {Object} specifics
+ */
+ProductAddBatchPayloadInner.prototype['specifics'] = undefined;
 
 /**
  * @member {Boolean} is_free_shipping
@@ -736,6 +751,11 @@ ProductAddBatchPayloadInner.prototype['url'] = undefined;
  * @member {String} seo_url
  */
 ProductAddBatchPayloadInner.prototype['seo_url'] = undefined;
+
+/**
+ * @member {String} external_product_link
+ */
+ProductAddBatchPayloadInner.prototype['external_product_link'] = undefined;
 
 /**
  * @member {String} manufacturer

@@ -24,6 +24,8 @@ import ModelResponseOrderStatusList from '../model/ModelResponseOrderStatusList'
 import ModelResponseOrderTransactionList from '../model/ModelResponseOrderTransactionList';
 import OrderAdd from '../model/OrderAdd';
 import OrderAdd200Response from '../model/OrderAdd200Response';
+import OrderCalculate from '../model/OrderCalculate';
+import OrderCalculate200Response from '../model/OrderCalculate200Response';
 import OrderCount200Response from '../model/OrderCount200Response';
 import OrderFinancialStatusList200Response from '../model/OrderFinancialStatusList200Response';
 import OrderFulfillmentStatusList200Response from '../model/OrderFulfillmentStatusList200Response';
@@ -166,6 +168,48 @@ export default class OrderApi {
       let returnType = OrderAdd200Response;
       return this.apiClient.callApi(
         '/order.add.json', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the orderCalculate operation.
+     * @callback module:api/OrderApi~orderCalculateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OrderCalculate200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * order.calculate
+     * <p>Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.</p> <p>Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.</p><p>The result of this method can be used when creating an order using the <strong>order.add</strong> method.</p>
+     * @param {module:model/OrderCalculate} orderCalculate 
+     * @param {module:api/OrderApi~orderCalculateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/OrderCalculate200Response}
+     */
+    orderCalculate(orderCalculate, callback) {
+      let postBody = orderCalculate;
+      // verify the required parameter 'orderCalculate' is set
+      if (orderCalculate === undefined || orderCalculate === null) {
+        throw new Error("Missing the required parameter 'orderCalculate' when calling orderCalculate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['StoreKeyAuth', 'ApiKeyAuth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = OrderCalculate200Response;
+      return this.apiClient.callApi(
+        '/order.calculate.json', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -201,6 +201,15 @@ import OrderAddNoteAttributesInner from './model/OrderAddNoteAttributesInner';
 import OrderAddOrderItemInner from './model/OrderAddOrderItemInner';
 import OrderAddOrderItemInnerOrderItemOptionInner from './model/OrderAddOrderItemInnerOrderItemOptionInner';
 import OrderAddOrderItemInnerOrderItemPropertyInner from './model/OrderAddOrderItemInnerOrderItemPropertyInner';
+import OrderCalculate from './model/OrderCalculate';
+import OrderCalculate200Response from './model/OrderCalculate200Response';
+import OrderCalculateDiscount from './model/OrderCalculateDiscount';
+import OrderCalculateItem from './model/OrderCalculateItem';
+import OrderCalculateOrderItemInner from './model/OrderCalculateOrderItemInner';
+import OrderCalculateOrderItemInnerOrderItemOptionInner from './model/OrderCalculateOrderItemInnerOrderItemOptionInner';
+import OrderCalculateShippingRate from './model/OrderCalculateShippingRate';
+import OrderCalculateSubtotal from './model/OrderCalculateSubtotal';
+import OrderCalculateTax from './model/OrderCalculateTax';
 import OrderCount200Response from './model/OrderCount200Response';
 import OrderCount200ResponseResult from './model/OrderCount200ResponseResult';
 import OrderFinancialStatusList200Response from './model/OrderFinancialStatusList200Response';
@@ -1614,6 +1623,60 @@ export {
      * @property {module:model/OrderAddOrderItemInnerOrderItemPropertyInner}
      */
     OrderAddOrderItemInnerOrderItemPropertyInner,
+
+    /**
+     * The OrderCalculate model constructor.
+     * @property {module:model/OrderCalculate}
+     */
+    OrderCalculate,
+
+    /**
+     * The OrderCalculate200Response model constructor.
+     * @property {module:model/OrderCalculate200Response}
+     */
+    OrderCalculate200Response,
+
+    /**
+     * The OrderCalculateDiscount model constructor.
+     * @property {module:model/OrderCalculateDiscount}
+     */
+    OrderCalculateDiscount,
+
+    /**
+     * The OrderCalculateItem model constructor.
+     * @property {module:model/OrderCalculateItem}
+     */
+    OrderCalculateItem,
+
+    /**
+     * The OrderCalculateOrderItemInner model constructor.
+     * @property {module:model/OrderCalculateOrderItemInner}
+     */
+    OrderCalculateOrderItemInner,
+
+    /**
+     * The OrderCalculateOrderItemInnerOrderItemOptionInner model constructor.
+     * @property {module:model/OrderCalculateOrderItemInnerOrderItemOptionInner}
+     */
+    OrderCalculateOrderItemInnerOrderItemOptionInner,
+
+    /**
+     * The OrderCalculateShippingRate model constructor.
+     * @property {module:model/OrderCalculateShippingRate}
+     */
+    OrderCalculateShippingRate,
+
+    /**
+     * The OrderCalculateSubtotal model constructor.
+     * @property {module:model/OrderCalculateSubtotal}
+     */
+    OrderCalculateSubtotal,
+
+    /**
+     * The OrderCalculateTax model constructor.
+     * @property {module:model/OrderCalculateTax}
+     */
+    OrderCalculateTax,
 
     /**
      * The OrderCount200Response model constructor.
