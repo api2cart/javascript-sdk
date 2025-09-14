@@ -146,6 +146,9 @@ class ProductUpdate {
             if (data.hasOwnProperty('product_class')) {
                 obj['product_class'] = ApiClient.convertToType(data['product_class'], 'String');
             }
+            if (data.hasOwnProperty('brand_name')) {
+                obj['brand_name'] = ApiClient.convertToType(data['brand_name'], 'String');
+            }
             if (data.hasOwnProperty('available_for_view')) {
                 obj['available_for_view'] = ApiClient.convertToType(data['available_for_view'], 'Boolean');
             }
@@ -411,6 +414,10 @@ class ProductUpdate {
         // ensure the json data is a string
         if (data['product_class'] && !(typeof data['product_class'] === 'string' || data['product_class'] instanceof String)) {
             throw new Error("Expected the field `product_class` to be a primitive type in the JSON string but got " + data['product_class']);
+        }
+        // ensure the json data is a string
+        if (data['brand_name'] && !(typeof data['brand_name'] === 'string' || data['brand_name'] instanceof String)) {
+            throw new Error("Expected the field `brand_name` to be a primitive type in the JSON string but got " + data['brand_name']);
         }
         // ensure the json data is a string
         if (data['stores_ids'] && !(typeof data['stores_ids'] === 'string' || data['stores_ids'] instanceof String)) {
@@ -742,6 +749,12 @@ ProductUpdate.prototype['avail_from'] = undefined;
  * @member {String} product_class
  */
 ProductUpdate.prototype['product_class'] = undefined;
+
+/**
+ * Retrieves brands specified by brand name
+ * @member {String} brand_name
+ */
+ProductUpdate.prototype['brand_name'] = undefined;
 
 /**
  * Specifies the set of visible/invisible products for users

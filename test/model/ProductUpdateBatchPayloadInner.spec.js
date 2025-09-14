@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property conditionDescription (base name: "condition_description")', function() {
+      // uncomment below and update the code to test the property conditionDescription
+      //var instance = new Api2CartOpenApi.ProductUpdateBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property visible (base name: "visible")', function() {
       // uncomment below and update the code to test the property visible
       //var instance = new Api2CartOpenApi.ProductUpdateBatchPayloadInner();

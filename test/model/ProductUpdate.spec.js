@@ -216,6 +216,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property brandName (base name: "brand_name")', function() {
+      // uncomment below and update the code to test the property brandName
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property availableForView (base name: "available_for_view")', function() {
       // uncomment below and update the code to test the property availableForView
       //var instance = new Api2CartOpenApi.ProductUpdate();

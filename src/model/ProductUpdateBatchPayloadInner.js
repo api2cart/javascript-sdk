@@ -120,6 +120,9 @@ class ProductUpdateBatchPayloadInner {
             if (data.hasOwnProperty('condition')) {
                 obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
             }
+            if (data.hasOwnProperty('condition_description')) {
+                obj['condition_description'] = ApiClient.convertToType(data['condition_description'], 'String');
+            }
             if (data.hasOwnProperty('visible')) {
                 obj['visible'] = ApiClient.convertToType(data['visible'], 'String');
             }
@@ -317,6 +320,10 @@ class ProductUpdateBatchPayloadInner {
         // ensure the json data is a string
         if (data['condition'] && !(typeof data['condition'] === 'string' || data['condition'] instanceof String)) {
             throw new Error("Expected the field `condition` to be a primitive type in the JSON string but got " + data['condition']);
+        }
+        // ensure the json data is a string
+        if (data['condition_description'] && !(typeof data['condition_description'] === 'string' || data['condition_description'] instanceof String)) {
+            throw new Error("Expected the field `condition_description` to be a primitive type in the JSON string but got " + data['condition_description']);
         }
         // ensure the json data is a string
         if (data['visible'] && !(typeof data['visible'] === 'string' || data['visible'] instanceof String)) {
@@ -560,6 +567,11 @@ ProductUpdateBatchPayloadInner.prototype['type'] = undefined;
  * @member {String} condition
  */
 ProductUpdateBatchPayloadInner.prototype['condition'] = undefined;
+
+/**
+ * @member {String} condition_description
+ */
+ProductUpdateBatchPayloadInner.prototype['condition_description'] = undefined;
 
 /**
  * @member {String} visible
