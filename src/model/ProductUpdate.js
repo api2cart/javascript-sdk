@@ -39,7 +39,6 @@ class ProductUpdate {
      * Only for internal use.
      */
     static initialize(obj) { 
-        obj['taxable'] = true;
         obj['avail'] = true;
         obj['is_virtual'] = false;
         obj['shipping_template_id'] = 0;
@@ -691,9 +690,8 @@ ProductUpdate.prototype['buyitnow_price'] = undefined;
 /**
  * Specifies whether a tax is charged
  * @member {Boolean} taxable
- * @default true
  */
-ProductUpdate.prototype['taxable'] = true;
+ProductUpdate.prototype['taxable'] = undefined;
 
 /**
  * Defines tax classes where entity has to be added

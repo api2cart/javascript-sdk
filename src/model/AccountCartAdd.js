@@ -339,6 +339,9 @@ class AccountCartAdd {
             if (data.hasOwnProperty('shopware_access_key')) {
                 obj['shopware_access_key'] = ApiClient.convertToType(data['shopware_access_key'], 'String');
             }
+            if (data.hasOwnProperty('unas_api_key')) {
+                obj['unas_api_key'] = ApiClient.convertToType(data['unas_api_key'], 'String');
+            }
             if (data.hasOwnProperty('shopware_api_key')) {
                 obj['shopware_api_key'] = ApiClient.convertToType(data['shopware_api_key'], 'String');
             }
@@ -922,6 +925,10 @@ class AccountCartAdd {
         // ensure the json data is a string
         if (data['shopware_access_key'] && !(typeof data['shopware_access_key'] === 'string' || data['shopware_access_key'] instanceof String)) {
             throw new Error("Expected the field `shopware_access_key` to be a primitive type in the JSON string but got " + data['shopware_access_key']);
+        }
+        // ensure the json data is a string
+        if (data['unas_api_key'] && !(typeof data['unas_api_key'] === 'string' || data['unas_api_key'] instanceof String)) {
+            throw new Error("Expected the field `unas_api_key` to be a primitive type in the JSON string but got " + data['unas_api_key']);
         }
         // ensure the json data is a string
         if (data['shopware_api_key'] && !(typeof data['shopware_api_key'] === 'string' || data['shopware_api_key'] instanceof String)) {
@@ -1783,6 +1790,12 @@ AccountCartAdd.prototype['shoplazza_shared_secret'] = undefined;
  * @member {String} shopware_access_key
  */
 AccountCartAdd.prototype['shopware_access_key'] = undefined;
+
+/**
+ * UNAS API Key
+ * @member {String} unas_api_key
+ */
+AccountCartAdd.prototype['unas_api_key'] = undefined;
 
 /**
  * Shopware api key

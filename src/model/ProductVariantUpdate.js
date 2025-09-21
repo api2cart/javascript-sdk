@@ -37,7 +37,6 @@ class ProductVariantUpdate {
     static initialize(obj) { 
         obj['available_for_sale'] = true;
         obj['avail'] = true;
-        obj['taxable'] = true;
         obj['is_virtual'] = false;
         obj['increase_quantity'] = 0;
         obj['reduce_quantity'] = 0;
@@ -213,6 +212,9 @@ class ProductVariantUpdate {
             if (data.hasOwnProperty('meta_keywords')) {
                 obj['meta_keywords'] = ApiClient.convertToType(data['meta_keywords'], 'String');
             }
+            if (data.hasOwnProperty('manufacturer')) {
+                obj['manufacturer'] = ApiClient.convertToType(data['manufacturer'], 'String');
+            }
             if (data.hasOwnProperty('reindex')) {
                 obj['reindex'] = ApiClient.convertToType(data['reindex'], 'Boolean');
             }
@@ -351,6 +353,10 @@ class ProductVariantUpdate {
         if (data['meta_keywords'] && !(typeof data['meta_keywords'] === 'string' || data['meta_keywords'] instanceof String)) {
             throw new Error("Expected the field `meta_keywords` to be a primitive type in the JSON string but got " + data['meta_keywords']);
         }
+        // ensure the json data is a string
+        if (data['manufacturer'] && !(typeof data['manufacturer'] === 'string' || data['manufacturer'] instanceof String)) {
+            throw new Error("Expected the field `manufacturer` to be a primitive type in the JSON string but got " + data['manufacturer']);
+        }
 
         return true;
     }
@@ -473,9 +479,8 @@ ProductVariantUpdate.prototype['is_free_shipping'] = undefined;
 /**
  * Specifies whether a tax is charged
  * @member {Boolean} taxable
- * @default true
  */
-ProductVariantUpdate.prototype['taxable'] = true;
+ProductVariantUpdate.prototype['taxable'] = undefined;
 
 /**
  * Defines tax classes where entity has to be added
@@ -678,6 +683,12 @@ ProductVariantUpdate.prototype['meta_description'] = undefined;
  * @member {String} meta_keywords
  */
 ProductVariantUpdate.prototype['meta_keywords'] = undefined;
+
+/**
+ * Specifies the product variant's manufacturer
+ * @member {String} manufacturer
+ */
+ProductVariantUpdate.prototype['manufacturer'] = undefined;
 
 /**
  * Is reindex required

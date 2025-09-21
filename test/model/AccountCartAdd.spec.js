@@ -612,6 +612,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property unasApiKey (base name: "unas_api_key")', function() {
+      // uncomment below and update the code to test the property unasApiKey
+      //var instance = new Api2CartOpenApi.AccountCartAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shopwareApiKey (base name: "shopware_api_key")', function() {
       // uncomment below and update the code to test the property shopwareApiKey
       //var instance = new Api2CartOpenApi.AccountCartAdd();

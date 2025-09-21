@@ -366,6 +366,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property manufacturer (base name: "manufacturer")', function() {
+      // uncomment below and update the code to test the property manufacturer
+      //var instance = new Api2CartOpenApi.ProductVariantUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reindex (base name: "reindex")', function() {
       // uncomment below and update the code to test the property reindex
       //var instance = new Api2CartOpenApi.ProductVariantUpdate();
