@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import ProductAddBatchPayloadInnerAdvancedPricesInner from './ProductAddBatchPayloadInnerAdvancedPricesInner';
 import ProductAddBatchPayloadInnerImagesInner from './ProductAddBatchPayloadInnerImagesInner';
+import ProductAddBatchPayloadInnerSalesTax from './ProductAddBatchPayloadInnerSalesTax';
 import ProductAddFilesInner from './ProductAddFilesInner';
 
 /**
@@ -80,6 +81,9 @@ class ProductAddBatchPayloadInner {
             if (data.hasOwnProperty('mpn')) {
                 obj['mpn'] = ApiClient.convertToType(data['mpn'], 'String');
             }
+            if (data.hasOwnProperty('isbn')) {
+                obj['isbn'] = ApiClient.convertToType(data['isbn'], 'String');
+            }
             if (data.hasOwnProperty('barcode')) {
                 obj['barcode'] = ApiClient.convertToType(data['barcode'], 'String');
             }
@@ -101,11 +105,23 @@ class ProductAddBatchPayloadInner {
             if (data.hasOwnProperty('sprice_expire')) {
                 obj['sprice_expire'] = ApiClient.convertToType(data['sprice_expire'], 'String');
             }
+            if (data.hasOwnProperty('avail_from')) {
+                obj['avail_from'] = ApiClient.convertToType(data['avail_from'], 'String');
+            }
             if (data.hasOwnProperty('advanced_prices')) {
                 obj['advanced_prices'] = ApiClient.convertToType(data['advanced_prices'], [ProductAddBatchPayloadInnerAdvancedPricesInner]);
             }
             if (data.hasOwnProperty('fixed_cost_shipping_price')) {
                 obj['fixed_cost_shipping_price'] = ApiClient.convertToType(data['fixed_cost_shipping_price'], 'Number');
+            }
+            if (data.hasOwnProperty('buyitnow_price')) {
+                obj['buyitnow_price'] = ApiClient.convertToType(data['buyitnow_price'], 'Number');
+            }
+            if (data.hasOwnProperty('reserve_price')) {
+                obj['reserve_price'] = ApiClient.convertToType(data['reserve_price'], 'Number');
+            }
+            if (data.hasOwnProperty('best_offer')) {
+                obj['best_offer'] = ApiClient.convertToType(data['best_offer'], 'Number');
             }
             if (data.hasOwnProperty('quantity')) {
                 obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
@@ -134,6 +150,9 @@ class ProductAddBatchPayloadInner {
             if (data.hasOwnProperty('condition')) {
                 obj['condition'] = ApiClient.convertToType(data['condition'], 'String');
             }
+            if (data.hasOwnProperty('condition_description')) {
+                obj['condition_description'] = ApiClient.convertToType(data['condition_description'], 'String');
+            }
             if (data.hasOwnProperty('visible')) {
                 obj['visible'] = ApiClient.convertToType(data['visible'], 'String');
             }
@@ -151,6 +170,12 @@ class ProductAddBatchPayloadInner {
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('listing_type')) {
+                obj['listing_type'] = ApiClient.convertToType(data['listing_type'], 'String');
+            }
+            if (data.hasOwnProperty('listing_duration')) {
+                obj['listing_duration'] = ApiClient.convertToType(data['listing_duration'], 'String');
             }
             if (data.hasOwnProperty('downloadable')) {
                 obj['downloadable'] = ApiClient.convertToType(data['downloadable'], 'Boolean');
@@ -202,6 +227,9 @@ class ProductAddBatchPayloadInner {
             }
             if (data.hasOwnProperty('tax_class_id')) {
                 obj['tax_class_id'] = ApiClient.convertToType(data['tax_class_id'], 'String');
+            }
+            if (data.hasOwnProperty('sales_tax')) {
+                obj['sales_tax'] = ProductAddBatchPayloadInnerSalesTax.constructFromObject(data['sales_tax']);
             }
             if (data.hasOwnProperty('meta_title')) {
                 obj['meta_title'] = ApiClient.convertToType(data['meta_title'], 'String');
@@ -296,6 +324,10 @@ class ProductAddBatchPayloadInner {
             throw new Error("Expected the field `mpn` to be a primitive type in the JSON string but got " + data['mpn']);
         }
         // ensure the json data is a string
+        if (data['isbn'] && !(typeof data['isbn'] === 'string' || data['isbn'] instanceof String)) {
+            throw new Error("Expected the field `isbn` to be a primitive type in the JSON string but got " + data['isbn']);
+        }
+        // ensure the json data is a string
         if (data['barcode'] && !(typeof data['barcode'] === 'string' || data['barcode'] instanceof String)) {
             throw new Error("Expected the field `barcode` to be a primitive type in the JSON string but got " + data['barcode']);
         }
@@ -306,6 +338,10 @@ class ProductAddBatchPayloadInner {
         // ensure the json data is a string
         if (data['sprice_expire'] && !(typeof data['sprice_expire'] === 'string' || data['sprice_expire'] instanceof String)) {
             throw new Error("Expected the field `sprice_expire` to be a primitive type in the JSON string but got " + data['sprice_expire']);
+        }
+        // ensure the json data is a string
+        if (data['avail_from'] && !(typeof data['avail_from'] === 'string' || data['avail_from'] instanceof String)) {
+            throw new Error("Expected the field `avail_from` to be a primitive type in the JSON string but got " + data['avail_from']);
         }
         if (data['advanced_prices']) { // data not null
             // ensure the json data is an array
@@ -330,12 +366,24 @@ class ProductAddBatchPayloadInner {
             throw new Error("Expected the field `condition` to be a primitive type in the JSON string but got " + data['condition']);
         }
         // ensure the json data is a string
+        if (data['condition_description'] && !(typeof data['condition_description'] === 'string' || data['condition_description'] instanceof String)) {
+            throw new Error("Expected the field `condition_description` to be a primitive type in the JSON string but got " + data['condition_description']);
+        }
+        // ensure the json data is a string
         if (data['visible'] && !(typeof data['visible'] === 'string' || data['visible'] instanceof String)) {
             throw new Error("Expected the field `visible` to be a primitive type in the JSON string but got " + data['visible']);
         }
         // ensure the json data is a string
         if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
             throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
+        }
+        // ensure the json data is a string
+        if (data['listing_type'] && !(typeof data['listing_type'] === 'string' || data['listing_type'] instanceof String)) {
+            throw new Error("Expected the field `listing_type` to be a primitive type in the JSON string but got " + data['listing_type']);
+        }
+        // ensure the json data is a string
+        if (data['listing_duration'] && !(typeof data['listing_duration'] === 'string' || data['listing_duration'] instanceof String)) {
+            throw new Error("Expected the field `listing_duration` to be a primitive type in the JSON string but got " + data['listing_duration']);
         }
         // ensure the json data is a string
         if (data['weight_unit'] && !(typeof data['weight_unit'] === 'string' || data['weight_unit'] instanceof String)) {
@@ -384,6 +432,10 @@ class ProductAddBatchPayloadInner {
         // ensure the json data is a string
         if (data['tax_class_id'] && !(typeof data['tax_class_id'] === 'string' || data['tax_class_id'] instanceof String)) {
             throw new Error("Expected the field `tax_class_id` to be a primitive type in the JSON string but got " + data['tax_class_id']);
+        }
+        // validate the optional field `sales_tax`
+        if (data['sales_tax']) { // data not null
+          ProductAddBatchPayloadInnerSalesTax.validateJSON(data['sales_tax']);
         }
         // ensure the json data is a string
         if (data['meta_title'] && !(typeof data['meta_title'] === 'string' || data['meta_title'] instanceof String)) {
@@ -513,6 +565,11 @@ ProductAddBatchPayloadInner.prototype['gtin'] = undefined;
 ProductAddBatchPayloadInner.prototype['mpn'] = undefined;
 
 /**
+ * @member {String} isbn
+ */
+ProductAddBatchPayloadInner.prototype['isbn'] = undefined;
+
+/**
  * @member {String} barcode
  */
 ProductAddBatchPayloadInner.prototype['barcode'] = undefined;
@@ -548,6 +605,11 @@ ProductAddBatchPayloadInner.prototype['sprice_create'] = undefined;
 ProductAddBatchPayloadInner.prototype['sprice_expire'] = undefined;
 
 /**
+ * @member {String} avail_from
+ */
+ProductAddBatchPayloadInner.prototype['avail_from'] = undefined;
+
+/**
  * @member {Array.<module:model/ProductAddBatchPayloadInnerAdvancedPricesInner>} advanced_prices
  */
 ProductAddBatchPayloadInner.prototype['advanced_prices'] = undefined;
@@ -556,6 +618,21 @@ ProductAddBatchPayloadInner.prototype['advanced_prices'] = undefined;
  * @member {Number} fixed_cost_shipping_price
  */
 ProductAddBatchPayloadInner.prototype['fixed_cost_shipping_price'] = undefined;
+
+/**
+ * @member {Number} buyitnow_price
+ */
+ProductAddBatchPayloadInner.prototype['buyitnow_price'] = undefined;
+
+/**
+ * @member {Number} reserve_price
+ */
+ProductAddBatchPayloadInner.prototype['reserve_price'] = undefined;
+
+/**
+ * @member {Number} best_offer
+ */
+ProductAddBatchPayloadInner.prototype['best_offer'] = undefined;
 
 /**
  * @member {Number} quantity
@@ -603,6 +680,11 @@ ProductAddBatchPayloadInner.prototype['status'] = undefined;
 ProductAddBatchPayloadInner.prototype['condition'] = undefined;
 
 /**
+ * @member {String} condition_description
+ */
+ProductAddBatchPayloadInner.prototype['condition_description'] = undefined;
+
+/**
  * @member {String} visible
  */
 ProductAddBatchPayloadInner.prototype['visible'] = undefined;
@@ -631,6 +713,16 @@ ProductAddBatchPayloadInner.prototype['in_stock'] = undefined;
  * @member {String} type
  */
 ProductAddBatchPayloadInner.prototype['type'] = undefined;
+
+/**
+ * @member {String} listing_type
+ */
+ProductAddBatchPayloadInner.prototype['listing_type'] = undefined;
+
+/**
+ * @member {String} listing_duration
+ */
+ProductAddBatchPayloadInner.prototype['listing_duration'] = undefined;
 
 /**
  * @member {Boolean} downloadable
@@ -716,6 +808,11 @@ ProductAddBatchPayloadInner.prototype['stores_ids'] = undefined;
  * @member {String} tax_class_id
  */
 ProductAddBatchPayloadInner.prototype['tax_class_id'] = undefined;
+
+/**
+ * @member {module:model/ProductAddBatchPayloadInnerSalesTax} sales_tax
+ */
+ProductAddBatchPayloadInner.prototype['sales_tax'] = undefined;
 
 /**
  * @member {String} meta_title

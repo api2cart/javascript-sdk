@@ -72,6 +72,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property orderItemParent (base name: "order_item_parent")', function() {
+      // uncomment below and update the code to test the property orderItemParent
+      //var instance = new Api2CartOpenApi.OrderCalculateOrderItemInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property orderItemParentOptionName (base name: "order_item_parent_option_name")', function() {
+      // uncomment below and update the code to test the property orderItemParentOptionName
+      //var instance = new Api2CartOpenApi.OrderCalculateOrderItemInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderItemOption (base name: "order_item_option")', function() {
       // uncomment below and update the code to test the property orderItemOption
       //var instance = new Api2CartOpenApi.OrderCalculateOrderItemInner();

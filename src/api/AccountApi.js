@@ -219,6 +219,7 @@ export default class AccountApi {
      * @param {String} [mivaAccessToken] Miva access token
      * @param {String} [mivaSignature] Miva signature
      * @param {String} [shopwareAccessKey] Shopware access key
+     * @param {String} [unasApiKey] UNAS API Key
      * @param {String} [shopwareApiKey] Shopware api key
      * @param {String} [shopwareApiSecret] Shopware client secret access key
      * @param {String} [bigcartelUserName] Subdomain of store
@@ -387,6 +388,7 @@ export default class AccountApi {
         'miva_access_token': opts['mivaAccessToken'],
         'miva_signature': opts['mivaSignature'],
         'shopware_access_key': opts['shopwareAccessKey'],
+        'unas_api_key': opts['unasApiKey'],
         'shopware_api_key': opts['shopwareApiKey'],
         'shopware_api_secret': opts['shopwareApiSecret'],
         'bigcartel_user_name': opts['bigcartelUserName'],

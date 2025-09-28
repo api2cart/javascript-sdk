@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import OrderItemOption from './OrderItemOption';
 
 /**
- * The OrderCalculateItem model module.
- * @module model/OrderCalculateItem
+ * The OrderCalculateBundle model module.
+ * @module model/OrderCalculateBundle
  * @version 1.1
  */
-class OrderCalculateItem {
+class OrderCalculateBundle {
     /**
-     * Constructs a new <code>OrderCalculateItem</code>.
-     * @alias module:model/OrderCalculateItem
+     * Constructs a new <code>OrderCalculateBundle</code>.
+     * @alias module:model/OrderCalculateBundle
      */
     constructor() { 
         
-        OrderCalculateItem.initialize(this);
+        OrderCalculateBundle.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class OrderCalculateItem {
     }
 
     /**
-     * Constructs a <code>OrderCalculateItem</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>OrderCalculateBundle</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OrderCalculateItem} obj Optional instance to populate.
-     * @return {module:model/OrderCalculateItem} The populated <code>OrderCalculateItem</code> instance.
+     * @param {module:model/OrderCalculateBundle} obj Optional instance to populate.
+     * @return {module:model/OrderCalculateBundle} The populated <code>OrderCalculateBundle</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new OrderCalculateItem();
+            obj = obj || new OrderCalculateBundle();
 
             if (data.hasOwnProperty('product_id')) {
                 obj['product_id'] = ApiClient.convertToType(data['product_id'], 'String');
@@ -84,9 +84,6 @@ class OrderCalculateItem {
             if (data.hasOwnProperty('variant_id')) {
                 obj['variant_id'] = ApiClient.convertToType(data['variant_id'], 'String');
             }
-            if (data.hasOwnProperty('bundle_product_id')) {
-                obj['bundle_product_id'] = ApiClient.convertToType(data['bundle_product_id'], 'String');
-            }
             if (data.hasOwnProperty('options')) {
                 obj['options'] = ApiClient.convertToType(data['options'], [OrderItemOption]);
             }
@@ -101,9 +98,9 @@ class OrderCalculateItem {
     }
 
     /**
-     * Validates the JSON data with respect to <code>OrderCalculateItem</code>.
+     * Validates the JSON data with respect to <code>OrderCalculateBundle</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>OrderCalculateItem</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>OrderCalculateBundle</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -130,10 +127,6 @@ class OrderCalculateItem {
         if (data['variant_id'] && !(typeof data['variant_id'] === 'string' || data['variant_id'] instanceof String)) {
             throw new Error("Expected the field `variant_id` to be a primitive type in the JSON string but got " + data['variant_id']);
         }
-        // ensure the json data is a string
-        if (data['bundle_product_id'] && !(typeof data['bundle_product_id'] === 'string' || data['bundle_product_id'] instanceof String)) {
-            throw new Error("Expected the field `bundle_product_id` to be a primitive type in the JSON string but got " + data['bundle_product_id']);
-        }
         if (data['options']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['options'])) {
@@ -156,87 +149,82 @@ class OrderCalculateItem {
 /**
  * @member {String} product_id
  */
-OrderCalculateItem.prototype['product_id'] = undefined;
+OrderCalculateBundle.prototype['product_id'] = undefined;
 
 /**
  * @member {String} sku
  */
-OrderCalculateItem.prototype['sku'] = undefined;
+OrderCalculateBundle.prototype['sku'] = undefined;
 
 /**
  * @member {String} name
  */
-OrderCalculateItem.prototype['name'] = undefined;
+OrderCalculateBundle.prototype['name'] = undefined;
 
 /**
  * @member {Number} quantity
  */
-OrderCalculateItem.prototype['quantity'] = undefined;
+OrderCalculateBundle.prototype['quantity'] = undefined;
 
 /**
  * @member {Number} price
  */
-OrderCalculateItem.prototype['price'] = undefined;
+OrderCalculateBundle.prototype['price'] = undefined;
 
 /**
  * @member {Number} price_inc_tax
  */
-OrderCalculateItem.prototype['price_inc_tax'] = undefined;
+OrderCalculateBundle.prototype['price_inc_tax'] = undefined;
 
 /**
  * @member {Number} tax_rate
  */
-OrderCalculateItem.prototype['tax_rate'] = undefined;
+OrderCalculateBundle.prototype['tax_rate'] = undefined;
 
 /**
  * @member {Number} unit_discount
  */
-OrderCalculateItem.prototype['unit_discount'] = undefined;
+OrderCalculateBundle.prototype['unit_discount'] = undefined;
 
 /**
  * @member {Number} weight
  */
-OrderCalculateItem.prototype['weight'] = undefined;
+OrderCalculateBundle.prototype['weight'] = undefined;
 
 /**
  * @member {String} weight_unit
  */
-OrderCalculateItem.prototype['weight_unit'] = undefined;
+OrderCalculateBundle.prototype['weight_unit'] = undefined;
 
 /**
  * @member {String} barcode
  */
-OrderCalculateItem.prototype['barcode'] = undefined;
+OrderCalculateBundle.prototype['barcode'] = undefined;
 
 /**
  * @member {String} variant_id
  */
-OrderCalculateItem.prototype['variant_id'] = undefined;
-
-/**
- * @member {String} bundle_product_id
- */
-OrderCalculateItem.prototype['bundle_product_id'] = undefined;
+OrderCalculateBundle.prototype['variant_id'] = undefined;
 
 /**
  * @member {Array.<module:model/OrderItemOption>} options
  */
-OrderCalculateItem.prototype['options'] = undefined;
+OrderCalculateBundle.prototype['options'] = undefined;
 
 /**
  * @member {Object} additional_fields
  */
-OrderCalculateItem.prototype['additional_fields'] = undefined;
+OrderCalculateBundle.prototype['additional_fields'] = undefined;
 
 /**
  * @member {Object} custom_fields
  */
-OrderCalculateItem.prototype['custom_fields'] = undefined;
+OrderCalculateBundle.prototype['custom_fields'] = undefined;
 
 
 
 
 
 
-export default OrderCalculateItem;
+export default OrderCalculateBundle;
 

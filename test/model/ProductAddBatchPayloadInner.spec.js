@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property isbn (base name: "isbn")', function() {
+      // uncomment below and update the code to test the property isbn
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property barcode (base name: "barcode")', function() {
       // uncomment below and update the code to test the property barcode
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
@@ -156,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property availFrom (base name: "avail_from")', function() {
+      // uncomment below and update the code to test the property availFrom
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property advancedPrices (base name: "advanced_prices")', function() {
       // uncomment below and update the code to test the property advancedPrices
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
@@ -164,6 +176,24 @@
 
     it('should have the property fixedCostShippingPrice (base name: "fixed_cost_shipping_price")', function() {
       // uncomment below and update the code to test the property fixedCostShippingPrice
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property buyitnowPrice (base name: "buyitnow_price")', function() {
+      // uncomment below and update the code to test the property buyitnowPrice
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reservePrice (base name: "reserve_price")', function() {
+      // uncomment below and update the code to test the property reservePrice
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bestOffer (base name: "best_offer")', function() {
+      // uncomment below and update the code to test the property bestOffer
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
       //expect(instance).to.be();
     });
@@ -222,6 +252,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property conditionDescription (base name: "condition_description")', function() {
+      // uncomment below and update the code to test the property conditionDescription
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
     it('should have the property visible (base name: "visible")', function() {
       // uncomment below and update the code to test the property visible
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
@@ -254,6 +290,18 @@
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property listingType (base name: "listing_type")', function() {
+      // uncomment below and update the code to test the property listingType
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property listingDuration (base name: "listing_duration")', function() {
+      // uncomment below and update the code to test the property listingDuration
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
       //expect(instance).to.be();
     });
@@ -356,6 +404,12 @@
 
     it('should have the property taxClassId (base name: "tax_class_id")', function() {
       // uncomment below and update the code to test the property taxClassId
+      //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property salesTax (base name: "sales_tax")', function() {
+      // uncomment below and update the code to test the property salesTax
       //var instance = new Api2CartOpenApi.ProductAddBatchPayloadInner();
       //expect(instance).to.be();
     });

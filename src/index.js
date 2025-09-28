@@ -203,6 +203,7 @@ import OrderAddOrderItemInnerOrderItemOptionInner from './model/OrderAddOrderIte
 import OrderAddOrderItemInnerOrderItemPropertyInner from './model/OrderAddOrderItemInnerOrderItemPropertyInner';
 import OrderCalculate from './model/OrderCalculate';
 import OrderCalculate200Response from './model/OrderCalculate200Response';
+import OrderCalculateBundle from './model/OrderCalculateBundle';
 import OrderCalculateDiscount from './model/OrderCalculateDiscount';
 import OrderCalculateItem from './model/OrderCalculateItem';
 import OrderCalculateOrderItemInner from './model/OrderCalculateOrderItemInner';
@@ -271,6 +272,7 @@ import ProductAddBatch from './model/ProductAddBatch';
 import ProductAddBatchPayloadInner from './model/ProductAddBatchPayloadInner';
 import ProductAddBatchPayloadInnerAdvancedPricesInner from './model/ProductAddBatchPayloadInnerAdvancedPricesInner';
 import ProductAddBatchPayloadInnerImagesInner from './model/ProductAddBatchPayloadInnerImagesInner';
+import ProductAddBatchPayloadInnerSalesTax from './model/ProductAddBatchPayloadInnerSalesTax';
 import ProductAddBestOffer from './model/ProductAddBestOffer';
 import ProductAddCertificationsInner from './model/ProductAddCertificationsInner';
 import ProductAddCertificationsInnerFilesInner from './model/ProductAddCertificationsInnerFilesInner';
@@ -1637,6 +1639,12 @@ export {
     OrderCalculate200Response,
 
     /**
+     * The OrderCalculateBundle model constructor.
+     * @property {module:model/OrderCalculateBundle}
+     */
+    OrderCalculateBundle,
+
+    /**
      * The OrderCalculateDiscount model constructor.
      * @property {module:model/OrderCalculateDiscount}
      */
@@ -2043,6 +2051,12 @@ export {
      * @property {module:model/ProductAddBatchPayloadInnerImagesInner}
      */
     ProductAddBatchPayloadInnerImagesInner,
+
+    /**
+     * The ProductAddBatchPayloadInnerSalesTax model constructor.
+     * @property {module:model/ProductAddBatchPayloadInnerSalesTax}
+     */
+    ProductAddBatchPayloadInnerSalesTax,
 
     /**
      * The ProductAddBestOffer model constructor.

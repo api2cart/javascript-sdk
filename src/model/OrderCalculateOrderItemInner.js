@@ -61,6 +61,12 @@ class OrderCalculateOrderItemInner {
             if (data.hasOwnProperty('order_item_variant_id')) {
                 obj['order_item_variant_id'] = ApiClient.convertToType(data['order_item_variant_id'], 'String');
             }
+            if (data.hasOwnProperty('order_item_parent')) {
+                obj['order_item_parent'] = ApiClient.convertToType(data['order_item_parent'], 'Number');
+            }
+            if (data.hasOwnProperty('order_item_parent_option_name')) {
+                obj['order_item_parent_option_name'] = ApiClient.convertToType(data['order_item_parent_option_name'], 'String');
+            }
             if (data.hasOwnProperty('order_item_option')) {
                 obj['order_item_option'] = ApiClient.convertToType(data['order_item_option'], [OrderCalculateOrderItemInnerOrderItemOptionInner]);
             }
@@ -87,6 +93,10 @@ class OrderCalculateOrderItemInner {
         // ensure the json data is a string
         if (data['order_item_variant_id'] && !(typeof data['order_item_variant_id'] === 'string' || data['order_item_variant_id'] instanceof String)) {
             throw new Error("Expected the field `order_item_variant_id` to be a primitive type in the JSON string but got " + data['order_item_variant_id']);
+        }
+        // ensure the json data is a string
+        if (data['order_item_parent_option_name'] && !(typeof data['order_item_parent_option_name'] === 'string' || data['order_item_parent_option_name'] instanceof String)) {
+            throw new Error("Expected the field `order_item_parent_option_name` to be a primitive type in the JSON string but got " + data['order_item_parent_option_name']);
         }
         if (data['order_item_option']) { // data not null
             // ensure the json data is an array
@@ -124,6 +134,18 @@ OrderCalculateOrderItemInner.prototype['order_item_quantity'] = undefined;
  * @member {String} order_item_variant_id
  */
 OrderCalculateOrderItemInner.prototype['order_item_variant_id'] = undefined;
+
+/**
+ * Index of the parent grouped/bundle product
+ * @member {Number} order_item_parent
+ */
+OrderCalculateOrderItemInner.prototype['order_item_parent'] = undefined;
+
+/**
+ * Option name of the parent grouped/bundle product
+ * @member {String} order_item_parent_option_name
+ */
+OrderCalculateOrderItemInner.prototype['order_item_parent_option_name'] = undefined;
 
 /**
  * @member {Array.<module:model/OrderCalculateOrderItemInnerOrderItemOptionInner>} order_item_option

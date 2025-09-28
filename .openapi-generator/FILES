@@ -203,6 +203,7 @@ docs/OrderAddOrderItemInnerOrderItemPropertyInner.md
 docs/OrderApi.md
 docs/OrderCalculate.md
 docs/OrderCalculate200Response.md
+docs/OrderCalculateBundle.md
 docs/OrderCalculateDiscount.md
 docs/OrderCalculateItem.md
 docs/OrderCalculateOrderItemInner.md
@@ -271,6 +272,7 @@ docs/ProductAddBatch.md
 docs/ProductAddBatchPayloadInner.md
 docs/ProductAddBatchPayloadInnerAdvancedPricesInner.md
 docs/ProductAddBatchPayloadInnerImagesInner.md
+docs/ProductAddBatchPayloadInnerSalesTax.md
 docs/ProductAddBestOffer.md
 docs/ProductAddCertificationsInner.md
 docs/ProductAddCertificationsInnerFilesInner.md
@@ -656,6 +658,7 @@ src/model/OrderAddOrderItemInnerOrderItemOptionInner.js
 src/model/OrderAddOrderItemInnerOrderItemPropertyInner.js
 src/model/OrderCalculate.js
 src/model/OrderCalculate200Response.js
+src/model/OrderCalculateBundle.js
 src/model/OrderCalculateDiscount.js
 src/model/OrderCalculateItem.js
 src/model/OrderCalculateOrderItemInner.js
@@ -724,6 +727,7 @@ src/model/ProductAddBatch.js
 src/model/ProductAddBatchPayloadInner.js
 src/model/ProductAddBatchPayloadInnerAdvancedPricesInner.js
 src/model/ProductAddBatchPayloadInnerImagesInner.js
+src/model/ProductAddBatchPayloadInnerSalesTax.js
 src/model/ProductAddBestOffer.js
 src/model/ProductAddCertificationsInner.js
 src/model/ProductAddCertificationsInnerFilesInner.js
@@ -1099,6 +1103,7 @@ test/model/OrderAddOrderItemInnerOrderItemOptionInner.spec.js
 test/model/OrderAddOrderItemInnerOrderItemPropertyInner.spec.js
 test/model/OrderCalculate.spec.js
 test/model/OrderCalculate200Response.spec.js
+test/model/OrderCalculateBundle.spec.js
 test/model/OrderCalculateDiscount.spec.js
 test/model/OrderCalculateItem.spec.js
 test/model/OrderCalculateOrderItemInner.spec.js
@@ -1167,6 +1172,7 @@ test/model/ProductAddBatch.spec.js
 test/model/ProductAddBatchPayloadInner.spec.js
 test/model/ProductAddBatchPayloadInnerAdvancedPricesInner.spec.js
 test/model/ProductAddBatchPayloadInnerImagesInner.spec.js
+test/model/ProductAddBatchPayloadInnerSalesTax.spec.js
 test/model/ProductAddBestOffer.spec.js
 test/model/ProductAddCertificationsInner.spec.js
 test/model/ProductAddCertificationsInnerFilesInner.spec.js

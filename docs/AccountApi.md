@@ -227,6 +227,7 @@ let opts = {
   'mivaAccessToken': "227cbe434a1e358d72db0de993x9d9fd", // String | Miva access token
   'mivaSignature': "1hpkrebfdsObGTor/0Gk9XcNBUQohrxrw67Sg9AM9ps=", // String | Miva signature
   'shopwareAccessKey': "SWSCS3O1RJBSRNBYQLFIYJN2ZQ", // String | Shopware access key
+  'unasApiKey': "c238908e29ceb6e6ad3df15f89a6234709d3f000", // String | UNAS API Key
   'shopwareApiKey': "SWSCS3O1RJBSRNBYQLFIYJN2ZQ", // String | Shopware api key
   'shopwareApiSecret': "V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ", // String | Shopware client secret access key
   'bigcartelUserName': "subdomain", // String | Subdomain of store
@@ -400,6 +401,7 @@ Name | Type | Description  | Notes
  **mivaAccessToken** | **String**| Miva access token | [optional] 
  **mivaSignature** | **String**| Miva signature | [optional] 
  **shopwareAccessKey** | **String**| Shopware access key | [optional] 
+ **unasApiKey** | **String**| UNAS API Key | [optional] 
  **shopwareApiKey** | **String**| Shopware api key | [optional] 
  **shopwareApiSecret** | **String**| Shopware client secret access key | [optional] 
  **bigcartelUserName** | **String**| Subdomain of store | [optional] 

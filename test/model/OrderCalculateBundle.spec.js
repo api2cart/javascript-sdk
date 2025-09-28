@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Api2CartOpenApi.OrderCalculateItem();
+    instance = new Api2CartOpenApi.OrderCalculateBundle();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,106 +47,100 @@
       object[property] = value;
   }
 
-  describe('OrderCalculateItem', function() {
-    it('should create an instance of OrderCalculateItem', function() {
-      // uncomment below and update the code to test OrderCalculateItem
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
-      //expect(instance).to.be.a(Api2CartOpenApi.OrderCalculateItem);
+  describe('OrderCalculateBundle', function() {
+    it('should create an instance of OrderCalculateBundle', function() {
+      // uncomment below and update the code to test OrderCalculateBundle
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
+      //expect(instance).to.be.a(Api2CartOpenApi.OrderCalculateBundle);
     });
 
     it('should have the property productId (base name: "product_id")', function() {
       // uncomment below and update the code to test the property productId
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property sku (base name: "sku")', function() {
       // uncomment below and update the code to test the property sku
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property price (base name: "price")', function() {
       // uncomment below and update the code to test the property price
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property priceIncTax (base name: "price_inc_tax")', function() {
       // uncomment below and update the code to test the property priceIncTax
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property taxRate (base name: "tax_rate")', function() {
       // uncomment below and update the code to test the property taxRate
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property unitDiscount (base name: "unit_discount")', function() {
       // uncomment below and update the code to test the property unitDiscount
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property weight (base name: "weight")', function() {
       // uncomment below and update the code to test the property weight
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property weightUnit (base name: "weight_unit")', function() {
       // uncomment below and update the code to test the property weightUnit
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property barcode (base name: "barcode")', function() {
       // uncomment below and update the code to test the property barcode
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property variantId (base name: "variant_id")', function() {
       // uncomment below and update the code to test the property variantId
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bundleProductId (base name: "bundle_product_id")', function() {
-      // uncomment below and update the code to test the property bundleProductId
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property options (base name: "options")', function() {
       // uncomment below and update the code to test the property options
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property additionalFields (base name: "additional_fields")', function() {
       // uncomment below and update the code to test the property additionalFields
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
     it('should have the property customFields (base name: "custom_fields")', function() {
       // uncomment below and update the code to test the property customFields
-      //var instance = new Api2CartOpenApi.OrderCalculateItem();
+      //var instance = new Api2CartOpenApi.OrderCalculateBundle();
       //expect(instance).to.be();
     });
 
