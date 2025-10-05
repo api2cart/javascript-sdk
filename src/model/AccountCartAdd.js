@@ -2561,6 +2561,12 @@ AccountCartAdd['CartIdEnum'] = {
     "Ubercart": "Ubercart",
 
     /**
+     * value: "Unas"
+     * @const
+     */
+    "Unas": "Unas",
+
+    /**
      * value: "Virtuemart"
      * @const
      */

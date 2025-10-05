@@ -282,6 +282,8 @@ Name | Type | Description | Notes
 
 * `Ubercart` (value: `"Ubercart"`)
 
+* `Unas` (value: `"Unas"`)
+
 * `Virtuemart` (value: `"Virtuemart"`)
 
 * `Volusion` (value: `"Volusion"`)
