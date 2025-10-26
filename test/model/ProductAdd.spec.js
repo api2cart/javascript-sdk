@@ -624,6 +624,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingProfileId (base name: "processing_profile_id")', function() {
+      // uncomment below and update the code to test the property processingProfileId
+      //var instance = new Api2CartOpenApi.ProductAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property shippingDetails (base name: "shipping_details")', function() {
       // uncomment below and update the code to test the property shippingDetails
       //var instance = new Api2CartOpenApi.ProductAdd();

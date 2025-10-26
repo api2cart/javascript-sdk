@@ -277,6 +277,9 @@ class ProductUpdate {
             if (data.hasOwnProperty('shipping_template_id')) {
                 obj['shipping_template_id'] = ApiClient.convertToType(data['shipping_template_id'], 'Number');
             }
+            if (data.hasOwnProperty('processing_profile_id')) {
+                obj['processing_profile_id'] = ApiClient.convertToType(data['processing_profile_id'], 'Number');
+            }
             if (data.hasOwnProperty('when_made')) {
                 obj['when_made'] = ApiClient.convertToType(data['when_made'], 'String');
             }
@@ -1012,6 +1015,12 @@ ProductUpdate.prototype['harmonized_system_code'] = undefined;
  * @default 0
  */
 ProductUpdate.prototype['shipping_template_id'] = 0;
+
+/**
+ * The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+ * @member {Number} processing_profile_id
+ */
+ProductUpdate.prototype['processing_profile_id'] = undefined;
 
 /**
  * An enumerated string for the era in which the maker made the product.

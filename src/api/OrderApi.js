@@ -392,6 +392,7 @@ export default class OrderApi {
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {Boolean} [enableCache = false)] If the value is 'true' and order exist in our cache, we will return order.info response from cache
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
+     * @param {Number} [roundingPrecision] <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
      * @param {module:api/OrderApi~orderInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/OrderInfo200Response}
      */
@@ -409,7 +410,8 @@ export default class OrderApi {
         'response_fields': opts['responseFields'],
         'exclude': opts['exclude'],
         'enable_cache': opts['enableCache'],
-        'use_latest_api_version': opts['useLatestApiVersion']
+        'use_latest_api_version': opts['useLatestApiVersion'],
+        'rounding_precision': opts['roundingPrecision']
       };
       let headerParams = {
       };
@@ -477,6 +479,7 @@ export default class OrderApi {
      * @param {String} [exclude] Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      * @param {Boolean} [enableCache = false)] If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
      * @param {Boolean} [useLatestApiVersion = false)] Use the latest platform API version
+     * @param {Number} [roundingPrecision] <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
      * @param {module:api/OrderApi~orderListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelResponseOrderList}
      */
@@ -524,7 +527,8 @@ export default class OrderApi {
         'response_fields': opts['responseFields'],
         'exclude': opts['exclude'],
         'enable_cache': opts['enableCache'],
-        'use_latest_api_version': opts['useLatestApiVersion']
+        'use_latest_api_version': opts['useLatestApiVersion'],
+        'rounding_precision': opts['roundingPrecision']
       };
       let headerParams = {
       };

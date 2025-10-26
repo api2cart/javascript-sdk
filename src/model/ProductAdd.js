@@ -371,6 +371,9 @@ class ProductAdd {
             if (data.hasOwnProperty('shipping_template_id')) {
                 obj['shipping_template_id'] = ApiClient.convertToType(data['shipping_template_id'], 'Number');
             }
+            if (data.hasOwnProperty('processing_profile_id')) {
+                obj['processing_profile_id'] = ApiClient.convertToType(data['processing_profile_id'], 'Number');
+            }
             if (data.hasOwnProperty('shipping_details')) {
                 obj['shipping_details'] = ApiClient.convertToType(data['shipping_details'], [ProductAddShippingDetailsInner]);
             }
@@ -1418,6 +1421,12 @@ ProductAdd.prototype['paypal_email'] = undefined;
  * @default 0
  */
 ProductAdd.prototype['shipping_template_id'] = 0;
+
+/**
+ * The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+ * @member {Number} processing_profile_id
+ */
+ProductAdd.prototype['processing_profile_id'] = undefined;
 
 /**
  * The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>

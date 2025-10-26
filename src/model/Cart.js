@@ -62,6 +62,9 @@ class Cart {
             if (data.hasOwnProperty('bridge_version')) {
                 obj['bridge_version'] = ApiClient.convertToType(data['bridge_version'], 'String');
             }
+            if (data.hasOwnProperty('default_rounding_precision')) {
+                obj['default_rounding_precision'] = ApiClient.convertToType(data['default_rounding_precision'], 'Number');
+            }
             if (data.hasOwnProperty('db_prefix')) {
                 obj['db_prefix'] = ApiClient.convertToType(data['db_prefix'], 'String');
             }
@@ -168,6 +171,11 @@ Cart.prototype['version'] = undefined;
  * @member {String} bridge_version
  */
 Cart.prototype['bridge_version'] = undefined;
+
+/**
+ * @member {Number} default_rounding_precision
+ */
+Cart.prototype['default_rounding_precision'] = undefined;
 
 /**
  * @member {String} db_prefix

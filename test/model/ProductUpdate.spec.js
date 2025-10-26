@@ -480,6 +480,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property processingProfileId (base name: "processing_profile_id")', function() {
+      // uncomment below and update the code to test the property processingProfileId
+      //var instance = new Api2CartOpenApi.ProductUpdate();
+      //expect(instance).to.be();
+    });
+
     it('should have the property whenMade (base name: "when_made")', function() {
       // uncomment below and update the code to test the property whenMade
       //var instance = new Api2CartOpenApi.ProductUpdate();

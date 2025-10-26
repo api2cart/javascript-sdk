@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **url** | **String** |  | [optional] 
 **version** | **String** |  | [optional] 
 **bridgeVersion** | **String** |  | [optional] 
+**defaultRoundingPrecision** | **Number** |  | [optional] 
 **dbPrefix** | **String** |  | [optional] 
 **storesInfo** | [**[CartStoreInfo]**](CartStoreInfo.md) |  | [optional] 
 **warehouses** | [**[CartWarehouse]**](CartWarehouse.md) |  | [optional] 
