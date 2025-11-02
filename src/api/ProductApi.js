@@ -640,6 +640,7 @@ export default class ProductApi {
      * product.count
      * Count products in store.
      * @param {Object} opts Optional parameters
+     * @param {String} [sku] Filter by product's sku
      * @param {String} [productIds] Counts products specified by product ids
      * @param {String} [sinceId] Retrieve entities starting from the specified id.
      * @param {String} [categoriesIds] Defines product add that is specified by comma-separated categories id
@@ -653,6 +654,7 @@ export default class ProductApi {
      * @param {String} [modifiedFrom] Retrieve entities from their modification date
      * @param {String} [modifiedTo] Retrieve entities to their modification date
      * @param {String} [brandName] Retrieves brands specified by brand name
+     * @param {String} [manufacturerId] Defines product's manufacturer by manufacturer_id
      * @param {Array.<String>} [productAttributes] Defines product attributes
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
@@ -673,6 +675,7 @@ export default class ProductApi {
       let pathParams = {
       };
       let queryParams = {
+        'sku': opts['sku'],
         'product_ids': opts['productIds'],
         'since_id': opts['sinceId'],
         'categories_ids': opts['categoriesIds'],
@@ -686,6 +689,7 @@ export default class ProductApi {
         'modified_from': opts['modifiedFrom'],
         'modified_to': opts['modifiedTo'],
         'brand_name': opts['brandName'],
+        'manufacturer_id': opts['manufacturerId'],
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
         'status': opts['status'],
         'type': opts['type'],
@@ -1229,6 +1233,7 @@ export default class ProductApi {
      * @param {String} [sku] Filter by product's sku
      * @param {String} [brandName] Retrieves brands specified by brand name
      * @param {Array.<String>} [productAttributes] Defines product attributes
+     * @param {String} [manufacturerId] Defines product's manufacturer by manufacturer_id
      * @param {String} [status] Defines product's status
      * @param {String} [type] Defines products's type
      * @param {String} [visible = 'everywhere')] Filter items by visibility status
@@ -1274,6 +1279,7 @@ export default class ProductApi {
         'sku': opts['sku'],
         'brand_name': opts['brandName'],
         'product_attributes': this.apiClient.buildCollectionParam(opts['productAttributes'], 'multi'),
+        'manufacturer_id': opts['manufacturerId'],
         'status': opts['status'],
         'type': opts['type'],
         'visible': opts['visible'],

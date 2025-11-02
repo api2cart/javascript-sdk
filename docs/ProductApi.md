@@ -749,6 +749,7 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Api2CartOpenApi.ProductApi();
 let opts = {
+  'sku': "bag_01", // String | Filter by product's sku
   'productIds': "4,5", // String | Counts products specified by product ids
   'sinceId': "56", // String | Retrieve entities starting from the specified id.
   'categoriesIds': "23,56", // String | Defines product add that is specified by comma-separated categories id
@@ -762,6 +763,7 @@ let opts = {
   'modifiedFrom': "2010-07-29 13:45:52", // String | Retrieve entities from their modification date
   'modifiedTo': "2100-08-29 13:45:52", // String | Retrieve entities to their modification date
   'brandName': "Abidas", // String | Retrieves brands specified by brand name
+  'manufacturerId': "1", // String | Defines product's manufacturer by manufacturer_id
   'productAttributes': ["null"], // [String] | Defines product attributes
   'status': "disabled", // String | Defines product's status
   'type': "simple", // String | Defines products's type
@@ -787,6 +789,7 @@ apiInstance.productCount(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sku** | **String**| Filter by product&#39;s sku | [optional] 
  **productIds** | **String**| Counts products specified by product ids | [optional] 
  **sinceId** | **String**| Retrieve entities starting from the specified id. | [optional] 
  **categoriesIds** | **String**| Defines product add that is specified by comma-separated categories id | [optional] 
@@ -800,6 +803,7 @@ Name | Type | Description  | Notes
  **modifiedFrom** | **String**| Retrieve entities from their modification date | [optional] 
  **modifiedTo** | **String**| Retrieve entities to their modification date | [optional] 
  **brandName** | **String**| Retrieves brands specified by brand name | [optional] 
+ **manufacturerId** | **String**| Defines product&#39;s manufacturer by manufacturer_id | [optional] 
  **productAttributes** | [**[String]**](String.md)| Defines product attributes | [optional] 
  **status** | **String**| Defines product&#39;s status | [optional] 
  **type** | **String**| Defines products&#39;s type | [optional] 
@@ -1466,6 +1470,7 @@ let opts = {
   'sku': "bag_01", // String | Filter by product's sku
   'brandName': "Abidas", // String | Retrieves brands specified by brand name
   'productAttributes': ["null"], // [String] | Defines product attributes
+  'manufacturerId': "1", // String | Defines product's manufacturer by manufacturer_id
   'status': "disabled", // String | Defines product's status
   'type': "simple", // String | Defines products's type
   'visible': "everywhere", // String | Filter items by visibility status
@@ -1516,6 +1521,7 @@ Name | Type | Description  | Notes
  **sku** | **String**| Filter by product&#39;s sku | [optional] 
  **brandName** | **String**| Retrieves brands specified by brand name | [optional] 
  **productAttributes** | [**[String]**](String.md)| Defines product attributes | [optional] 
+ **manufacturerId** | **String**| Defines product&#39;s manufacturer by manufacturer_id | [optional] 
  **status** | **String**| Defines product&#39;s status | [optional] 
  **type** | **String**| Defines products&#39;s type | [optional] 
  **visible** | **String**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;]

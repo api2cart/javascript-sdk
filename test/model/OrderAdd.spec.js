@@ -468,6 +468,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property feePrice (base name: "fee_price")', function() {
+      // uncomment below and update the code to test the property feePrice
+      //var instance = new Api2CartOpenApi.OrderAdd();
+      //expect(instance).to.be();
+    });
+
     it('should have the property orderItem (base name: "order_item")', function() {
       // uncomment below and update the code to test the property orderItem
       //var instance = new Api2CartOpenApi.OrderAdd();

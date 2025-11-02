@@ -284,6 +284,9 @@ class OrderAdd {
             if (data.hasOwnProperty('origin')) {
                 obj['origin'] = ApiClient.convertToType(data['origin'], 'String');
             }
+            if (data.hasOwnProperty('fee_price')) {
+                obj['fee_price'] = ApiClient.convertToType(data['fee_price'], 'Number');
+            }
             if (data.hasOwnProperty('order_item')) {
                 obj['order_item'] = ApiClient.convertToType(data['order_item'], [OrderAddOrderItemInner]);
             }
@@ -965,6 +968,12 @@ OrderAdd.prototype['clear_cache'] = true;
  * @member {String} origin
  */
 OrderAdd.prototype['origin'] = undefined;
+
+/**
+ * Specifies refund's fee price
+ * @member {Number} fee_price
+ */
+OrderAdd.prototype['fee_price'] = undefined;
 
 /**
  * @member {Array.<module:model/OrderAddOrderItemInner>} order_item
